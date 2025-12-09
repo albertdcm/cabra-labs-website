@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============== BASE GLOBAL =============== */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-900 text-slate-50 antialiased;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+      "Segoe UI", sans-serif;
+  }
+
+  #app {
+    @apply min-h-screen bg-slate-900;
+  }
+
+  a {
+    @apply underline-offset-4;
+  }
+
+  ::selection {
+    @apply bg-emerald-500 text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-700 hover:bg-slate-500;
+  }
+}
+
+/* =============== COMPONENTES =============== */
+@layer components {
+  /* Gradiente del título GOAT */
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-emerald-400 via-sky-400 to-emerald-300 bg-clip-text text-transparent;
+  }
+
+  /* Card tipo glass con hover dinámico (SIN clases con "/") */
+  .card-soft {
+    @apply rounded-3xl shadow-xl backdrop-blur-xl transition-all duration-300 ease-out;
+    background-color: rgba(15, 23, 42, 0.9);        /* slate-900 con opacidad */
+    border: 1px solid rgba(148, 163, 184, 0.35);    /* slate-400 suave */
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);  /* sombra profunda */
+  }
+
+  .card-soft:hover {
+    @apply -translate-y-1.5 shadow-2xl;
+    border-color: rgba(45, 212, 191, 0.9);          /* emerald */
+    background-color: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 28px 70px rgba(16, 185, 129, 0.55);
+  }
+}
+
+/* =============== UTILIDADES Y EFECTOS =============== */
+@layer utilities {
+  /* Orbes suaves por si los usas luego */
+  .blur-orb {
+    @apply pointer-events-none absolute rounded-full;
+    background-color: rgba(16, 185, 129, 0.14);
+    filter: blur(60px);
+  }
+
+  .blur-orb--top {
+    @apply -top-40 left-10;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .blur-orb--right {
+    @apply -right-32 top-32;
+    width: 20rem;
+    height: 20rem;
+    background-color: rgba(56, 189, 248, 0.16);
+  }
+
+  .blur-orb--bottom {
+    @apply -bottom-40 left-1/2 -translate-x-1/2;
+    width: 18rem;
+    height: 18rem;
+    background-color: rgba(217, 70, 239, 0.16);
+  }
+
+  /* Animaciones suaves que ya usas */
+  .float-soft {
+    animation: float-soft 9s ease-in-out infinite;
+  }
+
+  .pulse-soft {
+    animation: pulse-soft 3.3s ease-in-out infinite;
+  }
+
+  /* Animación genérica de entrada (por si quieres usarla luego) */
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
+  }
+
+  .delay-1 {
+    animation-delay: 0.15s;
+  }
+
+  .delay-2 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-3 {
+    animation-delay: 0.45s;
+  }
+
+  /* Navbar con transición suave de fondo */
+  header {
+    @apply transition-all duration-300 ease-out;
+    background-color: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  }
+
+  header:hover {
+    background-color: rgba(15, 23, 42, 0.98);
+    border-bottom-color: rgba(45, 212, 191, 0.8);
+  }
+
+  /* Links del navbar: color suave */
+  header nav a {
+    @apply transition-colors duration-200;
+  }
+
+  header nav a:hover {
+    @apply text-emerald-300;
+  }
+
+  /* Botones principales (#contacto y WhatsApp) con shimmer + elevación */
+  a[href="#contacto"],
+  a[href^="https://wa.me"] {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+
+  a[href="#contacto"]::after,
+  a[href^="https://wa.me"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 30%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  a[href="#contacto"]:hover::after,
+  a[href^="https://wa.me"]:hover::after {
+    animation: shimmer 0.8s ease-out;
+    opacity: 1;
+  }
+
+  a[href="#contacto"]:hover,
+  a[href^="https://wa.me"]:hover {
+    @apply -translate-y-0.5 shadow-lg;
+    box-shadow: 0 18px 45px rgba(16, 185, 129, 0.55);
+  }
+}
+
+/* =============== ANIMACIONES =============== */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
