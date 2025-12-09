@@ -1,5 +1,10 @@
 import "./style.css";
 
+import BrunoImg from "./assets/agents/Bruno.png";
+import GalaImg from "./assets/agents/Gala.png";
+import NiaImg from "./assets/agents/Nia.png";
+
+
 const app = document.querySelector<HTMLDivElement>("#app");
 
 if (!app) {
@@ -78,19 +83,19 @@ app.innerHTML = `
 
           <!-- Métricas -->
           <div class="grid gap-4 sm:grid-cols-4 text-sm">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+300</p>
               <p class="text-xs text-slate-300">empresas potenciadas</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+9M</p>
               <p class="text-xs text-slate-300">interacciones gestionadas</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+$30M</p>
               <p class="text-xs text-slate-300">en ingresos asistidos</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+39%</p>
               <p class="text-xs text-slate-300">crecimiento anual promedio</p>
             </div>
@@ -240,22 +245,31 @@ app.innerHTML = `
         <div class="grid gap-5 md:grid-cols-3">
           <!-- Gala -->
           <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-2">
-              <h3 class="text-lg font-semibold">Gala · Estrategia & Funnels</h3>
-              <p class="text-xs text-slate-300">
-                Desde $450 setup · planes mensuales según complejidad.
-              </p>
-              <ul
-                class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
-              >
-                <li>Mapea tu oferta, productos y recorridos de cliente.</li>
-                <li>Diseña funnels automatizados de captación y nurturing.</li>
-                <li>Define triggers, segmentación y journeys multicanal.</li>
-              </ul>
+            <div class="space-y-3">
+              <div class="flex justify-center">
+                <img
+                  src="${GalaImg}"
+                  alt="Gala · Estrategia & Funnels"
+                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
+                />
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold text-center">Gala · Estrategia & Funnels</h3>
+                <p class="text-xs text-slate-300 text-center">
+                  Desde $450 setup · planes mensuales según complejidad.
+                </p>
+                <ul
+                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
+                >
+                  <li>Mapea tu oferta, productos y recorridos de cliente.</li>
+                  <li>Diseña funnels automatizados de captación y nurturing.</li>
+                  <li>Define triggers, segmentación y journeys multicanal.</li>
+                </ul>
+              </div>
             </div>
             <a
               href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200"
+              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
             >
               Diseñar mi funnel con Gala →
             </a>
@@ -263,22 +277,31 @@ app.innerHTML = `
 
           <!-- Bruno -->
           <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-2">
-              <h3 class="text-lg font-semibold">Bruno · Soporte & Bots</h3>
-              <p class="text-xs text-slate-300">
-                Desde $250/mes · instalación única.
-              </p>
-              <ul
-                class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
-              >
-                <li>Responde WhatsApp, Instagram y web 24/7.</li>
-                <li>Gestiona FAQs, estado de pedidos, tickets y reclamaciones.</li>
-                <li>Derivación inteligente a humanos cuando importa.</li>
-              </ul>
+            <div class="space-y-3">
+              <div class="flex justify-center">
+                <img
+                  src="${BrunoImg}"
+                  alt="Bruno · Soporte & Bots"
+                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
+                />
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold text-center">Bruno · Soporte & Bots</h3>
+                <p class="text-xs text-slate-300 text-center">
+                  Desde $250/mes · instalación única.
+                </p>
+                <ul
+                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
+                >
+                  <li>Responde WhatsApp, Instagram y web 24/7.</li>
+                  <li>Gestiona FAQs, estado de pedidos, tickets y reclamaciones.</li>
+                  <li>Derivación inteligente a humanos cuando importa.</li>
+                </ul>
+              </div>
             </div>
             <a
               href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200"
+              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
             >
               Ver demo de Bruno →
             </a>
@@ -286,22 +309,31 @@ app.innerHTML = `
 
           <!-- Nia -->
           <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-2">
-              <h3 class="text-lg font-semibold">Nia · CRM & Seguimiento</h3>
-              <p class="text-xs text-slate-300">
-                Desde $300/mes · ideal para equipos comerciales.
-              </p>
-              <ul
-                class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
-              >
-                <li>Seguimiento automático de leads calientes y fríos.</li>
-                <li>Recordatorios, agendas y retargeting sobre tu CRM.</li>
-                <li>Reportes de conversión y forecast de oportunidades.</li>
-              </ul>
+            <div class="space-y-3">
+              <div class="flex justify-center">
+                <img
+                  src="${NiaImg}"
+                  alt="Nia · CRM & Seguimiento"
+                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
+                />
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold text-center">Nia · CRM & Seguimiento</h3>
+                <p class="text-xs text-slate-300 text-center">
+                  Desde $300/mes · ideal para equipos comerciales.
+                </p>
+                <ul
+                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
+                >
+                  <li>Seguimiento automático de leads calientes y fríos.</li>
+                  <li>Recordatorios, agendas y retargeting sobre tu CRM.</li>
+                  <li>Reportes de conversión y forecast de oportunidades.</li>
+                </ul>
+              </div>
             </div>
             <a
               href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200"
+              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
             >
               Activar a Nia en mi operación →
             </a>
@@ -470,3 +502,29 @@ app.innerHTML = `
   </div>
 `;
 
+// =========================
+//  Scroll reveal GOAT
+// =========================
+const revealElements = document.querySelectorAll<HTMLElement>(
+  "main section, .card-soft"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+revealElements.forEach((el, index) => {
+  el.classList.add("reveal-on-scroll");
+  el.style.transitionDelay = `${index * 40}ms`;
+  observer.observe(el);
+});
