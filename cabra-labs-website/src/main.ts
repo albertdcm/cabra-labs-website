@@ -3,6 +3,10 @@ import "./style.css";
 import BrunoImg from "./assets/agents/Bruno.png";
 import GalaImg from "./assets/agents/Gala.png";
 import NiaImg from "./assets/agents/Nia.png";
+import CabrasImg from "./assets/agents/cabras trabajando.png";
+import CabrasFut from "./assets/agents/cabras futuristas.png";
+import InstagramIcon from "./assets/agents/instagram.svg";
+import TikTokIcon from "./assets/agents/tik-tok.svg";
 
 
 const app = document.querySelector<HTMLDivElement>("#app");
@@ -25,18 +29,40 @@ app.innerHTML = `
           <span class="font-semibold tracking-tight">Cabra Labs</span>
         </div>
 
-        <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-          <a href="#agentes" class="hover:text-white transition-colors">Agentes</a>
-          <a href="#integraciones" class="hover:text-white transition-colors">Integraciones</a>
-          <a href="#sobre" class="hover:text-white transition-colors">Inteligencia Operativa</a>
+        <div class="hidden md:flex items-center gap-6 text-sm text-white">
+          <a href="#agentes" class="hover:text-emerald-300 transition-colors">Agentes</a>
+          <a href="#integraciones" class="hover:text-emerald-300 transition-colors">Integraciones</a>
+          <a href="#sobre" class="hover:text-emerald-300 transition-colors">Inteligencia Operativa</a>
         </div>
 
-        <a
-          href="#contacto"
-          class="text-sm font-medium rounded-full px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 transition-colors"
-        >
-          Agenda una llamada
-        </a>
+        <div class="flex items-center gap-2">
+          <a
+            href="https://tiktok.com/@cabra.labs"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok @cabra.labs"
+            class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+          >
+            <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-4 h-4 md:w-5 md:h-5 text-white" />
+          </a>
+
+          <a
+            href="https://instagram.com/cabra_labs"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram @cabra_labs"
+            class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+          >
+            <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-4 h-4 md:w-5 md:h-5" />
+          </a>
+
+          <a
+            href="#contacto"
+            class="text-sm font-medium rounded-full px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-white transition-colors"
+          >
+            Agenda una llamada
+          </a>
+        </div>
       </nav>
     </header>
 
@@ -72,7 +98,7 @@ app.innerHTML = `
           >
             <a
               href="#contacto"
-              class="rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 text-sm font-semibold px-6 py-2.5 transition-colors"
+              class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500 hover:shadow-lg hover:shadow-emerald-500/50 text-white text-sm font-semibold px-6 py-2.5 transition-all duration-300"
             >
               Diseñar mi equipo GOAT
             </a>
@@ -111,6 +137,9 @@ app.innerHTML = `
             >
               Equipo GOAT
             </p>
+            <div class="overflow-hidden rounded-2xl">
+              <img src="${CabrasImg}" alt="Cabras trabajando" class="w-full h-36 md:h-44 object-cover rounded-2xl" />
+            </div>
 
             <div class="space-y-3 text-sm">
               <p class="text-slate-200">
@@ -409,6 +438,9 @@ app.innerHTML = `
             La primera empresa enfocada en crear equipos GOAT de agentes de
             inteligencia artificial para operaciones en Latinoamérica.
           </p>
+          <div class="mt-3 overflow-hidden rounded-2xl">
+            <img src="${CabrasFut}" alt="Cabras futuristas" class="w-full h-28 md:h-32 object-cover rounded-2xl" />
+          </div>
           <p class="text-xs text-slate-400">
             Diseñamos, implementamos y medimos, para que puedas ver el impacto directo
             en tu facturación y en las horas que recuperas cada mes.
@@ -430,8 +462,9 @@ app.innerHTML = `
           integraciones y métricas a seguir.
         </p>
         <a
-          href="https://wa.me/XXXXXXXXXXX"
+          href="https://wa.me/584120599367"
           target="_blank"
+          rel="noopener"
           class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 text-sm font-semibold px-6 py-2.5 transition-colors"
         >
           Hablar con Cabra Labs por WhatsApp
@@ -451,6 +484,14 @@ app.innerHTML = `
             Creamos tu equipo de agentes y automatizaciones GOAT para que tu negocio
             funcione incluso cuando tú no estás.
           </p>
+          <div class="pt-2 flex items-center gap-2">
+            <a href="https://tiktok.com/@cabra.labs" target="_blank" rel="noopener" aria-label="TikTok @cabra.labs" class="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+              <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-3 h-3 md:w-4 md:h-4 text-white" />
+            </a>
+            <a href="https://instagram.com/cabra_labs" target="_blank" rel="noopener" aria-label="Instagram @cabra_labs" class="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
+              <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-3 h-3 md:w-4 md:h-4" />
+            </a>
+          </div>
         </div>
 
         <div>

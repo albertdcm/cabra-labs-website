@@ -132,12 +132,16 @@
 
   /* Botones dinámicos CON shimmer */
   a[href="#contacto"],
-  a[href^="https://wa.me"] {
+  a[href^="https://wa.me"],
+  a[href*="instagram.com"],
+  a[href*="tiktok.com"] {
     @apply relative overflow-hidden transition-all duration-300;
   }
 
   a[href="#contacto"]::after,
-  a[href^="https://wa.me"]::after {
+  a[href^="https://wa.me"]::after,
+  a[href*="instagram.com"]::after,
+  a[href*="tiktok.com"]::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -150,15 +154,19 @@
     );
     opacity: 0;
   }
-
   a[href="#contacto"]:hover::after,
-  a[href^="https://wa.me"]:hover::after {
+  a[href^="https://wa.me"]:hover::after,
+  a[href*="instagram.com"]:hover::after,
+  a[href*="instagram.com"]:active::after,
+  a[href*="tiktok.com"]:hover::after,
+  a[href*="tiktok.com"]:active::after {
     animation: shimmer .8s ease-out;
     opacity: 1;
   }
-
   a[href="#contacto"]:hover,
-  a[href^="https://wa.me"]:hover {
+  a[href^="https://wa.me"]:hover,
+  a[href*="instagram.com"]:hover,
+  a[href*="tiktok.com"]:hover {
     @apply -translate-y-0.5 shadow-lg;
     box-shadow: 0 18px 45px rgba(16, 185, 129, 0.45);
   }
