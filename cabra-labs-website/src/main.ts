@@ -8,7 +8,6 @@ import CabrasFut from "./assets/agents/cabras futuristas.png";
 import InstagramIcon from "./assets/agents/instagram.svg";
 import TikTokIcon from "./assets/agents/tik-tok.svg";
 
-
 const app = document.querySelector<HTMLDivElement>("#app");
 
 if (!app) {
@@ -18,53 +17,67 @@ if (!app) {
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
-      <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-        <div class="flex items-center gap-2">
-          <span
-            class="inline-flex h-9 w-9 rounded-2xl bg-emerald-500/15 border border-emerald-400/40 items-center justify-center text-xl"
-          >
-            🐐
-          </span>
-          <span class="font-semibold tracking-tight">Cabra Labs</span>
-        </div>
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
-        <div class="hidden md:flex items-center gap-6 text-sm text-white">
-          <a href="#agentes" class="hover:text-emerald-300 transition-colors">Agentes</a>
-          <a href="#integraciones" class="hover:text-emerald-300 transition-colors">Integraciones</a>
-          <a href="#sobre" class="hover:text-emerald-300 transition-colors">Inteligencia Operativa</a>
-        </div>
+    <!-- LOGO -->
+    <a href="#" class="flex items-center gap-3 group">
+      <span
+        class="inline-flex h-10 w-10 rounded-2xl bg-emerald-500/10 border border-emerald-400/40 items-center justify-center text-2xl group-hover:scale-105 transition-transform"
+      >
+        🐐
+      </span>
+      <span class="font-semibold tracking-tight text-slate-100 text-lg">
+        Cabra Labs
+      </span>
+    </a>
 
-        <div class="flex items-center gap-2">
-          <a
-            href="https://tiktok.com/@cabra.labs"
-            target="_blank"
-            rel="noopener"
-            aria-label="TikTok @cabra.labs"
-            class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950"
-          >
-            <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-4 h-4 md:w-5 md:h-5 text-white" />
-          </a>
+    <!-- NAV LINKS -->
+    <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+      <a href="#agentes" class="text-slate-200 hover:text-emerald-300 transition-colors">
+        Agentes
+      </a>
+      <a href="#integraciones" class="text-slate-200 hover:text-emerald-300 transition-colors">
+        Integraciones
+      </a>
+      <a href="#sobre" class="text-slate-200 hover:text-emerald-300 transition-colors">
+        Inteligencia Operativa
+      </a>
+    </div>
 
-          <a
-            href="https://instagram.com/cabra_labs"
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram @cabra_labs"
-            class="inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950"
-          >
-            <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-4 h-4 md:w-5 md:h-5" />
-          </a>
+    <!-- SOCIAL + CTA -->
+    <div class="flex items-center gap-3">
 
-          <a
-            href="#contacto"
-            class="text-sm font-medium rounded-full px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-white transition-colors"
-          >
-            Agenda una llamada
-          </a>
-        </div>
-      </nav>
-    </header>
+      <!-- TikTok -->
+      <a
+        href="https://tiktok.com/@cabra.labs"
+        target="_blank"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
+      >
+        <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" />
+      </a>
+
+      <!-- Instagram -->
+      <a
+        href="https://instagram.com/cabra_labs"
+        target="_blank"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
+      >
+        <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" />
+      </a>
+
+      <!-- CTA Principal -->
+      <a
+        href="#contacto"
+        class="rounded-full bg-emerald-500 hover:bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-900 transition-colors"
+      >
+        Agenda una llamada
+      </a>
+    </div>
+
+  </nav>
+</header>
+
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="max-w-6xl mx-auto px-4 md:px-0 py-12 md:py-16 space-y-16">
@@ -178,369 +191,606 @@ app.innerHTML = `
         </aside>
       </section>
 
-      <!-- QUIÉNES SOMOS -->
-      <section
-        id="sobre"
-        class="grid gap-8 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-start"
-      >
-        <div class="space-y-4">
-          <h2 class="text-2xl md:text-3xl font-semibold">¿Quiénes somos?</h2>
-          <p class="text-sm md:text-base text-slate-300">
-            Cabra Labs es un estudio de automatización y agentes de inteligencia
-            artificial especializado en operaciones y crecimiento de negocios.
-          </p>
-          <p class="text-sm md:text-base text-slate-300">
-            Diseñamos soluciones que optimizan procesos, liberan horas operativas y
-            aumentan la conversión en cada etapa del funnel. Nuestro enfoque es que tu
-            empresa tenga un equipo de asistentes virtuales trabajando como si fueran
-            parte de tu staff.
-          </p>
-        </div>
-
-        <div class="grid gap-3 text-xs text-slate-300">
-          <div class="card-soft p-4">
-            <p class="font-semibold text-slate-100 mb-1">
-              Inteligencia Operativa
-            </p>
-            <p>
-              Entendemos tus procesos actuales, detectamos cuellos de botella y los
-              traducimos en agentes y flujos automatizados.
-            </p>
-          </div>
-          <div class="card-soft p-4">
-            <p class="font-semibold text-slate-100 mb-1">
-              Implementación “done with you”
-            </p>
-            <p>
-              No solo entregamos bots: te acompañamos en la implementación, medición y
-              mejora continua.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ALIADOS COMERCIALES -->
-      <section class="space-y-4">
-        <h2 class="text-xl md:text-2xl font-semibold">Nuestros aliados comerciales</h2>
-        <p class="text-sm text-slate-300 max-w-2xl">
-          Trabajamos sobre ecosistemas líderes para que tus agentes GOAT se conecten
-          con lo que ya usas hoy: CRMs, pasarelas de pago, herramientas de marketing y
-          más.
-        </p>
-
+      <!-- QUIÉNES SOMOS (AJUSTADO) -->
+      <section id="sobre" class="relative">
+        <!-- Glows de fondo -->
         <div
-          class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 gap-3 text-[11px] text-slate-300"
-        >
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Meta
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Google
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Microsoft
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Stripe
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            WhatsApp API
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Kommo
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Shopify
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            WordPress
-          </div>
-        </div>
-      </section>
+          class="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"
+        ></div>
+        <div
+          class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl"
+        ></div>
 
-      <!-- AGENTES GOAT -->
-      <section id="agentes" class="space-y-6">
-        <div class="flex items-center justify-between gap-4">
-          <div>
-            <h2 class="text-xl md:text-2xl font-semibold">
-              Conoce a nuestros agentes GOAT
+        <div class="relative grid gap-10 md:grid-cols-[minmax(0,1.3fr),minmax(0,1fr)] items-start">
+          <!-- Columna texto -->
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
+              <span class="text-base">🐐</span>
+              <span>Quiénes somos</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">
+              Cabra Labs es tu equipo GOAT
+              <span class="text-emerald-300"> de automatización e IA </span>
+              para escalar operaciones.
             </h2>
-            <p class="text-sm text-slate-300">
-              Cada agente está diseñado para liderar una parte crítica de tu operación.
+
+            <p class="text-slate-200/90 leading-relaxed text-sm md:text-base">
+              Cabra Labs es un estudio de automatización y agentes de inteligencia
+              artificial especializado en operaciones y crecimiento de negocios.
             </p>
+
+            <p class="text-slate-300/80 leading-relaxed text-sm md:text-base">
+              Diseñamos soluciones que optimizan procesos, liberan horas operativas y aumentan
+              la conversión en cada etapa del funnel. Nuestro enfoque es que tu empresa tenga
+              un equipo de asistentes virtuales trabajando como si fueran parte de tu staff.
+            </p>
+
+            <!-- Chips de foco -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="rounded-full bg-slate-900/70 border border-emerald-500/40 px-3 py-1 text-xs text-emerald-100">
+                Operaciones
+              </span>
+              <span class="rounded-full bg-slate-900/70 border border-sky-500/40 px-3 py-1 text-xs text-sky-100">
+                Ventas &amp; funnels
+              </span>
+              <span class="rounded-full bg-slate-900/70 border border-violet-500/40 px-3 py-1 text-xs text-violet-100">
+                Soporte &amp; automatización
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div class="grid gap-5 md:grid-cols-3">
-          <!-- Gala -->
-          <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-3">
-              <div class="flex justify-center">
-                <img
-                  src="${GalaImg}"
-                  alt="Gala · Estrategia & Funnels"
-                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
-                />
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-center">Gala · Estrategia & Funnels</h3>
-                <p class="text-xs text-slate-300 text-center">
-                  Desde $450 setup · planes mensuales según complejidad.
-                </p>
-                <ul
-                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
+          <!-- Columna tarjetas -->
+          <div class="space-y-4">
+            <!-- Card 1 -->
+            <div
+              class="relative overflow-hidden rounded-3xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-emerald-500/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-emerald-400/40 card-soft"
+            >
+              <div class="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-emerald-400/20 blur-2xl"></div>
+              <div class="flex items-start gap-3 relative">
+                <div
+                  class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/50 text-lg"
                 >
-                  <li>Mapea tu oferta, productos y recorridos de cliente.</li>
-                  <li>Diseña funnels automatizados de captación y nurturing.</li>
-                  <li>Define triggers, segmentación y journeys multicanal.</li>
-                </ul>
+                  🤖
+                </div>
+                <div class="space-y-1">
+                  <h3 class="text-lg font-semibold text-emerald-100">
+                    Inteligencia Operativa
+                  </h3>
+                  <p class="text-sm text-emerald-50/80 leading-relaxed">
+                    Entendemos tus procesos actuales, detectamos cuellos de botella y los
+                    traducimos en agentes y flujos automatizados que se adaptan a tu operación.
+                  </p>
+                  <p class="text-xs text-emerald-100/70 pt-1">
+                    Ideal para empresas que quieren pasar de procesos manuales a una operación
+                    escalable y siempre encendida.
+                  </p>
+                </div>
               </div>
             </div>
-            <a
-              href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
-            >
-              Diseñar mi funnel con Gala →
-            </a>
-          </article>
 
-          <!-- Bruno -->
-          <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-3">
-              <div class="flex justify-center">
-                <img
-                  src="${BrunoImg}"
-                  alt="Bruno · Soporte & Bots"
-                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
-                />
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-center">Bruno · Soporte & Bots</h3>
-                <p class="text-xs text-slate-300 text-center">
-                  Desde $250/mes · instalación única.
-                </p>
-                <ul
-                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
+            <!-- Card 2 -->
+            <div
+              class="relative overflow-hidden rounded-3xl border border-violet-400/40 bg-gradient-to-br from-violet-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-violet-500/20 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-violet-400/40 card-soft"
+            >
+              <div class="absolute -left-10 -bottom-10 h-28 w-28 rounded-full bg-violet-400/25 blur-2xl"></div>
+              <div class="flex items-start gap-3 relative">
+                <div
+                  class="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-violet-500/20 border border-violet-400/50 text-lg"
                 >
-                  <li>Responde WhatsApp, Instagram y web 24/7.</li>
-                  <li>Gestiona FAQs, estado de pedidos, tickets y reclamaciones.</li>
-                  <li>Derivación inteligente a humanos cuando importa.</li>
-                </ul>
+                  📈
+                </div>
+                <div class="space-y-1">
+                  <h3 class="text-lg font-semibold text-violet-100">
+                    Implementación “done with you”
+                  </h3>
+                  <p class="text-sm text-violet-50/80 leading-relaxed">
+                    No solo entregamos bots: te acompañamos en la implementación, medición y
+                    mejora continua para que el equipo GOAT se convierta en parte real de tu
+                    operación.
+                  </p>
+                  <p class="text-xs text-violet-100/70 pt-1">
+                    Sesiones de trabajo conjunto, dashboards de resultados y roadmap de mejora
+                    continua.
+                  </p>
+                </div>
               </div>
             </div>
-            <a
-              href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
-            >
-              Ver demo de Bruno →
-            </a>
-          </article>
 
-          <!-- Nia -->
-          <article class="card-soft p-5 flex flex-col justify-between">
-            <div class="space-y-3">
-              <div class="flex justify-center">
-                <img
-                  src="${NiaImg}"
-                  alt="Nia · CRM & Seguimiento"
-                  class="w-28 h-28 object-contain drop-shadow-lg mb-1"
-                />
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-center">Nia · CRM & Seguimiento</h3>
-                <p class="text-xs text-slate-300 text-center">
-                  Desde $300/mes · ideal para equipos comerciales.
-                </p>
-                <ul
-                  class="mt-2 text-xs text-slate-300 space-y-1 list-disc list-inside"
-                >
-                  <li>Seguimiento automático de leads calientes y fríos.</li>
-                  <li>Recordatorios, agendas y retargeting sobre tu CRM.</li>
-                  <li>Reportes de conversión y forecast de oportunidades.</li>
-                </ul>
-              </div>
+            <!-- Micro badge animada -->
+            <div class="flex items-center gap-2 pt-2">
+              <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <p class="text-xs text-slate-400">
+                Siempre activos, siempre midiendo, siempre optimizando. 🐐⚙️
+              </p>
             </div>
-            <a
-              href="#contacto"
-              class="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center"
-            >
-              Activar a Nia en mi operación →
-            </a>
-          </article>
+          </div>
         </div>
       </section>
 
-      <!-- INTEGRACIONES -->
-      <section id="integraciones" class="space-y-4">
-        <h2 class="text-xl md:text-2xl font-semibold">
-          Nos integramos con tus herramientas favoritas
-        </h2>
-        <p class="text-sm text-slate-300 max-w-2xl">
-          Conectamos tus agentes GOAT con CRMs, ERPs, pasarelas de pago, tiendas en
-          línea y herramientas de productividad. Si no ves tu herramienta, probablemente
-          igual podamos conectarnos.
-        </p>
+            <!-- ALIADOS COMERCIALES -->
+<section class="relative">
+  <!-- Glows de fondo -->
+  <div
+    class="pointer-events-none absolute -left-24 -top-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl"
+  ></div>
 
+  <div
+    class="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950 px-6 py-7 md:px-8 md:py-8 shadow-xl shadow-emerald-500/15 backdrop-blur"
+  >
+    <div class="flex flex-col gap-4 md:flex-row md:items-center">
+      <div class="space-y-3 max-w-2xl">
         <div
-          class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 gap-3 text-[11px] text-slate-300"
+          class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-emerald-200"
         >
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            BNC
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Bancamiga
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Stripe
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            PayPal
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Kommo
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Odoo
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            Shopify
-          </div>
-          <div class="card-soft py-2 px-3 flex items-center justify-center">
-            WooCommerce
-          </div>
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span>Ecosistema GOAT</span>
         </div>
-      </section>
 
-      <!-- SIEMPRE TRABAJANDO -->
-      <section class="grid gap-8 md:grid-cols-2 items-center">
-        <div class="space-y-4">
+        <div class="space-y-1">
           <h2 class="text-xl md:text-2xl font-semibold">
-            Un compañero que siempre está trabajando
+            Nuestros aliados comerciales
           </h2>
           <p class="text-sm text-slate-300">
-            Tus agentes GOAT están disponibles 24/7. Captan leads mientras duermes,
-            atienden clientes cuando tu equipo está desconectado y mantienen tus
-            procesos corriendo incluso en horas pico.
+            Trabajamos sobre ecosistemas líderes para que tus agentes GOAT se conecten
+            con lo que ya usas hoy: CRMs, pasarelas de pago, herramientas de marketing y
+            más.
           </p>
-          <p class="text-sm text-slate-300">
+        </div>
+      </div>
+    </div>
+
+    <!-- Chips de marcas -->
+    <div
+      class="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-[11px] md:text-xs"
+    >
+      <!-- Cada aliado -->
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-emerald-500/25 via-sky-500/25 to-emerald-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Meta</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-sky-500/25 via-emerald-500/25 to-sky-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Google</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-emerald-500/25 via-sky-500/25 to-violet-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Microsoft</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-sky-500/25 via-emerald-500/25 to-sky-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Stripe</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-emerald-500/25 via-sky-500/25 to-emerald-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">WhatsApp API</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-violet-500/25 via-emerald-500/25 to-violet-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Kommo</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-sky-500/25 via-emerald-500/25 to-sky-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">Shopify</span>
+      </div>
+
+      <div
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+      >
+        <span
+          class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-emerald-500/25 via-sky-500/25 to-violet-500/25 blur-md"
+        ></span>
+        <span class="relative z-10 font-medium">WordPress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- AGENTES GOAT -->
+<section id="agentes" class="relative space-y-10 pt-6">
+  
+  <!-- Glows globales -->
+  <div class="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl"></div>
+
+  <!-- Encabezado -->
+  <div class="space-y-2">
+    <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.18em] text-emerald-200">
+      <span class="text-sm">⚡</span> Agentes GOAT
+    </div>
+
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+      Conoce a nuestros agentes GOAT
+    </h2>
+
+    <p class="text-sm text-slate-300 max-w-2xl">
+      Cada agente está diseñado para liderar una parte crítica de tu operación.
+    </p>
+  </div>
+
+  <!-- GRID DE AGENTES -->
+  <div class="grid gap-6 md:grid-cols-3">
+
+    <!-- GALA -->
+    <article
+      class="relative overflow-hidden rounded-3xl border border-emerald-400/30
+             bg-gradient-to-b from-emerald-500/10 via-slate-900/70 to-slate-950/90
+             p-6 shadow-xl shadow-emerald-500/10 backdrop-blur-xl
+             transition-transform duration-300 hover:-translate-y-1 hover:shadow-emerald-400/30">
+      
+      <!-- Glow específico -->
+      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-emerald-400/25 blur-3xl"></div>
+
+      <div class="flex justify-center mb-3">
+        <img src="${GalaImg}" alt="Gala" class="w-28 h-28 object-contain drop-shadow-lg" />
+      </div>
+
+      <h3 class="text-lg font-semibold text-center text-emerald-100">
+        Gala · Estrategia & Funnels
+      </h3>
+      <p class="text-xs text-slate-300 text-center mb-3">
+        Desde $450 setup · planes mensuales según complejidad.
+      </p>
+
+      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+        <li>Mapea tu oferta, productos y recorridos de cliente.</li>
+        <li>Diseña funnels automatizados de captación y nurturing.</li>
+        <li>Define triggers, segmentación y journeys multicanal.</li>
+      </ul>
+
+      <a href="#contacto"
+        class="block mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center transition-colors">
+        Diseñar mi funnel con Gala →
+      </a>
+    </article>
+
+    <!-- BRUNO -->
+    <article
+      class="relative overflow-hidden rounded-3xl border border-sky-400/30
+             bg-gradient-to-b from-sky-500/10 via-slate-900/70 to-slate-950/90
+             p-6 shadow-xl shadow-sky-500/10 backdrop-blur-xl
+             transition-transform duration-300 hover:-translate-y-1 hover:shadow-sky-400/30">
+      
+      <!-- Glow específico azul -->
+      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-sky-400/25 blur-3xl"></div>
+
+      <div class="flex justify-center mb-3">
+        <img src="${BrunoImg}" alt="Bruno" class="w-28 h-28 object-contain drop-shadow-lg" />
+      </div>
+
+      <h3 class="text-lg font-semibold text-center text-sky-100">
+        Bruno · Soporte & Bots
+      </h3>
+      <p class="text-xs text-slate-300 text-center mb-3">
+        Desde $250/mes · instalación única.
+      </p>
+
+      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+        <li>Responde WhatsApp, Instagram y web 24/7.</li>
+        <li>Gestiona FAQs, estado de pedidos, tickets y reclamaciones.</li>
+        <li>Derivación inteligente a humanos cuando importa.</li>
+      </ul>
+
+      <a href="#contacto"
+        class="block mt-4 text-xs font-medium text-sky-300 hover:text-sky-200 text-center transition-colors">
+        Ver demo de Bruno →
+      </a>
+    </article>
+
+    <!-- NIA -->
+    <article
+      class="relative overflow-hidden rounded-3xl border border-violet-400/30
+             bg-gradient-to-b from-violet-500/10 via-slate-900/70 to-slate-950/90
+             p-6 shadow-xl shadow-violet-500/10 backdrop-blur-xl
+             transition-transform duration-300 hover:-translate-y-1 hover:shadow-violet-400/30">
+      
+      <!-- Glow específico violeta -->
+      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-violet-400/25 blur-3xl"></div>
+
+      <div class="flex justify-center mb-3">
+        <img src="${NiaImg}" alt="Nia" class="w-28 h-28 object-contain drop-shadow-lg" />
+      </div>
+
+      <h3 class="text-lg font-semibold text-center text-violet-100">
+        Nia · CRM & Seguimiento
+      </h3>
+      <p class="text-xs text-slate-300 text-center mb-3">
+        Desde $300/mes · ideal para equipos comerciales.
+      </p>
+
+      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+        <li>Seguimiento automático de leads calientes y fríos.</li>
+        <li>Recordatorios, agendas y retargeting sobre tu CRM.</li>
+        <li>Reportes de conversión y forecast de oportunidades.</li>
+      </ul>
+
+      <a href="#contacto"
+        class="block mt-4 text-xs font-medium text-violet-300 hover:text-violet-200 text-center transition-colors">
+        Activar a Nia en mi operación →
+      </a>
+    </article>
+
+  </div>
+</section>
+
+
+      <!-- INTEGRACIONES -->
+      <section id="integraciones" class="relative space-y-6 py-10">
+  <!-- Glows de fondo -->
+  <div class="pointer-events-none absolute -left-20 top-0 h-60 w-60 rounded-full bg-emerald-500/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-sky-500/10 blur-3xl"></div>
+
+  <div class="relative space-y-4">
+    <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
+      <span class="text-base">⚡</span>
+      <span>Ecosistema GOAT</span>
+    </div>
+
+    <h2 class="text-xl md:text-2xl font-semibold">
+      Nos integramos con tus herramientas favoritas
+    </h2>
+
+    <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+      Conectamos tus agentes GOAT con CRMs, ERPs, pasarelas de pago, tiendas en línea 
+      y herramientas de productividad. Si no ves tu herramienta, igual podemos integrarla.
+    </p>
+  </div>
+
+  <!-- Chips de integraciones -->
+  <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-4">
+    ${["BNC", "Bancamiga", "Stripe", "PayPal", "Kommo", "Odoo", "Shopify", "WooCommerce"]
+      .map(
+        (name) => `
+        <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-300">
+          ${name}
+        </div>
+      `
+      )
+      .join("")}
+  </div>
+</section>
+
+            <!-- SIEMPRE TRABAJANDO -->
+      <section class="relative grid gap-10 md:grid-cols-[minmax(0,1.15fr),minmax(0,1.1fr)] items-center">
+        <!-- Columna texto -->
+        <div class="space-y-5">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
+            <span class="text-sm">⚡</span>
+            <span>Siempre encendido</span>
+          </div>
+
+          <h2 class="text-2xl md:text-3xl font-semibold leading-tight">
+            Un compañero que siempre está trabajando
+          </h2>
+
+          <p class="text-sm md:text-base text-slate-300/90 leading-relaxed">
+            Tus agentes GOAT están disponibles 24/7. Captan leads mientras duermes, atienden
+            clientes cuando tu equipo está desconectado y mantienen tus procesos corriendo
+            incluso en horas pico.
+          </p>
+
+          <p class="text-sm md:text-base text-slate-300/80 leading-relaxed">
             Nuestro trabajo es que tu negocio no dependa solo de disponibilidad humana
             para seguir creciendo.
           </p>
         </div>
 
-        <div class="card-soft p-6 space-y-3 pulse-soft">
-          <p
-            class="text-xs font-medium text-emerald-300 uppercase tracking-[0.2em]"
+        <!-- Card Cabra Labs -->
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-emerald-500/15 blur-3xl opacity-80"></div>
+
+          <article
+            class="relative card-soft p-6 md:p-7 overflow-hidden border border-emerald-400/40 bg-gradient-to-br from-slate-900/90 via-slate-950 to-slate-950"
           >
-            Cabra Labs
-          </p>
-          <p class="text-sm text-slate-200">
-            La primera empresa enfocada en crear equipos GOAT de agentes de
-            inteligencia artificial para operaciones en Latinoamérica.
-          </p>
-          <div class="mt-3 overflow-hidden rounded-2xl">
-            <img src="${CabrasFut}" alt="Cabras futuristas" class="w-full h-28 md:h-32 object-cover rounded-2xl" />
-          </div>
-          <p class="text-xs text-slate-400">
-            Diseñamos, implementamos y medimos, para que puedas ver el impacto directo
-            en tu facturación y en las horas que recuperas cada mes.
-          </p>
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <p class="text-xs font-semibold tracking-[0.25em] uppercase text-emerald-300">
+                  Cabra Labs
+                </p>
+                <p class="text-sm md:text-base text-slate-100 leading-relaxed">
+                  La primera empresa enfocada en crear equipos GOAT de agentes de inteligencia
+                  artificial para operaciones en Latinoamérica.
+                </p>
+              </div>
+
+              <div class="overflow-hidden rounded-2xl border border-emerald-400/30 bg-slate-900/70">
+                <img
+                  src="${CabrasFut}"
+                  alt="Cabras futuristas"
+                  class="w-full h-32 md:h-40 object-cover rounded-2xl"
+                />
+              </div>
+
+              <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
+                Diseñamos, implementamos y medimos, para que puedas ver el impacto directo
+                en tu facturación y en las horas que recuperas cada mes.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- CONTACTO / CTA FINAL -->
-      <section
-        id="contacto"
-        class="space-y-4 border-t border-white/10 pt-10 mt-6"
-      >
-        <h2 class="text-xl md:text-2xl font-semibold">
-          Listo para diseñar tu equipo GOAT
-        </h2>
-        <p class="text-sm text-slate-300 max-w-2xl">
-          Cuéntanos brevemente sobre tu negocio, tus canales principales y qué parte de
-          tu operación quieres automatizar. Te proponemos una arquitectura de agentes,
-          integraciones y métricas a seguir.
-        </p>
+
+            <!-- CONTACTO / CTA FINAL -->
+      <section id="contacto" class="relative pt-12 mt-10">
+        <!-- Glows de fondo -->
+        <div class="pointer-events-none absolute -left-24 top-0 h-56 w-56 rounded-full bg-emerald-500/15 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-10 bottom-0 h-56 w-56 rounded-full bg-sky-500/15 blur-3xl"></div>
+
+        <div
+          class="relative card-soft bg-gradient-to-r from-emerald-500/15 via-slate-950/95 to-sky-500/10 px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+        >
+          <!-- Texto -->
+          <div class="space-y-3 max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-emerald-200"
+            >
+              <span class="text-sm">📲</span>
+              <span>Próximo paso</span>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-semibold">
+              Listo para diseñar tu equipo GOAT
+            </h2>
+
+            <p class="text-sm text-slate-200/90 leading-relaxed">
+              Cuéntanos brevemente sobre tu negocio, tus canales principales y qué parte de
+              tu operación quieres automatizar. Te proponemos una arquitectura de agentes,
+              integraciones y métricas a seguir.
+            </p>
+
+            <p class="text-[11px] text-slate-400">
+              Llamada exploratoria de 20–30 minutos · Sin compromiso · Ideal para founders,
+              equipos de marketing y operaciones.
+            </p>
+          </div>
+
+          <!-- Botón WhatsApp -->
+          <div class="flex flex-col items-start md:items-end gap-2">
+            <a
+              href="https://wa.me/584120599367"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 text-sm font-semibold px-7 py-2.5 transition-colors"
+            >
+              Hablar con Cabra Labs por WhatsApp
+              <span class="text-base">↗</span>
+            </a>
+            <span class="text-[11px] text-slate-400">
+              Respondemos normalmente en menos de 24 horas. 🐐
+            </span>
+          </div>
+        </div>
+      </section>
+
+
+        <!-- FOOTER -->
+<footer class="border-t border-white/10 mt-8">
+  <div
+    class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-4 text-sm"
+  >
+    <!-- Columna 1 -->
+    <div class="space-y-3">
+      <p class="font-semibold">Cabra Labs</p>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        Creamos tu equipo de agentes y automatizaciones GOAT 
+        para que tu negocio funcione incluso cuando tú no estás.
+      </p>
+
+      <!-- Redes sociales (IGUALES AL HEADER) -->
+      <div class="pt-2 flex items-center gap-3">
+        <!-- TikTok -->
         <a
-          href="https://wa.me/584120599367"
+          href="https://tiktok.com/@cabra.labs"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 text-sm font-semibold px-6 py-2.5 transition-colors"
+          aria-label="TikTok @cabra.labs"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                 bg-[#0f2e2c] border border-emerald-400/40
+                 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)]
+                 hover:scale-105 transition-transform"
         >
-          Hablar con Cabra Labs por WhatsApp
-          <span>↗</span>
+          <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" />
         </a>
-      </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10 mt-8">
-      <div
-        class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-4 text-sm"
-      >
-        <div class="space-y-2">
-          <p class="font-semibold">Cabra Labs</p>
-          <p class="text-xs text-slate-400">
-            Creamos tu equipo de agentes y automatizaciones GOAT para que tu negocio
-            funcione incluso cuando tú no estás.
-          </p>
-          <div class="pt-2 flex items-center gap-2">
-            <a href="https://tiktok.com/@cabra.labs" target="_blank" rel="noopener" aria-label="TikTok @cabra.labs" class="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
-              <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-3 h-3 md:w-4 md:h-4 text-white" />
-            </a>
-            <a href="https://instagram.com/cabra_labs" target="_blank" rel="noopener" aria-label="Instagram @cabra_labs" class="inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-emerald-300 text-white hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950">
-              <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-3 h-3 md:w-4 md:h-4" />
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <p
-            class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide"
-          >
-            Agentes
-          </p>
-          <ul class="space-y-1 text-xs text-slate-400">
-            <li>Gala · Estrategia & Funnels</li>
-            <li>Bruno · Soporte & Bots</li>
-            <li>Nia · CRM & Seguimiento</li>
-          </ul>
-        </div>
-
-        <div>
-          <p
-            class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide"
-          >
-            Demos
-          </p>
-          <ul class="space-y-1 text-xs text-slate-400">
-            <li>Retail & e-commerce</li>
-            <li>Servicios y consultoría</li>
-            <li>Restaurantes & reservas</li>
-          </ul>
-        </div>
-
-        <div>
-          <p
-            class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide"
-          >
-            Soporte
-          </p>
-          <ul class="space-y-1 text-xs text-slate-400">
-            <li>Contacto</li>
-            <li>Preguntas frecuentes</li>
-            <li>Planes y precios</li>
-          </ul>
-        </div>
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/cabra_labs"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram @cabra_labs"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                 bg-[#0f2e2c] border border-emerald-400/40
+                 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)]
+                 hover:scale-105 transition-transform"
+        >
+          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" />
+        </a>
       </div>
+    </div>
 
-      <div
-        class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center"
-      >
-        © 2025 Cabra Labs. All rights reserved.
-      </div>
-    </footer>
+    <!-- Columna 2 -->
+    <div>
+      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+        Agentes
+      </p>
+      <ul class="space-y-1 text-xs text-slate-400">
+        <li>Gala · Estrategia &amp; Funnels</li>
+        <li>Bruno · Soporte &amp; Bots</li>
+        <li>Nia · CRM &amp; Seguimiento</li>
+      </ul>
+    </div>
+
+    <!-- Columna 3 -->
+    <div>
+      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+        Demos
+      </p>
+      <ul class="space-y-1 text-xs text-slate-400">
+        <li>Retail &amp; e-commerce</li>
+        <li>Servicios y consultoría</li>
+        <li>Restaurantes &amp; reservas</li>
+      </ul>
+    </div>
+
+    <!-- Columna 4 -->
+    <div>
+      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+        Soporte
+      </p>
+      <ul class="space-y-1 text-xs text-slate-400">
+        <li>Contacto</li>
+        <li>Preguntas frecuentes</li>
+        <li>Planes y precios</li>
+      </ul>
+    </div>
   </div>
+
+  <!-- Línea inferior -->
+  <div
+    class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center"
+  >
+    © 2025 Cabra Labs. All rights reserved.
+  </div>
+</footer>
 `;
 
 // =========================
@@ -566,6 +816,6 @@ const observer = new IntersectionObserver(
 
 revealElements.forEach((el, index) => {
   el.classList.add("reveal-on-scroll");
-  el.style.transitionDelay = `${index * 40}ms`;
+  (el as HTMLElement).style.transitionDelay = `${index * 40}ms`;
   observer.observe(el);
 });
