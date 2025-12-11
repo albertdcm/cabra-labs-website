@@ -17,7 +17,7 @@ if (!app) {
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+<header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
   <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
     <!-- LOGO -->
@@ -66,12 +66,14 @@ app.innerHTML = `
         <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" />
       </a>
 
-      <!-- CTA Principal -->
+      <!-- CTA Principal (ajustada para 1 sola línea en móvil) -->
       <a
         href="#contacto"
-        class="rounded-full bg-emerald-500 hover:bg-emerald-400 px-5 py-2.5 text-sm font-semibold 
-               text-white hover:text-white transition-all shadow-md hover:shadow-emerald-400/40 
-               hover:scale-[1.04]"
+        class="rounded-full bg-emerald-500 hover:bg-emerald-400 
+               px-5 py-2.5 text-sm sm:text-base font-semibold 
+               text-white hover:text-white transition-all shadow-md 
+               hover:shadow-emerald-400/40 hover:scale-[1.04]
+               whitespace-nowrap leading-none"
       >
         Agenda una llamada
       </a>
