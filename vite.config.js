@@ -11,4 +11,3 @@ export default defineConfig({
     emptyOutDir: true // limpia dist antes de cada build
   }
 });
-
