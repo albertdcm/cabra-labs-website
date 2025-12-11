@@ -345,7 +345,7 @@ app.innerHTML = `
       </div>
     </div>
 
-    
+
     <!-- Chips de marcas -->
     <div
       class="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-[11px] md:text-xs"
@@ -426,7 +426,6 @@ app.innerHTML = `
   </div>
 </section>
 
-
       <!-- AGENTES GOAT -->
 <section id="agentes" class="relative space-y-10 pt-16 pb-20">
   <!-- Glows -->
@@ -448,6 +447,7 @@ app.innerHTML = `
 
   <!-- Cards -->
   <div class="grid gap-8 md:grid-cols-3">
+
     <!-- GALA -->
     <article class="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)]">
       <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-slate-900/80 pointer-events-none"></div>
@@ -456,14 +456,17 @@ app.innerHTML = `
         <div class="flex flex-col items-center md:items-start gap-4">
           <img src="${GalaImg}" alt="Gala" class="h-28 w-auto drop-shadow-xl" />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Gala · Estrategia &amp; Funnels
-            </h3>
-            <p class="text-sm text-emerald-200/90">
-              Desde $450 setup · planes mensuales según complejidad.
-            </p>
+            <h3 class="text-xl font-semibold text-slate-50">Gala · Estrategia & Funnels</h3>
+            <p class="text-sm text-emerald-200/90">Desde $450 setup · planes mensuales según complejidad.</p>
           </div>
         </div>
+
+        <!-- COLETILLA -->
+        <p class="text-slate-300/90 text-sm italic leading-relaxed">
+          “Gala ordena tu negocio para que vendas más. Te ayuda a atraer clientes, 
+          guiarlos paso a paso hasta la compra, y automatiza mensajes y tareas 
+          para que no pierdas oportunidades.”
+        </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
           <li>• Auditoría de tu oferta, productos y recorridos de cliente.</li>
@@ -474,10 +477,7 @@ app.innerHTML = `
           <li>• Optimización mensual de tasas de conversión y revenue asistido.</li>
         </ul>
 
-        <a
-          href="/disenar-funnel"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors"
-        >
+        <a href="/disenar-funnel" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
           Diseñar mi funnel con Gala →
         </a>
       </div>
@@ -491,14 +491,16 @@ app.innerHTML = `
         <div class="flex flex-col items-center md:items-start gap-4">
           <img src="${BrunoImg}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Bruno · Soporte &amp; Bots
-            </h3>
-            <p class="text-sm text-sky-200/90">
-              Desde $250/mes · instalación única según canales.
-            </p>
+            <h3 class="text-xl font-semibold text-slate-50">Bruno · Soporte & Bots</h3>
+            <p class="text-sm text-sky-200/90">Desde $250/mes · instalación única según canales.</p>
           </div>
         </div>
+
+        <!-- COLETILLA -->
+        <p class="text-slate-300/90 text-sm italic leading-relaxed">
+          “Bruno responde por ti 24/7. Atiende preguntas, revisa pedidos, gestiona reclamos 
+          y si hace falta te pasa la conversación con toda la información lista para que solo resuelvas.”
+        </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
           <li>• Bot multicanal 24/7 en WhatsApp, Instagram y web.</li>
@@ -509,10 +511,7 @@ app.innerHTML = `
           <li>• Métricas de soporte: tiempos de respuesta, tickets asistidos y satisfacción.</li>
         </ul>
 
-        <a
-          href="/demo-bruno"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors"
-        >
+        <a href="/demo-bruno" class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors">
           Ver demo de Bruno →
         </a>
       </div>
@@ -526,14 +525,16 @@ app.innerHTML = `
         <div class="flex flex-col items-center md:items-start gap-4">
           <img src="${NiaImg}" alt="Nia" class="h-28 w-auto drop-shadow-xl" />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Nia · CRM &amp; Seguimiento
-            </h3>
-            <p class="text-sm text-purple-200/90">
-              Desde $300/mes · ideal para equipos comerciales.
-            </p>
+            <h3 class="text-xl font-semibold text-slate-50">Nia · CRM & Seguimiento</h3>
+            <p class="text-sm text-purple-200/90">Desde $300/mes · ideal para equipos comerciales.</p>
           </div>
         </div>
+
+        <!-- COLETILLA -->
+        <p class="text-slate-300/90 text-sm italic leading-relaxed">
+          “Nia organiza tu equipo comercial. Hace seguimiento de tus prospectos, recuerda tareas, 
+          envía mensajes automáticos y te muestra cuánto puedes vender este mes.”
+        </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
           <li>• Seguimiento automático de leads calientes, fríos y reactivación.</li>
@@ -544,14 +545,12 @@ app.innerHTML = `
           <li>• Optimización mensual del embudo comercial.</li>
         </ul>
 
-        <a
-          href="/crm-automation"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors"
-        >
+        <a href="/crm-automation" class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors">
           Activar a Nia en mi operación →
         </a>
       </div>
     </article>
+
   </div>
 </section>
 
