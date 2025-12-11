@@ -822,3 +822,5 @@ revealElements.forEach((el, index) => {
   (el as HTMLElement).style.transitionDelay = `${index * 40}ms`;
   observer.observe(el);
 });
+
+
