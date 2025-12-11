@@ -21,7 +21,7 @@ app.innerHTML = `
   <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
     <!-- LOGO -->
-    <a href="#" class="flex items-center gap-3 group">
+    <a href="/" class="flex items-center gap-3 group">
       <span
         class="inline-flex h-10 w-10 rounded-2xl bg-emerald-500/10 border border-emerald-400/40 items-center justify-center text-2xl group-hover:scale-105 transition-transform"
       >
@@ -420,7 +420,7 @@ app.innerHTML = `
       </div>
 
       <div
-        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
+        class="group relative flex items-center justify-center rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-slate-100/90 shadow-sm shadow-slate-950/50 overflow-hidden transition-all	duration-300 hover:-translate-y-0.5 hover:border-emerald-400/80 hover:text-emerald-100 hover:shadow-emerald-500/40"
       >
         <span
           class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-emerald-500/25 via-sky-500/25 to-violet-500/25 blur-md"
@@ -432,45 +432,68 @@ app.innerHTML = `
 </section>
 
       <!-- AGENTES GOAT -->
-<section id="agentes" class="relative space-y-10 pt-16 pb-20">
+<section
+  id="agentes"
+  class="relative pt-12 md:pt-16 pb-10 md:pb-16 space-y-8 md:space-y-10"
+>
   <!-- Glows -->
-  <div class="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"></div>
-  <div class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl"></div>
+  <div
+    class="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl"
+  ></div>
 
   <!-- Encabezado -->
   <div class="space-y-2 text-center md:text-left">
-    <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.18em] text-emerald-200">
+    <div
+      class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.18em] text-emerald-200"
+    >
       <span class="text-sm">⚡</span> Agentes GOAT
     </div>
-    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
+    <h2
+      class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50"
+    >
       Conoce a nuestros agentes GOAT
     </h2>
     <p class="text-slate-300 max-w-2xl text-sm md:text-base">
-      Cada agente está diseñado para liderar una parte crítica de tu operación: estrategia, soporte y seguimiento comercial trabajando en equipo.
+      Cada agente está diseñado para liderar una parte crítica de tu
+      operación: estrategia, soporte y seguimiento comercial trabajando en
+      equipo.
     </p>
   </div>
 
   <!-- Cards -->
-  <div class="grid gap-8 md:grid-cols-3">
-
+  <div class="grid gap-6 md:gap-8 md:grid-cols-3">
     <!-- GALA -->
-    <article class="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)]">
-      <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-slate-900/80 pointer-events-none"></div>
+    <article
+      class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-emerald-500/25 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
+      ></div>
 
       <div class="relative px-8 pt-8 pb-7 space-y-6">
         <div class="flex flex-col items-center md:items-start gap-4">
-          <img src="${GalaImg}" alt="Gala" class="h-28 w-auto drop-shadow-xl" />
+          <img
+            src="${GalaImg}"
+            alt="Gala"
+            class="h-28 w-auto drop-shadow-xl"
+          />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">Gala · Estrategia & Funnels</h3>
-            <p class="text-sm text-emerald-200/90">Desde $450 setup · planes mensuales según complejidad.</p>
+            <h3 class="text-xl font-semibold text-slate-50">
+              Gala · Estrategia & Funnels
+            </h3>
+            <p class="text-sm text-emerald-200/90">
+              Desde $450 setup · planes mensuales según complejidad.
+            </p>
           </div>
         </div>
 
-        <!-- COLETILLA -->
         <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Gala ordena tu negocio para que vendas más. Te ayuda a atraer clientes, 
-          guiarlos paso a paso hasta la compra, y automatiza mensajes y tareas 
-          para que no pierdas oportunidades.”
+          “Gala ordena tu negocio para que vendas más. Te ayuda a atraer
+          clientes, guiarlos paso a paso hasta la compra, y automatiza
+          mensajes y tareas para que no pierdas oportunidades.”
         </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
@@ -482,29 +505,44 @@ app.innerHTML = `
           <li>• Optimización mensual de tasas de conversión y revenue asistido.</li>
         </ul>
 
-        <a href="/disenar-funnel" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+        <a
+          href="/gala.html"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors"
+        >
           Diseñar mi funnel con Gala →
         </a>
       </div>
     </article>
 
     <!-- BRUNO -->
-    <article class="relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)]">
-      <div class="absolute inset-0 bg-gradient-to-br from-sky-500/18 via-transparent to-slate-900/80 pointer-events-none"></div>
+    <article
+      class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-sky-500/22 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
+      ></div>
 
       <div class="relative px-8 pt-8 pb-7 space-y-6">
         <div class="flex flex-col items-center md:items-start gap-4">
-          <img src="${BrunoImg}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" />
+          <img
+            src="${BrunoImg}"
+            alt="Bruno"
+            class="h-28 w-auto drop-shadow-xl"
+          />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">Bruno · Soporte & Bots</h3>
-            <p class="text-sm text-sky-200/90">Desde $250/mes · instalación única según canales.</p>
+            <h3 class="text-xl font-semibold text-slate-50">
+              Bruno · Soporte & Bots
+            </h3>
+            <p class="text-sm text-sky-200/90">
+              Desde $250/mes · instalación única según canales.
+            </p>
           </div>
         </div>
 
-        <!-- COLETILLA -->
         <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Bruno responde por ti 24/7. Atiende preguntas, revisa pedidos, gestiona reclamos 
-          y si hace falta te pasa la conversación con toda la información lista para que solo resuelvas.”
+          “Bruno responde por ti 24/7. Atiende preguntas, revisa pedidos,
+          gestiona reclamos y si hace falta te pasa la conversación con toda
+          la información lista para que solo resuelvas.”
         </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
@@ -516,29 +554,44 @@ app.innerHTML = `
           <li>• Métricas de soporte: tiempos de respuesta, tickets asistidos y satisfacción.</li>
         </ul>
 
-        <a href="/demo-bruno" class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors">
+        <a
+          href="/bruno.html"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors"
+        >
           Ver demo de Bruno →
         </a>
       </div>
     </article>
 
     <!-- NIA -->
-    <article class="relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)]">
-      <div class="absolute inset-0 bg-gradient-to-br from-purple-500/18 via-transparent to-slate-900/80 pointer-events-none"></div>
+    <article
+      class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-purple-500/24 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
+      ></div>
 
       <div class="relative px-8 pt-8 pb-7 space-y-6">
         <div class="flex flex-col items-center md:items-start gap-4">
-          <img src="${NiaImg}" alt="Nia" class="h-28 w-auto drop-shadow-xl" />
+          <img
+            src="${NiaImg}"
+            alt="Nia"
+            class="h-28 w-auto drop-shadow-xl"
+          />
           <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">Nia · CRM & Seguimiento</h3>
-            <p class="text-sm text-purple-200/90">Desde $300/mes · ideal para equipos comerciales.</p>
+            <h3 class="text-xl font-semibold text-slate-50">
+              Nia · CRM & Seguimiento
+            </h3>
+            <p class="text-sm text-purple-200/90">
+              Desde $300/mes · ideal para equipos comerciales.
+            </p>
           </div>
         </div>
 
-        <!-- COLETILLA -->
         <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Nia organiza tu equipo comercial. Hace seguimiento de tus prospectos, recuerda tareas, 
-          envía mensajes automáticos y te muestra cuánto puedes vender este mes.”
+          “Nia organiza tu equipo comercial. Hace seguimiento de tus
+          prospectos, recuerda tareas, envía mensajes automáticos y te
+          muestra cuánto puedes vender este mes.”
         </p>
 
         <ul class="space-y-2.5 text-sm text-slate-200/90">
@@ -546,16 +599,20 @@ app.innerHTML = `
           <li>• Recordatorios, agendas y tareas para equipos comerciales.</li>
           <li>• Mensajes inteligentes según etapa del pipeline.</li>
           <li>• Retargeting sobre tu CRM con flujos segmentados.</li>
-          <li>• Reportes de conversión, forecast y oportunidades recuperadas.</li>
+          <li>
+            • Reportes de conversión, forecast y oportunidades recuperadas.
+          </li>
           <li>• Optimización mensual del embudo comercial.</li>
         </ul>
 
-        <a href="/crm-automation" class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors">
+        <a
+          href="/nia.html"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors"
+        >
           Activar a Nia en mi operación →
         </a>
       </div>
     </article>
-
   </div>
 </section>
 
@@ -827,5 +884,3 @@ revealElements.forEach((el, index) => {
   (el as HTMLElement).style.transitionDelay = `${index * 40}ms`;
   observer.observe(el);
 });
-
-
