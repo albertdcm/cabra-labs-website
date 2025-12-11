@@ -48,25 +48,28 @@ app.innerHTML = `
     <!-- SOCIAL + CTA -->
     <div class="flex items-center gap-3">
 
-      <!-- TikTok -->
-      <a
-        href="https://tiktok.com/@cabra.labs"
-        target="_blank"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
-      >
-        <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" />
-      </a>
+      <!-- Redes: solo desktop -->
+      <div class="hidden md:flex items-center gap-3">
+        <!-- TikTok -->
+        <a
+          href="https://tiktok.com/@cabra.labs"
+          target="_blank"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
+        >
+          <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" />
+        </a>
 
-      <!-- Instagram -->
-      <a
-        href="https://instagram.com/cabra_labs"
-        target="_blank"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
-      >
-        <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" />
-      </a>
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/cabra_labs"
+          target="_blank"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all"
+        >
+          <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" />
+        </a>
+      </div>
 
-      <!-- CTA Principal (ajustada para 1 sola línea en móvil) -->
+      <!-- CTA Principal (visible en móvil y desktop) -->
       <a
         href="#contacto"
         class="rounded-full bg-emerald-500 hover:bg-emerald-400 
