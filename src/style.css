@@ -12,6 +12,9 @@
 
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
@@ -19,6 +22,9 @@
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont,
       "SF Pro Text", "Segoe UI", sans-serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   #app {
