@@ -69,7 +69,9 @@ app.innerHTML = `
       <!-- CTA Principal -->
       <a
         href="#contacto"
-        class="rounded-full bg-emerald-500 hover:bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-900 transition-colors"
+        class="rounded-full bg-emerald-500 hover:bg-emerald-400 px-5 py-2.5 text-sm font-semibold 
+               text-white hover:text-white transition-all shadow-md hover:shadow-emerald-400/40 
+               hover:scale-[1.04]"
       >
         Agenda una llamada
       </a>
@@ -343,6 +345,7 @@ app.innerHTML = `
       </div>
     </div>
 
+    
     <!-- Chips de marcas -->
     <div
       class="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-[11px] md:text-xs"
@@ -425,129 +428,130 @@ app.innerHTML = `
 
 
       <!-- AGENTES GOAT -->
-<section id="agentes" class="relative space-y-10 pt-6">
-  
-  <!-- Glows globales -->
+<section id="agentes" class="relative space-y-10 pt-16 pb-20">
+  <!-- Glows -->
   <div class="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"></div>
   <div class="pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl"></div>
 
   <!-- Encabezado -->
-  <div class="space-y-2">
+  <div class="space-y-2 text-center md:text-left">
     <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.18em] text-emerald-200">
       <span class="text-sm">⚡</span> Agentes GOAT
     </div>
-
-    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
       Conoce a nuestros agentes GOAT
     </h2>
-
-    <p class="text-sm text-slate-300 max-w-2xl">
-      Cada agente está diseñado para liderar una parte crítica de tu operación.
+    <p class="text-slate-300 max-w-2xl text-sm md:text-base">
+      Cada agente está diseñado para liderar una parte crítica de tu operación: estrategia, soporte y seguimiento comercial trabajando en equipo.
     </p>
   </div>
 
-  <!-- GRID DE AGENTES -->
-  <div class="grid gap-6 md:grid-cols-3">
-
+  <!-- Cards -->
+  <div class="grid gap-8 md:grid-cols-3">
     <!-- GALA -->
-    <article
-      class="relative overflow-hidden rounded-3xl border border-emerald-400/30
-             bg-gradient-to-b from-emerald-500/10 via-slate-900/70 to-slate-950/90
-             p-6 shadow-xl shadow-emerald-500/10 backdrop-blur-xl
-             transition-transform duration-300 hover:-translate-y-1 hover:shadow-emerald-400/30">
-      
-      <!-- Glow específico -->
-      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-emerald-400/25 blur-3xl"></div>
+    <article class="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)]">
+      <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-slate-900/80 pointer-events-none"></div>
 
-      <div class="flex justify-center mb-3">
-        <img src="${GalaImg}" alt="Gala" class="w-28 h-28 object-contain drop-shadow-lg" />
+      <div class="relative px-8 pt-8 pb-7 space-y-6">
+        <div class="flex flex-col items-center md:items-start gap-4">
+          <img src="${GalaImg}" alt="Gala" class="h-28 w-auto drop-shadow-xl" />
+          <div class="space-y-1 text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-50">
+              Gala · Estrategia &amp; Funnels
+            </h3>
+            <p class="text-sm text-emerald-200/90">
+              Desde $450 setup · planes mensuales según complejidad.
+            </p>
+          </div>
+        </div>
+
+        <ul class="space-y-2.5 text-sm text-slate-200/90">
+          <li>• Auditoría de tu oferta, productos y recorridos de cliente.</li>
+          <li>• Diseño completo de funnels: captación, nurturing y conversión.</li>
+          <li>• Definición de mensajes, secuencias y rutas multicanal.</li>
+          <li>• Configuración de triggers, segmentación y journeys dinámicos.</li>
+          <li>• Integración con CRM, email marketing y canales sociales.</li>
+          <li>• Optimización mensual de tasas de conversión y revenue asistido.</li>
+        </ul>
+
+        <a
+          href="/disenar-funnel"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors"
+        >
+          Diseñar mi funnel con Gala →
+        </a>
       </div>
-
-      <h3 class="text-lg font-semibold text-center text-emerald-100">
-        Gala · Estrategia & Funnels
-      </h3>
-      <p class="text-xs text-slate-300 text-center mb-3">
-        Desde $450 setup · planes mensuales según complejidad.
-      </p>
-
-      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
-        <li>Mapea tu oferta, productos y recorridos de cliente.</li>
-        <li>Diseña funnels automatizados de captación y nurturing.</li>
-        <li>Define triggers, segmentación y journeys multicanal.</li>
-      </ul>
-
-      <a href="#contacto"
-        class="block mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200 text-center transition-colors">
-        Diseñar mi funnel con Gala →
-      </a>
     </article>
 
     <!-- BRUNO -->
-    <article
-      class="relative overflow-hidden rounded-3xl border border-sky-400/30
-             bg-gradient-to-b from-sky-500/10 via-slate-900/70 to-slate-950/90
-             p-6 shadow-xl shadow-sky-500/10 backdrop-blur-xl
-             transition-transform duration-300 hover:-translate-y-1 hover:shadow-sky-400/30">
-      
-      <!-- Glow específico azul -->
-      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-sky-400/25 blur-3xl"></div>
+    <article class="relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)]">
+      <div class="absolute inset-0 bg-gradient-to-br from-sky-500/18 via-transparent to-slate-900/80 pointer-events-none"></div>
 
-      <div class="flex justify-center mb-3">
-        <img src="${BrunoImg}" alt="Bruno" class="w-28 h-28 object-contain drop-shadow-lg" />
+      <div class="relative px-8 pt-8 pb-7 space-y-6">
+        <div class="flex flex-col items-center md:items-start gap-4">
+          <img src="${BrunoImg}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" />
+          <div class="space-y-1 text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-50">
+              Bruno · Soporte &amp; Bots
+            </h3>
+            <p class="text-sm text-sky-200/90">
+              Desde $250/mes · instalación única según canales.
+            </p>
+          </div>
+        </div>
+
+        <ul class="space-y-2.5 text-sm text-slate-200/90">
+          <li>• Bot multicanal 24/7 en WhatsApp, Instagram y web.</li>
+          <li>• Gestión de FAQs, estados de pedido, tickets y reclamaciones.</li>
+          <li>• Flujos automatizados de soporte y entregas.</li>
+          <li>• Derivación a humanos con contexto y etiquetado inteligente.</li>
+          <li>• Conexión con CRM, ERP o ecommerce.</li>
+          <li>• Métricas de soporte: tiempos de respuesta, tickets asistidos y satisfacción.</li>
+        </ul>
+
+        <a
+          href="/demo-bruno"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors"
+        >
+          Ver demo de Bruno →
+        </a>
       </div>
-
-      <h3 class="text-lg font-semibold text-center text-sky-100">
-        Bruno · Soporte & Bots
-      </h3>
-      <p class="text-xs text-slate-300 text-center mb-3">
-        Desde $250/mes · instalación única.
-      </p>
-
-      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
-        <li>Responde WhatsApp, Instagram y web 24/7.</li>
-        <li>Gestiona FAQs, estado de pedidos, tickets y reclamaciones.</li>
-        <li>Derivación inteligente a humanos cuando importa.</li>
-      </ul>
-
-      <a href="#contacto"
-        class="block mt-4 text-xs font-medium text-sky-300 hover:text-sky-200 text-center transition-colors">
-        Ver demo de Bruno →
-      </a>
     </article>
 
     <!-- NIA -->
-    <article
-      class="relative overflow-hidden rounded-3xl border border-violet-400/30
-             bg-gradient-to-b from-violet-500/10 via-slate-900/70 to-slate-950/90
-             p-6 shadow-xl shadow-violet-500/10 backdrop-blur-xl
-             transition-transform duration-300 hover:-translate-y-1 hover:shadow-violet-400/30">
-      
-      <!-- Glow específico violeta -->
-      <div class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-violet-400/25 blur-3xl"></div>
+    <article class="relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)]">
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-500/18 via-transparent to-slate-900/80 pointer-events-none"></div>
 
-      <div class="flex justify-center mb-3">
-        <img src="${NiaImg}" alt="Nia" class="w-28 h-28 object-contain drop-shadow-lg" />
+      <div class="relative px-8 pt-8 pb-7 space-y-6">
+        <div class="flex flex-col items-center md:items-start gap-4">
+          <img src="${NiaImg}" alt="Nia" class="h-28 w-auto drop-shadow-xl" />
+          <div class="space-y-1 text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-50">
+              Nia · CRM &amp; Seguimiento
+            </h3>
+            <p class="text-sm text-purple-200/90">
+              Desde $300/mes · ideal para equipos comerciales.
+            </p>
+          </div>
+        </div>
+
+        <ul class="space-y-2.5 text-sm text-slate-200/90">
+          <li>• Seguimiento automático de leads calientes, fríos y reactivación.</li>
+          <li>• Recordatorios, agendas y tareas para equipos comerciales.</li>
+          <li>• Mensajes inteligentes según etapa del pipeline.</li>
+          <li>• Retargeting sobre tu CRM con flujos segmentados.</li>
+          <li>• Reportes de conversión, forecast y oportunidades recuperadas.</li>
+          <li>• Optimización mensual del embudo comercial.</li>
+        </ul>
+
+        <a
+          href="/crm-automation"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors"
+        >
+          Activar a Nia en mi operación →
+        </a>
       </div>
-
-      <h3 class="text-lg font-semibold text-center text-violet-100">
-        Nia · CRM & Seguimiento
-      </h3>
-      <p class="text-xs text-slate-300 text-center mb-3">
-        Desde $300/mes · ideal para equipos comerciales.
-      </p>
-
-      <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
-        <li>Seguimiento automático de leads calientes y fríos.</li>
-        <li>Recordatorios, agendas y retargeting sobre tu CRM.</li>
-        <li>Reportes de conversión y forecast de oportunidades.</li>
-      </ul>
-
-      <a href="#contacto"
-        class="block mt-4 text-xs font-medium text-violet-300 hover:text-violet-200 text-center transition-colors">
-        Activar a Nia en mi operación →
-      </a>
     </article>
-
   </div>
 </section>
 
