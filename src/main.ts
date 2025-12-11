@@ -41,7 +41,7 @@ app.innerHTML = `
         Integraciones
       </a>
       <a href="#sobre" class="text-slate-200 hover:text-emerald-300 transition-colors">
-        Inteligencia Operativa
+        Cómo trabajamos
       </a>
     </div>
 
@@ -98,17 +98,18 @@ app.innerHTML = `
             class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200"
           >
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-            Agentes de IA que venden y automatizan por ti
+            Asistentes digitales que venden y atienden por ti
           </div>
 
           <div class="space-y-4">
             <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
-              La <span class="text-gradient-emerald">empresa GOAT</span> de agentes
-              y automatizaciones para tu negocio.
+              La <span class="text-gradient-emerald">empresa GOAT</span> de asistentes
+              que ponen tu negocio en piloto automático.
             </h1>
             <p class="text-slate-300 text-sm md:text-base max-w-xl">
-              Construimos, crecemos y escalamos tu operación con un equipo de agentes,
-              bots y funnels que trabajan 24/7 sobre tus canales y herramientas favoritas.
+              Creamos asistentes digitales que responden mensajes, muestran ofertas,
+              recuerdan tareas y cuidan a tus clientes en WhatsApp, Instagram,
+              tu web y otros canales, a cualquier hora del día.
             </p>
           </div>
 
@@ -123,7 +124,7 @@ app.innerHTML = `
               Diseñar mi equipo GOAT
             </a>
             <p class="text-xs text-slate-400">
-              Sin compromiso · Diagnóstico inicial de tu flujo actual.
+              Sin compromiso · Revisamos gratis cómo estás atendiendo hoy.
             </p>
           </div>
 
@@ -131,19 +132,19 @@ app.innerHTML = `
           <div class="grid gap-4 sm:grid-cols-4 text-sm">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+300</p>
-              <p class="text-xs text-slate-300">empresas potenciadas</p>
+              <p class="text-xs text-slate-300">negocios acompañados</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+9M</p>
-              <p class="text-xs text-slate-300">interacciones gestionadas</p>
+              <p class="text-xs text-slate-300">mensajes y consultas atendidas</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+$30M</p>
-              <p class="text-xs text-slate-300">en ingresos asistidos</p>
+              <p class="text-xs text-slate-300">en ventas asistidas por nuestros sistemas</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
               <p class="text-2xl font-semibold">+39%</p>
-              <p class="text-xs text-slate-300">crecimiento anual promedio</p>
+              <p class="text-xs text-slate-300">crecimiento promedio de ingresos</p>
             </div>
           </div>
         </div>
@@ -163,15 +164,16 @@ app.innerHTML = `
 
             <div class="space-y-3 text-sm">
               <p class="text-slate-200">
-                Diseñamos un stack de agentes hecho a la medida de tu operación:
-                atención, ventas, cobranza y backoffice conectados entre sí.
+                Diseñamos un “equipo invisible” que trabaja detrás de tu negocio:
+                responde, recuerda, envía mensajes y lleva el control para que tú
+                puedas enfocarte en decidir y crear.
               </p>
               <ul
                 class="list-disc list-inside text-slate-300 text-xs space-y-1"
               >
-                <li>Bots multicanal en WhatsApp, Instagram, web y más.</li>
-                <li>Integraciones con CRMs, pasarelas de pago y ERPs.</li>
-                <li>Reportes y tableros con los números que realmente importan.</li>
+                <li>Atención automática en WhatsApp, Instagram, web y más.</li>
+                <li>Conexión con las herramientas que ya usas para vender y cobrar.</li>
+                <li>Paneles claros con los números que necesitas para tomar decisiones.</li>
               </ul>
             </div>
 
@@ -191,8 +193,8 @@ app.innerHTML = `
             </div>
 
             <p class="text-[11px] text-slate-400">
-              Cabra Labs se integra con tus sistemas actuales para que no tengas que
-              reinventar toda tu operación.
+              Nos adaptamos a tus sistemas actuales para mejorar lo que ya tienes,
+              no para obligarte a empezar todo desde cero.
             </p>
           </div>
         </aside>
@@ -218,31 +220,33 @@ app.innerHTML = `
 
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">
               Cabra Labs es tu equipo GOAT
-              <span class="text-emerald-300"> de automatización e IA </span>
-              para escalar operaciones.
+              <span class="text-emerald-300"> para automatizar tareas del día a día </span>
+              sin complicarte la vida.
             </h2>
 
             <p class="text-slate-200/90 leading-relaxed text-sm md:text-base">
-              Cabra Labs es un estudio de automatización y agentes de inteligencia
-              artificial especializado en operaciones y crecimiento de negocios.
+              Somos un equipo que combina negocio y tecnología para algo muy simple:
+              que tu empresa atienda mejor, venda más y dependa menos de trabajo manual
+              repetitivo.
             </p>
 
             <p class="text-slate-300/80 leading-relaxed text-sm md:text-base">
-              Diseñamos soluciones que optimizan procesos, liberan horas operativas y aumentan
-              la conversión en cada etapa del funnel. Nuestro enfoque es que tu empresa tenga
-              un equipo de asistentes virtuales trabajando como si fueran parte de tu staff.
+              Analizamos cómo trabajas hoy, identificamos los pasos que siempre se repiten
+              y los convertimos en procesos automáticos: recordatorios, respuestas,
+              seguimientos y reportes que se hacen solos, como si tuvieras varios asistentes
+              extra en tu equipo.
             </p>
 
             <!-- Chips de foco -->
             <div class="flex flex-wrap gap-2 pt-2">
               <span class="rounded-full bg-slate-900/70 border border-emerald-500/40 px-3 py-1 text-xs text-emerald-100">
-                Operaciones
+                Procesos más simples
               </span>
               <span class="rounded-full bg-slate-900/70 border border-sky-500/40 px-3 py-1 text-xs text-sky-100">
-                Ventas &amp; funnels
+                Más ventas sin más estrés
               </span>
               <span class="rounded-full bg-slate-900/70 border border-violet-500/40 px-3 py-1 text-xs text-violet-100">
-                Soporte &amp; automatización
+                Mejor atención a tus clientes
               </span>
             </div>
           </div>
@@ -262,15 +266,17 @@ app.innerHTML = `
                 </div>
                 <div class="space-y-1">
                   <h3 class="text-lg font-semibold text-emerald-100">
-                    Inteligencia Operativa
+                    Miramos tu operación con lupa
                   </h3>
                   <p class="text-sm text-emerald-50/80 leading-relaxed">
-                    Entendemos tus procesos actuales, detectamos cuellos de botella y los
-                    traducimos en agentes y flujos automatizados que se adaptan a tu operación.
+                    Revisamos cómo llegan tus clientes, cómo te escriben,
+                    quién les responde y qué pasa después. Con eso armamos
+                    un mapa sencillo de tu negocio.
                   </p>
                   <p class="text-xs text-emerald-100/70 pt-1">
-                    Ideal para empresas que quieren pasar de procesos manuales a una operación
-                    escalable y siempre encendida.
+                    A partir de ese mapa decidimos qué pasos puede hacer
+                    un asistente digital y cuáles deben seguir en manos
+                    de tu equipo.
                   </p>
                 </div>
               </div>
@@ -289,16 +295,16 @@ app.innerHTML = `
                 </div>
                 <div class="space-y-1">
                   <h3 class="text-lg font-semibold text-violet-100">
-                    Implementación “done with you”
+                    Implementamos contigo, no te dejamos solo
                   </h3>
                   <p class="text-sm text-violet-50/80 leading-relaxed">
-                    No solo entregamos bots: te acompañamos en la implementación, medición y
-                    mejora continua para que el equipo GOAT se convierta en parte real de tu
-                    operación.
+                    No instalamos “un bot” y ya. Te acompañamos paso a paso
+                    para que todo quede bien conectado, medimos resultados
+                    y hacemos ajustes hasta que funcione como necesitas.
                   </p>
                   <p class="text-xs text-violet-100/70 pt-1">
-                    Sesiones de trabajo conjunto, dashboards de resultados y roadmap de mejora
-                    continua.
+                    Reuniones cortas, paneles fáciles de leer y mejoras
+                    continuas basadas en datos reales de tu negocio.
                   </p>
                 </div>
               </div>
@@ -308,7 +314,7 @@ app.innerHTML = `
             <div class="flex items-center gap-2 pt-2">
               <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <p class="text-xs text-slate-400">
-                Siempre activos, siempre midiendo, siempre optimizando. 🐐⚙️
+                Siempre probando, midiendo y mejorando para que tus sistemas no se queden atrás. 🐐⚙️
               </p>
             </div>
           </div>
@@ -342,9 +348,9 @@ app.innerHTML = `
             Nuestros aliados comerciales
           </h2>
           <p class="text-sm text-slate-300">
-            Trabajamos sobre ecosistemas líderes para que tus agentes GOAT se conecten
-            con lo que ya usas hoy: CRMs, pasarelas de pago, herramientas de marketing y
-            más.
+            Conectamos tus asistentes con las plataformas que ya conoces:
+            bancos, pasarelas de pago, herramientas de anuncios, sistemas
+            para manejar clientes y tiendas en línea.
           </p>
         </div>
       </div>
@@ -457,160 +463,192 @@ app.innerHTML = `
       Conoce a nuestros agentes GOAT
     </h2>
     <p class="text-slate-300 max-w-2xl text-sm md:text-base">
-      Cada agente está diseñado para liderar una parte crítica de tu
-      operación: estrategia, soporte y seguimiento comercial trabajando en
-      equipo.
+      Cada agente se concentra en una parte clave de tu negocio:
+      atraer personas, responder dudas y hacer seguimiento a posibles
+      clientes hasta que se convierten en ventas.
     </p>
   </div>
 
   <!-- Cards -->
   <div class="grid gap-6 md:gap-8 md:grid-cols-3">
-    <!-- GALA -->
+    <!-- ---------------------- GALA ---------------------- -->
     <article
-      class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80"
+      class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80 h-full"
     >
       <div
         class="absolute inset-0 bg-gradient-to-br from-emerald-500/25 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
       ></div>
 
-      <div class="relative px-8 pt-8 pb-7 space-y-6">
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <img
-            src="${GalaImg}"
-            alt="Gala"
-            class="h-28 w-auto drop-shadow-xl"
-          />
-          <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Gala · Estrategia & Funnels
-            </h3>
-            <p class="text-sm text-emerald-200/90">
-              Desde $450 setup · planes mensuales según complejidad.
-            </p>
+      <div
+        class="relative px-8 pt-8 pb-7 space-y-6 grid grid-rows-[auto_1fr_auto] h-full"
+      >
+        <!-- Contenido -->
+        <div class="space-y-6">
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <img
+              src="${GalaImg}"
+              alt="Gala"
+              class="h-28 w-auto drop-shadow-xl"
+            />
+            <div class="space-y-1 text-center md:text-left">
+              <h3 class="text-xl font-semibold text-slate-50">
+                Gala · Estrategia & Funnels
+              </h3>
+              <p class="text-sm text-emerald-200/90">
+                Desde $450 de configuración inicial · Planes mensuales según lo que necesites.
+              </p>
+            </div>
           </div>
+
+          <p class="text-slate-300/90 text-sm italic leading-relaxed">
+            “Gala pone orden en tu forma de vender. Te ayuda a traer personas nuevas,
+            guiarlas paso a paso hasta la compra y dejar cada oportunidad asegurada.”
+          </p>
+
+          <ul class="space-y-2.5 text-sm text-slate-200/90">
+            <li>• Revisamos tus productos, servicios y forma actual de vender.</li>
+            <li>• Diseñamos el camino completo del cliente.</li>
+            <li>• Configuramos mensajes, secuencias y recordatorios.</li>
+            <li>• Activamos automatizaciones para cada etapa.</li>
+            <li>• Conectamos todo con tus redes y correos.</li>
+            <li>• Medimos avances para mejorar ventas cada mes.</li>
+          </ul>
         </div>
 
-        <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Gala ordena tu negocio para que vendas más. Te ayuda a atraer
-          clientes, guiarlos paso a paso hasta la compra, y automatiza
-          mensajes y tareas para que no pierdas oportunidades.”
-        </p>
-
-        <ul class="space-y-2.5 text-sm text-slate-200/90">
-          <li>• Auditoría de tu oferta, productos y recorridos de cliente.</li>
-          <li>• Diseño completo de funnels: captación, nurturing y conversión.</li>
-          <li>• Definición de mensajes, secuencias y rutas multicanal.</li>
-          <li>• Configuración de triggers, segmentación y journeys dinámicos.</li>
-          <li>• Integración con CRM, email marketing y canales sociales.</li>
-          <li>• Optimización mensual de tasas de conversión y revenue asistido.</li>
-        </ul>
-
-        <a
-          href="/gala.html"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors"
-        >
-          Diseñar mi funnel con Gala →
-        </a>
+        <!-- Botón alineado abajo en la fila 3 -->
+        <div class="row-start-3 pt-4">
+          <a
+            href="/gala.html"
+            class="inline-flex items-center justify-center gap-1 text-base font-semibold text-emerald-300 hover:text-emerald-100
+            border border-emerald-400/70 rounded-full px-5 py-2
+            shadow-[0_0_12px_rgba(16,185,129,0.45)]
+            hover:shadow-[0_0_22px_rgba(16,185,129,0.75)]
+            transition-all duration-300 hover:scale-[1.04]"
+          >
+            Diseñar mi funnel con Gala →
+          </a>
+        </div>
       </div>
     </article>
 
-    <!-- BRUNO -->
+    <!-- ---------------------- BRUNO ---------------------- -->
     <article
-      class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80"
+      class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80 h-full"
     >
       <div
         class="absolute inset-0 bg-gradient-to-br from-sky-500/22 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
       ></div>
 
-      <div class="relative px-8 pt-8 pb-7 space-y-6">
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <img
-            src="${BrunoImg}"
-            alt="Bruno"
-            class="h-28 w-auto drop-shadow-xl"
-          />
-          <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Bruno · Soporte & Bots
-            </h3>
-            <p class="text-sm text-sky-200/90">
-              Desde $250/mes · instalación única según canales.
-            </p>
+      <div
+        class="relative px-8 pt-8 pb-7 space-y-6 grid grid-rows-[auto_1fr_auto] h-full"
+      >
+        <!-- Contenido -->
+        <div class="space-y-6">
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <img
+              src="${BrunoImg}"
+              alt="Bruno"
+              class="h-28 w-auto drop-shadow-xl"
+            />
+            <div class="space-y-1 text-center md:text-left">
+              <h3 class="text-xl font-semibold text-slate-50">
+                Bruno · Soporte & Bots
+              </h3>
+              <p class="text-sm text-sky-200/90">
+                Desde $250/mes · Instalación única según los canales.
+              </p>
+            </div>
           </div>
+
+          <p class="text-slate-300/90 text-sm italic leading-relaxed">
+            “Bruno responde por ti 24/7. Atiende dudas, revisa pedidos,
+            recibe reclamos y transfiere casos importantes con todo el contexto.”
+          </p>
+
+          <ul class="space-y-2.5 text-sm text-slate-200/90">
+            <li>• Disponible 24/7 en WhatsApp, Instagram y web.</li>
+            <li>• Responde dudas sobre precios, pedidos y horarios.</li>
+            <li>• Flujos automáticos de estados y entregas.</li>
+            <li>• Escala casos complejos a un humano.</li>
+            <li>• Se conecta a inventario, pagos o CRM.</li>
+            <li>• Reportes claros cada mes.</li>
+          </ul>
         </div>
 
-        <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Bruno responde por ti 24/7. Atiende preguntas, revisa pedidos,
-          gestiona reclamos y si hace falta te pasa la conversación con toda
-          la información lista para que solo resuelvas.”
-        </p>
-
-        <ul class="space-y-2.5 text-sm text-slate-200/90">
-          <li>• Bot multicanal 24/7 en WhatsApp, Instagram y web.</li>
-          <li>• Gestión de FAQs, estados de pedido, tickets y reclamaciones.</li>
-          <li>• Flujos automatizados de soporte y entregas.</li>
-          <li>• Derivación a humanos con contexto y etiquetado inteligente.</li>
-          <li>• Conexión con CRM, ERP o ecommerce.</li>
-          <li>• Métricas de soporte: tiempos de respuesta, tickets asistidos y satisfacción.</li>
-        </ul>
-
-        <a
-          href="/bruno.html"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200 transition-colors"
-        >
-          Ver demo de Bruno →
-        </a>
+        <!-- Botón alineado abajo en la fila 3 -->
+        <div class="row-start-3 pt-4">
+          <a
+            href="/bruno.html"
+            class="inline-flex items-center justify-center gap-1 text-base font-semibold text-sky-300 hover:text-sky-100
+            border border-sky-400/70 rounded-full px-5 py-2
+            shadow-[0_0_12px_rgba(56,189,248,0.45)]
+            hover:shadow-[0_0_22px_rgba(56,189,248,0.75)]
+            transition-all duration-300 hover:scale-[1.04]"
+          >
+            Ver demo de Bruno →
+          </a>
+        </div>
       </div>
     </article>
 
-    <!-- NIA -->
+    <!-- ---------------------- NIA ---------------------- -->
     <article
-      class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80"
+      class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80 h-full"
     >
       <div
         class="absolute inset-0 bg-gradient-to-br from-purple-500/24 via-transparent to-slate-900/90 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
       ></div>
 
-      <div class="relative px-8 pt-8 pb-7 space-y-6">
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <img
-            src="${NiaImg}"
-            alt="Nia"
-            class="h-28 w-auto drop-shadow-xl"
-          />
-          <div class="space-y-1 text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-50">
-              Nia · CRM & Seguimiento
-            </h3>
-            <p class="text-sm text-purple-200/90">
-              Desde $300/mes · ideal para equipos comerciales.
-            </p>
+      <div
+        class="relative px-8 pt-8 pb-7 space-y-6 grid grid-rows-[auto_1fr_auto] h-full"
+      >
+        <!-- Contenido -->
+        <div class="space-y-6">
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <img
+              src="${NiaImg}"
+              alt="Nia"
+              class="h-28 w-auto drop-shadow-xl"
+            />
+            <div class="space-y-1 text-center md:text-left">
+              <h3 class="text-xl font-semibold text-slate-50">
+                Nia · CRM & Seguimiento
+              </h3>
+              <p class="text-sm text-purple-200/90">
+                Desde $300/mes · Ideal para equipos comerciales que quieren orden.
+              </p>
+            </div>
           </div>
+
+          <p class="text-slate-300/90 text-sm italic leading-relaxed">
+            “Nia organiza a tu equipo de ventas. Recuerda qué cliente va en qué etapa,
+            qué tarea toca hoy, envía mensajes de seguimiento y te muestra cuánto
+            podrías vender este mes si cierras esas oportunidades.”
+          </p>
+
+          <ul class="space-y-2.5 text-sm text-slate-200/90">
+            <li>• Ordena tus contactos en listas claras: calientes, fríos y para reactivar.</li>
+            <li>• Crea recordatorios y tareas automáticas para que ningún cliente se pierda.</li>
+            <li>• Envía mensajes según el momento: primera reunión, propuesta enviada, cierre, postventa.</li>
+            <li>• Se conecta con tu sistema de clientes (CRM) para aprovechar los datos que ya tienes.</li>
+            <li>• Muestra reportes sencillos: cuánto tienes en oportunidades y qué tan cerca estás de cerrar.</li>
+            <li>• Cada mes ajustamos el flujo para mejorar los resultados.</li>
+          </ul>
         </div>
 
-        <p class="text-slate-300/90 text-sm italic leading-relaxed">
-          “Nia organiza tu equipo comercial. Hace seguimiento de tus
-          prospectos, recuerda tareas, envía mensajes automáticos y te
-          muestra cuánto puedes vender este mes.”
-        </p>
-
-        <ul class="space-y-2.5 text-sm text-slate-200/90">
-          <li>• Seguimiento automático de leads calientes, fríos y reactivación.</li>
-          <li>• Recordatorios, agendas y tareas para equipos comerciales.</li>
-          <li>• Mensajes inteligentes según etapa del pipeline.</li>
-          <li>• Retargeting sobre tu CRM con flujos segmentados.</li>
-          <li>
-            • Reportes de conversión, forecast y oportunidades recuperadas.
-          </li>
-          <li>• Optimización mensual del embudo comercial.</li>
-        </ul>
-
-        <a
-          href="/nia.html"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-purple-200 transition-colors"
-        >
-          Activar a Nia en mi operación →
-        </a>
+        <!-- Botón alineado abajo en la fila 3 -->
+        <div class="row-start-3 pt-4">
+          <a
+            href="/nia.html"
+            class="inline-flex items-center justify-center gap-1 text-base font-semibold text-purple-300 hover:text-purple-100
+            border border-purple-400/70 rounded-full px-5 py-2
+            shadow-[0_0_12px_rgba(168,85,247,0.45)]
+            hover:shadow-[0_0_22px_rgba(168,85,247,0.75)]
+            transition-all duration-300 hover:scale-[1.04]"
+          >
+            Activar a Nia en mi operación →
+          </a>
+        </div>
       </div>
     </article>
   </div>
@@ -634,8 +672,9 @@ app.innerHTML = `
     </h2>
 
     <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
-      Conectamos tus agentes GOAT con CRMs, ERPs, pasarelas de pago, tiendas en línea 
-      y herramientas de productividad. Si no ves tu herramienta, igual podemos integrarla.
+      Conectamos tus asistentes GOAT con bancos, medios de pago, sistemas para
+      manejar clientes y plataformas de tienda en línea. Si no ves tu herramienta
+      en la lista, igual podemos revisarla y conectarla.
     </p>
   </div>
 
@@ -667,14 +706,14 @@ app.innerHTML = `
           </h2>
 
           <p class="text-sm md:text-base text-slate-300/90 leading-relaxed">
-            Tus agentes GOAT están disponibles 24/7. Captan leads mientras duermes, atienden
-            clientes cuando tu equipo está desconectado y mantienen tus procesos corriendo
-            incluso en horas pico.
+            Tus agentes GOAT no se cansan ni se distraen. Mientras tú duermes,
+            ellos siguen captando leads, respondiendo mensajes y moviendo a tus
+            clientes al siguiente paso.
           </p>
 
           <p class="text-sm md:text-base text-slate-300/80 leading-relaxed">
-            Nuestro trabajo es que tu negocio no dependa solo de disponibilidad humana
-            para seguir creciendo.
+            El objetivo es que tu negocio no se detenga cuando alguien del equipo
+            se enferma, está de viaje o simplemente no puede responder a tiempo.
           </p>
         </div>
 
@@ -691,8 +730,9 @@ app.innerHTML = `
                   Cabra Labs
                 </p>
                 <p class="text-sm md:text-base text-slate-100 leading-relaxed">
-                  La primera empresa enfocada en crear equipos GOAT de agentes de inteligencia
-                  artificial para operaciones en Latinoamérica.
+                  Somos la primera empresa enfocada en crear “equipos GOAT” de asistentes
+                  digitales para operaciones en Latinoamérica, con un lenguaje claro y
+                  cero tecnicismos innecesarios.
                 </p>
               </div>
 
@@ -705,66 +745,70 @@ app.innerHTML = `
               </div>
 
               <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
-                Diseñamos, implementamos y medimos, para que puedas ver el impacto directo
-                en tu facturación y en las horas que recuperas cada mes.
+                Medimos el impacto en horas ahorradas y ventas generadas, para que
+                veas claramente qué está haciendo cada asistente y cuánto valor
+                aporta a tu negocio.
               </p>
             </div>
           </article>
         </div>
       </section>
 
+<!-- CONTACTO / CTA FINAL -->
+<section id="contacto" class="relative pt-12 mt-10">
+  <!-- Glows de fondo -->
+  <div class="pointer-events-none absolute -left-24 top-0 h-56 w-56 rounded-full bg-emerald-500/15 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-10 bottom-0 h-56 w-56 rounded-full bg-sky-500/15 blur-3xl"></div>
 
-            <!-- CONTACTO / CTA FINAL -->
-      <section id="contacto" class="relative pt-12 mt-10">
-        <!-- Glows de fondo -->
-        <div class="pointer-events-none absolute -left-24 top-0 h-56 w-56 rounded-full bg-emerald-500/15 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-10 bottom-0 h-56 w-56 rounded-full bg-sky-500/15 blur-3xl"></div>
+  <div
+    class="relative card-soft bg-gradient-to-r from-emerald-500/15 via-slate-950/95 to-sky-500/10 px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+  >
+    <!-- Texto -->
+    <div class="space-y-3 max-w-2xl">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-emerald-200"
+      >
+        <span class="text-sm">📲</span>
+        <span>Próximo paso</span>
+      </div>
 
-        <div
-          class="relative card-soft bg-gradient-to-r from-emerald-500/15 via-slate-950/95 to-sky-500/10 px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-        >
-          <!-- Texto -->
-          <div class="space-y-3 max-w-2xl">
-            <div
-              class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-emerald-200"
-            >
-              <span class="text-sm">📲</span>
-              <span>Próximo paso</span>
-            </div>
+      <h2 class="text-2xl md:text-3xl font-semibold">
+        Listo para diseñar tu equipo GOAT
+      </h2>
 
-            <h2 class="text-2xl md:text-3xl font-semibold">
-              Listo para diseñar tu equipo GOAT
-            </h2>
+      <p class="text-sm text-slate-200/90 leading-relaxed">
+        En una llamada corta nos cuentas qué vendes, por dónde te escriben
+        tus clientes y qué tareas te quitan más tiempo. Con eso te mostramos
+        qué partes se pueden automatizar y qué tipo de asistente te conviene
+        activar primero.
+      </p>
 
-            <p class="text-sm text-slate-200/90 leading-relaxed">
-              Cuéntanos brevemente sobre tu negocio, tus canales principales y qué parte de
-              tu operación quieres automatizar. Te proponemos una arquitectura de agentes,
-              integraciones y métricas a seguir.
-            </p>
+      <p class="text-[11px] text-slate-400">
+        Llamada exploratoria de 20–30 minutos · Sin compromiso · Ideal para
+        founders y equipos que quieren orden antes de crecer.
+      </p>
+    </div>
 
-            <p class="text-[11px] text-slate-400">
-              Llamada exploratoria de 20–30 minutos · Sin compromiso · Ideal para founders,
-              equipos de marketing y operaciones.
-            </p>
-          </div>
+    <!-- Botón WhatsApp -->
+    <div class="flex flex-col items-start md:items-end gap-2">
+      <a
+        href="https://wa.me/584120599367"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 
+               text-white text-sm font-semibold px-7 py-2.5 transition-colors"
+      >
+        Hablar con Cabra Labs por WhatsApp
+        <span class="text-base text-white">↗</span>
+      </a>
 
-          <!-- Botón WhatsApp -->
-          <div class="flex flex-col items-start md:items-end gap-2">
-            <a
-              href="https://wa.me/584120599367"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 text-sm font-semibold px-7 py-2.5 transition-colors"
-            >
-              Hablar con Cabra Labs por WhatsApp
-              <span class="text-base">↗</span>
-            </a>
-            <span class="text-[11px] text-slate-400">
-              Respondemos normalmente en menos de 24 horas. 🐐
-            </span>
-          </div>
-        </div>
-      </section>
+      <span class="text-[11px] text-slate-400">
+        Respondemos normalmente en menos de 24 horas. 🐐
+      </span>
+    </div>
+  </div>
+</section>
+
 
 
         <!-- FOOTER -->
@@ -776,8 +820,8 @@ app.innerHTML = `
     <div class="space-y-3">
       <p class="font-semibold">Cabra Labs</p>
       <p class="text-xs text-slate-400 leading-relaxed">
-        Creamos tu equipo de agentes y automatizaciones GOAT 
-        para que tu negocio funcione incluso cuando tú no estás.
+        Creamos equipos de asistentes digitales y automatizaciones GOAT 
+        para que tu negocio siga atendiendo y vendiendo incluso cuando tú no estás conectado.
       </p>
 
       <!-- Redes sociales (IGUALES AL HEADER) -->
