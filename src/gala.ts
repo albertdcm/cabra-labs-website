@@ -1,5 +1,6 @@
 import "./style.css";
 import GalaInternoImg from "./assets/agents/Gala Interno.png";
+import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -12,16 +13,18 @@ app.innerHTML = `
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-        <a href="/" class="flex items-center gap-3 group">
-          <span
-            class="inline-flex h-9 w-9 rounded-2xl bg-emerald-500/10 border border-emerald-400/40 items-center justify-center text-xl group-hover:scale-105 transition-transform"
-          >
-            🐐
-          </span>
-          <span class="font-semibold tracking-tight text-slate-100 text-base">
-            Cabra Labs
-          </span>
+
+        <!-- LOGO (PNG, VITE OK) -->
+        <a href="/" class="flex items-center group">
+          <img
+            src="${CabraLogo}"
+            alt="Cabra Labs"
+            class="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+            loading="eager"
+            decoding="async"
+          />
         </a>
+
         <a
           href="/"
           class="text-xs sm:text-sm text-slate-300 hover:text-emerald-300 transition-colors"
@@ -33,10 +36,11 @@ app.innerHTML = `
 
     <!-- CONTENIDO -->
     <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-12">
+
       <!-- HERO GALA -->
-      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center fade-in-up">
+      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
         <!-- Texto -->
-        <div class="space-y-5">
+        <div class="space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-200">
             <span class="text-sm">⚡</span>
             <span>Gala · Estrategia & Funnels</span>
@@ -47,23 +51,63 @@ app.innerHTML = `
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Gala ordena tu negocio para que vendas más. Te ayuda a atraer clientes, 
-            guiarlos paso a paso hasta la compra, y automatiza mensajes y tareas 
-            para que no pierdas oportunidades.
+            Gala ordena tu negocio para que vendas más. Diseñamos el recorrido completo del cliente
+            (desde el primer contacto hasta la recompra), armamos la arquitectura del embudo y
+            automatizamos los pasos clave para que no se te escape ningún lead.
           </p>
 
-          <div class="grid gap-3 text-xs md:text-sm text-slate-200/90">
-            <p>Con Gala trabajamos en tres capas:</p>
-            <ul class="list-disc list-inside space-y-1">
-              <li>Mapa completo de tu recorrido de cliente (desde el primer contacto hasta la recompra).</li>
-              <li>Arquitectura de funnels y mensajes por canal: anuncios, orgánico, email, WhatsApp, etc.</li>
-              <li>Definición de automatizaciones clave y métricas que vamos a seguir mes a mes.</li>
-            </ul>
+          <!-- Plan / Qué incluye -->
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-5 card-soft">
+              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Qué incluye</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+                <li>• Diagnóstico + mapa del funnel (pasos y objeciones).</li>
+                <li>• Copy y guiones de mensajes por etapa (DM/WhatsApp/email).</li>
+                <li>• Diseño de landing / estructura de oferta (si aplica).</li>
+                <li>• Tracking: eventos, conversiones y métricas clave.</li>
+                <li>• Iteración semanal (mejoras basadas en datos).</li>
+              </ul>
+            </div>
+
+            <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-5 card-soft">
+              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Automatizaciones incluidas</p>
+              <div class="mt-3 space-y-3 text-sm text-slate-200/90">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-slate-100">Base</p>
+                  <p class="text-xs text-slate-300 mt-1">
+                    <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-emerald-200 font-semibold">1</span> funnel principal.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-slate-100">Crecimiento</p>
+                  <p class="text-xs text-slate-300 mt-1">
+                    <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación básica.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <p class="font-semibold text-slate-100">Escala</p>
+                  <p class="text-xs text-slate-300 mt-1">
+                    <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-emerald-200 font-semibold">3</span> funnels + reportes avanzados.
+                  </p>
+                </div>
+
+                <p class="text-[11px] text-slate-400">
+                  “Automatización” = un flujo completo (ej: lead → calificación → recordatorios → cierre).
+                </p>
+              </div>
+            </div>
           </div>
 
-          <p class="text-xs text-emerald-200/90">
-            Desde $450 setup · planes mensuales según complejidad y número de funnels.
-          </p>
+          <!-- Precio -->
+          <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
+            <p class="text-sm text-slate-200/90">
+              <span class="text-emerald-200 font-semibold">Setup desde $450</span> · mensualidad según complejidad,
+              cantidad de funnels y automatizaciones.
+            </p>
+            <p class="text-[11px] text-slate-400 mt-1">
+              Si ya tienes herramientas (CRM, WhatsApp, email), nos integramos para aprovechar lo que tienes.
+            </p>
+          </div>
         </div>
 
         <!-- Imagen Gala -->
@@ -73,7 +117,9 @@ app.innerHTML = `
             <img
               src="${GalaInternoImg}"
               alt="Gala, agente GOAT de estrategia y funnels"
-              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto float-soft"
+              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
+              loading="lazy"
+              decoding="async"
             />
             <p class="mt-4 text-[11px] text-center text-emerald-100/80">
               Gala analiza campañas, embudos y experiencias para encontrar las rutas
@@ -84,23 +130,26 @@ app.innerHTML = `
       </section>
 
       <!-- FORMULARIO GALA -->
-      <section class="grid gap-8 md:grid-cols-[minmax(0,1.1fr),minmax(0,1.1fr)] items-start fade-in-up">
+      <section class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start">
         <!-- Copy formulario -->
         <div class="space-y-4">
           <h2 class="text-xl md:text-2xl font-semibold">
-            Cuéntale a Gala sobre tu negocio
+            Briefing para diseñar tu funnel con Gala
           </h2>
           <p class="text-sm text-slate-300 leading-relaxed">
-            Completa este formulario para que podamos diseñar un funnel a tu medida. 
-            Usaremos esta información para la primera llamada de diagnóstico y para 
-            preparar propuestas de recorridos y automatizaciones.
+            Con esta info preparamos tu diagnóstico, definimos el funnel y estimamos cuántas automatizaciones
+            necesitas para cerrar más (sin estar pegado al teléfono).
           </p>
-          <ul class="text-sm text-slate-300/90 space-y-1.5">
-            <li>• Tipo de negocio y ticket promedio.</li>
-            <li>• Canales actuales de adquisición (pagos y orgánicos).</li>
-            <li>• Herramientas que ya utilizas (CRM, email, pasarelas, etc.).</li>
-            <li>• Objetivo principal en los próximos 3–6 meses.</li>
-          </ul>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-5 card-soft">
+            <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Lo que armamos con esto</p>
+            <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+              <li>• Funnel recomendado (1–3 etapas principales).</li>
+              <li>• Automatizaciones necesarias (3 / 6 / 10 según tu caso).</li>
+              <li>• Recomendación de herramientas e integraciones.</li>
+              <li>• Próximos pasos (implementación y timing).</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Form -->
@@ -118,46 +167,140 @@ app.innerHTML = `
                 required
               />
             </div>
+
             <div class="space-y-1.5">
               <label class="text-xs text-slate-300">Correo electrónico</label>
               <input
                 type="email"
                 name="email"
                 class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-                placeholder="para enviarte el mapa de funnel"
+                placeholder="para enviarte el diagnóstico"
                 required
               />
             </div>
           </div>
 
-          <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">Negocio y oferta principal</label>
-            <textarea
-              name="negocio"
-              rows={3}
-              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-              placeholder="¿Qué vendes? ¿A quién? ¿Cuál es tu ticket promedio?"
-            ></textarea>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300">WhatsApp (opcional)</label>
+              <input
+                type="tel"
+                name="whatsapp"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                placeholder="+58..."
+              />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300">Sitio web o Instagram</label>
+              <input
+                type="text"
+                name="url"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                placeholder="tu web o @instagram"
+              />
+            </div>
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">Canales actuales y herramientas</label>
+            <label class="text-xs text-slate-300">¿Qué vendes y a quién?</label>
+            <textarea
+              name="oferta"
+              rows="3"
+              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+              placeholder="Producto/servicio, cliente ideal, qué problema resuelves"
+              required
+            ></textarea>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300">Ticket promedio</label>
+              <input
+                type="text"
+                name="ticket"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                placeholder="Ej: $50 / $250 / $1.200"
+              />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300">Objetivo (próx. 3–6 meses)</label>
+              <select
+                name="objetivo"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+              >
+                <option value="">Selecciona uno</option>
+                <option>Conseguir más leads</option>
+                <option>Convertir más (mejor cierre)</option>
+                <option>Subir ticket / upsells</option>
+                <option>Reactivar base fría</option>
+                <option>Automatizar seguimiento</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-slate-300">¿Cómo llegan tus clientes hoy?</label>
             <textarea
               name="canales"
-              rows={3}
+              rows="3"
               class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-              placeholder="Ej: Instagram, Meta Ads, WhatsApp, sitio web, CRM, email marketing..."
+              placeholder="Ej: Instagram orgánico, Meta Ads, referidos, web, WhatsApp..."
             ></textarea>
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">Objetivo principal (3–6 meses)</label>
-            <textarea
-              name="objetivo"
-              rows={3}
-              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-              placeholder="Ej: duplicar leads, mejorar conversión de llamada a venta, reactivar base fría..."
-            ></textarea>
+            <label class="text-xs text-slate-300">Herramientas actuales</label>
+            <div class="grid gap-2 sm:grid-cols-2">
+              ${[
+                "WhatsApp Business",
+                "Instagram DM",
+                "Meta Ads",
+                "Email (Mailchimp/Klaviyo)",
+                "CRM (Kommo/HubSpot)",
+                "Shopify/WooCommerce",
+                "Pasarela (Stripe/PayPal)",
+                "Google Sheets"
+              ]
+                .map(
+                  (tool) => `
+                    <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200/90 hover:bg-white/10 transition-colors">
+                      <input type="checkbox" name="herramientas" value="${tool}" class="accent-emerald-400" />
+                      ${tool}
+                    </label>
+                  `
+                )
+                .join("")}
+            </div>
+            <p class="text-[11px] text-slate-500">
+              Si no está tu herramienta, no importa: igual lo levantamos en la llamada.
+            </p>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs text-slate-300">Plan sugerido</label>
+            <div class="grid gap-2 sm:grid-cols-3">
+              ${[
+                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones" },
+                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones" },
+                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" }
+              ]
+                .map(
+                  (p) => `
+                    <label class="rounded-2xl border border-white/10 bg-white/5 p-3 text-xs text-slate-200/90 hover:bg-white/10 transition-colors cursor-pointer">
+                      <div class="flex items-start gap-2">
+                        <input type="radio" name="plan" value="${p.key}" class="mt-0.5 accent-emerald-400" />
+                        <div>
+                          <p class="font-semibold text-slate-100">${p.key}</p>
+                          <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
+                        </div>
+                      </div>
+                    </label>
+                  `
+                )
+                .join("")}
+            </div>
           </div>
 
           <button
@@ -169,11 +312,71 @@ app.innerHTML = `
           </button>
 
           <p class="text-[11px] text-slate-500 pt-1">
-            Ajustaremos luego el endpoint de este formulario para conectarlo con tu flujo en n8n.
+            Luego conectamos este formulario a tu flujo en n8n (WhatsApp, email, CRM, etc.).
           </p>
         </form>
       </section>
+
+            <!-- FOOTER -->
+      <footer class="border-t border-white/10 mt-12">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-4 text-sm">
+
+          <!-- Marca -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-100">Cabra Labs</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Diseñamos asistentes digitales y automatizaciones GOAT para que tu
+              negocio venda y atienda incluso cuando tú no estás.
+            </p>
+          </div>
+
+          <!-- Agentes -->
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+              Agentes GOAT
+            </p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>Gala · Estrategia & Funnels</li>
+              <li>Bruno · Soporte & Bots</li>
+              <li>Nia · CRM & Seguimiento</li>
+            </ul>
+          </div>
+
+          <!-- Servicios -->
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+              Servicios
+            </p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>Diseño de funnels</li>
+              <li>Automatizaciones</li>
+              <li>Integraciones y métricas</li>
+            </ul>
+          </div>
+
+          <!-- Soporte -->
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
+              Soporte
+            </p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>
+                <a href="/" class="hover:text-emerald-300 transition-colors">
+                  Volver al inicio
+                </a>
+              </li>
+              <li>Contacto</li>
+              <li>Diagnóstico inicial</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
+          © 2025 Cabra Labs. Todos los derechos reservados.
+        </div>
+      </footer>
+
     </main>
   </div>
 `;
-
