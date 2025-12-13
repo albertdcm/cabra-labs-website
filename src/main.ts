@@ -248,7 +248,7 @@ app.innerHTML = `
           </div>
 
           <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-[11px] md:text-xs">
-            ${["Meta","Google","Microsoft","Stripe","WhatsApp API","Kommo","Shopify","WordPress"]
+            ${["Meta","Google","Microsoft","Stripe","WhatsApp API","N8N","Shopify","WordPress"]
               .map(
                 (name) => `
                   <div class="card-soft py-2 px-3 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
@@ -326,7 +326,7 @@ app.innerHTML = `
               </div>
               <div class="pt-4">
                 <a href="/bruno.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-sky-300 hover:text-sky-100 border border-sky-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(56,189,248,0.45)] hover:shadow-[0_0_22px_rgba(56,189,248,0.75)] transition-all duration-200 hover:scale-[1.03]">
-                  Ver demo de Bruno →
+                  Activar a Bruno →
                 </a>
               </div>
             </div>
@@ -460,10 +460,9 @@ app.innerHTML = `
             </p>
 
             <p class="text-[11px] text-slate-400">
-              Llamada exploratoria · Sin compromiso.
+              Chat exploratorio · Sin compromiso.
             </p>
           </div>
-
           <div class="flex flex-col items-start md:items-end gap-2">
             <a
               href="https://wa.me/584120599367"
@@ -476,76 +475,111 @@ app.innerHTML = `
             </a>
 
             <span class="text-[11px] text-slate-400">
-              Respondemos normalmente en menos de 24 horas. 🐐
+              Estamos listos para atenderte. 🐐
             </span>
           </div>
         </div>
       </section>
 
       <!-- FOOTER -->
-      <footer class="border-t border-white/10 mt-8">
-        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-4 text-sm">
-          <div class="space-y-3">
-            <p class="font-semibold">Cabra Labs</p>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
-            </p>
+<footer class="border-t border-white/10 mt-8">
+  <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+    
+    <!-- BRAND -->
+    <div class="space-y-3">
+      <p class="font-semibold">Cabra Labs</p>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
+      </p>
 
-            <div class="pt-2 flex items-center gap-3">
-              <a
-                href="https://tiktok.com/@cabra.labs"
-                target="_blank"
-                rel="noopener"
-                aria-label="TikTok @cabra.labs"
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-              >
-                <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
-              </a>
+      <div class="pt-2 flex items-center gap-3">
+        <a
+          href="https://tiktok.com/@cabra.labs"
+          target="_blank"
+          rel="noopener"
+          aria-label="TikTok @cabra.labs"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+        >
+          <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+        </a>
 
-              <a
-                href="https://instagram.com/cabra_labs"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram @cabra_labs"
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-              >
-                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
-              </a>
-            </div>
-          </div>
+        <a
+          href="https://instagram.com/cabra_labs"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram @cabra_labs"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+        >
+          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+        </a>
+      </div>
+    </div>
 
-          <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
-            <ul class="space-y-1 text-xs text-slate-400">
-              <li>Gala · Estrategia &amp; Funnels</li>
-              <li>Bruno · Soporte &amp; Bots</li>
-              <li>Nia · CRM &amp; Seguimiento</li>
-            </ul>
-          </div>
+    <!-- AGENTES -->
+    <div>
+      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
+      <ul class="space-y-1 text-xs text-slate-400">
+        <li>
+          <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
+            Gala · Estrategia &amp; Funnels
+          </a>
+        </li>
+        <li>
+          <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
+            Bruno · Soporte &amp; Bots
+          </a>
+        </li>
+        <li>
+          <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
+            Nia · CRM &amp; Seguimiento
+          </a>
+        </li>
+      </ul>
+    </div>
 
-          <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Demos</p>
-            <ul class="space-y-1 text-xs text-slate-400">
-              <li>Retail &amp; e-commerce</li>
-              <li>Servicios y consultoría</li>
-              <li>Restaurantes &amp; reservas</li>
-            </ul>
-          </div>
+    <!-- SOPORTE -->
+    <div>
+      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
+      <ul class="space-y-1 text-xs text-slate-400">
+        <li>
+          <a
+            class="hover:text-emerald-200 transition-colors"
+            href="https://wa.me/584120599367"
+            target="_blank"
+            rel="noopener"
+          >
+            Contacto
+          </a>
+        </li>
 
-          <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
-            <ul class="space-y-1 text-xs text-slate-400">
-              <li><a class="hover:text-emerald-200 transition-colors" href="#contacto">Contacto</a></li>
-              <li>Preguntas frecuentes</li>
-              <li>Planes y precios</li>
-            </ul>
-          </div>
-        </div>
+        <li>
+          <a
+            class="hover:text-emerald-200 transition-colors"
+            href="/faq.html"
+          >
+            Preguntas frecuentes
+          </a>
+        </li>
 
-        <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
-          © 2025 Cabra Labs. All rights reserved.
-        </div>
-      </footer>
+        <li>
+          <a
+            class="hover:text-emerald-200 transition-colors"
+            href="#agentes"
+          >
+            Planes y precios
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
+    © 2025 Cabra Labs. All rights reserved.
+  </div>
+</footer>
+
+
 
     </main>
   </div>

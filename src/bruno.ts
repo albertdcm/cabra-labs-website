@@ -1,6 +1,8 @@
 import "./style.css";
 import BrunoInternoImg from "./assets/agents/Bruno Interno.png";
 import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
+import TikTokIcon from "./assets/agents/tik-tok.svg";
+import InstagramIcon from "./assets/agents/instagram.svg";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
@@ -9,7 +11,7 @@ if (!app) {
 }
 
 app.innerHTML = `
-  <div class="min-h-screen bg-slate-950 text-slate-50">
+  <div class="theme-bruno min-h-screen bg-slate-950 text-slate-50">
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
@@ -284,7 +286,7 @@ app.innerHTML = `
                 .map(
                   (tool) => `
                     <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200/90 hover:bg-white/10 transition-colors">
-                      <input type="checkbox" name="integraciones" value="${tool}" class="accent-sky-400" />
+                      <input type="checkbox" name="integraciones" value's${tool}' class="accent-sky-400" />
                       ${tool}
                     </label>
                   `
@@ -333,62 +335,67 @@ app.innerHTML = `
       </section>
 
       <!-- FOOTER -->
-      <footer class="border-t border-white/10 mt-12">
-        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-4 text-sm">
+      <footer class="border-t border-white/10 mt-8">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
 
-          <!-- Marca -->
+          <!-- BRAND -->
           <div class="space-y-3">
-            <p class="font-semibold text-slate-100">Cabra Labs</p>
+            <p class="font-semibold">Cabra Labs</p>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Diseñamos asistentes digitales y automatizaciones GOAT para que tu
-              negocio venda y atienda incluso cuando tú no estás.
+              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
             </p>
+
+            <div class="pt-2 flex items-center gap-3">
+              <a
+                href="https://tiktok.com/@cabra.labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok @cabra.labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
+
+              <a
+                href="https://instagram.com/cabra_labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram @cabra_labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
+            </div>
           </div>
 
-          <!-- Agentes -->
+          <!-- AGENTES -->
           <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
-              Agentes GOAT
-            </p>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
-              <li>Gala · Estrategia &amp; Funnels</li>
-              <li>Bruno · Soporte &amp; Bots</li>
-              <li>Nia · CRM &amp; Seguimiento</li>
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Estrategia &amp; Funnels</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Soporte &amp; Bots</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · CRM &amp; Seguimiento</a></li>
             </ul>
           </div>
 
-          <!-- Servicios -->
+          <!-- SOPORTE -->
           <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
-              Servicios
-            </p>
-            <ul class="space-y-1 text-xs text-slate-400">
-              <li>Diseño de funnels</li>
-              <li>Automatizaciones</li>
-              <li>Integraciones y métricas</li>
-            </ul>
-          </div>
-
-          <!-- Soporte -->
-          <div>
-            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">
-              Soporte
-            </p>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
             <ul class="space-y-1 text-xs text-slate-400">
               <li>
-                <a href="/" class="hover:text-emerald-300 transition-colors">
-                  Volver al inicio
+                <a class="hover:text-emerald-200 transition-colors" href="https://wa.me/584120599367" target="_blank" rel="noopener">
+                  Contacto
                 </a>
               </li>
-              <li>Contacto</li>
-              <li>Diagnóstico inicial</li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/#agentes">Planes y precios</a></li>
             </ul>
           </div>
 
         </div>
 
         <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
-          © 2025 Cabra Labs. Todos los derechos reservados.
+          © 2025 Cabra Labs. All rights reserved.
         </div>
       </footer>
 
