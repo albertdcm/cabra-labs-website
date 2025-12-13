@@ -224,3 +224,15 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===========================
+   Bruno theme: hover azul
+   =========================== */
+.theme-bruno .card-soft {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.theme-bruno .card-soft:hover {
+  border-color: rgba(56, 189, 248, 0.55) !important; /* sky-400 aprox */
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 0 30px -12px rgba(56, 189, 248, 0.55) !important;
+}
