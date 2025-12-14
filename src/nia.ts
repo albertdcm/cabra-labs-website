@@ -389,7 +389,7 @@ app.innerHTML = `
           aria-label="Instagram @cabra_labs"
           class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
         >
-          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+          <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>
@@ -456,3 +456,104 @@ app.innerHTML = `
     </main>
   </div>
 `;
+
+/* ================================
+   ✅ CONEXIÓN CON n8n (solo esto)
+================================== */
+
+const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-leads";
+// Para pruebas con "Listen for test event", usa:
+// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-leads";
+
+const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
+
+async function sendLead(payload: any) {
+  const res = await fetch(N8N_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-cabra-token": CABRA_TOKEN,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const text = await res.text();
+  let data: any = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    data = { raw: text };
+  }
+
+  if (!res.ok) {
+    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
+  }
+
+  return data;
+}
+
+const niaForm = app.querySelector("form") as HTMLFormElement | null;
+
+if (niaForm) {
+  niaForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const getValue = (name: string) =>
+      (niaForm.querySelector(
+        `[name="${name}"]`
+      ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null)?.value?.trim?.() ?? "";
+
+    const seguimientos = Array.from(
+      niaForm.querySelectorAll<HTMLInputElement>('input[name="seguimientos"]:checked')
+    ).map((i) => i.value);
+
+    const plan = (niaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+
+    const payload = {
+      agent: "Nia",
+      name: getValue("nombre"),
+      email: getValue("email"),
+      phone: getValue("whatsapp"),
+      company: "", // (no existe campo empresa en este form)
+      website: getValue("url"),
+      need: [
+        `Proceso: ${getValue("proceso")}`,
+        getValue("crm") ? `CRM: ${getValue("crm")}` : "",
+        getValue("equipo") ? `Equipo: ${getValue("equipo")}` : "",
+        getValue("etapas") ? `Etapas: ${getValue("etapas")}` : "",
+        seguimientos.length ? `Seguimientos: ${seguimientos.join(", ")}` : "",
+        getValue("sla") ? `SLA respuesta: ${getValue("sla")}` : "",
+        getValue("objetivo") ? `Objetivo: ${getValue("objetivo")}` : "",
+        plan ? `Plan sugerido: ${plan}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n"),
+      budget: "", // (no hay campo presupuesto en este form)
+      timeline: "", // (no hay campo timeline en este form)
+      source_url: window.location.href,
+      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+    };
+
+    const submitBtn = niaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const originalText = submitBtn?.textContent ?? "";
+
+    try {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando…";
+      }
+
+      const data = await sendLead(payload);
+      alert(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
+      niaForm.reset();
+    } catch (err) {
+      console.error(err);
+      alert("❌ No se pudo enviar. Intenta de nuevo.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+  });
+}

@@ -4,7 +4,6 @@ import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
 import TikTokIcon from "./assets/agents/tik-tok.svg";
 import InstagramIcon from "./assets/agents/instagram.svg";
 
-
 const app = document.querySelector<HTMLDivElement>("#app");
 
 if (!app) {
@@ -421,3 +420,104 @@ app.innerHTML = `
     </main>
   </div>
 `;
+
+/* ================================
+   ✅ CONEXIÓN CON n8n (solo esto)
+================================== */
+
+// ✅ PRODUCCIÓN (Workflow: Cabra Labs — Leads (All Agents))
+const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-leads";
+
+// ✅ TEST (solo cuando uses “Listen for test event” en el nodo Webhook)
+// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-leads";
+
+const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
+
+async function sendLead(payload: any) {
+  const res = await fetch(N8N_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-cabra-token": CABRA_TOKEN,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const text = await res.text();
+  let data: any = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    data = { raw: text };
+  }
+
+  if (!res.ok) {
+    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
+  }
+
+  return data;
+}
+
+const galaForm = app.querySelector("form") as HTMLFormElement | null;
+
+if (galaForm) {
+  galaForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const getValue = (name: string) =>
+      (galaForm.querySelector(
+        `[name="${name}"]`
+      ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null)?.value?.trim?.() ?? "";
+
+    const herramientas = Array.from(
+      galaForm.querySelectorAll<HTMLInputElement>('input[name="herramientas"]:checked')
+    ).map((i) => i.value);
+
+    const plan = (galaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+
+    const payload = {
+      agent: "Gala",
+      name: getValue("nombre"),
+      email: getValue("email"),
+      phone: getValue("whatsapp"),
+      company: "",
+      website: getValue("url"),
+      need: [
+        `Oferta: ${getValue("oferta")}`,
+        getValue("canales") ? `Canales: ${getValue("canales")}` : "",
+        getValue("objetivo") ? `Objetivo: ${getValue("objetivo")}` : "",
+        getValue("ticket") ? `Ticket: ${getValue("ticket")}` : "",
+        herramientas.length ? `Herramientas: ${herramientas.join(", ")}` : "",
+        plan ? `Plan sugerido: ${plan}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n"),
+      budget: getValue("ticket"),
+      timeline: "",
+      source_url: window.location.href,
+      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+    };
+
+    const submitBtn = galaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const originalText = submitBtn?.textContent ?? "";
+
+    try {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando…";
+      }
+
+      const data = await sendLead(payload);
+      alert(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
+      galaForm.reset();
+    } catch (err) {
+      console.error(err);
+      alert("❌ No se pudo enviar. Intenta de nuevo.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+  });
+}

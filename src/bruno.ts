@@ -402,3 +402,107 @@ app.innerHTML = `
     </main>
   </div>
 `;
+
+/* ================================
+   ✅ CONEXIÓN CON n8n (solo esto)
+================================== */
+
+const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-leads";
+// Para pruebas con "Listen for test event", usa:
+// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-leads";
+
+const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
+
+async function sendLead(payload: any) {
+  const res = await fetch(N8N_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-cabra-token": CABRA_TOKEN,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const text = await res.text();
+  let data: any = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    data = { raw: text };
+  }
+
+  if (!res.ok) {
+    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
+  }
+
+  return data;
+}
+
+const brunoForm = app.querySelector("form") as HTMLFormElement | null;
+
+if (brunoForm) {
+  brunoForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const getValue = (name: string) =>
+      (brunoForm.querySelector(
+        `[name="${name}"]`
+      ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null)?.value?.trim?.() ?? "";
+
+    const canales = Array.from(
+      brunoForm.querySelectorAll<HTMLInputElement>('input[name="canales"]:checked')
+    ).map((i) => i.value);
+
+    const integraciones = Array.from(
+      brunoForm.querySelectorAll<HTMLInputElement>('input[name="integraciones"]:checked')
+    ).map((i) => i.value);
+
+    const plan = (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+
+    const payload = {
+      agent: "Bruno",
+      name: getValue("nombre"),
+      email: getValue("email"),
+      phone: getValue("whatsapp"),
+      company: "", // (no existe campo empresa en este form)
+      website: getValue("url"),
+      need: [
+        `Casos: ${getValue("casos")}`,
+        canales.length ? `Canales: ${canales.join(", ")}` : "",
+        getValue("horario") ? `Horario humano: ${getValue("horario")}` : "",
+        getValue("sla") ? `SLA humano: ${getValue("sla")}` : "",
+        getValue("handoff") ? `Handoff a humano: ${getValue("handoff")}` : "",
+        integraciones.length ? `Integraciones: ${integraciones.join(", ")}` : "",
+        plan ? `Plan sugerido: ${plan}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n"),
+      budget: "", // (no hay campo presupuesto en este form)
+      timeline: "", // (no hay campo timeline en este form)
+      source_url: window.location.href,
+      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+    };
+
+    const submitBtn = brunoForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const originalText = submitBtn?.textContent ?? "";
+
+    try {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando…";
+      }
+
+      const data = await sendLead(payload);
+      alert(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
+      brunoForm.reset();
+    } catch (err) {
+      console.error(err);
+      alert("❌ No se pudo enviar. Intenta de nuevo.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+  });
+}
