@@ -386,7 +386,7 @@ app.innerHTML = `
           href="https://instagram.com/cabra_labs"
           target="_blank"
           rel="noopener"
-          aria-label="Instagram @cabra_labs"
+          aria-label="Instagram @cabra.labs"
           class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
         >
           <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
@@ -511,7 +511,11 @@ if (niaForm) {
 
     const payload = {
       agent: "Nia",
+
+      // ✅ AJUSTE: n8n valida body.nombre (y body.email)
+      nombre: getValue("nombre"),
       name: getValue("nombre"),
+
       email: getValue("email"),
       phone: getValue("whatsapp"),
       company: "", // (no existe campo empresa en este form)

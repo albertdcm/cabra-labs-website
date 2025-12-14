@@ -286,7 +286,7 @@ app.innerHTML = `
                 .map(
                   (tool) => `
                     <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200/90 hover:bg-white/10 transition-colors">
-                      <input type="checkbox" name="integraciones" value's${tool}' class="accent-sky-400" />
+                      <input type="checkbox" name="integraciones" value="${tool}" class="accent-sky-400" />
                       ${tool}
                     </label>
                   `
@@ -457,28 +457,25 @@ if (brunoForm) {
       brunoForm.querySelectorAll<HTMLInputElement>('input[name="integraciones"]:checked')
     ).map((i) => i.value);
 
-    const plan = (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+    const plan =
+      (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
+    // ✅ Payload alineado con tu workflow de n8n (body.nombre/body.email + normalize)
     const payload = {
       agent: "Bruno",
-      name: getValue("nombre"),
+      nombre: getValue("nombre"),
       email: getValue("email"),
-      phone: getValue("whatsapp"),
-      company: "", // (no existe campo empresa en este form)
-      website: getValue("url"),
-      need: [
-        `Casos: ${getValue("casos")}`,
-        canales.length ? `Canales: ${canales.join(", ")}` : "",
-        getValue("horario") ? `Horario humano: ${getValue("horario")}` : "",
-        getValue("sla") ? `SLA humano: ${getValue("sla")}` : "",
-        getValue("handoff") ? `Handoff a humano: ${getValue("handoff")}` : "",
-        integraciones.length ? `Integraciones: ${integraciones.join(", ")}` : "",
-        plan ? `Plan sugerido: ${plan}` : "",
-      ]
-        .filter(Boolean)
-        .join("\n"),
-      budget: "", // (no hay campo presupuesto en este form)
-      timeline: "", // (no hay campo timeline en este form)
+      whatsapp: getValue("whatsapp"),
+      url: getValue("url"),
+
+      casos: getValue("casos"),
+      canales,
+      horario: getValue("horario"),
+      sla: getValue("sla"),
+      handoff: getValue("handoff"),
+      integraciones,
+      plan,
+
       source_url: window.location.href,
       utm: Object.fromEntries(new URLSearchParams(window.location.search)),
     };
