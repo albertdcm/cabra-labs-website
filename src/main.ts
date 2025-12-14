@@ -18,6 +18,7 @@ if (!app) {
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- NAVBAR (STICKY SIEMPRE) -->
+    <!-- Ajuste B: se agrega link FAQ en navbar + CTA con estilo de botones de la web (gradiente) -->
     <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
       <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
@@ -42,6 +43,9 @@ app.innerHTML = `
           </a>
           <a href="#sobre" class="text-slate-200 hover:text-emerald-300 transition-colors">
             Cómo trabajamos
+          </a>
+          <a href="/faq.html" class="text-slate-200 hover:text-emerald-300 transition-colors">
+            FAQ
           </a>
         </div>
 
@@ -73,14 +77,13 @@ app.innerHTML = `
             </a>
           </div>
 
-          <!-- CTA Principal -->
+          <!-- CTA Principal (mismo estilo que el resto de la web) -->
           <a
             href="#contacto"
-            class="rounded-full bg-emerald-500 hover:bg-emerald-400 
-                   px-5 py-2.5 text-sm sm:text-base font-semibold 
-                   text-white transition-all duration-200 shadow-md 
-                   hover:shadow-emerald-400/40 hover:scale-[1.03]
-                   whitespace-nowrap leading-none"
+            class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500
+                   px-5 py-2.5 text-sm sm:text-base font-semibold text-slate-950
+                   shadow-md shadow-emerald-500/25 hover:shadow-emerald-500/45 hover:scale-[1.03]
+                   transition-all duration-200 whitespace-nowrap leading-none"
           >
             Agenda una llamada
           </a>
@@ -383,7 +386,7 @@ app.innerHTML = `
         </div>
 
         <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-4">
-          ${["BNC","Bancamiga","Stripe","PayPal","Kommo","Odoo","Shopify","WooCommerce"]
+          ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
             .map(
               (name) => `
               <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
@@ -600,18 +603,18 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.12,          // aparece antes
-    rootMargin: "120px 0px",  // precarga visual antes del viewport
+    threshold: 0.12,
+    rootMargin: "120px 0px",
   }
 );
 
 revealElements.forEach((el, index) => {
   el.classList.add("reveal-on-scroll");
-  el.style.transitionDelay = `${Math.min(index * 16, 160)}ms`; // más rápido
+  el.style.transitionDelay = `${Math.min(index * 16, 160)}ms`;
   observer.observe(el);
 });
 
-// Preload ligero de imágenes clave (ayuda a que “aparezca” más rápido)
+// Preload ligero de imágenes clave
 const preload = (src: string) => {
   const img = new Image();
   img.decoding = "async";
