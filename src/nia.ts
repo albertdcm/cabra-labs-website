@@ -205,8 +205,6 @@ app.innerHTML = `
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-
-        <!-- LOGO (PNG, VITE OK) -->
         <a href="/" class="flex items-center group">
           <img
             src="${CabraLogo}"
@@ -231,7 +229,6 @@ app.innerHTML = `
 
       <!-- HERO NIA -->
       <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
-        <!-- Texto -->
         <div class="space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-purple-200">
             <span class="text-sm">⚡</span>
@@ -248,7 +245,6 @@ app.innerHTML = `
             por cerrarse para que no se te enfríen los prospectos.
           </p>
 
-          <!-- Plan / Qué incluye -->
           <div class="grid gap-4 sm:grid-cols-2">
             <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft">
               <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Qué incluye</p>
@@ -291,7 +287,6 @@ app.innerHTML = `
             </div>
           </div>
 
-          <!-- Precio -->
           <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
               <span class="text-purple-200 font-semibold">Desde $300/mes</span> · setup según CRM, cantidad de pipelines y automatizaciones.
@@ -302,7 +297,6 @@ app.innerHTML = `
           </div>
         </div>
 
-        <!-- Imagen Nia -->
         <div class="relative flex items-center justify-center">
           <div class="absolute -inset-6 rounded-3xl bg-purple-500/15 blur-3xl opacity-80"></div>
           <div class="relative rounded-3xl border border-purple-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
@@ -322,11 +316,8 @@ app.innerHTML = `
 
       <!-- FORMULARIO NIA -->
       <section class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start">
-        <!-- Copy formulario -->
         <div class="space-y-4">
-          <h2 class="text-xl md:text-2xl font-semibold">
-            Briefing para activar a Nia
-          </h2>
+          <h2 class="text-xl md:text-2xl font-semibold">Briefing para activar a Nia</h2>
           <p class="text-sm text-slate-300 leading-relaxed">
             Con esta información definimos tu pipeline, las reglas de seguimiento, tareas del equipo,
             y el número de automatizaciones que necesitas para cerrar más rápido.
@@ -343,10 +334,7 @@ app.innerHTML = `
           </div>
         </div>
 
-        <!-- Form -->
-        <form
-          class="space-y-4 rounded-3xl border border-purple-400/30 bg-slate-900/80 p-5 md:p-6 shadow-xl shadow-purple-500/15"
-        >
+        <form class="space-y-4 rounded-3xl border border-purple-400/30 bg-slate-900/80 p-5 md:p-6 shadow-xl shadow-purple-500/15">
           <div class="grid gap-4 md:grid-cols-2">
             <div class="space-y-1.5">
               <label class="text-xs text-slate-300">Nombre completo</label>
@@ -540,96 +528,64 @@ app.innerHTML = `
       </section>
 
       <!-- FOOTER -->
-<footer class="border-t border-white/10 mt-8">
-  <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+      <footer class="border-t border-white/10 mt-8">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+          <div class="space-y-3">
+            <p class="font-semibold">Cabra Labs</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
+            </p>
 
-    <!-- BRAND -->
-    <div class="space-y-3">
-      <p class="font-semibold">Cabra Labs</p>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
-      </p>
+            <div class="pt-2 flex items-center gap-3">
+              <a
+                href="https://tiktok.com/@cabra.labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok @cabra.labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
 
-      <div class="pt-2 flex items-center gap-3">
-        <a
-          href="https://tiktok.com/@cabra.labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="TikTok @cabra.labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
+              <a
+                href="https://instagram.com/cabra_labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram @cabra_labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
+            </div>
+          </div>
 
-        <a
-          href="https://instagram.com/cabra_labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram @cabra_labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
-      </div>
-    </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Estrategia &amp; Funnels</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Soporte &amp; Bots</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · CRM &amp; Seguimiento</a></li>
+            </ul>
+          </div>
 
-    <!-- AGENTES -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
-            Gala · Estrategia &amp; Funnels
-          </a>
-        </li>
-        <li>
-          <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
-            Bruno · Soporte &amp; Bots
-          </a>
-        </li>
-        <li>
-          <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
-            Nia · CRM &amp; Seguimiento
-          </a>
-        </li>
-      </ul>
-    </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>
+                <a class="hover:text-emerald-200 transition-colors" href="https://wa.me/584120599367" target="_blank" rel="noopener">
+                  Contacto
+                </a>
+              </li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/#agentes">Planes y precios</a></li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- SOPORTE -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="https://wa.me/584120599367"
-            target="_blank"
-            rel="noopener"
-          >
-            Contacto
-          </a>
-        </li>
-
-        <li>
-          <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
-            Preguntas frecuentes
-          </a>
-        </li>
-
-        <li>
-          <a class="hover:text-emerald-200 transition-colors" href="/#agentes">
-            Planes y precios
-          </a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
-    © 2025 Cabra Labs. All rights reserved.
-  </div>
-</footer>
+        <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
+          © 2025 Cabra Labs. All rights reserved.
+        </div>
+      </footer>
 
     </main>
 
@@ -779,8 +735,16 @@ if (niaForm) {
 
     const plan = (niaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
-    const utmParams = new URLSearchParams(window.location.search);
+    // UTM
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmObj = Object.fromEntries(urlParams.entries());
+    const utm_source = urlParams.get("utm_source") || "";
+    const utm_medium = urlParams.get("utm_medium") || "";
+    const utm_campaign = urlParams.get("utm_campaign") || "";
+    const utm_content = urlParams.get("utm_content") || "";
+    const utm_term = urlParams.get("utm_term") || "";
 
+    // Campos Nia (sheet columns)
     const nia_proceso = getValue("proceso");
     const nia_crm = getValue("crm");
     const nia_equipo = getValue("equipo");
@@ -790,7 +754,8 @@ if (niaForm) {
     const nia_objetivo = getValue("objetivo");
     const nia_plan = plan;
 
-    const message = [
+    // Texto principal (Slack + Sheets)
+    const messageText = [
       nia_proceso ? `Proceso: ${nia_proceso}` : "",
       nia_crm ? `CRM: ${nia_crm}` : "",
       nia_equipo ? `Equipo: ${nia_equipo}` : "",
@@ -803,38 +768,56 @@ if (niaForm) {
       .filter(Boolean)
       .join("\n");
 
-    // ✅ ENVÍO EN FORMATO COMPATIBLE CON TU Normalize + Metadata
-    // (soporta payload directo, { body: ... }, y body string JSON)
-    // + además satisface tu validación (body.nombre / body.email)
+    // ✅ ÚNICO CAMBIO: payload (keys correctas para Normalize + Metadata / Sheets / Slack / Email)
     const payload = {
-      body: {
-        agent: "Nia",
+      agent: "Nia",
+      plan: nia_plan,
+
+      // “name/email/phone/website/message/source_url” (columns)
+      name: getValue("nombre"),
+      email: getValue("email"),
+      phone: getValue("whatsapp"),
+      company: "",
+      website: getValue("url"),
+      message: messageText,
+      source_url: window.location.href,
+
+      // Extra “por si acaso” (compat validaciones legacy)
+      nombre: getValue("nombre"),
+
+      // Para tu workflow actual (Slack templates, etc.)
+      need: messageText,
+      budget: "",
+      timeline: "",
+
+      // UTM (obj + flatten)
+      utm: utmObj,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_content,
+      utm_term,
+
+      // Columns directas (Sheets)
+      nia_proceso,
+      nia_crm,
+      nia_equipo,
+      nia_etapas,
+      nia_seguimientos,
+      nia_sla,
+      nia_objetivo,
+      nia_plan,
+
+      // Objeto por agente (Normalize puede aplanar si lo usa)
+      nia: {
+        proceso: nia_proceso,
+        crm: nia_crm,
+        equipo: nia_equipo,
+        etapas: nia_etapas,
+        seguimientos: seguimientos.join("\n"),
+        sla: nia_sla,
+        objetivo: nia_objetivo,
         plan: nia_plan,
-        nombre: getValue("nombre"),
-        name: getValue("nombre"),
-        email: getValue("email"),
-        phone: getValue("whatsapp"),
-        company: "",
-        website: getValue("url"),
-        message,
-        source_url: window.location.href,
-
-        // UTM flatten (compat con columnas utm_* del sheet)
-        utm_source: utmParams.get("utm_source") || "",
-        utm_medium: utmParams.get("utm_medium") || "",
-        utm_campaign: utmParams.get("utm_campaign") || "",
-        utm_content: utmParams.get("utm_content") || "",
-        utm_term: utmParams.get("utm_term") || "",
-
-        // Campos específicos Nia (compat con columnas nia_* del sheet)
-        nia_proceso,
-        nia_crm,
-        nia_equipo,
-        nia_etapas,
-        nia_seguimientos,
-        nia_sla,
-        nia_objetivo,
-        nia_plan,
       },
     };
 
@@ -849,10 +832,7 @@ if (niaForm) {
 
       const data = await sendLead(payload);
 
-      openSuccessModal(
-        data?.message || "✅ Recibimos tu información. Te contactaremos pronto."
-      );
-
+      openSuccessModal(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
       niaForm.reset();
     } catch (err) {
       console.error(err);

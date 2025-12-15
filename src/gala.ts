@@ -263,7 +263,7 @@ app.innerHTML = `
                 "CRM (Kommo/HubSpot)",
                 "Shopify/WooCommerce",
                 "Pasarela (Stripe/PayPal)",
-                "Google Sheets"
+                "Google Sheets",
               ]
                 .map(
                   (tool) => `
@@ -286,7 +286,7 @@ app.innerHTML = `
               ${[
                 { key: "Base", desc: "1 funnel · hasta 3 automatizaciones" },
                 { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones" },
-                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" }
+                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" },
               ]
                 .map(
                   (p) => `
@@ -345,7 +345,7 @@ app.innerHTML = `
                 href="https://instagram.com/cabra_labs"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram @cabra_labs"
+                aria-label="Instagram @cabra.labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
                 <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
@@ -357,21 +357,9 @@ app.innerHTML = `
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
-              <li>
-                <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
-                  Gala · Estrategia &amp; Funnels
-                </a>
-              </li>
-              <li>
-                <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
-                  Bruno · Soporte &amp; Bots
-                </a>
-              </li>
-              <li>
-                <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
-                  Nia · CRM &amp; Seguimiento
-                </a>
-              </li>
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Estrategia &amp; Funnels</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Soporte &amp; Bots</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · CRM &amp; Seguimiento</a></li>
             </ul>
           </div>
 
@@ -380,27 +368,12 @@ app.innerHTML = `
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
             <ul class="space-y-1 text-xs text-slate-400">
               <li>
-                <a
-                  class="hover:text-emerald-200 transition-colors"
-                  href="https://wa.me/584120599367"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a class="hover:text-emerald-200 transition-colors" href="https://wa.me/584120599367" target="_blank" rel="noopener">
                   Contacto
                 </a>
               </li>
-
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
-                  Preguntas frecuentes
-                </a>
-              </li>
-
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="#agentes">
-                  Planes y precios
-                </a>
-              </li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
             </ul>
           </div>
 
@@ -598,7 +571,6 @@ function mountLeadUI() {
   `;
   document.body.appendChild(ui);
 
-  // close handlers
   const overlay = document.getElementById("cabra-success-overlay") as HTMLDivElement | null;
   overlay?.addEventListener("click", (e) => {
     if (e.target === overlay) closeSuccessModal();
@@ -662,7 +634,6 @@ function hideErrorToast() {
 
 // ✅ PRODUCCIÓN (Workflow: Cabra Labs — Leads (All Agents))
 const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-leads";
-
 // ✅ TEST (solo cuando uses “Listen for test event” en el nodo Webhook)
 // const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-leads";
 
@@ -673,9 +644,9 @@ async function sendLead(payload: any) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-cabra-token": CABRA_TOKEN
+      "x-cabra-token": CABRA_TOKEN,
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
   });
 
   const text = await res.text();
@@ -700,15 +671,24 @@ if (galaForm) {
     e.preventDefault();
 
     const getValue = (name: string) =>
-      (galaForm.querySelector(
-        `[name="${name}"]`
-      ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null)?.value?.trim?.() ?? "";
+      (
+        galaForm.querySelector(
+          `[name="${name}"]`
+        ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null
+      )?.value?.trim?.() ?? "";
 
     const herramientas = Array.from(
-      galaForm.querySelectorAll<HTMLInputElement>('input[name="herramientas"]:checked')
+      galaForm.querySelectorAll<HTMLInputElement>(
+        'input[name="herramientas"]:checked'
+      )
     ).map((i) => i.value);
 
-    const plan = (galaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+    const plan =
+      (
+        galaForm.querySelector(
+          'input[name="plan"]:checked'
+        ) as HTMLInputElement | null
+      )?.value ?? "";
 
     // UTM para tu Normalize + Metadata (y tracking)
     const urlParams = new URLSearchParams(window.location.search);
@@ -725,57 +705,69 @@ if (galaForm) {
     const ticket = getValue("ticket");
     const websiteOrIg = getValue("url");
 
-    // Texto principal (compatible con Slack template + Sheets)
+    // Texto principal (Slack + Email + Sheets)
     const messageText = [
       `Oferta: ${oferta}`,
       canales ? `Canales: ${canales}` : "",
       objetivo ? `Objetivo: ${objetivo}` : "",
       ticket ? `Ticket: ${ticket}` : "",
       herramientas.length ? `Herramientas: ${herramientas.join(", ")}` : "",
-      plan ? `Plan sugerido: ${plan}` : ""
+      plan ? `Plan sugerido: ${plan}` : "",
     ]
       .filter(Boolean)
       .join("\n");
 
-    // ✅ Payload listo para tu Normalize + Metadata
-    // (mantiene need/budget/source_url para Slack, y añade message/plan + gala.* + utm_* para Sheets)
+    // ✅✅ ÚNICO CAMBIO: payload con keys correctas (Sheets + Normalize + Slack/Email)
     const payload = {
       agent: "Gala",
       plan: plan,
+
+      // Campos “generales” esperados por tu workflow/sheets
       name: getValue("nombre"),
       email: getValue("email"),
       phone: getValue("whatsapp"),
       company: "",
       website: websiteOrIg,
+      message: messageText,
+      source_url: window.location.href,
 
-      // Para tu workflow actual
+      // Compatibilidad con templates viejos (si Slack/Email usan esto)
       need: messageText,
       budget: ticket,
       timeline: "",
-      source_url: window.location.href,
 
-      // Para Sheets / Normalize + Metadata
-      message: messageText,
-
-      // UTM (top-level + objeto)
-      utm: utmObj,
+      // UTM (top-level)
       utm_source,
       utm_medium,
       utm_campaign,
       utm_content,
       utm_term,
+      utm: utmObj,
 
-      // Estructura por agente (tu Normalize puede aplanar esto a gala_objetivo, etc.)
+      // ✅ Campos aplanados (por si Sheets mapea directo a columnas gala_*)
+      gala_objetivo: objetivo,
+      gala_procesos: [oferta, canales ? `Canales: ${canales}` : ""]
+        .filter(Boolean)
+        .join("\n"),
+      gala_herramientas: herramientas.join("\n"),
+      gala_integraciones: herramientas.join("\n"),
+      gala_plan: plan,
+
+      // ✅ Estructura anidada (por si tu Normalize aplanaba desde "gala")
       gala: {
         objetivo: objetivo,
-        procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
+        procesos: [oferta, canales ? `Canales: ${canales}` : ""]
+          .filter(Boolean)
+          .join("\n"),
         herramientas: herramientas.join("\n"),
         integraciones: herramientas.join("\n"),
-        plan: plan
-      }
+        plan: plan,
+      },
     };
 
-    const submitBtn = galaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const submitBtn = galaForm.querySelector(
+      'button[type="submit"]'
+    ) as HTMLButtonElement | null;
     const originalText = submitBtn?.textContent ?? "";
 
     try {
@@ -787,7 +779,9 @@ if (galaForm) {
       const data = await sendLead(payload);
 
       // ✅ Modal éxito (reemplaza alert)
-      openSuccessModal(data?.message || "Recibimos tu información. Te contactaremos pronto.");
+      openSuccessModal(
+        data?.message || "Recibimos tu información. Te contactaremos pronto."
+      );
 
       galaForm.reset();
     } catch (err) {

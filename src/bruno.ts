@@ -352,7 +352,7 @@ app.innerHTML = `
 
       <!-- FOOTER -->
       <footer class="border-t border-white/10 mt-8">
-        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm>
 
           <!-- BRAND -->
           <div class="space-y-3">
