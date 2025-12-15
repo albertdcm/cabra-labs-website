@@ -319,103 +319,97 @@ app.innerHTML = `
         </form>
       </section>
 
-            <!-- FOOTER -->
-<footer class="border-t border-white/10 mt-8">
-  <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+      <!-- FOOTER -->
+      <footer class="border-t border-white/10 mt-8">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
 
-    <!-- BRAND -->
-    <div class="space-y-3">
-      <p class="font-semibold">Cabra Labs</p>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
-      </p>
+          <!-- BRAND -->
+          <div class="space-y-3">
+            <p class="font-semibold">Cabra Labs</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
+            </p>
 
-    <div class="pt-2 flex items-center gap-3">
-        <a
-          href="https://tiktok.com/@cabra.labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="TikTok @cabra.labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
+            <div class="pt-2 flex items-center gap-3">
+              <a
+                href="https://tiktok.com/@cabra.labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok @cabra.labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
 
-        <a
-          href="https://instagram.com/cabra_labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram @cabra_labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
-      </div>
-    </div>
+              <a
+                href="https://instagram.com/cabra_labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram @cabra_labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
+            </div>
+          </div>
 
-    <!-- AGENTES -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
-            Gala · Estrategia &amp; Funnels
-          </a>
-        </li>
-        <li>
-          <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
-            Bruno · Soporte &amp; Bots
-          </a>
-        </li>
-        <li>
-          <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
-            Nia · CRM &amp; Seguimiento
-          </a>
-        </li>
-      </ul>
-    </div>
+          <!-- AGENTES -->
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>
+                <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
+                  Gala · Estrategia &amp; Funnels
+                </a>
+              </li>
+              <li>
+                <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
+                  Bruno · Soporte &amp; Bots
+                </a>
+              </li>
+              <li>
+                <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
+                  Nia · CRM &amp; Seguimiento
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    <!-- SOPORTE -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="https://wa.me/584120599367"
-            target="_blank"
-            rel="noopener"
-          >
-            Contacto
-          </a>
-        </li>
+          <!-- SOPORTE -->
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>
+                <a
+                  class="hover:text-emerald-200 transition-colors"
+                  href="https://wa.me/584120599367"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Contacto
+                </a>
+              </li>
 
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="/faq.html"
-          >
-            Preguntas frecuentes
-          </a>
-        </li>
+              <li>
+                <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
+                  Preguntas frecuentes
+                </a>
+              </li>
 
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="#agentes"
-          >
-            Planes y precios
-          </a>
-        </li>
-      </ul>
-    </div>
+              <li>
+                <a class="hover:text-emerald-200 transition-colors" href="#agentes">
+                  Planes y precios
+                </a>
+              </li>
+            </ul>
+          </div>
 
-  </div>
+        </div>
 
-  <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
-    © 2025 Cabra Labs. All rights reserved.
-  </div>
-</footer>
+        <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
+          © 2025 Cabra Labs. All rights reserved.
+        </div>
+      </footer>
 
     </main>
   </div>
@@ -663,6 +657,7 @@ function hideErrorToast() {
 
 /* ================================
    ✅ CONEXIÓN CON n8n (solo esto)
+   Vinculado a tu Normalize + Metadata
 ================================== */
 
 // ✅ PRODUCCIÓN (Workflow: Cabra Labs — Leads (All Agents))
@@ -678,9 +673,9 @@ async function sendLead(payload: any) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-cabra-token": CABRA_TOKEN,
+      "x-cabra-token": CABRA_TOKEN
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(payload)
   });
 
   const text = await res.text();
@@ -715,27 +710,69 @@ if (galaForm) {
 
     const plan = (galaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
+    // UTM para tu Normalize + Metadata (y tracking)
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmObj = Object.fromEntries(urlParams.entries());
+    const utm_source = urlParams.get("utm_source") || "";
+    const utm_medium = urlParams.get("utm_medium") || "";
+    const utm_campaign = urlParams.get("utm_campaign") || "";
+    const utm_content = urlParams.get("utm_content") || "";
+    const utm_term = urlParams.get("utm_term") || "";
+
+    const oferta = getValue("oferta");
+    const canales = getValue("canales");
+    const objetivo = getValue("objetivo");
+    const ticket = getValue("ticket");
+    const websiteOrIg = getValue("url");
+
+    // Texto principal (compatible con Slack template + Sheets)
+    const messageText = [
+      `Oferta: ${oferta}`,
+      canales ? `Canales: ${canales}` : "",
+      objetivo ? `Objetivo: ${objetivo}` : "",
+      ticket ? `Ticket: ${ticket}` : "",
+      herramientas.length ? `Herramientas: ${herramientas.join(", ")}` : "",
+      plan ? `Plan sugerido: ${plan}` : ""
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    // ✅ Payload listo para tu Normalize + Metadata
+    // (mantiene need/budget/source_url para Slack, y añade message/plan + gala.* + utm_* para Sheets)
     const payload = {
       agent: "Gala",
+      plan: plan,
       name: getValue("nombre"),
       email: getValue("email"),
       phone: getValue("whatsapp"),
       company: "",
-      website: getValue("url"),
-      need: [
-        `Oferta: ${getValue("oferta")}`,
-        getValue("canales") ? `Canales: ${getValue("canales")}` : "",
-        getValue("objetivo") ? `Objetivo: ${getValue("objetivo")}` : "",
-        getValue("ticket") ? `Ticket: ${getValue("ticket")}` : "",
-        herramientas.length ? `Herramientas: ${herramientas.join(", ")}` : "",
-        plan ? `Plan sugerido: ${plan}` : "",
-      ]
-        .filter(Boolean)
-        .join("\n"),
-      budget: getValue("ticket"),
+      website: websiteOrIg,
+
+      // Para tu workflow actual
+      need: messageText,
+      budget: ticket,
       timeline: "",
       source_url: window.location.href,
-      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+
+      // Para Sheets / Normalize + Metadata
+      message: messageText,
+
+      // UTM (top-level + objeto)
+      utm: utmObj,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_content,
+      utm_term,
+
+      // Estructura por agente (tu Normalize puede aplanar esto a gala_objetivo, etc.)
+      gala: {
+        objetivo: objetivo,
+        procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
+        herramientas: herramientas.join("\n"),
+        integraciones: herramientas.join("\n"),
+        plan: plan
+      }
     };
 
     const submitBtn = galaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
@@ -757,7 +794,9 @@ if (galaForm) {
       console.error(err);
 
       // ✅ Toast error bonito (reemplaza alert)
-      showErrorToast("No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp.");
+      showErrorToast(
+        "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp."
+      );
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

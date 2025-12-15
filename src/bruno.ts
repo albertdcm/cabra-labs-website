@@ -436,7 +436,9 @@ async function sendLead(payload: any) {
       "Content-Type": "application/json",
       "x-cabra-token": CABRA_TOKEN,
     },
-    body: JSON.stringify(payload),
+    // ✅ AJUSTE (ÚNICO): enviar el payload dentro de { body: ... } para que tu nodo "Normalize + Metadata"
+    // lo lea como $json.body (y también siga siendo compatible con tu soporte de { body: ... }).
+    body: JSON.stringify({ body: payload }),
   });
 
   const text = await res.text();

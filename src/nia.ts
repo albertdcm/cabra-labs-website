@@ -779,33 +779,63 @@ if (niaForm) {
 
     const plan = (niaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
+    const utmParams = new URLSearchParams(window.location.search);
+
+    const nia_proceso = getValue("proceso");
+    const nia_crm = getValue("crm");
+    const nia_equipo = getValue("equipo");
+    const nia_etapas = getValue("etapas");
+    const nia_seguimientos = seguimientos.join(", ");
+    const nia_sla = getValue("sla");
+    const nia_objetivo = getValue("objetivo");
+    const nia_plan = plan;
+
+    const message = [
+      nia_proceso ? `Proceso: ${nia_proceso}` : "",
+      nia_crm ? `CRM: ${nia_crm}` : "",
+      nia_equipo ? `Equipo: ${nia_equipo}` : "",
+      nia_etapas ? `Etapas: ${nia_etapas}` : "",
+      seguimientos.length ? `Seguimientos: ${nia_seguimientos}` : "",
+      nia_sla ? `SLA respuesta: ${nia_sla}` : "",
+      nia_objetivo ? `Objetivo: ${nia_objetivo}` : "",
+      nia_plan ? `Plan sugerido: ${nia_plan}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    // ✅ ENVÍO EN FORMATO COMPATIBLE CON TU Normalize + Metadata
+    // (soporta payload directo, { body: ... }, y body string JSON)
+    // + además satisface tu validación (body.nombre / body.email)
     const payload = {
-      agent: "Nia",
+      body: {
+        agent: "Nia",
+        plan: nia_plan,
+        nombre: getValue("nombre"),
+        name: getValue("nombre"),
+        email: getValue("email"),
+        phone: getValue("whatsapp"),
+        company: "",
+        website: getValue("url"),
+        message,
+        source_url: window.location.href,
 
-      // ✅ AJUSTE: n8n valida body.nombre (y body.email)
-      nombre: getValue("nombre"),
-      name: getValue("nombre"),
+        // UTM flatten (compat con columnas utm_* del sheet)
+        utm_source: utmParams.get("utm_source") || "",
+        utm_medium: utmParams.get("utm_medium") || "",
+        utm_campaign: utmParams.get("utm_campaign") || "",
+        utm_content: utmParams.get("utm_content") || "",
+        utm_term: utmParams.get("utm_term") || "",
 
-      email: getValue("email"),
-      phone: getValue("whatsapp"),
-      company: "", // (no existe campo empresa en este form)
-      website: getValue("url"),
-      need: [
-        `Proceso: ${getValue("proceso")}`,
-        getValue("crm") ? `CRM: ${getValue("crm")}` : "",
-        getValue("equipo") ? `Equipo: ${getValue("equipo")}` : "",
-        getValue("etapas") ? `Etapas: ${getValue("etapas")}` : "",
-        seguimientos.length ? `Seguimientos: ${seguimientos.join(", ")}` : "",
-        getValue("sla") ? `SLA respuesta: ${getValue("sla")}` : "",
-        getValue("objetivo") ? `Objetivo: ${getValue("objetivo")}` : "",
-        plan ? `Plan sugerido: ${plan}` : "",
-      ]
-        .filter(Boolean)
-        .join("\n"),
-      budget: "", // (no hay campo presupuesto en este form)
-      timeline: "", // (no hay campo timeline en este form)
-      source_url: window.location.href,
-      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+        // Campos específicos Nia (compat con columnas nia_* del sheet)
+        nia_proceso,
+        nia_crm,
+        nia_equipo,
+        nia_etapas,
+        nia_seguimientos,
+        nia_sla,
+        nia_objetivo,
+        nia_plan,
+      },
     };
 
     const submitBtn = niaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
