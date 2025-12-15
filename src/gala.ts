@@ -646,7 +646,8 @@ async function sendLead(payload: any) {
       "Content-Type": "application/json",
       "x-cabra-token": CABRA_TOKEN,
     },
-    body: JSON.stringify(payload),
+    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
+    body: JSON.stringify({ body: payload }),
   });
 
   const text = await res.text();
@@ -778,7 +779,6 @@ if (galaForm) {
 
       const data = await sendLead(payload);
 
-      // ✅ Modal éxito (reemplaza alert)
       openSuccessModal(
         data?.message || "Recibimos tu información. Te contactaremos pronto."
       );
@@ -787,7 +787,6 @@ if (galaForm) {
     } catch (err) {
       console.error(err);
 
-      // ✅ Toast error bonito (reemplaza alert)
       showErrorToast(
         "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp."
       );

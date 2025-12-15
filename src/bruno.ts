@@ -419,6 +419,246 @@ app.innerHTML = `
   </div>
 `;
 
+/* ======================================================
+   ✅ MODAL (ÉXITO) + ALERTA BONITA (ERROR) — SOLO UI
+   (copiado tal cual de Gala, sin lógica de negocio)
+====================================================== */
+
+function mountLeadUI() {
+  if (document.getElementById("cabra-lead-ui")) return;
+
+  const ui = document.createElement("div");
+  ui.id = "cabra-lead-ui";
+  ui.innerHTML = `
+    <style>
+      .cabra-overlay{
+        position:fixed; inset:0; z-index:9999;
+        display:none; align-items:center; justify-content:center;
+        padding:16px;
+        background:rgba(2,6,23,.72);
+        backdrop-filter: blur(10px);
+      }
+      .cabra-overlay.is-open{ display:flex; }
+      .cabra-modal{
+        width:min(560px, 100%);
+        border-radius:28px;
+        border:1px solid rgba(52,211,153,.30);
+        background:linear-gradient(135deg, rgba(15,23,42,.96), rgba(2,6,23,.92));
+        box-shadow: 0 30px 90px rgba(0,0,0,.55), 0 0 0 1px rgba(52,211,153,.12), 0 0 60px rgba(16,185,129,.20);
+        overflow:hidden;
+        transform: translateY(8px) scale(.98);
+        opacity:0;
+        transition: transform 200ms ease, opacity 200ms ease;
+      }
+      .cabra-overlay.is-open .cabra-modal{ transform: translateY(0) scale(1); opacity:1; }
+      .cabra-modal__top{
+        padding:18px 18px 12px 18px;
+        display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      }
+      .cabra-pill{
+        display:inline-flex; align-items:center; gap:8px;
+        font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+        color:rgba(167,243,208,.95);
+        border:1px solid rgba(52,211,153,.28);
+        background:rgba(16,185,129,.10);
+        padding:8px 12px;
+        border-radius:999px;
+      }
+      .cabra-close{
+        width:40px; height:40px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.10);
+        background:rgba(255,255,255,.06);
+        color:rgba(226,232,240,.95);
+        display:inline-flex; align-items:center; justify-content:center;
+        transition: transform 150ms ease, background-color 150ms ease, border-color 150ms ease;
+        cursor:pointer;
+      }
+      .cabra-close:hover{ transform: scale(1.04); background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.16); }
+      .cabra-modal__body{ padding:0 18px 18px 18px; }
+      .cabra-title{
+        margin-top:6px;
+        font-size:20px; font-weight:700;
+        letter-spacing:-.01em;
+        color:rgba(240,253,250,.98);
+      }
+      .cabra-text{
+        margin-top:8px;
+        font-size:13px;
+        color:rgba(148,163,184,.95);
+        line-height:1.6;
+      }
+      .cabra-actions{
+        margin-top:16px;
+        display:flex; gap:10px; flex-wrap:wrap;
+      }
+      .cabra-btn{
+        border:none; cursor:pointer;
+        border-radius:999px;
+        padding:10px 14px;
+        font-size:13px; font-weight:700;
+        transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+      }
+      .cabra-btn:active{ transform: scale(.98); }
+      .cabra-btn--primary{
+        color:#052e2b;
+        background:linear-gradient(90deg, rgba(52,211,153,1), rgba(56,189,248,1));
+        box-shadow: 0 18px 45px rgba(16,185,129,.25);
+      }
+      .cabra-btn--ghost{
+        color:rgba(226,232,240,.95);
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.10);
+      }
+
+      /* Toast */
+      .cabra-toast-wrap{
+        position:fixed; z-index:10000;
+        left:16px; right:16px; bottom:16px;
+        display:flex; justify-content:center;
+        pointer-events:none;
+      }
+      .cabra-toast{
+        pointer-events:auto;
+        width:min(560px, 100%);
+        border-radius:18px;
+        border:1px solid rgba(248,113,113,.25);
+        background:linear-gradient(135deg, rgba(15,23,42,.96), rgba(2,6,23,.92));
+        box-shadow: 0 22px 70px rgba(0,0,0,.50), 0 0 40px rgba(239,68,68,.12);
+        padding:12px 12px;
+        display:flex; align-items:flex-start; gap:10px;
+        transform: translateY(10px);
+        opacity:0;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+      .cabra-toast.is-show{ transform: translateY(0); opacity:1; }
+      .cabra-toast__icon{
+        width:34px; height:34px;
+        border-radius:14px;
+        display:flex; align-items:center; justify-content:center;
+        background:rgba(239,68,68,.12);
+        border:1px solid rgba(248,113,113,.22);
+        flex:0 0 auto;
+      }
+      .cabra-toast__title{
+        font-size:13px; font-weight:800;
+        color:rgba(254,226,226,.98);
+        margin-top:1px;
+      }
+      .cabra-toast__msg{
+        font-size:12px;
+        color:rgba(148,163,184,.98);
+        margin-top:2px;
+        line-height:1.45;
+      }
+      .cabra-toast__close{
+        margin-left:auto;
+        width:36px; height:36px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.10);
+        background:rgba(255,255,255,.06);
+        color:rgba(226,232,240,.95);
+        display:flex; align-items:center; justify-content:center;
+        cursor:pointer;
+        transition: transform 150ms ease, background-color 150ms ease;
+      }
+      .cabra-toast__close:hover{ transform: scale(1.04); background:rgba(255,255,255,.10); }
+    </style>
+
+    <!-- Modal éxito -->
+    <div class="cabra-overlay" id="cabra-success-overlay" role="dialog" aria-modal="true" aria-labelledby="cabra-success-title">
+      <div class="cabra-modal">
+        <div class="cabra-modal__top">
+          <div class="cabra-pill">✅ <span>Enviado</span></div>
+          <button class="cabra-close" type="button" aria-label="Cerrar" data-cabra-close>✕</button>
+        </div>
+        <div class="cabra-modal__body">
+          <div class="cabra-title" id="cabra-success-title">¡Briefing recibido! 🚀</div>
+          <div class="cabra-text" id="cabra-success-msg">
+            Recibimos tu información. Bruno ya puede preparar el bot y los flujos de atención.
+          </div>
+          <div class="cabra-actions">
+            <button class="cabra-btn cabra-btn--primary" type="button" data-cabra-close>Perfecto</button>
+            <a class="cabra-btn cabra-btn--ghost" href="https://wa.me/584120599367" target="_blank" rel="noopener" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
+              Escribir por WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast error -->
+    <div class="cabra-toast-wrap" aria-live="polite" aria-atomic="true">
+      <div class="cabra-toast" id="cabra-error-toast" role="status">
+        <div class="cabra-toast__icon">⚠️</div>
+        <div style="min-width:0;">
+          <div class="cabra-toast__title" id="cabra-error-title">No se pudo enviar</div>
+          <div class="cabra-toast__msg" id="cabra-error-msg">
+            Intenta de nuevo en unos segundos. Si el problema continúa, escríbenos por WhatsApp.
+          </div>
+        </div>
+        <button class="cabra-toast__close" type="button" aria-label="Cerrar" data-cabra-toast-close>✕</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(ui);
+
+  const overlay = document.getElementById("cabra-success-overlay") as HTMLDivElement | null;
+  overlay?.addEventListener("click", (e) => {
+    if (e.target === overlay) closeSuccessModal();
+  });
+
+  document.querySelectorAll("[data-cabra-close]").forEach((btn) => {
+    btn.addEventListener("click", () => closeSuccessModal());
+  });
+
+  document.querySelectorAll("[data-cabra-toast-close]").forEach((btn) => {
+    btn.addEventListener("click", () => hideErrorToast());
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeSuccessModal();
+      hideErrorToast();
+    }
+  });
+}
+
+function openSuccessModal(message?: string) {
+  mountLeadUI();
+  const overlay = document.getElementById("cabra-success-overlay");
+  const msg = document.getElementById("cabra-success-msg");
+  if (msg && message) msg.textContent = message;
+  overlay?.classList.add("is-open");
+}
+
+function closeSuccessModal() {
+  const overlay = document.getElementById("cabra-success-overlay");
+  overlay?.classList.remove("is-open");
+}
+
+let toastTimer: number | undefined;
+
+function showErrorToast(message?: string) {
+  mountLeadUI();
+  const toast = document.getElementById("cabra-error-toast");
+  const msg = document.getElementById("cabra-error-msg");
+  if (msg && message) msg.textContent = message;
+
+  toast?.classList.add("is-show");
+  if (toastTimer) window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => {
+    hideErrorToast();
+  }, 4500);
+}
+
+function hideErrorToast() {
+  const toast = document.getElementById("cabra-error-toast");
+  toast?.classList.remove("is-show");
+  if (toastTimer) window.clearTimeout(toastTimer);
+  toastTimer = undefined;
+}
+
 /* ================================
    ✅ CONEXIÓN CON n8n (solo esto)
 ================================== */
@@ -436,8 +676,7 @@ async function sendLead(payload: any) {
       "Content-Type": "application/json",
       "x-cabra-token": CABRA_TOKEN,
     },
-    // ✅ AJUSTE (ÚNICO): enviar el payload dentro de { body: ... } para que tu nodo "Normalize + Metadata"
-    // lo lea como $json.body (y también siga siendo compatible con tu soporte de { body: ... }).
+    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
     body: JSON.stringify({ body: payload }),
   });
 
@@ -478,24 +717,81 @@ if (brunoForm) {
     const plan =
       (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
-    // ✅ Payload alineado con tu workflow de n8n (body.nombre/body.email + normalize)
+    // UTM (flatten + obj)
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmObj = Object.fromEntries(urlParams.entries());
+    const utm_source = urlParams.get("utm_source") || "";
+    const utm_medium = urlParams.get("utm_medium") || "";
+    const utm_campaign = urlParams.get("utm_campaign") || "";
+    const utm_content = urlParams.get("utm_content") || "";
+    const utm_term = urlParams.get("utm_term") || "";
+
+    const nombre = getValue("nombre");
+    const email = getValue("email");
+    const whatsapp = getValue("whatsapp");
+    const websiteOrIg = getValue("url");
+
+    const casos = getValue("casos");
+    const horario = getValue("horario");
+    const sla = getValue("sla");
+    const handoff = getValue("handoff");
+
+    const messageText = [
+      casos ? `Casos: ${casos}` : "",
+      canales.length ? `Canales: ${canales.join(", ")}` : "",
+      horario ? `Horario humano: ${horario}` : "",
+      sla ? `SLA humano: ${sla}` : "",
+      handoff ? `Handoff: ${handoff}` : "",
+      integraciones.length ? `Integraciones: ${integraciones.join(", ")}` : "",
+      plan ? `Plan sugerido: ${plan}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    // ✅ Payload alineado con tu workflow/sheets (agent/plan + name/email/phone/website/message + bruno_*)
     const payload = {
       agent: "Bruno",
-      nombre: getValue("nombre"),
-      email: getValue("email"),
-      whatsapp: getValue("whatsapp"),
-      url: getValue("url"),
+      plan: plan,
 
-      casos: getValue("casos"),
-      canales,
-      horario: getValue("horario"),
-      sla: getValue("sla"),
-      handoff: getValue("handoff"),
-      integraciones,
-      plan,
-
+      name: nombre,
+      email: email,
+      phone: whatsapp,
+      company: "",
+      website: websiteOrIg,
+      message: messageText,
       source_url: window.location.href,
-      utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+
+      // Compat/legacy (por si algo usa estos nombres)
+      nombre: nombre,
+      whatsapp: whatsapp,
+      url: websiteOrIg,
+
+      // UTM
+      utm: utmObj,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_content,
+      utm_term,
+
+      // Columns directas Bruno (Sheets)
+      bruno_negocio: "",
+      bruno_oferta: casos,
+      bruno_canales: canales.join(", "),
+      bruno_presupuesto: "",
+      bruno_objetivo: "",
+      bruno_plan: plan,
+
+      // Objeto por agente (por si Normalize aplanaba)
+      bruno: {
+        oferta: casos,
+        canales: canales.join("\n"),
+        horario: horario,
+        sla: sla,
+        handoff: handoff,
+        integraciones: integraciones.join("\n"),
+        plan: plan,
+      },
     };
 
     const submitBtn = brunoForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
@@ -508,11 +804,18 @@ if (brunoForm) {
       }
 
       const data = await sendLead(payload);
-      alert(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
+
+      openSuccessModal(
+        data?.message || "Recibimos tu información. Te contactaremos pronto."
+      );
+
       brunoForm.reset();
     } catch (err) {
       console.error(err);
-      alert("❌ No se pudo enviar. Intenta de nuevo.");
+
+      showErrorToast(
+        "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp."
+      );
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

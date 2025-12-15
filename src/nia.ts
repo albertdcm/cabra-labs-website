@@ -43,7 +43,11 @@ app.innerHTML = `
         width: min(560px, 100%);
         border-radius: 24px;
         border: 1px solid rgba(192, 132, 252, 0.28);
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92));
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.92),
+          rgba(2, 6, 23, 0.92)
+        );
         box-shadow:
           0 30px 80px rgba(2, 6, 23, 0.75),
           0 0 0 2px rgba(192, 132, 252, 0.10),
@@ -61,8 +65,17 @@ app.innerHTML = `
         position: relative;
         padding: 18px 18px 12px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: radial-gradient(1000px 220px at 20% -20%, rgba(168, 85, 247, 0.35), transparent 60%),
-                    radial-gradient(900px 220px at 90% -30%, rgba(56, 189, 248, 0.18), transparent 55%);
+        background:
+          radial-gradient(
+            1000px 220px at 20% -20%,
+            rgba(168, 85, 247, 0.35),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 220px at 90% -30%,
+            rgba(56, 189, 248, 0.18),
+            transparent 55%
+          );
       }
       .cabra-modal-title {
         display: flex;
@@ -105,7 +118,11 @@ app.innerHTML = `
         font-weight: 700;
         border: 1px solid rgba(192, 132, 252, 0.28);
         color: rgba(15, 23, 42, 0.95);
-        background: linear-gradient(90deg, rgba(192, 132, 252, 1), rgba(56, 189, 248, 1));
+        background: linear-gradient(
+          90deg,
+          rgba(192, 132, 252, 1),
+          rgba(56, 189, 248, 1)
+        );
         box-shadow: 0 18px 45px rgba(168, 85, 247, 0.25);
         transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
         cursor: pointer;
@@ -152,7 +169,11 @@ app.innerHTML = `
         display: none;
         border-radius: 18px;
         border: 1px solid rgba(248, 113, 113, 0.35);
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92));
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.92),
+          rgba(2, 6, 23, 0.92)
+        );
         box-shadow:
           0 22px 55px rgba(2, 6, 23, 0.72),
           0 0 45px rgba(248, 113, 113, 0.18);
@@ -169,7 +190,12 @@ app.innerHTML = `
         gap: 10px;
         padding: 12px 14px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        background: radial-gradient(700px 160px at 10% -30%, rgba(248, 113, 113, 0.28), transparent 55%);
+        background:
+          radial-gradient(
+            700px 160px at 10% -30%,
+            rgba(248, 113, 113, 0.28),
+            transparent 55%
+          );
       }
       .cabra-toast-title {
         display: flex;
@@ -646,7 +672,8 @@ async function sendLead(payload: any) {
       "Content-Type": "application/json",
       "x-cabra-token": CABRA_TOKEN,
     },
-    body: JSON.stringify(payload),
+    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
+    body: JSON.stringify({ body: payload }),
   });
 
   const text = await res.text();
@@ -724,6 +751,7 @@ if (niaForm) {
   niaForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // ✅ FIX: sin backslashes \ en template literal
     const getValue = (name: string) =>
       (niaForm.querySelector(
         `[name="${name}"]`
@@ -755,6 +783,7 @@ if (niaForm) {
     const nia_plan = plan;
 
     // Texto principal (Slack + Sheets)
+    // ✅ FIX: sin backslashes \ en template literal
     const messageText = [
       nia_proceso ? `Proceso: ${nia_proceso}` : "",
       nia_crm ? `CRM: ${nia_crm}` : "",
