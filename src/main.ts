@@ -17,13 +17,34 @@ if (!app) {
 
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
+    <!-- FIX: Tap highlight / click overlay (iOS + desktop) -> gris oscuro, focus verde -->
+    <style>
+      .cabra-header, .cabra-header * {
+        -webkit-tap-highlight-color: rgba(30, 41, 59, 0.55); /* slate-800/55 */
+      }
+      .cabra-header a:active,
+      .cabra-header button:active {
+        background-color: rgba(30, 41, 59, 0.38); /* gris oscuro */
+      }
+      .cabra-header a:focus,
+      .cabra-header button:focus {
+        outline: none;
+      }
+      .cabra-header a:focus-visible,
+      .cabra-header button:focus-visible {
+        outline: 2px solid rgba(52, 211, 153, 0.6); /* emerald */
+        outline-offset: 2px;
+        border-radius: 9999px;
+      }
+    </style>
+
     <!-- NAVBAR (STICKY SIEMPRE) -->
-    <!-- Ajuste B: se agrega link FAQ en navbar + CTA con estilo de botones de la web (gradiente) -->
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
+    <!-- Ajuste: FAQ eliminado del menú + CTA "Conversemos" a WhatsApp (texto blanco) -->
+    <header class="cabra-header sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
       <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
         <!-- LOGO (PNG, VITE OK) -->
-        <a href="/" class="flex items-center group">
+        <a href="/" class="flex items-center group rounded-full px-2 py-1 active:bg-slate-800/40">
           <img
             src="${CabraLogo}"
             alt="Cabra Labs"
@@ -33,19 +54,16 @@ app.innerHTML = `
           />
         </a>
 
-        <!-- NAV LINKS -->
+        <!-- NAV LINKS (FAQ eliminado) -->
         <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-          <a href="#agentes" class="text-slate-200 hover:text-emerald-300 transition-colors">
+          <a href="#agentes" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Agentes
           </a>
-          <a href="#integraciones" class="text-slate-200 hover:text-emerald-300 transition-colors">
+          <a href="#integraciones" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Integraciones
           </a>
-          <a href="#sobre" class="text-slate-200 hover:text-emerald-300 transition-colors">
+          <a href="#sobre" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Cómo trabajamos
-          </a>
-          <a href="/faq.html" class="text-slate-200 hover:text-emerald-300 transition-colors">
-            FAQ
           </a>
         </div>
 
@@ -59,7 +77,7 @@ app.innerHTML = `
               href="https://tiktok.com/@cabra.labs"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200"
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200 active:bg-slate-800/40"
               aria-label="TikTok"
             >
               <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" loading="lazy" decoding="async" />
@@ -70,22 +88,25 @@ app.innerHTML = `
               href="https://instagram.com/cabra_labs"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200"
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200 active:bg-slate-800/40"
               aria-label="Instagram"
             >
               <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" loading="lazy" decoding="async" />
             </a>
           </div>
 
-          <!-- CTA Principal (mismo estilo que el resto de la web) -->
+          <!-- CTA Principal → WhatsApp (texto blanco) -->
           <a
-            href="#contacto"
+            href="https://wa.me/584120599367?text=Hola%20Cabra%20Labs%2C%20vengo%20desde%20la%20web%20y%20deseo%20trabajar%20con%20uno%20de%20sus%20agentes.
+"
+            target="_blank"
+            rel="noopener"
             class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500
-                   px-5 py-2.5 text-sm sm:text-base font-semibold text-slate-950
+                   px-5 py-2.5 text-sm sm:text-base font-semibold text-white
                    shadow-md shadow-emerald-500/25 hover:shadow-emerald-500/45 hover:scale-[1.03]
-                   transition-all duration-200 whitespace-nowrap leading-none"
+                   transition-all duration-200 whitespace-nowrap leading-none active:bg-slate-800/40"
           >
-            Agenda una llamada
+            Conversemos
           </a>
         </div>
 
@@ -581,8 +602,6 @@ app.innerHTML = `
     © 2025 Cabra Labs. All rights reserved.
   </div>
 </footer>
-
-
 
     </main>
   </div>

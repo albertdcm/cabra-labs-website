@@ -45,32 +45,35 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-slate-700 rounded-full hover:bg-slate-500;
   }
+
+  /* 🔑 Elimina highlight azul iOS */
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 }
 
 /* ======================================================
    GRADIENTES Y COMPONENTES
 ====================================================== */
 @layer components {
-  /* Texto GOAT con gradiente */
   .text-gradient-emerald {
     @apply bg-gradient-to-r from-emerald-400 via-sky-400 to-emerald-300
       bg-clip-text text-transparent;
   }
 
-  /* CARD con efecto glass + hover dinámico */
   .card-soft {
     @apply rounded-3xl shadow-xl backdrop-blur-xl transition-all duration-300;
-    background-color: rgba(15, 23, 42, 0.88); /* slate-900 */
-    border: 1px solid rgba(148, 163, 184, 0.25); /* slate-400 */
+    background-color: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.25);
     box-shadow:
       0 20px 45px rgba(15, 23, 42, 0.9),
-      0 0 45px rgba(16, 185, 129, 0.18); /* suave glow esmeralda */
+      0 0 45px rgba(16, 185, 129, 0.18);
   }
 
   .card-soft:hover {
     @apply -translate-y-1 shadow-2xl;
     background-color: rgba(15, 23, 42, 0.96);
-    border-color: rgba(45, 212, 191, 0.7); /* emerald glow */
+    border-color: rgba(45, 212, 191, 0.7);
     box-shadow:
       0 28px 55px rgba(15, 23, 42, 0.95),
       0 0 65px rgba(16, 185, 129, 0.45);
@@ -81,106 +84,53 @@
    EFECTOS Y UTILIDADES
 ====================================================== */
 @layer utilities {
-  /* Orbs suaves (opcional / reutilizable) */
-  .blur-orb {
-    @apply absolute rounded-full pointer-events-none;
-    filter: blur(60px);
-    background-color: rgba(16, 185, 129, 0.14);
-  }
-
-  .blur-orb--top {
-    @apply -top-40 left-10;
-    width: 16rem;
-    height: 16rem;
-  }
-  .blur-orb--right {
-    @apply -right-32 top-32;
-    width: 20rem;
-    height: 20rem;
-    background-color: rgba(56, 189, 248, 0.16);
-  }
-  .blur-orb--bottom {
-    @apply -bottom-40 left-1/2 -translate-x-1/2;
-    width: 18rem;
-    height: 18rem;
-    background-color: rgba(217, 70, 239, 0.16);
-  }
-
-  /* Animaciones suaves */
-  .float-soft {
-    animation: float-soft 9s ease-in-out infinite;
-  }
-  .pulse-soft {
-    animation: pulse-soft 3.3s ease-in-out infinite;
-  }
-
-  /* Fade-in para secciones (scroll reveal sin JS directo) */
-  .fade-in-up {
-    animation: fade-in-up 0.8s ease-out both;
-  }
-  .delay-1 { animation-delay: .15s; }
-  .delay-2 { animation-delay: .3s; }
-  .delay-3 { animation-delay: .45s; }
-
-  /* Navbar con transición */
+  /* Navbar */
   header {
     @apply transition-all duration-300;
     background-color: rgba(15, 23, 42, 0.88);
     border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     backdrop-filter: blur(18px);
   }
-  header:hover {
-    background-color: rgba(15, 23, 42, 0.96);
-    border-bottom-color: rgba(45, 212, 191, 0.7);
+
+  /* ✨ TONO NUEVO — slate elegante integrado */
+  header:hover,
+  header:active,
+  header:focus-within {
+    background-color: rgba(17, 24, 39, 0.96); /* slate-900 elegante */
+    border-bottom-color: rgba(45, 212, 191, 0.35);
   }
 
   header nav a {
     @apply transition-colors duration-200;
+    outline: none;
   }
+
   header nav a:hover {
     @apply text-emerald-300;
   }
 
-  /* Botones dinámicos CON shimmer (CTA + redes + WhatsApp) */
+  /* 🔥 Elimina azul iOS + gris integrado */
+  header a:focus,
+  header a:active,
+  header a:focus-visible {
+    background-color: rgba(17, 24, 39, 0.9);
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Botones */
   a[href="#contacto"],
   a[href^="https://wa.me"],
   a[href*="instagram.com"],
   a[href*="tiktok.com"] {
     @apply relative overflow-hidden transition-all duration-300;
+    outline: none;
   }
 
-  a[href="#contacto"]::after,
-  a[href^="https://wa.me"]::after,
-  a[href*="instagram.com"]::after,
-  a[href*="tiktok.com"]::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    transform: translateX(-120%);
-    background: linear-gradient(
-      120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.45) 35%,
-      transparent 70%
-    );
-    opacity: 0;
-    pointer-events: none;
-  }
-  a[href="#contacto"]:hover::after,
-  a[href^="https://wa.me"]:hover::after,
-  a[href*="instagram.com"]:hover::after,
-  a[href*="instagram.com"]:active::after,
-  a[href*="tiktok.com"]:hover::after,
-  a[href*="tiktok.com"]:active::after {
-    animation: shimmer .8s ease-out;
-    opacity: 1;
-  }
-  a[href="#contacto"]:hover,
-  a[href^="https://wa.me"]:hover,
-  a[href*="instagram.com"]:hover,
-  a[href*="tiktok.com"]:hover {
-    @apply -translate-y-0.5 shadow-lg;
-    box-shadow: 0 18px 45px rgba(16, 185, 129, 0.45);
+  a[href="#contacto"]:focus,
+  a[href^="https://wa.me"]:focus {
+    background-color: rgba(17, 24, 39, 0.9);
+    outline: none;
   }
 }
 
@@ -189,50 +139,29 @@
 ====================================================== */
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes pulse-soft {
   0%, 100% { transform: scale(1); opacity: .9; }
-  50%       { transform: scale(1.02); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 1; }
 }
 
 @keyframes shimmer {
-  0%   { transform: translateX(-120%); }
+  0% { transform: translateX(-120%); }
   100% { transform: translateX(120%); }
 }
 
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(15px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 /* ======================================================
-   SCROLL REVEAL (SECCIONES Y CARDS)
+   SCROLL REVEAL
 ====================================================== */
-
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(18px);
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
-  will-change: opacity, transform;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ===========================
-   Bruno theme: hover azul
-   =========================== */
-.theme-bruno .card-soft {
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
-}
-
-.theme-bruno .card-soft:hover {
-  border-color: rgba(56, 189, 248, 0.55) !important; /* sky-400 aprox */
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 0 30px -12px rgba(56, 189, 248, 0.55) !important;
 }

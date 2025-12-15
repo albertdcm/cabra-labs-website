@@ -12,6 +12,22 @@ if (!app) {
 
 app.innerHTML = `
   <div class="theme-bruno min-h-screen bg-slate-950 text-slate-50">
+    <!-- ✅ AJUSTE: contorno azul (hover/click/focus) SOLO para contenedores (.card-soft) en Bruno -->
+    <style>
+      .theme-bruno .card-soft {
+        transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+      }
+
+      .theme-bruno .card-soft:hover,
+      .theme-bruno .card-soft:active,
+      .theme-bruno .card-soft:focus-within {
+        border-color: rgba(56, 189, 248, 0.55) !important; /* sky-400 */
+        box-shadow:
+          0 0 0 1px rgba(56, 189, 248, 0.22),
+          0 0 34px -12px rgba(56, 189, 248, 0.55) !important;
+      }
+    </style>
+
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
