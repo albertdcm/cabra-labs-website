@@ -21,6 +21,185 @@ app.innerHTML = `
           0 0 0 2px rgba(192, 132, 252, 0.22),
           0 0 30px -10px rgba(168, 85, 247, 0.45) !important; /* purple glow */
       }
+
+      /* ===========================
+         ✅ MODAL (ÉXITO) + TOAST (ERROR)
+         =========================== */
+      .cabra-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        background: rgba(2, 6, 23, 0.72);
+        backdrop-filter: blur(10px);
+      }
+      .cabra-modal-backdrop.is-open {
+        display: flex;
+      }
+      .cabra-modal {
+        width: min(560px, 100%);
+        border-radius: 24px;
+        border: 1px solid rgba(192, 132, 252, 0.28);
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92));
+        box-shadow:
+          0 30px 80px rgba(2, 6, 23, 0.75),
+          0 0 0 2px rgba(192, 132, 252, 0.10),
+          0 0 60px rgba(168, 85, 247, 0.28);
+        overflow: hidden;
+        transform: translateY(10px) scale(0.98);
+        opacity: 0;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+      .cabra-modal-backdrop.is-open .cabra-modal {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      .cabra-modal-top {
+        position: relative;
+        padding: 18px 18px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(1000px 220px at 20% -20%, rgba(168, 85, 247, 0.35), transparent 60%),
+                    radial-gradient(900px 220px at 90% -30%, rgba(56, 189, 248, 0.18), transparent 55%);
+      }
+      .cabra-modal-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(233, 213, 255, 0.92);
+      }
+      .cabra-modal-body {
+        padding: 14px 18px 18px;
+      }
+      .cabra-modal-h1 {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: rgba(248, 250, 252, 0.96);
+      }
+      .cabra-modal-p {
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.55;
+        color: rgba(203, 213, 225, 0.92);
+      }
+      .cabra-modal-actions {
+        margin-top: 14px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .cabra-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        border: 1px solid rgba(192, 132, 252, 0.28);
+        color: rgba(15, 23, 42, 0.95);
+        background: linear-gradient(90deg, rgba(192, 132, 252, 1), rgba(56, 189, 248, 1));
+        box-shadow: 0 18px 45px rgba(168, 85, 247, 0.25);
+        transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+        cursor: pointer;
+      }
+      .cabra-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 24px 60px rgba(168, 85, 247, 0.33);
+        filter: brightness(1.02);
+      }
+      .cabra-btn-ghost {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(226, 232, 240, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: none;
+      }
+      .cabra-btn-ghost:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.085);
+      }
+      .cabra-modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(226, 232, 240, 0.9);
+        cursor: pointer;
+        transition: transform 150ms ease, background 150ms ease;
+      }
+      .cabra-modal-close:hover {
+        transform: scale(1.03);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      .cabra-toast {
+        position: fixed;
+        z-index: 10000;
+        right: 14px;
+        bottom: 14px;
+        width: min(420px, calc(100% - 28px));
+        display: none;
+        border-radius: 18px;
+        border: 1px solid rgba(248, 113, 113, 0.35);
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92));
+        box-shadow:
+          0 22px 55px rgba(2, 6, 23, 0.72),
+          0 0 45px rgba(248, 113, 113, 0.18);
+        overflow: hidden;
+      }
+      .cabra-toast.is-open {
+        display: block;
+        animation: cabra-toast-in 180ms ease-out both;
+      }
+      .cabra-toast-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(700px 160px at 10% -30%, rgba(248, 113, 113, 0.28), transparent 55%);
+      }
+      .cabra-toast-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(254, 202, 202, 0.95);
+      }
+      .cabra-toast-body {
+        padding: 12px 14px 14px;
+        font-size: 13px;
+        color: rgba(226, 232, 240, 0.92);
+        line-height: 1.5;
+      }
+      .cabra-toast-x {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(226, 232, 240, 0.9);
+        cursor: pointer;
+      }
+
+      @keyframes cabra-toast-in {
+        from { transform: translateY(10px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
     </style>
 
     <!-- NAVBAR SIMPLE -->
@@ -386,10 +565,10 @@ app.innerHTML = `
           href="https://instagram.com/cabra_labs"
           target="_blank"
           rel="noopener"
-          aria-label="Instagram @cabra.labs"
+          aria-label="Instagram @cabra_labs"
           class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
         >
-          <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>
@@ -452,8 +631,45 @@ app.innerHTML = `
   </div>
 </footer>
 
-
     </main>
+
+    <!-- ✅ MODAL ÉXITO -->
+    <div id="cabra-modal" class="cabra-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cabra-modal-h1">
+      <div class="cabra-modal" role="document">
+        <div class="cabra-modal-top">
+          <button id="cabra-modal-x" class="cabra-modal-close" aria-label="Cerrar">✕</button>
+          <div class="cabra-modal-title">
+            <span style="font-size:18px">✅</span>
+            <span>Briefing recibido</span>
+          </div>
+        </div>
+        <div class="cabra-modal-body">
+          <div id="cabra-modal-h1" class="cabra-modal-h1">¡Listo! Nia ya tiene tu info.</div>
+          <div id="cabra-modal-msg" class="cabra-modal-p">
+            Recibimos tu briefing. En breve te contactamos con los próximos pasos y la propuesta.
+          </div>
+          <div class="cabra-modal-actions">
+            <button id="cabra-modal-ok" class="cabra-btn">Perfecto <span>↗</span></button>
+            <button id="cabra-modal-close" class="cabra-btn cabra-btn-ghost">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ TOAST ERROR -->
+    <div id="cabra-toast" class="cabra-toast" role="status" aria-live="polite">
+      <div class="cabra-toast-top">
+        <div class="cabra-toast-title">
+          <span style="font-size:16px">⚠️</span>
+          <span>No se pudo enviar</span>
+        </div>
+        <button id="cabra-toast-x" class="cabra-toast-x" aria-label="Cerrar">✕</button>
+      </div>
+      <div id="cabra-toast-msg" class="cabra-toast-body">
+        Ocurrió un error. Intenta de nuevo.
+      </div>
+    </div>
+
   </div>
 `;
 
@@ -491,6 +707,60 @@ async function sendLead(payload: any) {
 
   return data;
 }
+
+/* ================================
+   ✅ UI: Modal (éxito) + Toast (error)
+================================== */
+const modal = document.getElementById("cabra-modal") as HTMLDivElement | null;
+const modalMsg = document.getElementById("cabra-modal-msg") as HTMLDivElement | null;
+
+const toast = document.getElementById("cabra-toast") as HTMLDivElement | null;
+const toastMsg = document.getElementById("cabra-toast-msg") as HTMLDivElement | null;
+
+let toastTimer: number | null = null;
+
+function openSuccessModal(message?: string) {
+  if (!modal) return;
+  if (modalMsg && message) modalMsg.textContent = message;
+  modal.classList.add("is-open");
+}
+
+function closeSuccessModal() {
+  if (!modal) return;
+  modal.classList.remove("is-open");
+}
+
+function showErrorToast(message?: string) {
+  if (!toast) return;
+  if (toastMsg && message) toastMsg.textContent = message;
+  toast.classList.add("is-open");
+
+  if (toastTimer) window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => {
+    toast.classList.remove("is-open");
+  }, 4200);
+}
+
+// Cerrar modal por botones / backdrop / ESC
+const modalOk = document.getElementById("cabra-modal-ok");
+const modalClose = document.getElementById("cabra-modal-close");
+const modalX = document.getElementById("cabra-modal-x");
+
+modalOk?.addEventListener("click", closeSuccessModal);
+modalClose?.addEventListener("click", closeSuccessModal);
+modalX?.addEventListener("click", closeSuccessModal);
+
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) closeSuccessModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeSuccessModal();
+});
+
+// Cerrar toast
+const toastX = document.getElementById("cabra-toast-x");
+toastX?.addEventListener("click", () => toast?.classList.remove("is-open"));
 
 const niaForm = app.querySelector("form") as HTMLFormElement | null;
 
@@ -548,11 +818,15 @@ if (niaForm) {
       }
 
       const data = await sendLead(payload);
-      alert(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
+
+      openSuccessModal(
+        data?.message || "✅ Recibimos tu información. Te contactaremos pronto."
+      );
+
       niaForm.reset();
     } catch (err) {
       console.error(err);
-      alert("❌ No se pudo enviar. Intenta de nuevo.");
+      showErrorToast("❌ No se pudo enviar. Revisa tu conexión e intenta de nuevo.");
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
