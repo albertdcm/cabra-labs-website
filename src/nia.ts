@@ -661,7 +661,7 @@ app.innerHTML = `
 ================================== */
 
 const N8N_WEBHOOK_URL =
-  "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
+  "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
