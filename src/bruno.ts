@@ -352,7 +352,7 @@ app.innerHTML = `
 
       <!-- FOOTER -->
       <footer class="border-t border-white/10 mt-8">
-        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm>
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
 
           <!-- BRAND -->
           <div class="space-y-3">
@@ -376,10 +376,10 @@ app.innerHTML = `
                 href="https://instagram.com/cabra_labs"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram @cabra_labs"
+                aria-label="Instagram @cabra.labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -404,7 +404,7 @@ app.innerHTML = `
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/#agentes">Planes y precios</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
             </ul>
           </div>
 
