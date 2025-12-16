@@ -631,11 +631,11 @@ function hideErrorToast() {
    ✅ CONEXIÓN CON n8n (CORS-SAFE)
 ================================== */
 
-const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
-// TEST:
-// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
+const N8N_WEBHOOK_URL =
+  "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
+
 
 async function sendLead(payload: any) {
   const rawBody = JSON.stringify({

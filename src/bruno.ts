@@ -665,11 +665,11 @@ function hideErrorToast() {
    - Token va dentro del body (NO header custom)
 ================================== */
 
-const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
-// TEST (solo cuando uses “Listen for test event” en el nodo Webhook):
-// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
+const N8N_WEBHOOK_URL =
+  "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
+
 
 async function sendLead(payload: any) {
   // ⚠️ Enviamos como text/plain para evitar preflight CORS
