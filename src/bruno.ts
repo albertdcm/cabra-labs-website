@@ -660,24 +660,30 @@ function hideErrorToast() {
 }
 
 /* ================================
-   ✅ CONEXIÓN CON n8n (solo esto)
+   ✅ CONEXIÓN CON n8n (CORS-SAFE)
+   - Evita preflight: Content-Type text/plain
+   - Token va dentro del body (NO header custom)
 ================================== */
 
 const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
-// Para pruebas con "Listen for test event", usa:
+// TEST (solo cuando uses “Listen for test event” en el nodo Webhook):
 // const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
 async function sendLead(payload: any) {
+  // ⚠️ Enviamos como text/plain para evitar preflight CORS
+  const rawBody = JSON.stringify({
+    token: CABRA_TOKEN,
+    body: payload, // tu Normalize + Metadata ya soporta body string JSON
+  });
+
   const res = await fetch(N8N_WEBHOOK_URL, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "x-cabra-token": CABRA_TOKEN,
+      "Content-Type": "text/plain;charset=UTF-8",
     },
-    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
-    body: JSON.stringify({ body: payload }),
+    body: rawBody,
   });
 
   const text = await res.text();
@@ -717,7 +723,7 @@ if (brunoForm) {
     const plan =
       (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
-    // UTM (flatten + obj)
+    // UTM
     const urlParams = new URLSearchParams(window.location.search);
     const utmObj = Object.fromEntries(urlParams.entries());
     const utm_source = urlParams.get("utm_source") || "";
@@ -748,22 +754,21 @@ if (brunoForm) {
       .filter(Boolean)
       .join("\n");
 
-    // ✅ Payload alineado con tu workflow/sheets (agent/plan + name/email/phone/website/message + bruno_*)
     const payload = {
       agent: "Bruno",
-      plan: plan,
+      plan,
 
       name: nombre,
-      email: email,
+      email,
       phone: whatsapp,
       company: "",
       website: websiteOrIg,
       message: messageText,
       source_url: window.location.href,
 
-      // Compat/legacy (por si algo usa estos nombres)
-      nombre: nombre,
-      whatsapp: whatsapp,
+      // compat
+      nombre,
+      whatsapp,
       url: websiteOrIg,
 
       // UTM
@@ -774,7 +779,7 @@ if (brunoForm) {
       utm_content,
       utm_term,
 
-      // Columns directas Bruno (Sheets)
+      // columnas Bruno
       bruno_negocio: "",
       bruno_oferta: casos,
       bruno_canales: canales.join(", "),
@@ -782,15 +787,14 @@ if (brunoForm) {
       bruno_objetivo: "",
       bruno_plan: plan,
 
-      // Objeto por agente (por si Normalize aplanaba)
       bruno: {
         oferta: casos,
         canales: canales.join("\n"),
-        horario: horario,
-        sla: sla,
-        handoff: handoff,
+        horario,
+        sla,
+        handoff,
         integraciones: integraciones.join("\n"),
-        plan: plan,
+        plan,
       },
     };
 
@@ -804,18 +808,11 @@ if (brunoForm) {
       }
 
       const data = await sendLead(payload);
-
-      openSuccessModal(
-        data?.message || "Recibimos tu información. Te contactaremos pronto."
-      );
-
+      openSuccessModal(data?.message || "Recibimos tu información. Te contactaremos pronto.");
       brunoForm.reset();
     } catch (err) {
       console.error(err);
-
-      showErrorToast(
-        "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp."
-      );
+      showErrorToast("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.");
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

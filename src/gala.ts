@@ -628,26 +628,27 @@ function hideErrorToast() {
 }
 
 /* ================================
-   ✅ CONEXIÓN CON n8n (solo esto)
-   Vinculado a tu Normalize + Metadata
+   ✅ CONEXIÓN CON n8n (CORS-SAFE)
 ================================== */
 
-// ✅ PRODUCCIÓN (Workflow: Cabra Labs — Leads (All Agents))
 const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
-// ✅ TEST (solo cuando uses “Listen for test event” en el nodo Webhook)
+// TEST:
 // const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
 async function sendLead(payload: any) {
+  const rawBody = JSON.stringify({
+    token: CABRA_TOKEN,
+    body: payload,
+  });
+
   const res = await fetch(N8N_WEBHOOK_URL, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "x-cabra-token": CABRA_TOKEN,
+      "Content-Type": "text/plain;charset=UTF-8",
     },
-    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
-    body: JSON.stringify({ body: payload }),
+    body: rawBody,
   });
 
   const text = await res.text();
@@ -658,10 +659,7 @@ async function sendLead(payload: any) {
     data = { raw: text };
   }
 
-  if (!res.ok) {
-    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
-  }
-
+  if (!res.ok) throw new Error(data?.message || data?.raw || "Error enviando el formulario");
   return data;
 }
 
@@ -679,19 +677,13 @@ if (galaForm) {
       )?.value?.trim?.() ?? "";
 
     const herramientas = Array.from(
-      galaForm.querySelectorAll<HTMLInputElement>(
-        'input[name="herramientas"]:checked'
-      )
+      galaForm.querySelectorAll<HTMLInputElement>('input[name="herramientas"]:checked')
     ).map((i) => i.value);
 
     const plan =
-      (
-        galaForm.querySelector(
-          'input[name="plan"]:checked'
-        ) as HTMLInputElement | null
-      )?.value ?? "";
+      (galaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
-    // UTM para tu Normalize + Metadata (y tracking)
+    // UTM
     const urlParams = new URLSearchParams(window.location.search);
     const utmObj = Object.fromEntries(urlParams.entries());
     const utm_source = urlParams.get("utm_source") || "";
@@ -706,7 +698,6 @@ if (galaForm) {
     const ticket = getValue("ticket");
     const websiteOrIg = getValue("url");
 
-    // Texto principal (Slack + Email + Sheets)
     const messageText = [
       `Oferta: ${oferta}`,
       canales ? `Canales: ${canales}` : "",
@@ -718,12 +709,10 @@ if (galaForm) {
       .filter(Boolean)
       .join("\n");
 
-    // ✅✅ ÚNICO CAMBIO: payload con keys correctas (Sheets + Normalize + Slack/Email)
     const payload = {
       agent: "Gala",
-      plan: plan,
+      plan,
 
-      // Campos “generales” esperados por tu workflow/sheets
       name: getValue("nombre"),
       email: getValue("email"),
       phone: getValue("whatsapp"),
@@ -732,12 +721,10 @@ if (galaForm) {
       message: messageText,
       source_url: window.location.href,
 
-      // Compatibilidad con templates viejos (si Slack/Email usan esto)
       need: messageText,
       budget: ticket,
       timeline: "",
 
-      // UTM (top-level)
       utm_source,
       utm_medium,
       utm_campaign,
@@ -745,30 +732,22 @@ if (galaForm) {
       utm_term,
       utm: utmObj,
 
-      // ✅ Campos aplanados (por si Sheets mapea directo a columnas gala_*)
       gala_objetivo: objetivo,
-      gala_procesos: [oferta, canales ? `Canales: ${canales}` : ""]
-        .filter(Boolean)
-        .join("\n"),
+      gala_procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
       gala_herramientas: herramientas.join("\n"),
       gala_integraciones: herramientas.join("\n"),
       gala_plan: plan,
 
-      // ✅ Estructura anidada (por si tu Normalize aplanaba desde "gala")
       gala: {
-        objetivo: objetivo,
-        procesos: [oferta, canales ? `Canales: ${canales}` : ""]
-          .filter(Boolean)
-          .join("\n"),
+        objetivo,
+        procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
         herramientas: herramientas.join("\n"),
         integraciones: herramientas.join("\n"),
-        plan: plan,
+        plan,
       },
     };
 
-    const submitBtn = galaForm.querySelector(
-      'button[type="submit"]'
-    ) as HTMLButtonElement | null;
+    const submitBtn = galaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     const originalText = submitBtn?.textContent ?? "";
 
     try {
@@ -778,18 +757,11 @@ if (galaForm) {
       }
 
       const data = await sendLead(payload);
-
-      openSuccessModal(
-        data?.message || "Recibimos tu información. Te contactaremos pronto."
-      );
-
+      openSuccessModal(data?.message || "Recibimos tu información. Te contactaremos pronto.");
       galaForm.reset();
     } catch (err) {
       console.error(err);
-
-      showErrorToast(
-        "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo. Si persiste, escríbenos por WhatsApp."
-      );
+      showErrorToast("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.");
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

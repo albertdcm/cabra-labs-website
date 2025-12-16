@@ -656,24 +656,28 @@ app.innerHTML = `
 `;
 
 /* ================================
-   ✅ CONEXIÓN CON n8n (solo esto)
+   ✅ CONEXIÓN CON n8n (CORS-SAFE)
+   (ÚNICA — sin duplicados)
 ================================== */
 
 const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
-// Para pruebas con "Listen for test event", usa:
+// TEST:
 // const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
 async function sendLead(payload: any) {
+  const rawBody = JSON.stringify({
+    token: CABRA_TOKEN,
+    body: payload,
+  });
+
   const res = await fetch(N8N_WEBHOOK_URL, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "x-cabra-token": CABRA_TOKEN,
+      "Content-Type": "text/plain;charset=UTF-8",
     },
-    // ✅ AJUSTE (ÚNICO): envolver payload dentro de "body" para Normalize + Metadata
-    body: JSON.stringify({ body: payload }),
+    body: rawBody,
   });
 
   const text = await res.text();
@@ -684,66 +688,9 @@ async function sendLead(payload: any) {
     data = { raw: text };
   }
 
-  if (!res.ok) {
-    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
-  }
-
+  if (!res.ok) throw new Error(data?.message || data?.raw || "Error enviando el formulario");
   return data;
 }
-
-/* ================================
-   ✅ UI: Modal (éxito) + Toast (error)
-================================== */
-const modal = document.getElementById("cabra-modal") as HTMLDivElement | null;
-const modalMsg = document.getElementById("cabra-modal-msg") as HTMLDivElement | null;
-
-const toast = document.getElementById("cabra-toast") as HTMLDivElement | null;
-const toastMsg = document.getElementById("cabra-toast-msg") as HTMLDivElement | null;
-
-let toastTimer: number | null = null;
-
-function openSuccessModal(message?: string) {
-  if (!modal) return;
-  if (modalMsg && message) modalMsg.textContent = message;
-  modal.classList.add("is-open");
-}
-
-function closeSuccessModal() {
-  if (!modal) return;
-  modal.classList.remove("is-open");
-}
-
-function showErrorToast(message?: string) {
-  if (!toast) return;
-  if (toastMsg && message) toastMsg.textContent = message;
-  toast.classList.add("is-open");
-
-  if (toastTimer) window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => {
-    toast.classList.remove("is-open");
-  }, 4200);
-}
-
-// Cerrar modal por botones / backdrop / ESC
-const modalOk = document.getElementById("cabra-modal-ok");
-const modalClose = document.getElementById("cabra-modal-close");
-const modalX = document.getElementById("cabra-modal-x");
-
-modalOk?.addEventListener("click", closeSuccessModal);
-modalClose?.addEventListener("click", closeSuccessModal);
-modalX?.addEventListener("click", closeSuccessModal);
-
-modal?.addEventListener("click", (e) => {
-  if (e.target === modal) closeSuccessModal();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeSuccessModal();
-});
-
-// Cerrar toast
-const toastX = document.getElementById("cabra-toast-x");
-toastX?.addEventListener("click", () => toast?.classList.remove("is-open"));
 
 const niaForm = app.querySelector("form") as HTMLFormElement | null;
 
@@ -751,7 +698,6 @@ if (niaForm) {
   niaForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // ✅ FIX: sin backslashes \ en template literal
     const getValue = (name: string) =>
       (niaForm.querySelector(
         `[name="${name}"]`
@@ -772,7 +718,6 @@ if (niaForm) {
     const utm_content = urlParams.get("utm_content") || "";
     const utm_term = urlParams.get("utm_term") || "";
 
-    // Campos Nia (sheet columns)
     const nia_proceso = getValue("proceso");
     const nia_crm = getValue("crm");
     const nia_equipo = getValue("equipo");
@@ -782,8 +727,6 @@ if (niaForm) {
     const nia_objetivo = getValue("objetivo");
     const nia_plan = plan;
 
-    // Texto principal (Slack + Sheets)
-    // ✅ FIX: sin backslashes \ en template literal
     const messageText = [
       nia_proceso ? `Proceso: ${nia_proceso}` : "",
       nia_crm ? `CRM: ${nia_crm}` : "",
@@ -797,12 +740,10 @@ if (niaForm) {
       .filter(Boolean)
       .join("\n");
 
-    // ✅ ÚNICO CAMBIO: payload (keys correctas para Normalize + Metadata / Sheets / Slack / Email)
     const payload = {
       agent: "Nia",
       plan: nia_plan,
 
-      // “name/email/phone/website/message/source_url” (columns)
       name: getValue("nombre"),
       email: getValue("email"),
       phone: getValue("whatsapp"),
@@ -811,15 +752,11 @@ if (niaForm) {
       message: messageText,
       source_url: window.location.href,
 
-      // Extra “por si acaso” (compat validaciones legacy)
       nombre: getValue("nombre"),
-
-      // Para tu workflow actual (Slack templates, etc.)
       need: messageText,
       budget: "",
       timeline: "",
 
-      // UTM (obj + flatten)
       utm: utmObj,
       utm_source,
       utm_medium,
@@ -827,7 +764,6 @@ if (niaForm) {
       utm_content,
       utm_term,
 
-      // Columns directas (Sheets)
       nia_proceso,
       nia_crm,
       nia_equipo,
@@ -837,7 +773,6 @@ if (niaForm) {
       nia_objetivo,
       nia_plan,
 
-      // Objeto por agente (Normalize puede aplanar si lo usa)
       nia: {
         proceso: nia_proceso,
         crm: nia_crm,
@@ -860,7 +795,6 @@ if (niaForm) {
       }
 
       const data = await sendLead(payload);
-
       openSuccessModal(data?.message || "✅ Recibimos tu información. Te contactaremos pronto.");
       niaForm.reset();
     } catch (err) {
@@ -873,4 +807,42 @@ if (niaForm) {
       }
     }
   });
+}
+/* ================================
+   ✅ HELPERS UI (FALTABAN)
+================================== */
+
+function openSuccessModal(message: string) {
+  const modal = document.getElementById("cabra-modal");
+  const msg = document.getElementById("cabra-modal-msg");
+  const okBtn = document.getElementById("cabra-modal-ok");
+  const closeBtn = document.getElementById("cabra-modal-close");
+  const xBtn = document.getElementById("cabra-modal-x");
+
+  if (msg) msg.textContent = message;
+
+  modal?.classList.add("is-open");
+
+  const close = () => modal?.classList.remove("is-open");
+
+  okBtn?.addEventListener("click", close);
+  closeBtn?.addEventListener("click", close);
+  xBtn?.addEventListener("click", close);
+}
+
+function showErrorToast(message: string) {
+  const toast = document.getElementById("cabra-toast");
+  const msg = document.getElementById("cabra-toast-msg");
+  const xBtn = document.getElementById("cabra-toast-x");
+
+  if (msg) msg.textContent = message;
+
+  toast?.classList.add("is-open");
+
+  const close = () => toast?.classList.remove("is-open");
+
+  xBtn?.addEventListener("click", close);
+
+  // auto close
+  setTimeout(close, 5000);
 }
