@@ -633,9 +633,9 @@ function hideErrorToast() {
 ================================== */
 
 // ✅ PRODUCCIÓN (Workflow: Cabra Labs — Leads (All Agents))
-const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-leads";
+const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/cabra-labs";
 // ✅ TEST (solo cuando uses “Listen for test event” en el nodo Webhook)
-// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-leads";
+// const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook-test/cabra-labs";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
