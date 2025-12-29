@@ -61,16 +61,16 @@ app.innerHTML = `
         <div class="space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-sky-200">
             <span class="text-sm">⚡</span>
-            <span>Bruno · Soporte & Bots</span>
+            <span>Bruno · Responde por ti 24/7</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
-            Atención 24/7 con <span class="text-sky-300">Bruno</span>
+            Tu negocio responde, filtra y escala con <span class="text-sky-300">Bruno</span>
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Bruno responde por ti en WhatsApp, Instagram y web: resuelve dudas, califica prospectos,
-            gestiona reclamos y, cuando haga falta, <span class="text-slate-100">te pasa la conversación con todo el contexto</span>
+            Bruno convierte mensajes en oportunidades: responde en WhatsApp, Instagram y web, califica interesados,
+            captura datos y, cuando hace falta, <span class="text-slate-100">te pasa la conversación con contexto</span>
             para que tú solo cierres o resuelvas.
           </p>
 
@@ -79,11 +79,11 @@ app.innerHTML = `
             <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft">
               <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Qué incluye</p>
               <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-                <li>• Diseño del bot por objetivos (ventas / soporte / mixto).</li>
-                <li>• Base de respuestas (FAQ) + tono de marca.</li>
-                <li>• Flujos de atención: preguntas frecuentes, precios, horarios, envíos, etc.</li>
-                <li>• Calificación de leads (preguntas clave + tags).</li>
-                <li>• Escalamiento a humano (cuando el caso lo amerita).</li>
+                <li>• Diseño por objetivos (ventas / soporte / mixto).</li>
+                <li>• Base de respuestas + tono de marca.</li>
+                <li>• Flujos de atención: precios, horarios, envíos, disponibilidad, políticas, etc.</li>
+                <li>• Calificación de leads (preguntas clave + etiquetas).</li>
+                <li>• Escalamiento a humano con contexto (handoff).</li>
                 <li>• Reporte mensual con conversaciones, motivos y oportunidades.</li>
               </ul>
             </div>
@@ -94,7 +94,7 @@ app.innerHTML = `
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Base</p>
                   <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-sky-200 font-semibold">Hasta 2</span> flujos (ventas/soporte) + <span class="text-sky-200 font-semibold">1</span> canal.
+                    <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
                   </p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -120,10 +120,10 @@ app.innerHTML = `
           <!-- Precio -->
           <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
-              <span class="text-sky-200 font-semibold">Desde $250/mes</span> · setup según canales, cantidad de flujos y nivel de personalización.
+              <span class="text-sky-200 font-semibold">Desde $150/mes</span> · setup según canales, cantidad de flujos y nivel de personalización.
             </p>
             <p class="text-[11px] text-slate-400 mt-1">
-              Podemos conectarlo con CRM, Google Sheets, pasarelas y herramientas que ya usas.
+              Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
             </p>
           </div>
         </div>
@@ -134,13 +134,13 @@ app.innerHTML = `
           <div class="relative rounded-3xl border border-sky-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
             <img
               src="${BrunoInternoImg}"
-              alt="Bruno, agente GOAT de soporte y bots"
+              alt="Bruno, agente GOAT de atención y calificación"
               class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
               loading="lazy"
               decoding="async"
             />
             <p class="mt-4 text-[11px] text-center text-sky-100/80">
-              Bruno atiende, filtra y escala: para que tu equipo no pierda tiempo en lo repetitivo.
+              Bruno atiende lo repetitivo, filtra interesados y escala a humano cuando toca.
             </p>
           </div>
         </div>
@@ -154,16 +154,16 @@ app.innerHTML = `
             Briefing para activar a Bruno
           </h2>
           <p class="text-sm text-slate-300 leading-relaxed">
-            Con esta información definimos el bot, los flujos de atención, el handoff a humano
-            y el nivel de automatización ideal (Base / Crecimiento / Escala).
+            Con esta información definimos qué debe responder, cómo califica interesados, cuándo escala a humano
+            y el nivel ideal de automatización (Base / Crecimiento / Escala).
           </p>
 
           <div class="rounded-3xl border border-white/10 bg-white/5 p-5 card-soft">
             <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Lo que armamos con esto</p>
             <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
               <li>• Flujos prioritarios (ventas, soporte, reclamos, seguimiento).</li>
-              <li>• Preguntas clave para calificar leads.</li>
-              <li>• Reglas de escalamiento a humano.</li>
+              <li>• Preguntas clave para filtrar y calificar leads.</li>
+              <li>• Reglas claras de escalamiento a humano (handoff).</li>
               <li>• Integraciones necesarias (CRM, Sheets, pasarela, etc.).</li>
             </ul>
           </div>
@@ -225,7 +225,7 @@ app.innerHTML = `
               name="casos"
               rows="3"
               class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
-              placeholder="Ej: dudas de precios, envíos, horarios, disponibilidad, reclamos, devoluciones..."
+              placeholder="Ej: preguntas repetidas, precios, envíos, horarios, disponibilidad, reclamos, devoluciones..."
               required
             ></textarea>
           </div>
@@ -358,7 +358,7 @@ app.innerHTML = `
           <div class="space-y-3">
             <p class="font-semibold">Cabra Labs</p>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
+              Creamos equipos GOAT para que tu negocio responda, capture leads y haga seguimiento hasta cerrar ventas.
             </p>
 
             <div class="pt-2 flex items-center gap-3">
@@ -376,10 +376,10 @@ app.innerHTML = `
                 href="https://instagram.com/cabra_labs"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram @cabra.labs"
+                aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -388,9 +388,9 @@ app.innerHTML = `
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
-              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Estrategia &amp; Funnels</a></li>
-              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Soporte &amp; Bots</a></li>
-              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · CRM &amp; Seguimiento</a></li>
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Atrae clientes listos para comprar</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Responde por ti 24/7</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · Cierra ventas con seguimiento automático</a></li>
             </ul>
           </div>
 
@@ -575,7 +575,7 @@ function mountLeadUI() {
         <div class="cabra-modal__body">
           <div class="cabra-title" id="cabra-success-title">¡Briefing recibido! 🚀</div>
           <div class="cabra-text" id="cabra-success-msg">
-            Recibimos tu información. Bruno ya puede preparar el bot y los flujos de atención.
+            Recibimos tu información. Bruno ya puede preparar el bot y los flujos para atender y calificar interesados.
           </div>
           <div class="cabra-actions">
             <button class="cabra-btn cabra-btn--primary" type="button" data-cabra-close>Perfecto</button>

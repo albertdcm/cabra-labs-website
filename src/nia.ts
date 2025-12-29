@@ -315,7 +315,7 @@ app.innerHTML = `
 
           <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
-              <span class="text-purple-200 font-semibold">Desde $300/mes</span> · setup según CRM, cantidad de pipelines y automatizaciones.
+              <span class="text-purple-200 font-semibold">Desde $200/mes</span> · setup según CRM, cantidad de pipelines y automatizaciones.
             </p>
             <p class="text-[11px] text-slate-400 mt-1">
               Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
@@ -469,7 +469,7 @@ app.innerHTML = `
                 "Post-llamada",
                 "Reactivación de leads fríos",
                 "Post-venta (recompra)",
-                "Recordatorios de pago"
+                "Recordatorios de pago",
               ]
                 .map(
                   (opt) => `
@@ -520,7 +520,7 @@ app.innerHTML = `
               ${[
                 { key: "Base", desc: "1 pipeline · hasta 3 automatizaciones" },
                 { key: "Crecimiento", desc: "2 pipelines · hasta 6 automatizaciones" },
-                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones" }
+                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones" },
               ]
                 .map(
                   (p) => `
@@ -808,41 +808,73 @@ if (niaForm) {
     }
   });
 }
+
 /* ================================
-   ✅ HELPERS UI (FALTABAN)
+   ✅ HELPERS UI (sin listeners duplicados)
 ================================== */
+
+let cabraModalBound = false;
+let cabraToastTimer: number | undefined;
 
 function openSuccessModal(message: string) {
   const modal = document.getElementById("cabra-modal");
   const msg = document.getElementById("cabra-modal-msg");
+  if (msg) msg.textContent = message;
+
+  modal?.classList.add("is-open");
+  bindModalOnce();
+}
+
+function closeSuccessModal() {
+  document.getElementById("cabra-modal")?.classList.remove("is-open");
+}
+
+function bindModalOnce() {
+  if (cabraModalBound) return;
+  cabraModalBound = true;
+
+  const modal = document.getElementById("cabra-modal") as HTMLDivElement | null;
   const okBtn = document.getElementById("cabra-modal-ok");
   const closeBtn = document.getElementById("cabra-modal-close");
   const xBtn = document.getElementById("cabra-modal-x");
 
-  if (msg) msg.textContent = message;
-
-  modal?.classList.add("is-open");
-
-  const close = () => modal?.classList.remove("is-open");
+  const close = () => closeSuccessModal();
 
   okBtn?.addEventListener("click", close);
   closeBtn?.addEventListener("click", close);
   xBtn?.addEventListener("click", close);
+
+  // click afuera
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+
+  // ESC
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      close();
+      hideErrorToast();
+    }
+  });
 }
 
 function showErrorToast(message: string) {
   const toast = document.getElementById("cabra-toast");
   const msg = document.getElementById("cabra-toast-msg");
-  const xBtn = document.getElementById("cabra-toast-x");
-
   if (msg) msg.textContent = message;
 
   toast?.classList.add("is-open");
 
-  const close = () => toast?.classList.remove("is-open");
+  const xBtn = document.getElementById("cabra-toast-x");
+  xBtn?.addEventListener("click", hideErrorToast);
 
-  xBtn?.addEventListener("click", close);
+  if (cabraToastTimer) window.clearTimeout(cabraToastTimer);
+  cabraToastTimer = window.setTimeout(() => hideErrorToast(), 5000);
+}
 
-  // auto close
-  setTimeout(close, 5000);
+function hideErrorToast() {
+  const toast = document.getElementById("cabra-toast");
+  toast?.classList.remove("is-open");
+  if (cabraToastTimer) window.clearTimeout(cabraToastTimer);
+  cabraToastTimer = undefined;
 }
