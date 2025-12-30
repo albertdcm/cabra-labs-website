@@ -36,14 +36,49 @@ app.innerHTML = `
         outline-offset: 2px;
         border-radius: 9999px;
       }
+
+      /* ============================
+         ✅ TOGGLE (A MEDIDA)
+         ============================ */
+      .goat-toggle-btn {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(226, 232, 240, 0.88);
+        transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+      }
+      .goat-toggle-btn:hover {
+        background: rgba(255, 255, 255, 0.09);
+        transform: translateY(-1px);
+      }
+      .goat-toggle-btn[aria-selected="true"] {
+        background: linear-gradient(90deg, rgba(56,189,248,0.18), rgba(16,185,129,0.18));
+        border-color: rgba(16,185,129,0.35);
+        color: rgba(236, 253, 245, 0.92);
+        box-shadow: 0 0 0 2px rgba(16,185,129,0.10);
+      }
+      .goat-panel[hidden] { display: none !important; }
+
+      /* ============================
+         ✅ “CÓMO SE COTIZA” CARD ALIGN
+         ============================ */
+      .quote-card {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .quote-card h4 {
+        letter-spacing: 0.18em;
+      }
+      .quote-chip {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.05);
+      }
     </style>
 
     <!-- NAVBAR (STICKY SIEMPRE) -->
-    <!-- Ajuste: FAQ eliminado del menú + CTA "Conversemos" a WhatsApp (texto blanco) -->
     <header class="cabra-header sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
       <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
 
-        <!-- LOGO (PNG, VITE OK) -->
+        <!-- LOGO -->
         <a href="/" class="flex items-center group rounded-full px-2 py-1 active:bg-slate-800/40">
           <img
             src="${CabraLogo}"
@@ -54,7 +89,7 @@ app.innerHTML = `
           />
         </a>
 
-        <!-- NAV LINKS (FAQ eliminado) -->
+        <!-- NAV LINKS -->
         <div class="hidden md:flex items-center gap-10 text-sm font-medium">
           <a href="#agentes" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Agentes
@@ -69,10 +104,7 @@ app.innerHTML = `
 
         <!-- SOCIAL + CTA -->
         <div class="flex items-center gap-3">
-
-          <!-- Redes: solo desktop -->
           <div class="hidden md:flex items-center gap-3">
-            <!-- TikTok -->
             <a
               href="https://tiktok.com/@cabra.labs"
               target="_blank"
@@ -83,7 +115,6 @@ app.innerHTML = `
               <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" loading="lazy" decoding="async" />
             </a>
 
-            <!-- Instagram -->
             <a
               href="https://instagram.com/cabra_labs"
               target="_blank"
@@ -95,7 +126,6 @@ app.innerHTML = `
             </a>
           </div>
 
-          <!-- CTA Principal → WhatsApp (texto blanco) -->
           <a
             href="https://wa.me/584120599367?text=Hola%20Cabra%20Labs%2C%20vengo%20desde%20la%20web%20y%20quiero%20que%20mi%20negocio%20responda%20y%20cierre%20m%C3%A1s%20ventas%20con%20un%20agente%20GOAT."
             target="_blank"
@@ -310,9 +340,11 @@ app.innerHTML = `
                     <p class="text-sm text-emerald-200/90">$350 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
+
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
                   “Gala atrae y califica: convierte clics y mensajes en oportunidades reales, con una arquitectura probada que adaptamos a tu negocio.”
                 </p>
+
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
                   <li>• Calificación automática de leads (frío | tibio | caliente).</li>
                   <li>• Flujos de captación desde Ads, link en bio y WhatsApp directo.</li>
@@ -320,8 +352,9 @@ app.innerHTML = `
                   <li>• Canales: WhatsApp · Instagram · Facebook Messenger.</li>
                 </ul>
               </div>
+
               <div class="pt-4">
-                <a href="/gala.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-emerald-300 hover:text-emerald-100 border border-emerald-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(16,185,129,0.45)] hover:shadow-[0_0_22px_rgba(16,185,129,0.75)] transition-all duration-200 hover:scale-[1.03]">
+                <a href="/gala.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-emerald-300 hover:text-emerald-100 border border-emerald-400/70 rounded-full px-6 py-2.5 shadow-[0_0_14px_rgba(16,185,129,0.40)] hover:shadow-[0_0_24px_rgba(16,185,129,0.70)] transition-all duration-200 hover:scale-[1.03]">
                   Quiero leads →
                 </a>
               </div>
@@ -339,9 +372,11 @@ app.innerHTML = `
                     <p class="text-sm text-sky-200/90">$250 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
+
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
                   “Bruno responde y filtra en segundos: atención consistente con tono de marca, captura datos y pasa a humano con contexto cuando hace falta.”
                 </p>
+
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
                   <li>• Atención automática 24/7 + FAQs y respuestas claras.</li>
                   <li>• Captura de datos, filtros y escalamiento a humano.</li>
@@ -349,8 +384,9 @@ app.innerHTML = `
                   <li>• Canales: WhatsApp · Instagram · Facebook (Web opcional).</li>
                 </ul>
               </div>
+
               <div class="pt-4">
-                <a href="/bruno.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-sky-300 hover:text-sky-100 border border-sky-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(56,189,248,0.45)] hover:shadow-[0_0_22px_rgba(56,189,248,0.75)] transition-all duration-200 hover:scale-[1.03]">
+                <a href="/bruno.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-sky-300 hover:text-sky-100 border border-sky-400/70 rounded-full px-6 py-2.5 shadow-[0_0_14px_rgba(56,189,248,0.40)] hover:shadow-[0_0_24px_rgba(56,189,248,0.70)] transition-all duration-200 hover:scale-[1.03]">
                   Quiero atención 24/7 →
                 </a>
               </div>
@@ -368,9 +404,11 @@ app.innerHTML = `
                     <p class="text-sm text-purple-200/90">$300 configuración inicial · $200/mes.</p>
                   </div>
                 </div>
+
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
                   “Nia hace el seguimiento por ti: activa el mensaje correcto en el momento correcto para que el lead no se enfríe y llegues a cierre.”
                 </p>
+
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
                   <li>• Seguimiento automático 24h/72h + recuperación de leads fríos.</li>
                   <li>• Pipeline base y recordatorios para avanzar oportunidades.</li>
@@ -378,14 +416,165 @@ app.innerHTML = `
                   <li>• Canales: WhatsApp · Instagram (Email opcional).</li>
                 </ul>
               </div>
+
               <div class="pt-4">
-                <a href="/nia.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-purple-300 hover:text-purple-100 border border-purple-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(168,85,247,0.45)] hover:shadow-[0_0_22px_rgba(168,85,247,0.75)] transition-all duration-200 hover:scale-[1.03]">
+                <a href="/nia.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-purple-300 hover:text-purple-100 border border-purple-400/70 rounded-full px-6 py-2.5 shadow-[0_0_14px_rgba(168,85,247,0.40)] hover:shadow-[0_0_24px_rgba(168,85,247,0.70)] transition-all duration-200 hover:scale-[1.03]">
                   Quiero cerrar más →
                 </a>
               </div>
             </div>
           </article>
         </div>
+
+        <!-- ✅ BLOQUE “A MEDIDA” (COMPACTO) -->
+        <div class="pt-2">
+          <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900/80 via-slate-950 to-slate-900/70 px-6 py-7 md:px-8 md:py-8 card-soft">
+            <div class="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-emerald-500/12 blur-3xl"></div>
+            <div class="pointer-events-none absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-sky-500/12 blur-3xl"></div>
+
+            <div class="relative grid gap-6 md:grid-cols-[minmax(0,1.25fr),minmax(0,1fr)] items-start">
+
+              <!-- LEFT -->
+              <div class="space-y-4">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-slate-200">
+                  <span class="text-sm">🧩</span>
+                  Automatización a medida
+                </div>
+
+                <h3 class="text-xl md:text-2xl font-semibold">
+                  ¿Necesitas un flujo específico fuera de los planes?
+                </h3>
+
+                <p class="text-sm text-slate-300 leading-relaxed max-w-2xl">
+                  Diseñamos e implementamos el flujo exacto que te falta (pagos, CRM, reportes, campañas, onboarding).
+                </p>
+
+                <!-- ✅ TOGGLE -->
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Tipo de automatización a medida">
+                  <button
+                    class="goat-toggle-btn rounded-full px-4 py-2 text-xs md:text-sm font-semibold"
+                    data-goat-tab="puntual"
+                    role="tab"
+                    aria-selected="true"
+                    type="button"
+                  >
+                    Flujo puntual
+                  </button>
+                  <button
+                    class="goat-toggle-btn rounded-full px-4 py-2 text-xs md:text-sm font-semibold"
+                    data-goat-tab="integracion"
+                    role="tab"
+                    aria-selected="false"
+                    type="button"
+                  >
+                    Integración
+                  </button>
+                  <button
+                    class="goat-toggle-btn rounded-full px-4 py-2 text-xs md:text-sm font-semibold"
+                    data-goat-tab="sistema"
+                    role="tab"
+                    aria-selected="false"
+                    type="button"
+                  >
+                    Sistema completo
+                  </button>
+                </div>
+
+                <!-- PANELS (cortos) -->
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5">
+                  <div class="goat-panel space-y-2" data-goat-panel="puntual">
+                    <p class="text-sm text-slate-200/90">
+                      Para resolver <span class="text-emerald-200 font-semibold">1 objetivo</span> rápido.
+                    </p>
+                    <ul class="text-sm text-slate-200/90 space-y-1.5">
+                      <li>• Reglas + automatización lista para usar</li>
+                      <li>• Pruebas + entrega + doc mínima</li>
+                    </ul>
+                  </div>
+
+                  <div class="goat-panel space-y-2" data-goat-panel="integracion" hidden>
+                    <p class="text-sm text-slate-200/90">
+                      Para <span class="text-sky-200 font-semibold">conectar herramientas</span> (API/Webhooks).
+                    </p>
+                    <ul class="text-sm text-slate-200/90 space-y-1.5">
+                      <li>• Mapeo de datos + validaciones</li>
+                      <li>• Manejo de errores + pruebas end-to-end</li>
+                    </ul>
+                  </div>
+
+                  <div class="goat-panel space-y-2" data-goat-panel="sistema" hidden>
+                    <p class="text-sm text-slate-200/90">
+                      Para flujos <span class="text-violet-200 font-semibold">multi-etapas</span> con métricas.
+                    </p>
+                    <ul class="text-sm text-slate-200/90 space-y-1.5">
+                      <li>• Varias rutas + segmentación</li>
+                      <li>• Indicadores (básico o avanzado)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p class="text-[11px] text-slate-400">
+                  Sirve para complementar Gala/Bruno/Nia con algo extra.
+                </p>
+              </div>
+
+              <!-- RIGHT (Cómo se cotiza) -->
+              <div class="space-y-4 md:text-right">
+                <div class="quote-card rounded-3xl p-5 md:p-6 text-left">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-[11px] uppercase tracking-[0.22em] text-slate-300">Cómo se cotiza</p>
+                      <h4 class="mt-2 text-base md:text-lg font-semibold text-slate-100">
+                        Por alcance (impacto + integraciones + volumen)
+                      </h4>
+                    </div>
+
+                    <div class="shrink-0 w-10 h-10 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center">
+                      <span class="text-lg">🧾</span>
+                    </div>
+                  </div>
+
+                  <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+                    <li class="flex gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                      <span><span class="font-semibold text-slate-100">Complejidad</span> del flujo</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 rounded-full bg-sky-400 shrink-0"></span>
+                      <span><span class="font-semibold text-slate-100">Integraciones</span> (CRM, pagos, e-commerce)</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <span class="mt-[6px] h-1.5 w-1.5 rounded-full bg-violet-400 shrink-0"></span>
+                      <span><span class="font-semibold text-slate-100">Volumen</span> (leads/mensajes)</span>
+                    </li>
+                  </ul>
+
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="quote-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Propuesta rápida</span>
+                    <span class="quote-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Entrega clara</span>
+                    <span class="quote-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Pruebas incluidas</span>
+                  </div>
+
+                  <p class="mt-4 text-[11px] text-slate-400">
+                    En una llamada corta te enviamos alcance + entregables + precio.
+                  </p>
+                </div>
+
+                <div class="flex md:justify-end">
+                  <a
+                    href="#contacto"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500 hover:shadow-lg hover:shadow-emerald-500/40 text-white text-sm font-semibold px-6 py-2.5 transition-all duration-200"
+                  >
+                    Cotizar flujo a medida
+                    <span class="text-base text-white">↗</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <!-- INTEGRACIONES -->
@@ -409,7 +598,7 @@ app.innerHTML = `
         </div>
 
         <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-4">
-          ${["Credicard","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
+          ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
             .map(
               (name) => `
               <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
@@ -508,102 +697,64 @@ app.innerHTML = `
       </section>
 
       <!-- FOOTER -->
-<footer class="border-t border-white/10 mt-8">
-  <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
-    
-    <!-- BRAND -->
-    <div class="space-y-3">
-      <p class="font-semibold">Cabra Labs</p>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        Creamos equipos GOAT para que tu negocio responda, capture leads y haga seguimiento hasta cerrar ventas.
-      </p>
+      <footer class="border-t border-white/10 mt-8">
+        <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+          <div class="space-y-3">
+            <p class="font-semibold">Cabra Labs</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Creamos equipos GOAT para que tu negocio responda, capture leads y haga seguimiento hasta cerrar ventas.
+            </p>
 
-      <div class="pt-2 flex items-center gap-3">
-        <a
-          href="https://tiktok.com/@cabra.labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="TikTok @cabra.labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
+            <div class="pt-2 flex items-center gap-3">
+              <a
+                href="https://tiktok.com/@cabra.labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok @cabra.labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${TikTokIcon}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
 
-        <a
-          href="https://instagram.com/cabra_labs"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram @cabra_labs"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
-        >
-          <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
-        </a>
-      </div>
-    </div>
+              <a
+                href="https://instagram.com/cabra_labs"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram @cabra_labs"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
+              >
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+              </a>
+            </div>
+          </div>
 
-    <!-- AGENTES -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
-            Gala · Atrae clientes listos para comprar
-          </a>
-        </li>
-        <li>
-          <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
-            Bruno · Responde por ti 24/7
-          </a>
-        </li>
-        <li>
-          <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
-            Nia · Cierra ventas con seguimiento automático
-          </a>
-        </li>
-      </ul>
-    </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Atrae clientes listos para comprar</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Responde por ti 24/7</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · Cierra ventas con seguimiento automático</a></li>
+            </ul>
+          </div>
 
-    <!-- SOPORTE -->
-    <div>
-      <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
-      <ul class="space-y-1 text-xs text-slate-400">
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="https://wa.me/584120599367"
-            target="_blank"
-            rel="noopener"
-          >
-            Contacto
-          </a>
-        </li>
+          <div>
+            <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
+            <ul class="space-y-1 text-xs text-slate-400">
+              <li>
+                <a class="hover:text-emerald-200 transition-colors" href="https://wa.me/584120599367" target="_blank" rel="noopener">
+                  Contacto
+                </a>
+              </li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
+            </ul>
+          </div>
+        </div>
 
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="/faq.html"
-          >
-            Preguntas frecuentes
-          </a>
-        </li>
-
-        <li>
-          <a
-            class="hover:text-emerald-200 transition-colors"
-            href="#agentes"
-          >
-            Planes y precios
-          </a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
-    © 2025 Cabra Labs. All rights reserved.
-  </div>
-</footer>
+        <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
+          © 2025 Cabra Labs. All rights reserved.
+        </div>
+      </footer>
 
     </main>
   </div>
@@ -634,6 +785,38 @@ revealElements.forEach((el, index) => {
   el.style.transitionDelay = `${Math.min(index * 16, 160)}ms`;
   observer.observe(el);
 });
+
+// =========================
+// ✅ Toggle A MEDIDA
+// =========================
+(function initGoatToggle() {
+  const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-goat-tab]"));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>("[data-goat-panel]"));
+
+  if (!tabButtons.length || !panels.length) return;
+
+  const setActive = (key: string) => {
+    tabButtons.forEach((btn) => {
+      const isActive = btn.getAttribute("data-goat-tab") === key;
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    panels.forEach((panel) => {
+      const show = panel.getAttribute("data-goat-panel") === key;
+      panel.toggleAttribute("hidden", !show);
+    });
+  };
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.getAttribute("data-goat-tab") || "puntual";
+      setActive(key);
+    });
+  });
+
+  // default
+  setActive("puntual");
+})();
 
 // Preload ligero de imágenes clave
 const preload = (src: string) => {

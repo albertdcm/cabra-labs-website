@@ -89,25 +89,30 @@ app.innerHTML = `
             </div>
 
             <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Automatizaciones incluidas</p>
+              <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Planes (flujos y canales incluidos)</p>
               <div class="mt-3 space-y-3 text-sm text-slate-200/90">
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Base</p>
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $150/mes</p>
                 </div>
+
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Crecimiento</p>
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-sky-200 font-semibold">Hasta 5</span> flujos + <span class="text-sky-200 font-semibold">2</span> canales + handoff a humano.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $250/mes</p>
                 </div>
+
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Escala</p>
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-sky-200 font-semibold">Hasta 8</span> flujos + <span class="text-sky-200 font-semibold">3</span> canales + etiquetas + reportes avanzados.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $400/mes</p>
                 </div>
 
                 <p class="text-[11px] text-slate-400">
@@ -120,10 +125,14 @@ app.innerHTML = `
           <!-- Precio -->
           <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
-              <span class="text-sky-200 font-semibold">Desde $150/mes</span> · setup según canales, cantidad de flujos y nivel de personalización.
+              <span class="text-sky-200 font-semibold">Setup desde $250</span> · mensualidad fija por plan:
+              <span class="text-sky-200 font-semibold">Base $150/mes</span> ·
+              <span class="text-sky-200 font-semibold">Crecimiento $250/mes</span> ·
+              <span class="text-sky-200 font-semibold">Escala $400/mes</span>.
             </p>
             <p class="text-[11px] text-slate-400 mt-1">
               Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
+              Integraciones especiales o automatizaciones a medida se cotizan por proyecto.
             </p>
           </div>
         </div>
@@ -315,9 +324,9 @@ app.innerHTML = `
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "2 flujos · 1 canal" },
-                { key: "Crecimiento", desc: "5 flujos · 2 canales · handoff" },
-                { key: "Escala", desc: "8 flujos · 3 canales · reportes" }
+                { key: "Base", desc: "2 flujos · 1 canal", price: "$150/mes" },
+                { key: "Crecimiento", desc: "5 flujos · 2 canales · handoff", price: "$250/mes" },
+                { key: "Escala", desc: "8 flujos · 3 canales · reportes", price: "$400/mes" }
               ]
                 .map(
                   (p) => `
@@ -327,6 +336,7 @@ app.innerHTML = `
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
+                          <p class="text-[11px] text-sky-200/90 mt-1 font-semibold">${p.price}</p>
                         </div>
                       </div>
                     </label>
@@ -670,12 +680,11 @@ const N8N_WEBHOOK_URL =
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
 
-
 async function sendLead(payload: any) {
   // ⚠️ Enviamos como text/plain para evitar preflight CORS
   const rawBody = JSON.stringify({
     token: CABRA_TOKEN,
-    body: payload, // tu Normalize + Metadata ya soporta body string JSON
+    body: payload,
   });
 
   const res = await fetch(N8N_WEBHOOK_URL, {

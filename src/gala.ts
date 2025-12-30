@@ -45,17 +45,17 @@ app.innerHTML = `
         <div class="space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-200">
             <span class="text-sm">⚡</span>
-            <span>Gala · Atrae clientes listos para comprar</span>
+            <span>Gala · Captación y calificación</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
-            Construye un sistema que <span class="text-gradient-emerald">atrae, convierte y recompra</span> con Gala
+            Convierte mensajes y clics en <span class="text-gradient-emerald">oportunidades reales</span> con Gala
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Gala ordena tu ruta de ventas para que no dependas del “estar pendiente”.
-            Diseñamos el recorrido completo del cliente (del primer contacto al cierre),
-            armamos el embudo por etapas y automatizamos lo clave para que <span class="text-slate-100">ningún lead se pierda</span>.
+            Gala organiza tu ruta de ventas con una <span class="text-slate-100">arquitectura probada</span> que adaptamos a tu negocio:
+            atrae, califica y empuja al lead hacia la decisión con seguimiento inteligente para que
+            <span class="text-slate-100">no se te escape ninguna venta</span>.
           </p>
 
           <!-- Plan / Qué incluye -->
@@ -64,33 +64,39 @@ app.innerHTML = `
               <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Qué incluye</p>
               <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
                 <li>• Diagnóstico + mapa del funnel (etapas, fricciones y objeciones).</li>
-                <li>• Mensajes por etapa (DM/WhatsApp/email) con tono de marca.</li>
-                <li>• Estructura de oferta + landing (si aplica).</li>
-                <li>• Tracking: eventos, conversiones y métricas clave.</li>
-                <li>• Iteración semanal: mejoras basadas en datos reales.</li>
+                <li>• Mensajes por etapa con tono de marca (IG/WhatsApp/Email opcional).</li>
+                <li>• Calificación de leads (frío / tibio / caliente) y segmentación básica.</li>
+                <li>• Tracking y métricas clave para mejorar con datos.</li>
+                <li>• Iteración semanal: ajustes para convertir más.</li>
               </ul>
             </div>
 
             <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Automatizaciones incluidas</p>
+              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Planes (automatizaciones incluidas)</p>
               <div class="mt-3 space-y-3 text-sm text-slate-200/90">
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Base</p>
                   <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-emerald-200 font-semibold">1</span> funnel principal.
+                    <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones + 
+                    <span class="text-emerald-200 font-semibold">1</span> funnel principal.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Crecimiento</p>
                   <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación básica.
+                    <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones + 
+                    <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación básica.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Escala</p>
                   <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-emerald-200 font-semibold">3</span> funnels + reportes avanzados.
+                    <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones + 
+                    <span class="text-emerald-200 font-semibold">3</span> funnels + reportes avanzados.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
                 </div>
 
                 <p class="text-[11px] text-slate-400">
@@ -103,11 +109,14 @@ app.innerHTML = `
           <!-- Precio -->
           <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
-              <span class="text-emerald-200 font-semibold">Setup desde $350</span> · mensualidad según complejidad,
-              cantidad de funnels y automatizaciones.
+              <span class="text-emerald-200 font-semibold">Setup desde $350</span> · mensualidad fija por plan:
+              <span class="text-emerald-200 font-semibold">Base $200/mes</span> ·
+              <span class="text-emerald-200 font-semibold">Crecimiento $350/mes</span> ·
+              <span class="text-emerald-200 font-semibold">Escala $550/mes</span>.
             </p>
             <p class="text-[11px] text-slate-400 mt-1">
               Si ya tienes herramientas (CRM, WhatsApp, email), nos integramos para aprovechar lo que ya funciona.
+              Automatizaciones a medida e integraciones especiales se cotizan por proyecto.
             </p>
           </div>
         </div>
@@ -124,7 +133,7 @@ app.innerHTML = `
               decoding="async"
             />
             <p class="mt-4 text-[11px] text-center text-emerald-100/80">
-              Gala encuentra la ruta más rentable: qué decir, cuándo decirlo y cómo convertir sin perseguir.
+              Gala te dice qué decir, cuándo decirlo y cómo mover al lead hasta el cierre (sin perseguir).
             </p>
           </div>
         </div>
@@ -138,15 +147,15 @@ app.innerHTML = `
             Briefing para activar a Gala
           </h2>
           <p class="text-sm text-slate-300 leading-relaxed">
-            Con esta info preparamos tu diagnóstico, definimos el funnel y estimamos las automatizaciones
-            que necesitas para <span class="text-slate-100">cerrar más</span> sin vivir pegado al teléfono.
+            Con esta info preparamos tu diagnóstico, definimos el funnel y estimamos el plan ideal
+            para <span class="text-slate-100">captar y calificar</span> mejor desde el día 1.
           </p>
 
           <div class="rounded-3xl border border-white/10 bg-white/5 p-5 card-soft">
             <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Lo que armamos con esto</p>
             <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
               <li>• Funnel recomendado (1–3 etapas principales).</li>
-              <li>• Automatizaciones necesarias (3 / 6 / 10 según tu caso).</li>
+              <li>• Plan sugerido (Base / Crecimiento / Escala).</li>
               <li>• Recomendación de herramientas e integraciones.</li>
               <li>• Próximos pasos (implementación y timing).</li>
             </ul>
@@ -283,9 +292,9 @@ app.innerHTML = `
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones" },
-                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones" },
-                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" },
+                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones", price: "$200/mes" },
+                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones", price: "$350/mes" },
+                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones", price: "$550/mes" },
               ]
                 .map(
                   (p) => `
@@ -295,6 +304,7 @@ app.innerHTML = `
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
+                          <p class="text-[11px] text-emerald-200/90 mt-1 font-semibold">${p.price}</p>
                         </div>
                       </div>
                     </label>
@@ -344,10 +354,10 @@ app.innerHTML = `
                 href="https://instagram.com/cabra_labs"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram @cabra_labs"
+                aria-label="Instagram @cabra.labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -634,7 +644,6 @@ const N8N_WEBHOOK_URL =
   "https://cabralab.app.n8n.cloud/webhook/form-submission";
 
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
-
 
 async function sendLead(payload: any) {
   const rawBody = JSON.stringify({

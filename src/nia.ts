@@ -292,18 +292,21 @@ app.innerHTML = `
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Crecimiento</p>
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
                   <p class="font-semibold text-slate-100">Escala</p>
                   <p class="text-xs text-slate-300 mt-1">
                     <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards avanzados.
                   </p>
+                  <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
                 </div>
 
                 <p class="text-[11px] text-slate-400">
@@ -313,11 +316,16 @@ app.innerHTML = `
             </div>
           </div>
 
+          <!-- ✅ AJUSTE: pricing fijo (setup + mensualidad por plan) -->
           <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
             <p class="text-sm text-slate-200/90">
-              <span class="text-purple-200 font-semibold">Desde $200/mes</span> · setup según CRM, cantidad de pipelines y automatizaciones.
+              <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
+              <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
+              <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
+              <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
             </p>
             <p class="text-[11px] text-slate-400 mt-1">
+              Integraciones especiales, migraciones o automatizaciones a medida se cotizan por proyecto.
               Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
             </p>
           </div>
@@ -514,13 +522,14 @@ app.innerHTML = `
             </div>
           </div>
 
+          <!-- ✅ AJUSTE: cards del plan incluyen precio -->
           <div class="space-y-1.5">
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "1 pipeline · hasta 3 automatizaciones" },
-                { key: "Crecimiento", desc: "2 pipelines · hasta 6 automatizaciones" },
-                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones" },
+                { key: "Base", desc: "1 pipeline · hasta 3 automatizaciones", price: "$200/mes" },
+                { key: "Crecimiento", desc: "2 pipelines · hasta 6 automatizaciones", price: "$350/mes" },
+                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones", price: "$550/mes" },
               ]
                 .map(
                   (p) => `
@@ -530,6 +539,7 @@ app.innerHTML = `
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
+                          <p class="text-[11px] text-purple-200/90 mt-1 font-semibold">${p.price}</p>
                         </div>
                       </div>
                     </label>
