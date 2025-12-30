@@ -139,7 +139,7 @@ app.innerHTML = `
               href="#contacto"
               class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500 hover:shadow-lg hover:shadow-emerald-500/50 text-white text-sm font-semibold px-6 py-2.5 transition-all duration-200"
             >
-              Quiero mi equipo GOAT
+              Activar GOAT
             </a>
             <p class="text-xs text-slate-400">
               Sin compromiso · Revisamos gratis dónde se te están escapando mensajes y ventas.
@@ -306,22 +306,23 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${GalaImg}" alt="Gala" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Gala · Atrae clientes listos para comprar</h3>
-                    <p class="text-sm text-emerald-200/90">Desde $350 de configuración inicial.</p>
+                    <h3 class="text-xl font-semibold text-slate-50">Gala · Captación y calificación</h3>
+                    <p class="text-sm text-emerald-200/90">$350 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Gala convierte tu interés en oportunidades: organiza el camino del cliente y automatiza el seguimiento para que lleguen listos a cerrar.”
+                  “Gala atrae y califica: convierte clics y mensajes en oportunidades reales, con una arquitectura probada que adaptamos a tu negocio.”
                 </p>
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
-                  <li>• Diseñamos el camino completo del cliente para vender sin fricción.</li>
-                  <li>• Mensajes que califican y secuencias automáticas que mueven al lead.</li>
-                  <li>• Medición y mejoras para que cierres más cada mes.</li>
+                  <li>• Calificación automática de leads (frío | tibio | caliente).</li>
+                  <li>• Flujos de captación desde Ads, link en bio y WhatsApp directo.</li>
+                  <li>• Etiquetado y conexión a agenda/CRM + métricas básicas.</li>
+                  <li>• Canales: WhatsApp · Instagram · Facebook Messenger.</li>
                 </ul>
               </div>
               <div class="pt-4">
                 <a href="/gala.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-emerald-300 hover:text-emerald-100 border border-emerald-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(16,185,129,0.45)] hover:shadow-[0_0_22px_rgba(16,185,129,0.75)] transition-all duration-200 hover:scale-[1.03]">
-                  Quiero convertir más con Gala →
+                  Quiero leads →
                 </a>
               </div>
             </div>
@@ -334,22 +335,23 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${BrunoImg}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Bruno · Responde por ti 24/7</h3>
-                    <p class="text-sm text-sky-200/90">Desde $150/mes.</p>
+                    <h3 class="text-xl font-semibold text-slate-50">Bruno · Atención 24/7</h3>
+                    <p class="text-sm text-sky-200/90">$250 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Bruno responde, filtra y guía: atiende dudas, toma pedidos, recoge datos y pasa a humano con contexto cuando hace falta.”
+                  “Bruno responde y filtra en segundos: atención consistente con tono de marca, captura datos y pasa a humano con contexto cuando hace falta.”
                 </p>
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
-                  <li>• WhatsApp, Instagram y web, sin dejar mensajes en visto.</li>
-                  <li>• Respuestas rápidas, captura de datos y escalamiento a humano.</li>
-                  <li>• Reportes claros para que sepas qué se movió cada mes.</li>
+                  <li>• Atención automática 24/7 + FAQs y respuestas claras.</li>
+                  <li>• Captura de datos, filtros y escalamiento a humano.</li>
+                  <li>• Reportes mensuales de actividad y conversaciones.</li>
+                  <li>• Canales: WhatsApp · Instagram · Facebook (Web opcional).</li>
                 </ul>
               </div>
               <div class="pt-4">
                 <a href="/bruno.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-sky-300 hover:text-sky-100 border border-sky-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(56,189,248,0.45)] hover:shadow-[0_0_22px_rgba(56,189,248,0.75)] transition-all duration-200 hover:scale-[1.03]">
-                  Quiero que mi negocio responda solo →
+                  Quiero atención 24/7 →
                 </a>
               </div>
             </div>
@@ -362,22 +364,23 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${NiaImg}" alt="Nia" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Nia · Cierra ventas con seguimiento automático</h3>
-                    <p class="text-sm text-purple-200/90">Desde $200/mes.</p>
+                    <h3 class="text-xl font-semibold text-slate-50">Nia · Seguimiento y cierre</h3>
+                    <p class="text-sm text-purple-200/90">$300 configuración inicial · $200/mes.</p>
                   </div>
                 </div>
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Nia organiza tus prospectos y activa el seguimiento correcto para que no se enfríen: recordatorios, pipeline y reportes simples.”
+                  “Nia hace el seguimiento por ti: activa el mensaje correcto en el momento correcto para que el lead no se enfríe y llegues a cierre.”
                 </p>
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
-                  <li>• Recordatorios y mensajes automáticos para volver a tocar al lead.</li>
-                  <li>• Etapas claras del pipeline para saber quién está listo para cerrar.</li>
-                  <li>• Reportes simples de oportunidades y cierres.</li>
+                  <li>• Seguimiento automático 24h/72h + recuperación de leads fríos.</li>
+                  <li>• Pipeline base y recordatorios para avanzar oportunidades.</li>
+                  <li>• Alertas y reportes simples de oportunidades y cierres.</li>
+                  <li>• Canales: WhatsApp · Instagram (Email opcional).</li>
                 </ul>
               </div>
               <div class="pt-4">
                 <a href="/nia.html" class="inline-flex items-center justify-center gap-1 text-base font-semibold text-purple-300 hover:text-purple-100 border border-purple-400/70 rounded-full px-5 py-2 shadow-[0_0_12px_rgba(168,85,247,0.45)] hover:shadow-[0_0_22px_rgba(168,85,247,0.75)] transition-all duration-200 hover:scale-[1.03]">
-                  Quiero cerrar más con Nia →
+                  Quiero cerrar más →
                 </a>
               </div>
             </div>
@@ -406,7 +409,7 @@ app.innerHTML = `
         </div>
 
         <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-4">
-          ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
+          ${["Credicard","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
             .map(
               (name) => `
               <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
