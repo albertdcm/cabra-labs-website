@@ -159,8 +159,8 @@ app.innerHTML = `
               responde rápido y convierte más sin contratar más personal.
             </h1>
             <p class="text-slate-300 text-sm md:text-base max-w-xl">
-              Creamos asistentes GOAT que atienden en WhatsApp e Instagram, califican interesados y hacen seguimiento
-              para que no se te escape ninguna oportunidad.
+              Creamos asistentes GOAT que captan, responden y hacen seguimiento en WhatsApp, Instagram, 
+              web y otros canales, para que no se pierdan oportunidades de venta.
             </p>
           </div>
 
@@ -178,7 +178,7 @@ app.innerHTML = `
 
           <div class="grid gap-4 sm:grid-cols-4 text-sm">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
-              <p class="text-2xl font-semibold">+300</p>
+              <p class="text-2xl font-semibold">+100</p>
               <p class="text-xs text-slate-300">negocios acompañados</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
@@ -549,7 +549,7 @@ app.innerHTML = `
         </div>
 
         <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-2">
-          ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
+          ${["Credicard","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
             .map(
               (name) => `
               <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">

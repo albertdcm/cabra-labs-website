@@ -142,8 +142,8 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-C6zyiMoo.js";const p="/assets
               responde rápido y convierte más sin contratar más personal.
             </h1>
             <p class="text-slate-300 text-sm md:text-base max-w-xl">
-              Creamos asistentes GOAT que atienden en WhatsApp e Instagram, califican interesados y hacen seguimiento
-              para que no se te escape ninguna oportunidad.
+              Creamos asistentes GOAT que captan, responden y hacen seguimiento en WhatsApp, Instagram, 
+              web y otros canales, para que no se pierdan oportunidades de venta.
             </p>
           </div>
 
@@ -161,7 +161,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-C6zyiMoo.js";const p="/assets
 
           <div class="grid gap-4 sm:grid-cols-4 text-sm">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
-              <p class="text-2xl font-semibold">+300</p>
+              <p class="text-2xl font-semibold">+100</p>
               <p class="text-xs text-slate-300">negocios acompañados</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4 card-soft">
@@ -532,7 +532,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-C6zyiMoo.js";const p="/assets
         </div>
 
         <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-2">
-          ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"].map(a=>`
+          ${["Credicard","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"].map(a=>`
               <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
                 ${a}
               </div>
@@ -740,4 +740,4 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-C6zyiMoo.js";const p="/assets
 
     </main>
   </div>
-`;const f=document.querySelectorAll("main section, .card-soft"),g=new IntersectionObserver(a=>{a.forEach(e=>{e.isIntersecting&&(e.target.classList.add("is-visible"),g.unobserve(e.target))})},{threshold:.12,rootMargin:"120px 0px"});f.forEach((a,e)=>{a.classList.add("reveal-on-scroll"),a.style.transitionDelay=`${Math.min(e*16,160)}ms`,g.observe(a)});(function(){const e=Array.from(document.querySelectorAll("[data-goat-tab]")),o=Array.from(document.querySelectorAll("[data-goat-panel]"));if(!e.length||!o.length)return;const i=s=>{e.forEach(t=>{const r=t.getAttribute("data-goat-tab")===s;t.setAttribute("aria-selected",r?"true":"false")}),o.forEach(t=>{const r=t.getAttribute("data-goat-panel")===s;t.toggleAttribute("hidden",!r)})};e.forEach(s=>{s.addEventListener("click",()=>{const t=s.getAttribute("data-goat-tab")||"puntual";i(t)})}),i("puntual")})();const l=a=>{const e=new Image;e.decoding="async",e.loading="eager",e.src=a};l(c);l(u);l(m);l(p);l(x);
+`;const h=document.querySelectorAll("main section, .card-soft"),g=new IntersectionObserver(a=>{a.forEach(e=>{e.isIntersecting&&(e.target.classList.add("is-visible"),g.unobserve(e.target))})},{threshold:.12,rootMargin:"120px 0px"});h.forEach((a,e)=>{a.classList.add("reveal-on-scroll"),a.style.transitionDelay=`${Math.min(e*16,160)}ms`,g.observe(a)});(function(){const e=Array.from(document.querySelectorAll("[data-goat-tab]")),o=Array.from(document.querySelectorAll("[data-goat-panel]"));if(!e.length||!o.length)return;const i=s=>{e.forEach(t=>{const r=t.getAttribute("data-goat-tab")===s;t.setAttribute("aria-selected",r?"true":"false")}),o.forEach(t=>{const r=t.getAttribute("data-goat-panel")===s;t.toggleAttribute("hidden",!r)})};e.forEach(s=>{s.addEventListener("click",()=>{const t=s.getAttribute("data-goat-tab")||"puntual";i(t)})}),i("puntual")})();const l=a=>{const e=new Image;e.decoding="async",e.loading="eager",e.src=a};l(c);l(u);l(m);l(p);l(x);
