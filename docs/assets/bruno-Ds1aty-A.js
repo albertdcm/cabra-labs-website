@@ -1,4 +1,4 @@
-import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets/Bruno%20Interno-J3XYnWux.png",f=document.querySelector("#app");if(!f)throw new Error("No se encontró el elemento #app");f.innerHTML=`
+import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets/Bruno%20Interno-J3XYnWux.png",f=document.querySelector("#app");if(!f)throw new Error("No se encontró el elemento #app");f.innerHTML=`
   <div class="theme-bruno min-h-screen bg-slate-950 text-slate-50">
     <!-- ✅ AJUSTE: contorno azul (hover/click/focus) SOLO para contenedores (.card-soft) en Bruno -->
     <style>
@@ -14,16 +14,22 @@ import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets
           0 0 0 1px rgba(56, 189, 248, 0.22),
           0 0 34px -12px rgba(56, 189, 248, 0.55) !important;
       }
+
+      /* ✅ Igualar alturas SOLO en desktop para la fila de 3 tarjetas */
+      @media (min-width: 768px){
+        .theme-bruno .equal-row > .equal-card{
+          height: 100%;
+        }
+      }
     </style>
 
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-
         <!-- LOGO (PNG, VITE OK) -->
         <a href="/" class="flex items-center group">
           <img
-            src="${q}"
+            src="${A}"
             alt="Cabra Labs"
             class="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
             loading="eager"
@@ -41,12 +47,12 @@ import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets
     </header>
 
     <!-- CONTENIDO -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-12">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-9 md:py-12 space-y-10 md:space-y-12">
 
-      <!-- HERO BRUNO -->
-      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
+      <!-- HERO BRUNO (más compacto y con imagen integrada) -->
+      <section class="grid gap-8 md:gap-10 md:grid-cols-[minmax(0,1.35fr),minmax(0,1fr)] items-center">
         <!-- Texto -->
-        <div class="space-y-6">
+        <div class="space-y-5 md:space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-sky-200">
             <span class="text-sm">⚡</span>
             <span>Bruno · Responde por ti 24/7</span>
@@ -61,84 +67,101 @@ import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets
             captura datos y, cuando hace falta, <span class="text-slate-100">te pasa la conversación con contexto</span>
             para que tú solo cierres o resuelvas.
           </p>
+        </div>
 
-          <!-- Plan / Qué incluye -->
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Qué incluye</p>
-              <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-                <li>• Diseño por objetivos (ventas / soporte / mixto).</li>
-                <li>• Base de respuestas + tono de marca.</li>
-                <li>• Flujos de atención: precios, horarios, envíos, disponibilidad, políticas, etc.</li>
-                <li>• Calificación de leads (preguntas clave + etiquetas).</li>
-                <li>• Escalamiento a humano con contexto (handoff).</li>
-                <li>• Reporte mensual con conversaciones, motivos y oportunidades.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Planes (flujos y canales incluidos)</p>
-              <div class="mt-3 space-y-3 text-sm text-slate-200/90">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Base</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $150/mes</p>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Crecimiento</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-sky-200 font-semibold">Hasta 5</span> flujos + <span class="text-sky-200 font-semibold">2</span> canales + handoff a humano.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $250/mes</p>
-                </div>
-
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Escala</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-sky-200 font-semibold">Hasta 8</span> flujos + <span class="text-sky-200 font-semibold">3</span> canales + etiquetas + reportes avanzados.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $400/mes</p>
-                </div>
-
-                <p class="text-[11px] text-slate-400">
-                  “Flujo” = una ruta completa (ej: consulta → preguntas → respuesta → captura de datos → cierre o soporte).
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Precio -->
-          <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft">
-            <p class="text-sm text-slate-200/90">
-              <span class="text-sky-200 font-semibold">Setup desde $250</span> · mensualidad fija por plan:
-              <span class="text-sky-200 font-semibold">Base $150/mes</span> ·
-              <span class="text-sky-200 font-semibold">Crecimiento $250/mes</span> ·
-              <span class="text-sky-200 font-semibold">Escala $400/mes</span>.
+        <!-- Imagen Bruno (sube y se siente parte del hero/banner) -->
+        <div class="relative flex items-center justify-center md:justify-end">
+          <div class="absolute -inset-6 rounded-3xl bg-sky-500/15 blur-3xl opacity-80"></div>
+          <div class="relative rounded-3xl border border-sky-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
+            <img
+              src="${N}"
+              alt="Bruno, agente GOAT de atención y calificación"
+              class="w-48 md:w-64 lg:w-72 max-w-full mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="mt-3 text-[11px] text-center text-sky-100/80">
+              Bruno atiende lo repetitivo, filtra interesados y escala a humano cuando toca.
             </p>
-            <p class="text-[11px] text-slate-400 mt-1">
-              Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
-              Integraciones especiales o automatizaciones a medida se cotizan por proyecto.
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ FILA 3-COLUMNAS (desktop) con alto igual: Qué incluye / Planes / Precio -->
+      <section class="grid gap-4 md:gap-5 md:grid-cols-3 md:items-stretch equal-row">
+        <!-- Qué incluye -->
+        <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Qué incluye</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+            <li>• Diseño por objetivos (ventas / soporte / mixto).</li>
+            <li>• Base de respuestas + tono de marca.</li>
+            <li>• Flujos de atención: precios, horarios, envíos, disponibilidad, políticas, etc.</li>
+            <li>• Calificación de leads (preguntas clave + etiquetas).</li>
+            <li>• Escalamiento a humano con contexto (handoff).</li>
+            <li>• Reporte mensual con conversaciones, motivos y oportunidades.</li>
+          </ul>
+        </div>
+
+        <!-- Planes -->
+        <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Planes (flujos y canales incluidos)</p>
+
+          <div class="mt-3 space-y-3 text-sm text-slate-200/90">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Base</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $150/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Crecimiento</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-sky-200 font-semibold">Hasta 5</span> flujos + <span class="text-sky-200 font-semibold">2</span> canales + handoff a humano.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $250/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Escala</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-sky-200 font-semibold">Hasta 8</span> flujos + <span class="text-sky-200 font-semibold">3</span> canales + etiquetas + reportes avanzados.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $400/mes</p>
+            </div>
+
+            <p class="text-[11px] text-slate-400">
+              “Flujo” = una ruta completa (ej: consulta → preguntas → respuesta → captura de datos → cierre o soporte).
             </p>
           </div>
         </div>
 
-        <!-- Imagen Bruno -->
-        <div class="relative flex items-center justify-center">
-          <div class="absolute -inset-6 rounded-3xl bg-sky-500/15 blur-3xl opacity-80"></div>
-          <div class="relative rounded-3xl border border-sky-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
-            <img
-              src="${P}"
-              alt="Bruno, agente GOAT de atención y calificación"
-              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="mt-4 text-[11px] text-center text-sky-100/80">
-              Bruno atiende lo repetitivo, filtra interesados y escala a humano cuando toca.
+        <!-- Precio -->
+        <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Precio</p>
+
+          <p class="mt-3 text-sm text-slate-200/90">
+            <span class="text-sky-200 font-semibold">Setup desde $250</span> · mensualidad fija por plan:
+            <span class="text-sky-200 font-semibold">Base $150/mes</span> ·
+            <span class="text-sky-200 font-semibold">Crecimiento $250/mes</span> ·
+            <span class="text-sky-200 font-semibold">Escala $400/mes</span>.
+          </p>
+
+          <p class="text-[11px] text-slate-400 mt-2">
+            Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
+            Integraciones especiales o automatizaciones a medida se cotizan por proyecto.
+          </p>
+
+          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-xs text-slate-300">
+              Ideal si hoy:
             </p>
+            <ul class="mt-2 space-y-1 text-[12px] text-slate-200/90">
+              <li>• Respondes tarde y se enfrían leads</li>
+              <li>• Te saturan preguntas repetidas</li>
+              <li>• Necesitas handoff ordenado a tu equipo</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -348,7 +371,7 @@ import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets
                 aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${N}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${P}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -557,7 +580,7 @@ import{C as q,T as R,I as N}from"./Cabra Labs Logo-C6zyiMoo.js";const P="/assets
         <button class="cabra-toast__close" type="button" aria-label="Cerrar" data-cabra-toast-close>✕</button>
       </div>
     </div>
-  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",s=>{s.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(s=>{s.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(s=>{s.addEventListener("click",()=>g())}),window.addEventListener("keydown",s=>{s.key==="Escape"&&(x(),g())})}function z(e){E();const a=document.getElementById("cabra-success-overlay"),s=document.getElementById("cabra-success-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function M(e){E();const a=document.getElementById("cabra-error-toast"),s=document.getElementById("cabra-error-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{g()},4500)}function g(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const H="https://cabralab.app.n8n.cloud/webhook/form-submission",W="cabra_labs_goat_2025_secure";async function F(e){const a=JSON.stringify({token:W,body:e}),s=await fetch(H,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),l=await s.text();let t={};try{t=l?JSON.parse(l):{}}catch{t={raw:l}}if(!s.ok)throw new Error((t==null?void 0:t.message)||(t==null?void 0:t.raw)||"Error enviando el formulario");return t}const n=f.querySelector("form");n&&n.addEventListener("submit",async e=>{var w;e.preventDefault();const a=o=>{var k,p,_;return((_=(p=(k=n.querySelector(`[name="${o}"]`))==null?void 0:k.value)==null?void 0:p.trim)==null?void 0:_.call(p))??""},s=Array.from(n.querySelectorAll('input[name="canales"]:checked')).map(o=>o.value),l=Array.from(n.querySelectorAll('input[name="integraciones"]:checked')).map(o=>o.value),t=((w=n.querySelector('input[name="plan"]:checked'))==null?void 0:w.value)??"",i=new URLSearchParams(window.location.search),j=Object.fromEntries(i.entries()),B=i.get("utm_source")||"",C=i.get("utm_medium")||"",T=i.get("utm_campaign")||"",I=i.get("utm_content")||"",S=i.get("utm_term")||"",y=a("nombre"),$=a("email"),v=a("whatsapp"),h=a("url"),d=a("casos"),m=a("horario"),b=a("sla"),u=a("handoff"),L=[d?`Casos: ${d}`:"",s.length?`Canales: ${s.join(", ")}`:"",m?`Horario humano: ${m}`:"",b?`SLA humano: ${b}`:"",u?`Handoff: ${u}`:"",l.length?`Integraciones: ${l.join(", ")}`:"",t?`Plan sugerido: ${t}`:""].filter(Boolean).join(`
-`),A={agent:"Bruno",plan:t,name:y,email:$,phone:v,company:"",website:h,message:L,source_url:window.location.href,nombre:y,whatsapp:v,url:h,utm:j,utm_source:B,utm_medium:C,utm_campaign:T,utm_content:I,utm_term:S,bruno_negocio:"",bruno_oferta:d,bruno_canales:s.join(", "),bruno_presupuesto:"",bruno_objetivo:"",bruno_plan:t,bruno:{oferta:d,canales:s.join(`
-`),horario:m,sla:b,handoff:u,integraciones:l.join(`
-`),plan:t}},r=n.querySelector('button[type="submit"]'),O=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const o=await F(A);z((o==null?void 0:o.message)||"Recibimos tu información. Te contactaremos pronto."),n.reset()}catch(o){console.error(o),M("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{r&&(r.disabled=!1,r.textContent=O)}});
+  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",s=>{s.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(s=>{s.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(s=>{s.addEventListener("click",()=>g())}),window.addEventListener("keydown",s=>{s.key==="Escape"&&(x(),g())})}function z(e){E();const a=document.getElementById("cabra-success-overlay"),s=document.getElementById("cabra-success-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function M(e){E();const a=document.getElementById("cabra-error-toast"),s=document.getElementById("cabra-error-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{g()},4500)}function g(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const H="https://cabralab.app.n8n.cloud/webhook/form-submission",W="cabra_labs_goat_2025_secure";async function F(e){const a=JSON.stringify({token:W,body:e}),s=await fetch(H,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),n=await s.text();let t={};try{t=n?JSON.parse(n):{}}catch{t={raw:n}}if(!s.ok)throw new Error((t==null?void 0:t.message)||(t==null?void 0:t.raw)||"Error enviando el formulario");return t}const l=f.querySelector("form");l&&l.addEventListener("submit",async e=>{var w;e.preventDefault();const a=o=>{var k,p,_;return((_=(p=(k=l.querySelector(`[name="${o}"]`))==null?void 0:k.value)==null?void 0:p.trim)==null?void 0:_.call(p))??""},s=Array.from(l.querySelectorAll('input[name="canales"]:checked')).map(o=>o.value),n=Array.from(l.querySelectorAll('input[name="integraciones"]:checked')).map(o=>o.value),t=((w=l.querySelector('input[name="plan"]:checked'))==null?void 0:w.value)??"",i=new URLSearchParams(window.location.search),j=Object.fromEntries(i.entries()),B=i.get("utm_source")||"",C=i.get("utm_medium")||"",I=i.get("utm_campaign")||"",T=i.get("utm_content")||"",S=i.get("utm_term")||"",y=a("nombre"),$=a("email"),h=a("whatsapp"),v=a("url"),d=a("casos"),m=a("horario"),u=a("sla"),b=a("handoff"),L=[d?`Casos: ${d}`:"",s.length?`Canales: ${s.join(", ")}`:"",m?`Horario humano: ${m}`:"",u?`SLA humano: ${u}`:"",b?`Handoff: ${b}`:"",n.length?`Integraciones: ${n.join(", ")}`:"",t?`Plan sugerido: ${t}`:""].filter(Boolean).join(`
+`),q={agent:"Bruno",plan:t,name:y,email:$,phone:h,company:"",website:v,message:L,source_url:window.location.href,nombre:y,whatsapp:h,url:v,utm:j,utm_source:B,utm_medium:C,utm_campaign:I,utm_content:T,utm_term:S,bruno_negocio:"",bruno_oferta:d,bruno_canales:s.join(", "),bruno_presupuesto:"",bruno_objetivo:"",bruno_plan:t,bruno:{oferta:d,canales:s.join(`
+`),horario:m,sla:u,handoff:b,integraciones:n.join(`
+`),plan:t}},r=l.querySelector('button[type="submit"]'),O=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const o=await F(q);z((o==null?void 0:o.message)||"Recibimos tu información. Te contactaremos pronto."),l.reset()}catch(o){console.error(o),M("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{r&&(r.disabled=!1,r.textContent=O)}});

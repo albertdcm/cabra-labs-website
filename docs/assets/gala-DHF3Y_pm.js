@@ -1,10 +1,8 @@
-import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets/Gala%20Interno-CbumL5kd.png",g=document.querySelector("#app");if(!g)throw new Error("No se encontró el elemento #app");g.innerHTML=`
+import{C as S,T as L,I as O}from"./Cabra Labs Logo-DKhkTmSi.js";const B="/assets/Gala%20Interno-CbumL5kd.png",g=document.querySelector("#app");if(!g)throw new Error("No se encontró el elemento #app");g.innerHTML=`
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-
-        <!-- LOGO (PNG, VITE OK) -->
         <a href="/" class="flex items-center group">
           <img
             src="${S}"
@@ -25,127 +23,144 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
     </header>
 
     <!-- CONTENIDO -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-12">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-8 md:py-10 space-y-10">
 
-      <!-- HERO GALA -->
-      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
+      <!-- ✅ HERO GALA (compacto + imagen integrada al banner como Bruno/Nia) -->
+      <section class="grid gap-6 md:gap-8 md:grid-cols-[minmax(0,1.55fr),minmax(0,1fr)] items-center">
         <!-- Texto -->
-        <div class="space-y-6">
+        <div class="space-y-4 md:space-y-5">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-200">
             <span class="text-sm">⚡</span>
             <span>Gala · Captación y calificación</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
-            Convierte mensajes y clics en <span class="text-gradient-emerald">oportunidades reales</span> con Gala
+            Convierte clics y mensajes en <span class="text-gradient-emerald">leads listos para comprar</span>
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Gala organiza tu ruta de ventas con una <span class="text-slate-100">arquitectura probada</span> que adaptamos a tu negocio:
-            atrae, califica y empuja al lead hacia la decisión con seguimiento inteligente para que
-            <span class="text-slate-100">no se te escape ninguna venta</span>.
+            Gala diseña tu ruta de ventas con un funnel probado:
+            <span class="text-slate-100">atrae</span>,
+            <span class="text-slate-100">califica</span> y
+            <span class="text-slate-100">mueve al lead</span> hacia la decisión con
+            seguimiento inteligente para que no se te escape ninguna oportunidad.
           </p>
-
-          <!-- Plan / Qué incluye -->
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Qué incluye</p>
-              <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-                <li>• Diagnóstico + mapa del funnel (etapas, fricciones y objeciones).</li>
-                <li>• Mensajes por etapa con tono de marca (IG/WhatsApp/Email opcional).</li>
-                <li>• Calificación de leads (frío / tibio / caliente) y segmentación básica.</li>
-                <li>• Tracking y métricas clave para mejorar con datos.</li>
-                <li>• Iteración semanal: ajustes para convertir más.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Planes (automatizaciones incluidas)</p>
-              <div class="mt-3 space-y-3 text-sm text-slate-200/90">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Base</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones + 
-                    <span class="text-emerald-200 font-semibold">1</span> funnel principal.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Crecimiento</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones + 
-                    <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación básica.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Escala</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones + 
-                    <span class="text-emerald-200 font-semibold">3</span> funnels + reportes avanzados.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
-                </div>
-
-                <p class="text-[11px] text-slate-400">
-                  “Automatización” = un flujo completo (ej: lead → calificación → recordatorios → cierre).
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Precio -->
-          <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
-            <p class="text-sm text-slate-200/90">
-              <span class="text-emerald-200 font-semibold">Setup desde $350</span> · mensualidad fija por plan:
-              <span class="text-emerald-200 font-semibold">Base $200/mes</span> ·
-              <span class="text-emerald-200 font-semibold">Crecimiento $350/mes</span> ·
-              <span class="text-emerald-200 font-semibold">Escala $550/mes</span>.
-            </p>
-            <p class="text-[11px] text-slate-400 mt-1">
-              Si ya tienes herramientas (CRM, WhatsApp, email), nos integramos para aprovechar lo que ya funciona.
-              Automatizaciones a medida e integraciones especiales se cotizan por proyecto.
-            </p>
-          </div>
         </div>
 
-        <!-- Imagen Gala -->
-        <div class="relative flex items-center justify-center">
-          <div class="absolute -inset-6 rounded-3xl bg-emerald-500/15 blur-3xl opacity-80"></div>
-          <div class="relative rounded-3xl border border-emerald-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
+        <!-- ✅ Imagen Gala (subida + alineada al centro del hero; se siente parte del banner) -->
+        <div class="relative flex items-center justify-center md:justify-end">
+          <div class="absolute -inset-8 rounded-3xl bg-emerald-500/15 blur-3xl opacity-80"></div>
+
+          <div class="relative rounded-3xl border border-emerald-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
             <img
-              src="${z}"
+              src="${B}"
               alt="Gala, agente GOAT de estrategia y funnels"
-              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
+              class="w-44 md:w-56 lg:w-64 max-w-full mx-auto"
               loading="lazy"
               decoding="async"
             />
-            <p class="mt-4 text-[11px] text-center text-emerald-100/80">
-              Gala te dice qué decir, cuándo decirlo y cómo mover al lead hasta el cierre (sin perseguir).
+            <p class="mt-3 text-[11px] text-center text-emerald-100/80">
+              Gala define qué decir, cuándo decirlo y cómo llevar al lead al siguiente paso.
             </p>
           </div>
         </div>
       </section>
 
+      <!-- ✅ INFO EN 1 FILA (Qué incluye / Planes / Precio) | MÁS COMPACTO + MISMO ALTO -->
+      <section id="planes" class="grid gap-4 md:gap-3 md:grid-cols-3 items-stretch scroll-mt-24">
+
+        <!-- Qué incluye -->
+        <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-4 card-soft md:h-full flex flex-col">
+          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Qué incluye</p>
+
+          <ul class="mt-2 space-y-2 text-sm text-slate-200/90">
+            <li>• Diagnóstico + mapa del funnel (etapas, fricciones, objeciones).</li>
+            <li>• Mensajes por etapa con tono de marca (WhatsApp/IG · Email opcional).</li>
+            <li>• Calificación (frío / tibio / caliente) + segmentación base.</li>
+            <li>• Tracking + métricas clave para mejorar con datos.</li>
+            <li>• Iteración semanal: ajustes para convertir más.</li>
+          </ul>
+
+          <div class="mt-auto"></div>
+        </div>
+
+        <!-- Planes -->
+        <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-4 card-soft md:h-full flex flex-col">
+          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Planes (incluye automatizaciones)</p>
+
+          <div class="mt-2 space-y-2 text-sm text-slate-200/90">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Base</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones +
+                <span class="text-emerald-200 font-semibold">1</span> funnel principal
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Crecimiento</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones +
+                <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Escala</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones +
+                <span class="text-emerald-200 font-semibold">3</span> funnels + reportes
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-slate-400 mt-auto pt-2">
+            “Automatización” = un flujo completo (lead → calificación → recordatorios → cierre).
+          </p>
+        </div>
+
+        <!-- Precio / Integraciones -->
+        <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-4 card-soft md:h-full flex flex-col">
+          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Precio e integraciones</p>
+
+          <p class="mt-2 text-sm text-slate-200/90 leading-relaxed">
+            <span class="text-emerald-200 font-semibold">Setup desde $350</span> · mensualidad fija por plan:
+            <span class="text-emerald-200 font-semibold">Base $200</span> ·
+            <span class="text-emerald-200 font-semibold">Crecimiento $350</span> ·
+            <span class="text-emerald-200 font-semibold">Escala $550</span>.
+          </p>
+
+          <p class="text-[11px] text-slate-400 mt-auto pt-2 leading-relaxed">
+            Si ya usas CRM, WhatsApp, email o pasarela, nos integramos para aprovechar lo que ya funciona.
+            Integraciones especiales se cotizan por proyecto.
+          </p>
+        </div>
+
+      </section>
+
       <!-- FORMULARIO GALA -->
-      <section class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start">
+      <section id="briefing" class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start scroll-mt-24">
         <!-- Copy formulario -->
         <div class="space-y-4">
           <h2 class="text-xl md:text-2xl font-semibold">
             Briefing para activar a Gala
           </h2>
+
           <p class="text-sm text-slate-300 leading-relaxed">
-            Con esta info preparamos tu diagnóstico, definimos el funnel y estimamos el plan ideal
-            para <span class="text-slate-100">captar y calificar</span> mejor desde el día 1.
+            Con esta info preparamos tu diagnóstico y estimamos el plan ideal para captar y calificar mejor
+            <span class="text-slate-100">desde el día 1</span>.
           </p>
 
           <div class="rounded-3xl border border-white/10 bg-white/5 p-5 card-soft">
-            <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Lo que armamos con esto</p>
+            <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Lo que te llevas</p>
             <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
               <li>• Funnel recomendado (1–3 etapas principales).</li>
               <li>• Plan sugerido (Base / Crecimiento / Escala).</li>
-              <li>• Recomendación de herramientas e integraciones.</li>
-              <li>• Próximos pasos (implementación y timing).</li>
+              <li>• Integraciones recomendadas (si aplica).</li>
+              <li>• Próximos pasos + timing estimado.</li>
             </ul>
           </div>
         </div>
@@ -298,8 +313,6 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
       <!-- FOOTER -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
-
-          <!-- BRAND -->
           <div class="space-y-3">
             <p class="font-semibold">Cabra Labs</p>
             <p class="text-xs text-slate-400 leading-relaxed">
@@ -321,7 +334,7 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
                 href="https://instagram.com/cabra_labs"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram @cabra.labs"
+                aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
                 <img src="${O}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
@@ -329,7 +342,6 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
             </div>
           </div>
 
-          <!-- AGENTES -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
@@ -339,7 +351,6 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
             </ul>
           </div>
 
-          <!-- SOPORTE -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
             <ul class="space-y-1 text-xs text-slate-400">
@@ -349,10 +360,9 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="#planes">Planes y precios</a></li>
             </ul>
           </div>
-
         </div>
 
         <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
@@ -533,11 +543,11 @@ import{C as S,T as L,I as O}from"./Cabra Labs Logo-C6zyiMoo.js";const z="/assets
         <button class="cabra-toast__close" type="button" aria-label="Cerrar" data-cabra-toast-close>✕</button>
       </div>
     </div>
-  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",t=>{t.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(t=>{t.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(t=>{t.addEventListener("click",()=>u())}),window.addEventListener("keydown",t=>{t.key==="Escape"&&(x(),u())})}function q(e){w();const a=document.getElementById("cabra-success-overlay"),t=document.getElementById("cabra-success-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function B(e){w();const a=document.getElementById("cabra-error-toast"),t=document.getElementById("cabra-error-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{u()},4500)}function u(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const G="https://cabralab.app.n8n.cloud/webhook/form-submission",P="cabra_labs_goat_2025_secure";async function R(e){const a=JSON.stringify({token:P,body:e}),t=await fetch(G,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),r=await t.text();let s={};try{s=r?JSON.parse(r):{}}catch{s={raw:r}}if(!t.ok)throw new Error((s==null?void 0:s.message)||(s==null?void 0:s.raw)||"Error enviando el formulario");return s}const i=g.querySelector("form");i&&i.addEventListener("submit",async e=>{var v;e.preventDefault();const a=l=>{var y,p,h;return((h=(p=(y=i.querySelector(`[name="${l}"]`))==null?void 0:y.value)==null?void 0:p.trim)==null?void 0:h.call(p))??""},t=Array.from(i.querySelectorAll('input[name="herramientas"]:checked')).map(l=>l.value),r=((v=i.querySelector('input[name="plan"]:checked'))==null?void 0:v.value)??"",s=new URLSearchParams(window.location.search),_=Object.fromEntries(s.entries()),k=s.get("utm_source")||"",E=s.get("utm_medium")||"",j=s.get("utm_campaign")||"",C=s.get("utm_content")||"",T=s.get("utm_term")||"",m=a("oferta"),n=a("canales"),d=a("objetivo"),b=a("ticket"),A=a("url"),f=[`Oferta: ${m}`,n?`Canales: ${n}`:"",d?`Objetivo: ${d}`:"",b?`Ticket: ${b}`:"",t.length?`Herramientas: ${t.join(", ")}`:"",r?`Plan sugerido: ${r}`:""].filter(Boolean).join(`
-`),$={agent:"Gala",plan:r,name:a("nombre"),email:a("email"),phone:a("whatsapp"),company:"",website:A,message:f,source_url:window.location.href,need:f,budget:b,timeline:"",utm_source:k,utm_medium:E,utm_campaign:j,utm_content:C,utm_term:T,utm:_,gala_objetivo:d,gala_procesos:[m,n?`Canales: ${n}`:""].filter(Boolean).join(`
+  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",t=>{t.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(t=>{t.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(t=>{t.addEventListener("click",()=>u())}),window.addEventListener("keydown",t=>{t.key==="Escape"&&(x(),u())})}function z(e){w();const a=document.getElementById("cabra-success-overlay"),t=document.getElementById("cabra-success-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function P(e){w();const a=document.getElementById("cabra-error-toast"),t=document.getElementById("cabra-error-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{u()},4500)}function u(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const q="https://cabralab.app.n8n.cloud/webhook/form-submission",G="cabra_labs_goat_2025_secure";async function M(e){const a=JSON.stringify({token:G,body:e}),t=await fetch(q,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),r=await t.text();let s={};try{s=r?JSON.parse(r):{}}catch{s={raw:r}}if(!t.ok)throw new Error((s==null?void 0:s.message)||(s==null?void 0:s.raw)||"Error enviando el formulario");return s}const i=g.querySelector("form");i&&i.addEventListener("submit",async e=>{var v;e.preventDefault();const a=l=>{var y,p,h;return((h=(p=(y=i.querySelector(`[name="${l}"]`))==null?void 0:y.value)==null?void 0:p.trim)==null?void 0:h.call(p))??""},t=Array.from(i.querySelectorAll('input[name="herramientas"]:checked')).map(l=>l.value),r=((v=i.querySelector('input[name="plan"]:checked'))==null?void 0:v.value)??"",s=new URLSearchParams(window.location.search),_=Object.fromEntries(s.entries()),k=s.get("utm_source")||"",j=s.get("utm_medium")||"",C=s.get("utm_campaign")||"",E=s.get("utm_content")||"",I=s.get("utm_term")||"",m=a("oferta"),n=a("canales"),d=a("objetivo"),b=a("ticket"),A=a("url"),f=[`Oferta: ${m}`,n?`Canales: ${n}`:"",d?`Objetivo: ${d}`:"",b?`Ticket: ${b}`:"",t.length?`Herramientas: ${t.join(", ")}`:"",r?`Plan sugerido: ${r}`:""].filter(Boolean).join(`
+`),T={agent:"Gala",plan:r,name:a("nombre"),email:a("email"),phone:a("whatsapp"),company:"",website:A,message:f,source_url:window.location.href,need:f,budget:b,timeline:"",utm_source:k,utm_medium:j,utm_campaign:C,utm_content:E,utm_term:I,utm:_,gala_objetivo:d,gala_procesos:[m,n?`Canales: ${n}`:""].filter(Boolean).join(`
 `),gala_herramientas:t.join(`
 `),gala_integraciones:t.join(`
 `),gala_plan:r,gala:{objetivo:d,procesos:[m,n?`Canales: ${n}`:""].filter(Boolean).join(`
 `),herramientas:t.join(`
 `),integraciones:t.join(`
-`),plan:r}},o=i.querySelector('button[type="submit"]'),I=(o==null?void 0:o.textContent)??"";try{o&&(o.disabled=!0,o.textContent="Enviando…");const l=await R($);q((l==null?void 0:l.message)||"Recibimos tu información. Te contactaremos pronto."),i.reset()}catch(l){console.error(l),B("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{o&&(o.disabled=!1,o.textContent=I)}});
+`),plan:r}},o=i.querySelector('button[type="submit"]'),$=(o==null?void 0:o.textContent)??"";try{o&&(o.disabled=!0,o.textContent="Enviando…");const l=await M(T);z((l==null?void 0:l.message)||"Recibimos tu información. Te contactaremos pronto."),i.reset()}catch(l){console.error(l),P("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{o&&(o.disabled=!1,o.textContent=$)}});

@@ -1,4 +1,4 @@
-import{C as c,T as d,I as n}from"./Cabra Labs Logo-C6zyiMoo.js";const p="/assets/Bruno-Cyc_QUnD.png",m="/assets/Gala-krAELU__.png",x="/assets/Nia-hhaFx0w2.png",u="/assets/cabras%20trabajando-CGKFwWGa.png",v="/assets/cabras%20futuristas-4WcOcFQL.png",b=document.querySelector("#app");if(!b)throw new Error("No se encontró el elemento #app");b.innerHTML=`
+import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets/Bruno-Cyc_QUnD.png",m="/assets/Gala-krAELU__.png",x="/assets/Nia-hhaFx0w2.png",u="/assets/cabras%20trabajando-CGKFwWGa.png",v="/assets/cabras%20futuristas-4WcOcFQL.png",b=document.querySelector("#app");if(!b)throw new Error("No se encontró el elemento #app");b.innerHTML=`
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- FIX: Tap highlight / click overlay (iOS + desktop) -> gris oscuro, focus verde -->
     <style>

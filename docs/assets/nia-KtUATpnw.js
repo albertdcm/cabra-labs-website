@@ -1,13 +1,22 @@
-import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets/Nia%20Interno-CeIzaFWq.png",h=document.querySelector("#app");if(!h)throw new Error("No se encontró el elemento #app");h.innerHTML=`
+import{C as L,T as R,I as j}from"./Cabra Labs Logo-DKhkTmSi.js";const $="/assets/Nia%20Interno-CeIzaFWq.png",h=document.querySelector("#app");if(!h)throw new Error("No se encontró el elemento #app");h.innerHTML=`
   <div class="nia-page min-h-screen bg-slate-950 text-slate-50">
-    <!-- FIX HOVER VERDE -> MORADO (solo para esta página) -->
+    <!-- ✅ Ajustes SOLO para Nia (sin cambiar el diseño base) -->
     <style>
+      /* FIX HOVER VERDE -> MORADO (solo para esta página) */
       .nia-page .card-soft:hover,
+      .nia-page .card-soft:active,
       .nia-page .card-soft:focus-within {
         border-color: rgba(192, 132, 252, 0.55) !important; /* purple-300 */
         box-shadow:
           0 0 0 2px rgba(192, 132, 252, 0.22),
           0 0 30px -10px rgba(168, 85, 247, 0.45) !important; /* purple glow */
+      }
+
+      /* ✅ Igualar alturas SOLO en desktop para la fila de 3 tarjetas */
+      @media (min-width: 768px){
+        .nia-page .equal-row > .equal-card{
+          height: 100%;
+        }
       }
 
       /* ===========================
@@ -221,7 +230,7 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
         <a href="/" class="flex items-center group">
           <img
-            src="${N}"
+            src="${L}"
             alt="Cabra Labs"
             class="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
             loading="eager"
@@ -239,14 +248,15 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
     </header>
 
     <!-- CONTENIDO -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-12">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-9 md:py-12 space-y-10 md:space-y-12">
 
-      <!-- HERO NIA -->
-      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
-        <div class="space-y-6">
+      <!-- ✅ HERO NIA (más compacto + imagen integrada al banner) -->
+      <section class="grid gap-8 md:gap-10 md:grid-cols-[minmax(0,1.35fr),minmax(0,1fr)] items-center">
+        <!-- Texto -->
+        <div class="space-y-5 md:space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-purple-200">
             <span class="text-sm">⚡</span>
-            <span>Nia · CRM & Seguimiento</span>
+            <span>Nia · Seguimiento & CRM</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -254,84 +264,102 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Nia organiza tu equipo comercial: estructura tu pipeline, recuerda tareas,
-            automatiza mensajes de seguimiento y te muestra qué oportunidades están
-            por cerrarse para que no se te enfríen los prospectos.
+            Nia ordena tu pipeline, automatiza seguimientos (24h/72h), crea tareas y recordatorios,
+            y te muestra qué oportunidades están por cerrarse para que <span class="text-slate-100">no se enfríen prospectos</span>.
           </p>
+        </div>
 
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Qué incluye</p>
-              <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-                <li>• Configuración de CRM / pipeline (etapas, estados y reglas).</li>
-                <li>• Automatizaciones de seguimiento (no-respondió, recontacto, post-llamada).</li>
-                <li>• Recordatorios y tareas para el equipo (SLA, próximos pasos).</li>
-                <li>• Etiquetas y segmentación (frío / tibio / caliente / VIP).</li>
-                <li>• Dashboards básicos de oportunidades y conversiones.</li>
-                <li>• Optimización continua según resultados.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Automatizaciones incluidas</p>
-              <div class="mt-3 space-y-3 text-sm text-slate-200/90">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Base</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Crecimiento</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Escala</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards avanzados.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
-                </div>
-
-                <p class="text-[11px] text-slate-400">
-                  “Automatización” = una regla/flujo completo (ej: lead → tarea → mensaje → cambio de etapa → alerta).
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- ✅ AJUSTE: pricing fijo (setup + mensualidad por plan) -->
-          <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
-            <p class="text-sm text-slate-200/90">
-              <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
-              <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
-              <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
-              <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
+        <!-- Imagen Nia (sube y se siente parte del hero/banner) -->
+        <div class="relative flex items-center justify-center md:justify-end">
+          <div class="absolute -inset-6 rounded-3xl bg-purple-500/15 blur-3xl opacity-80"></div>
+          <div class="relative rounded-3xl border border-purple-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
+            <img
+              src="${$}"
+              alt="Nia, agente GOAT de CRM y seguimiento"
+              class="w-48 md:w-64 lg:w-72 max-w-full mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="mt-3 text-[11px] text-center text-purple-100/80">
+              Nia te da estructura y seguimiento automático para cerrar sin perseguir.
             </p>
-            <p class="text-[11px] text-slate-400 mt-1">
-              Integraciones especiales, migraciones o automatizaciones a medida se cotizan por proyecto.
-              Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ INFO EN 1 FILA (desktop): Qué incluye / Planes / Precio (alto igual) -->
+      <section class="grid gap-4 md:gap-5 md:grid-cols-3 md:items-stretch equal-row">
+        <!-- Qué incluye -->
+        <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Qué incluye</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+            <li>• Configuración de CRM / pipeline (etapas, estados y reglas).</li>
+            <li>• Seguimiento automático (no-respondió, recontacto, post-llamada).</li>
+            <li>• Recordatorios y tareas (SLA, próximos pasos).</li>
+            <li>• Etiquetas y segmentación (frío / tibio / caliente / VIP).</li>
+            <li>• Dashboards básicos de oportunidades y conversiones.</li>
+            <li>• Optimización continua según resultados.</li>
+          </ul>
+        </div>
+
+        <!-- Planes -->
+        <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Planes (automatizaciones incluidas)</p>
+
+          <div class="mt-3 space-y-3 text-sm text-slate-200/90">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Base</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Crecimiento</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Escala</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
+            </div>
+
+            <p class="text-[11px] text-slate-400">
+              “Automatización” = una regla/flujo completo (lead → tarea → mensaje → cambio de etapa → alerta).
             </p>
           </div>
         </div>
 
-        <div class="relative flex items-center justify-center">
-          <div class="absolute -inset-6 rounded-3xl bg-purple-500/15 blur-3xl opacity-80"></div>
-          <div class="relative rounded-3xl border border-purple-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
-            <img
-              src="${L}"
-              alt="Nia, agente GOAT de CRM y seguimiento"
-              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="mt-4 text-[11px] text-center text-purple-100/80">
-              Nia ordena tu pipeline y hace seguimiento automático para que cierres sin perseguir.
-            </p>
+        <!-- Precio -->
+        <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Precio</p>
+
+          <p class="mt-3 text-sm text-slate-200/90">
+            <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
+            <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
+            <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
+            <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
+          </p>
+
+          <p class="text-[11px] text-slate-400 mt-2">
+            Integraciones especiales, migraciones o automatizaciones a medida se cotizan por proyecto.
+            Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
+          </p>
+
+          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-xs text-slate-300">Ideal si hoy:</p>
+            <ul class="mt-2 space-y-1 text-[12px] text-slate-200/90">
+              <li>• Hablas con leads pero no avanzan a cierre</li>
+              <li>• No tienes pipeline claro ni próximos pasos</li>
+              <li>• No hay seguimiento sistemático (se enfrían)</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -499,7 +527,6 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
             </div>
           </div>
 
-          <!-- ✅ AJUSTE: cards del plan incluyen precio -->
           <div class="space-y-1.5">
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
@@ -549,7 +576,7 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
                 aria-label="TikTok @cabra.labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${j}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${R}" alt="TikTok @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
 
               <a
@@ -559,7 +586,7 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
                 aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${$}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${j}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -632,6 +659,6 @@ import{C as N,T as j,I as $}from"./Cabra Labs Logo-C6zyiMoo.js";const L="/assets
     </div>
 
   </div>
-`;const A="https://cabralab.app.n8n.cloud/webhook/form-submission",B="cabra_labs_goat_2025_secure";async function M(e){const a=JSON.stringify({token:B,body:e}),s=await fetch(A,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),o=await s.text();let t={};try{t=o?JSON.parse(o):{}}catch{t={raw:o}}if(!s.ok)throw new Error((t==null?void 0:t.message)||(t==null?void 0:t.raw)||"Error enviando el formulario");return t}const l=h.querySelector("form");l&&l.addEventListener("submit",async e=>{var k;e.preventDefault();const a=i=>{var E,f,S;return((S=(f=(E=l.querySelector(`[name="${i}"]`))==null?void 0:E.value)==null?void 0:f.trim)==null?void 0:S.call(f))??""},s=Array.from(l.querySelectorAll('input[name="seguimientos"]:checked')).map(i=>i.value),o=((k=l.querySelector('input[name="plan"]:checked'))==null?void 0:k.value)??"",t=new URLSearchParams(window.location.search),p=Object.fromEntries(t.entries()),C=t.get("utm_source")||"",T=t.get("utm_medium")||"",z=t.get("utm_campaign")||"",O=t.get("utm_content")||"",q=t.get("utm_term")||"",d=a("proceso"),m=a("crm"),u=a("equipo"),b=a("etapas"),y=s.join(", "),x=a("sla"),g=a("objetivo"),c=o,w=[d?`Proceso: ${d}`:"",m?`CRM: ${m}`:"",u?`Equipo: ${u}`:"",b?`Etapas: ${b}`:"",s.length?`Seguimientos: ${y}`:"",x?`SLA respuesta: ${x}`:"",g?`Objetivo: ${g}`:"",c?`Plan sugerido: ${c}`:""].filter(Boolean).join(`
-`),I={agent:"Nia",plan:c,name:a("nombre"),email:a("email"),phone:a("whatsapp"),company:"",website:a("url"),message:w,source_url:window.location.href,nombre:a("nombre"),need:w,budget:"",timeline:"",utm:p,utm_source:C,utm_medium:T,utm_campaign:z,utm_content:O,utm_term:q,nia_proceso:d,nia_crm:m,nia_equipo:u,nia_etapas:b,nia_seguimientos:y,nia_sla:x,nia_objetivo:g,nia_plan:c,nia:{proceso:d,crm:m,equipo:u,etapas:b,seguimientos:s.join(`
-`),sla:x,objetivo:g,plan:c}},r=l.querySelector('button[type="submit"]'),R=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const i=await M(I);P((i==null?void 0:i.message)||"✅ Recibimos tu información. Te contactaremos pronto."),l.reset()}catch(i){console.error(i),F("❌ No se pudo enviar. Revisa tu conexión e intenta de nuevo.")}finally{r&&(r.disabled=!1,r.textContent=R)}});let _=!1,n;function P(e){const a=document.getElementById("cabra-modal"),s=document.getElementById("cabra-modal-msg");s&&(s.textContent=e),a==null||a.classList.add("is-open"),H()}function D(){var e;(e=document.getElementById("cabra-modal"))==null||e.classList.remove("is-open")}function H(){if(_)return;_=!0;const e=document.getElementById("cabra-modal"),a=document.getElementById("cabra-modal-ok"),s=document.getElementById("cabra-modal-close"),o=document.getElementById("cabra-modal-x"),t=()=>D();a==null||a.addEventListener("click",t),s==null||s.addEventListener("click",t),o==null||o.addEventListener("click",t),e==null||e.addEventListener("click",p=>{p.target===e&&t()}),window.addEventListener("keydown",p=>{p.key==="Escape"&&(t(),v())})}function F(e){const a=document.getElementById("cabra-toast"),s=document.getElementById("cabra-toast-msg");s&&(s.textContent=e),a==null||a.classList.add("is-open");const o=document.getElementById("cabra-toast-x");o==null||o.addEventListener("click",v),n&&window.clearTimeout(n),n=window.setTimeout(()=>v(),5e3)}function v(){const e=document.getElementById("cabra-toast");e==null||e.classList.remove("is-open"),n&&window.clearTimeout(n),n=void 0}
+`;const A="https://cabralab.app.n8n.cloud/webhook/form-submission",P="cabra_labs_goat_2025_secure";async function B(e){const a=JSON.stringify({token:P,body:e}),s=await fetch(A,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),o=await s.text();let t={};try{t=o?JSON.parse(o):{}}catch{t={raw:o}}if(!s.ok)throw new Error((t==null?void 0:t.message)||(t==null?void 0:t.raw)||"Error enviando el formulario");return t}const l=h.querySelector("form");l&&l.addEventListener("submit",async e=>{var k;e.preventDefault();const a=i=>{var E,f,O;return((O=(f=(E=l.querySelector(`[name="${i}"]`))==null?void 0:E.value)==null?void 0:f.trim)==null?void 0:O.call(f))??""},s=Array.from(l.querySelectorAll('input[name="seguimientos"]:checked')).map(i=>i.value),o=((k=l.querySelector('input[name="plan"]:checked'))==null?void 0:k.value)??"",t=new URLSearchParams(window.location.search),c=Object.fromEntries(t.entries()),_=t.get("utm_source")||"",C=t.get("utm_medium")||"",I=t.get("utm_campaign")||"",N=t.get("utm_content")||"",q=t.get("utm_term")||"",d=a("proceso"),m=a("crm"),u=a("equipo"),b=a("etapas"),y=s.join(", "),x=a("sla"),g=a("objetivo"),p=o,w=[d?`Proceso: ${d}`:"",m?`CRM: ${m}`:"",u?`Equipo: ${u}`:"",b?`Etapas: ${b}`:"",s.length?`Seguimientos: ${y}`:"",x?`SLA respuesta: ${x}`:"",g?`Objetivo: ${g}`:"",p?`Plan sugerido: ${p}`:""].filter(Boolean).join(`
+`),T={agent:"Nia",plan:p,name:a("nombre"),email:a("email"),phone:a("whatsapp"),company:"",website:a("url"),message:w,source_url:window.location.href,nombre:a("nombre"),need:w,budget:"",timeline:"",utm:c,utm_source:_,utm_medium:C,utm_campaign:I,utm_content:N,utm_term:q,nia_proceso:d,nia_crm:m,nia_equipo:u,nia_etapas:b,nia_seguimientos:y,nia_sla:x,nia_objetivo:g,nia_plan:p,nia:{proceso:d,crm:m,equipo:u,etapas:b,seguimientos:s.join(`
+`),sla:x,objetivo:g,plan:p}},r=l.querySelector('button[type="submit"]'),z=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const i=await B(T);M((i==null?void 0:i.message)||"✅ Recibimos tu información. Te contactaremos pronto."),l.reset()}catch(i){console.error(i),H("❌ No se pudo enviar. Revisa tu conexión e intenta de nuevo.")}finally{r&&(r.disabled=!1,r.textContent=z)}});let S=!1,n;function M(e){const a=document.getElementById("cabra-modal"),s=document.getElementById("cabra-modal-msg");s&&(s.textContent=e),a==null||a.classList.add("is-open"),F()}function D(){var e;(e=document.getElementById("cabra-modal"))==null||e.classList.remove("is-open")}function F(){if(S)return;S=!0;const e=document.getElementById("cabra-modal"),a=document.getElementById("cabra-modal-ok"),s=document.getElementById("cabra-modal-close"),o=document.getElementById("cabra-modal-x"),t=()=>D();a==null||a.addEventListener("click",t),s==null||s.addEventListener("click",t),o==null||o.addEventListener("click",t),e==null||e.addEventListener("click",c=>{c.target===e&&t()}),window.addEventListener("keydown",c=>{c.key==="Escape"&&(t(),v())})}function H(e){const a=document.getElementById("cabra-toast"),s=document.getElementById("cabra-toast-msg");s&&(s.textContent=e),a==null||a.classList.add("is-open");const o=document.getElementById("cabra-toast-x");o==null||o.addEventListener("click",v),n&&window.clearTimeout(n),n=window.setTimeout(()=>v(),5e3)}function v(){const e=document.getElementById("cabra-toast");e==null||e.classList.remove("is-open"),n&&window.clearTimeout(n),n=void 0}
