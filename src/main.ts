@@ -156,11 +156,11 @@ app.innerHTML = `
           <div class="space-y-4">
             <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
               Pon tu negocio en <span class="text-gradient-emerald">piloto automático</span>:
-              respuestas, leads y seguimiento sin contratar más personal.
+              responde rápido y convierte más sin contratar más personal.
             </h1>
             <p class="text-slate-300 text-sm md:text-base max-w-xl">
-              Creamos asistentes GOAT que convierten mensajes en oportunidades: responden en WhatsApp e Instagram,
-              califican interesados, muestran ofertas y hacen seguimiento para que no se te escape ninguna venta.
+              Creamos asistentes GOAT que atienden en WhatsApp e Instagram, califican interesados y hacen seguimiento
+              para que no se te escape ninguna oportunidad.
             </p>
           </div>
 
@@ -208,9 +208,8 @@ app.innerHTML = `
 
             <div class="space-y-3 text-sm">
               <p class="text-slate-200">
-                Diseñamos un “equipo invisible” que atiende y vende detrás de tu negocio:
-                responde rápido, filtra interesados, envía recordatorios y hace seguimiento para que tú
-                te enfoques en decidir y crecer.
+                Un “equipo invisible” que atiende y vende detrás de tu negocio:
+                responde, filtra interesados y hace seguimiento para que tú te enfoques en decidir y crecer.
               </p>
               <ul class="list-disc list-inside text-slate-300 text-xs space-y-1">
                 <li>Atención automática en WhatsApp, Instagram, web y más.</li>
@@ -220,111 +219,63 @@ app.innerHTML = `
             </div>
 
             <p class="text-[11px] text-slate-400">
-              Nos adaptamos a tus sistemas actuales para mejorar lo que ya tienes,
-              no para obligarte a empezar desde cero.
+              Nos adaptamos a tu sistema actual — sin obligarte a empezar desde cero.
             </p>
           </div>
         </aside>
       </section>
 
-      <!-- SOBRE -->
-      <section id="sobre" class="relative">
-        <div class="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl"></div>
+      <!-- ✅ GUÍA RÁPIDA (para reducir fricción y mejorar el scroll) -->
+      <section class="relative">
+        <div class="pointer-events-none absolute -left-24 -top-12 h-60 w-60 rounded-full bg-emerald-500/12 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-24 bottom-0 h-60 w-60 rounded-full bg-sky-500/12 blur-3xl"></div>
 
-        <div class="relative grid gap-10 md:grid-cols-[minmax(0,1.3fr),minmax(0,1fr)] items-start">
-          <div class="space-y-6">
+        <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900/80 via-slate-950 to-slate-900/70 px-6 py-7 md:px-8 md:py-8 card-soft">
+          <div class="space-y-3 max-w-3xl">
             <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
-              <span class="text-base">🐐</span>
-              <span>Quiénes somos</span>
+              <span class="text-base">🧭</span>
+              <span>Por dónde empezar</span>
             </div>
 
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">
-              Cabra Labs es tu equipo GOAT
-              <span class="text-emerald-300"> para vender y atender sin complicarte </span>
+            <h2 class="text-xl md:text-2xl font-semibold">
+              Elige el primer paso según tu problema
             </h2>
 
-            <p class="text-slate-200/90 leading-relaxed text-sm md:text-base">
-              Combinamos negocio y tecnología para que tu empresa responda más rápido,
-              no pierda oportunidades y haga seguimiento hasta cerrar.
-            </p>
-
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="rounded-full bg-slate-900/70 border border-emerald-500/40 px-3 py-1 text-xs text-emerald-100">
-                Menos conversaciones perdidas
-              </span>
-              <span class="rounded-full bg-slate-900/70 border border-sky-500/40 px-3 py-1 text-xs text-sky-100">
-                Más cierres sin perseguir
-              </span>
-              <span class="rounded-full bg-slate-900/70 border border-violet-500/40 px-3 py-1 text-xs text-violet-100">
-                Atención consistente 24/7
-              </span>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="relative overflow-hidden rounded-3xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-emerald-500/20 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-emerald-400/40 card-soft">
-              <h3 class="text-lg font-semibold text-emerald-100">Identificamos dónde se te escapan ventas</h3>
-              <p class="text-sm text-emerald-50/80 leading-relaxed mt-2">
-                Revisamos cómo te llegan los mensajes, qué preguntas te hacen y qué pasa después.
-                Con eso armamos un mapa simple para responder mejor y dar seguimiento.
-              </p>
-            </div>
-
-            <div class="relative overflow-hidden rounded-3xl border border-violet-400/40 bg-gradient-to-br from-violet-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-violet-500/20 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-violet-400/40 card-soft">
-              <h3 class="text-lg font-semibold text-violet-100">Implementamos y optimizamos contigo</h3>
-              <p class="text-sm text-violet-50/80 leading-relaxed mt-2">
-                Te acompañamos paso a paso, medimos resultados y ajustamos hasta que el sistema
-                responda mejor, capture leads y cierre más.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ALIADOS -->
-      <section class="relative">
-        <div class="pointer-events-none absolute -left-24 -top-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl"></div>
-
-        <div class="relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950 px-6 py-7 md:px-8 md:py-8 shadow-xl shadow-emerald-500/15 backdrop-blur">
-          <div class="space-y-3 max-w-2xl">
-            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-emerald-200">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              Ecosistema GOAT
-            </div>
-
-            <h2 class="text-xl md:text-2xl font-semibold">Nos integramos con lo que ya usas</h2>
             <p class="text-sm text-slate-300">
-              Conectamos tus asistentes con pagos, anuncios, CRM y tiendas online para que todo fluya y puedas cerrar más.
+              No necesitas saber de automatizaciones: te decimos qué agente te conviene primero.
             </p>
           </div>
 
-          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 text-[11px] md:text-xs">
-            ${["Meta","Google","Microsoft","Stripe","WhatsApp API","N8N","Shopify","WordPress"]
-              .map(
-                (name) => `
-                  <div class="card-soft py-2 px-3 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
-                    ${name}
-                  </div>
-                `
-              )
-              .join("")}
+          <div class="mt-6 grid gap-3 md:grid-cols-3 text-sm">
+            <a href="/bruno.html" class="card-soft p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
+              <p class="text-slate-100 font-semibold">Pierdo mensajes o respondo tarde</p>
+              <p class="text-xs text-slate-300 mt-1">Empieza con <span class="text-sky-200 font-semibold">Bruno</span> (atención 24/7).</p>
+            </a>
+
+            <a href="/gala.html" class="card-soft p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
+              <p class="text-slate-100 font-semibold">Me llegan leads, pero no buenos</p>
+              <p class="text-xs text-slate-300 mt-1">Empieza con <span class="text-emerald-200 font-semibold">Gala</span> (captación + calificación).</p>
+            </a>
+
+            <a href="/nia.html" class="card-soft p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
+              <p class="text-slate-100 font-semibold">Hablo con leads, pero no cierro</p>
+              <p class="text-xs text-slate-300 mt-1">Empieza con <span class="text-purple-200 font-semibold">Nia</span> (seguimiento + cierre).</p>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- AGENTES -->
-      <section id="agentes" class="relative pt-12 md:pt-16 pb-10 md:pb-16 space-y-10">
+      <section id="agentes" class="relative pt-8 md:pt-10 pb-6 md:pb-10 space-y-10">
         <div class="space-y-2 text-center md:text-left">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.18em] text-emerald-200">
             <span class="text-sm">⚡</span> Agentes GOAT
           </div>
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-50">
-            Conoce a nuestros agentes GOAT
+            Elige tu agente GOAT
           </h2>
           <p class="text-slate-300 max-w-2xl text-sm md:text-base">
-            Cada agente se concentra en una parte clave: atraer, responder y dar seguimiento hasta cerrar.
+            Cada uno se enfoca en una etapa: atraer, responder o hacer seguimiento hasta cerrar.
           </p>
         </div>
 
@@ -336,18 +287,18 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${GalaImg}" alt="Gala" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Gala · Captación y calificación</h3>
+                    <h3 class="text-xl font-semibold text-slate-50">Gala · Leads listos para comprar</h3>
                     <p class="text-sm text-emerald-200/90">$350 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
 
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Gala atrae y califica: convierte clics y mensajes en oportunidades reales, con una arquitectura probada que adaptamos a tu negocio.”
+                  “Convierte clics y mensajes en oportunidades reales: atrae, califica y ordena tus leads.”
                 </p>
 
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
-                  <li>• Calificación automática de leads (frío | tibio | caliente).</li>
-                  <li>• Flujos de captación desde Ads, link en bio y WhatsApp directo.</li>
+                  <li>• Calificación automática (frío | tibio | caliente).</li>
+                  <li>• Captación desde Ads, link en bio y WhatsApp directo.</li>
                   <li>• Etiquetado y conexión a agenda/CRM + métricas básicas.</li>
                   <li>• Canales: WhatsApp · Instagram · Facebook Messenger.</li>
                 </ul>
@@ -368,19 +319,19 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${BrunoImg}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Bruno · Atención 24/7</h3>
+                    <h3 class="text-xl font-semibold text-slate-50">Bruno · Atención 24/7 sin estrés</h3>
                     <p class="text-sm text-sky-200/90">$250 configuración inicial · $150/mes.</p>
                   </div>
                 </div>
 
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Bruno responde y filtra en segundos: atención consistente con tono de marca, captura datos y pasa a humano con contexto cuando hace falta.”
+                  “Responde y filtra en segundos: atención consistente con tono de marca y escalamiento a humano.”
                 </p>
 
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
-                  <li>• Atención automática 24/7 + FAQs y respuestas claras.</li>
+                  <li>• Atención automática 24/7 + FAQs claras.</li>
                   <li>• Captura de datos, filtros y escalamiento a humano.</li>
-                  <li>• Reportes mensuales de actividad y conversaciones.</li>
+                  <li>• Reportes mensuales de actividad.</li>
                   <li>• Canales: WhatsApp · Instagram · Facebook (Web opcional).</li>
                 </ul>
               </div>
@@ -400,19 +351,19 @@ app.innerHTML = `
                 <div class="flex flex-col items-center md:items-start gap-4">
                   <img src="${NiaImg}" alt="Nia" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-slate-50">Nia · Seguimiento y cierre</h3>
+                    <h3 class="text-xl font-semibold text-slate-50">Nia · Seguimiento que cierra</h3>
                     <p class="text-sm text-purple-200/90">$300 configuración inicial · $200/mes.</p>
                   </div>
                 </div>
 
                 <p class="text-slate-300/90 text-sm italic leading-relaxed">
-                  “Nia hace el seguimiento por ti: activa el mensaje correcto en el momento correcto para que el lead no se enfríe y llegues a cierre.”
+                  “Hace el seguimiento por ti: el mensaje correcto, en el momento correcto, para llegar a cierre.”
                 </p>
 
                 <ul class="space-y-2.5 text-sm text-slate-200/90">
                   <li>• Seguimiento automático 24h/72h + recuperación de leads fríos.</li>
-                  <li>• Pipeline base y recordatorios para avanzar oportunidades.</li>
-                  <li>• Alertas y reportes simples de oportunidades y cierres.</li>
+                  <li>• Pipeline base y recordatorios para avanzar.</li>
+                  <li>• Alertas y reportes simples.</li>
                   <li>• Canales: WhatsApp · Instagram (Email opcional).</li>
                 </ul>
               </div>
@@ -442,11 +393,11 @@ app.innerHTML = `
                 </div>
 
                 <h3 class="text-xl md:text-2xl font-semibold">
-                  ¿Necesitas un flujo específico fuera de los planes?
+                  ¿Necesitas algo específico fuera de los planes?
                 </h3>
 
                 <p class="text-sm text-slate-300 leading-relaxed max-w-2xl">
-                  Diseñamos e implementamos el flujo exacto que te falta (pagos, CRM, reportes, campañas, onboarding).
+                  Diseñamos e implementamos el flujo exacto que te falta: pagos, CRM, reportes, campañas u onboarding.
                 </p>
 
                 <!-- ✅ TOGGLE -->
@@ -487,7 +438,7 @@ app.innerHTML = `
                       Para resolver <span class="text-emerald-200 font-semibold">1 objetivo</span> rápido.
                     </p>
                     <ul class="text-sm text-slate-200/90 space-y-1.5">
-                      <li>• Reglas + automatización lista para usar</li>
+                      <li>• Automatización lista para usar</li>
                       <li>• Pruebas + entrega + doc mínima</li>
                     </ul>
                   </div>
@@ -497,8 +448,8 @@ app.innerHTML = `
                       Para <span class="text-sky-200 font-semibold">conectar herramientas</span> (API/Webhooks).
                     </p>
                     <ul class="text-sm text-slate-200/90 space-y-1.5">
-                      <li>• Mapeo de datos + validaciones</li>
-                      <li>• Manejo de errores + pruebas end-to-end</li>
+                      <li>• Mapeo + validaciones</li>
+                      <li>• Manejo de errores + pruebas</li>
                     </ul>
                   </div>
 
@@ -514,7 +465,7 @@ app.innerHTML = `
                 </div>
 
                 <p class="text-[11px] text-slate-400">
-                  Sirve para complementar Gala/Bruno/Nia con algo extra.
+                  Ideal para complementar Gala/Bruno/Nia con un extra puntual.
                 </p>
               </div>
 
@@ -577,19 +528,19 @@ app.innerHTML = `
 
       </section>
 
-      <!-- INTEGRACIONES -->
-      <section id="integraciones" class="relative space-y-6 py-10">
+      <!-- INTEGRACIONES (✅ se queda SOLO esta, removimos la redundante) -->
+      <section id="integraciones" class="relative space-y-6 py-6">
         <div class="pointer-events-none absolute -left-20 top-0 h-60 w-60 rounded-full bg-emerald-500/10 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-sky-500/10 blur-3xl"></div>
 
-        <div class="relative space-y-4">
+        <div class="relative space-y-3">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
             <span class="text-base">⚡</span>
-            <span>Ecosistema GOAT</span>
+            <span>Integraciones</span>
           </div>
 
           <h2 class="text-xl md:text-2xl font-semibold">
-            Nos integramos con tus herramientas favoritas
+            Se conecta con tu stack actual
           </h2>
 
           <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -597,7 +548,7 @@ app.innerHTML = `
           </p>
         </div>
 
-        <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-4">
+        <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-2">
           ${["BNC","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"]
             .map(
               (name) => `
@@ -610,7 +561,59 @@ app.innerHTML = `
         </div>
       </section>
 
-      <!-- SIEMPRE TRABAJANDO -->
+      <!-- SOBRE (más corto) -->
+      <section id="sobre" class="relative">
+        <div class="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl"></div>
+
+        <div class="relative grid gap-10 md:grid-cols-[minmax(0,1.3fr),minmax(0,1fr)] items-start">
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
+              <span class="text-base">🐐</span>
+              <span>Cómo trabajamos</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">
+              Menos mensajes perdidos.
+              <span class="text-emerald-300"> Más ventas con seguimiento.</span>
+            </h2>
+
+            <p class="text-slate-200/90 leading-relaxed text-sm md:text-base">
+              Combinamos negocio y tecnología para que respondas rápido, filtres mejor y cierres más.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="rounded-full bg-slate-900/70 border border-emerald-500/40 px-3 py-1 text-xs text-emerald-100">
+                Respuesta consistente
+              </span>
+              <span class="rounded-full bg-slate-900/70 border border-sky-500/40 px-3 py-1 text-xs text-sky-100">
+                Leads calificados
+              </span>
+              <span class="rounded-full bg-slate-900/70 border border-violet-500/40 px-3 py-1 text-xs text-violet-100">
+                Seguimiento automático
+              </span>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="relative overflow-hidden rounded-3xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-emerald-500/20 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-emerald-400/40 card-soft">
+              <h3 class="text-lg font-semibold text-emerald-100">Diagnóstico rápido</h3>
+              <p class="text-sm text-emerald-50/80 leading-relaxed mt-2">
+                Revisamos tus mensajes y detectamos dónde se caen oportunidades (y cómo recuperarlas).
+              </p>
+            </div>
+
+            <div class="relative overflow-hidden rounded-3xl border border-violet-400/40 bg-gradient-to-br from-violet-500/15 via-slate-900/80 to-slate-950/90 px-6 py-6 shadow-xl shadow-violet-500/20 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-violet-400/40 card-soft">
+              <h3 class="text-lg font-semibold text-violet-100">Implementación + mejoras</h3>
+              <p class="text-sm text-violet-50/80 leading-relaxed mt-2">
+                Lo montamos contigo, medimos y ajustamos hasta que se note en respuestas y cierres.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIEMPRE TRABAJANDO (más directo) -->
       <section class="relative grid gap-10 md:grid-cols-[minmax(0,1.15fr),minmax(0,1.1fr)] items-center">
         <div class="space-y-5">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
@@ -619,11 +622,11 @@ app.innerHTML = `
           </div>
 
           <h2 class="text-2xl md:text-3xl font-semibold leading-tight">
-            Un compañero que siempre está trabajando
+            Tu equipo GOAT trabaja mientras tú no estás
           </h2>
 
           <p class="text-sm md:text-base text-slate-300/90 leading-relaxed">
-            Tus agentes GOAT no se cansan. Mientras tú duermes, siguen respondiendo, filtrando interesados y haciendo seguimiento para cerrar.
+            Responde, filtra y hace seguimiento 24/7 para que no se enfríen tus leads.
           </p>
         </div>
 
@@ -667,11 +670,11 @@ app.innerHTML = `
             </div>
 
             <h2 class="text-2xl md:text-3xl font-semibold">
-              ¿Listo para que tu negocio responda y cierre más?
+              ¿Listo para dejar de perder mensajes y cerrar más?
             </h2>
 
             <p class="text-sm text-slate-200/90 leading-relaxed">
-              En una llamada corta revisamos tu atención actual y te mostramos qué automatizar primero para no perder oportunidades.
+              En una llamada corta revisamos tu atención actual y te mostramos qué automatizar primero.
             </p>
 
             <p class="text-[11px] text-slate-400">
@@ -731,9 +734,9 @@ app.innerHTML = `
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
-              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Atrae clientes listos para comprar</a></li>
-              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Responde por ti 24/7</a></li>
-              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · Cierra ventas con seguimiento automático</a></li>
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Leads listos para comprar</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Atención 24/7 sin estrés</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · Seguimiento que cierra</a></li>
             </ul>
           </div>
 
