@@ -12,14 +12,23 @@ if (!app) {
 
 app.innerHTML = `
   <div class="nia-page min-h-screen bg-slate-950 text-slate-50">
-    <!-- FIX HOVER VERDE -> MORADO (solo para esta página) -->
+    <!-- ✅ Ajustes SOLO para Nia (sin cambiar el diseño base) -->
     <style>
+      /* FIX HOVER VERDE -> MORADO (solo para esta página) */
       .nia-page .card-soft:hover,
+      .nia-page .card-soft:active,
       .nia-page .card-soft:focus-within {
         border-color: rgba(192, 132, 252, 0.55) !important; /* purple-300 */
         box-shadow:
           0 0 0 2px rgba(192, 132, 252, 0.22),
           0 0 30px -10px rgba(168, 85, 247, 0.45) !important; /* purple glow */
+      }
+
+      /* ✅ Igualar alturas SOLO en desktop para la fila de 3 tarjetas */
+      @media (min-width: 768px){
+        .nia-page .equal-row > .equal-card{
+          height: 100%;
+        }
       }
 
       /* ===========================
@@ -251,14 +260,15 @@ app.innerHTML = `
     </header>
 
     <!-- CONTENIDO -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-12">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-9 md:py-12 space-y-10 md:space-y-12">
 
-      <!-- HERO NIA -->
-      <section class="grid gap-10 md:grid-cols-[minmax(0,1.4fr),minmax(0,1fr)] items-center">
-        <div class="space-y-6">
+      <!-- ✅ HERO NIA (más compacto + imagen integrada al banner) -->
+      <section class="grid gap-8 md:gap-10 md:grid-cols-[minmax(0,1.35fr),minmax(0,1fr)] items-center">
+        <!-- Texto -->
+        <div class="space-y-5 md:space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-purple-200">
             <span class="text-sm">⚡</span>
-            <span>Nia · CRM & Seguimiento</span>
+            <span>Nia · Seguimiento & CRM</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -266,84 +276,102 @@ app.innerHTML = `
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Nia organiza tu equipo comercial: estructura tu pipeline, recuerda tareas,
-            automatiza mensajes de seguimiento y te muestra qué oportunidades están
-            por cerrarse para que no se te enfríen los prospectos.
+            Nia ordena tu pipeline, automatiza seguimientos (24h/72h), crea tareas y recordatorios,
+            y te muestra qué oportunidades están por cerrarse para que <span class="text-slate-100">no se enfríen prospectos</span>.
           </p>
+        </div>
 
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Qué incluye</p>
-              <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-                <li>• Configuración de CRM / pipeline (etapas, estados y reglas).</li>
-                <li>• Automatizaciones de seguimiento (no-respondió, recontacto, post-llamada).</li>
-                <li>• Recordatorios y tareas para el equipo (SLA, próximos pasos).</li>
-                <li>• Etiquetas y segmentación (frío / tibio / caliente / VIP).</li>
-                <li>• Dashboards básicos de oportunidades y conversiones.</li>
-                <li>• Optimización continua según resultados.</li>
-              </ul>
-            </div>
-
-            <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft">
-              <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Automatizaciones incluidas</p>
-              <div class="mt-3 space-y-3 text-sm text-slate-200/90">
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Base</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Crecimiento</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <p class="font-semibold text-slate-100">Escala</p>
-                  <p class="text-xs text-slate-300 mt-1">
-                    <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards avanzados.
-                  </p>
-                  <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
-                </div>
-
-                <p class="text-[11px] text-slate-400">
-                  “Automatización” = una regla/flujo completo (ej: lead → tarea → mensaje → cambio de etapa → alerta).
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- ✅ AJUSTE: pricing fijo (setup + mensualidad por plan) -->
-          <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft">
-            <p class="text-sm text-slate-200/90">
-              <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
-              <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
-              <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
-              <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
+        <!-- Imagen Nia (sube y se siente parte del hero/banner) -->
+        <div class="relative flex items-center justify-center md:justify-end">
+          <div class="absolute -inset-6 rounded-3xl bg-purple-500/15 blur-3xl opacity-80"></div>
+          <div class="relative rounded-3xl border border-purple-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
+            <img
+              src="${NiaInternoImg}"
+              alt="Nia, agente GOAT de CRM y seguimiento"
+              class="w-48 md:w-64 lg:w-72 max-w-full mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="mt-3 text-[11px] text-center text-purple-100/80">
+              Nia te da estructura y seguimiento automático para cerrar sin perseguir.
             </p>
-            <p class="text-[11px] text-slate-400 mt-1">
-              Integraciones especiales, migraciones o automatizaciones a medida se cotizan por proyecto.
-              Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
+          </div>
+        </div>
+      </section>
+
+      <!-- ✅ INFO EN 1 FILA (desktop): Qué incluye / Planes / Precio (alto igual) -->
+      <section class="grid gap-4 md:gap-5 md:grid-cols-3 md:items-stretch equal-row">
+        <!-- Qué incluye -->
+        <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Qué incluye</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+            <li>• Configuración de CRM / pipeline (etapas, estados y reglas).</li>
+            <li>• Seguimiento automático (no-respondió, recontacto, post-llamada).</li>
+            <li>• Recordatorios y tareas (SLA, próximos pasos).</li>
+            <li>• Etiquetas y segmentación (frío / tibio / caliente / VIP).</li>
+            <li>• Dashboards básicos de oportunidades y conversiones.</li>
+            <li>• Optimización continua según resultados.</li>
+          </ul>
+        </div>
+
+        <!-- Planes -->
+        <div class="rounded-3xl border border-purple-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Planes (automatizaciones incluidas)</p>
+
+          <div class="mt-3 space-y-3 text-sm text-slate-200/90">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Base</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Crecimiento</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p class="font-semibold text-slate-100">Escala</p>
+              <p class="text-xs text-slate-300 mt-1">
+                <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards.
+              </p>
+              <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
+            </div>
+
+            <p class="text-[11px] text-slate-400">
+              “Automatización” = una regla/flujo completo (lead → tarea → mensaje → cambio de etapa → alerta).
             </p>
           </div>
         </div>
 
-        <div class="relative flex items-center justify-center">
-          <div class="absolute -inset-6 rounded-3xl bg-purple-500/15 blur-3xl opacity-80"></div>
-          <div class="relative rounded-3xl border border-purple-400/40 bg-slate-900/80 px-4 py-6 md:px-6 md:py-7 card-soft">
-            <img
-              src="${NiaInternoImg}"
-              alt="Nia, agente GOAT de CRM y seguimiento"
-              class="w-52 md:w-64 lg:w-72 max-w-full mx-auto"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="mt-4 text-[11px] text-center text-purple-100/80">
-              Nia ordena tu pipeline y hace seguimiento automático para que cierres sin perseguir.
-            </p>
+        <!-- Precio -->
+        <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Precio</p>
+
+          <p class="mt-3 text-sm text-slate-200/90">
+            <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
+            <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
+            <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
+            <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
+          </p>
+
+          <p class="text-[11px] text-slate-400 mt-2">
+            Integraciones especiales, migraciones o automatizaciones a medida se cotizan por proyecto.
+            Si ya usas Kommo/HubSpot/Odoo/Sheets, armamos Nia encima para aprovechar tu base.
+          </p>
+
+          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-xs text-slate-300">Ideal si hoy:</p>
+            <ul class="mt-2 space-y-1 text-[12px] text-slate-200/90">
+              <li>• Hablas con leads pero no avanzan a cierre</li>
+              <li>• No tienes pipeline claro ni próximos pasos</li>
+              <li>• No hay seguimiento sistemático (se enfrían)</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -522,7 +550,6 @@ app.innerHTML = `
             </div>
           </div>
 
-          <!-- ✅ AJUSTE: cards del plan incluyen precio -->
           <div class="space-y-1.5">
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
@@ -670,11 +697,8 @@ app.innerHTML = `
    (ÚNICA — sin duplicados)
 ================================== */
 
-const N8N_WEBHOOK_URL =
-  "https://cabralab.app.n8n.cloud/webhook/form-submission";
-
+const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/form-submission";
 const CABRA_TOKEN = "cabra_labs_goat_2025_secure";
-
 
 async function sendLead(payload: any) {
   const rawBody = JSON.stringify({
