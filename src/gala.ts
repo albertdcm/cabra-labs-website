@@ -107,7 +107,6 @@ app.innerHTML = `
                 <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones +
                 <span class="text-emerald-200 font-semibold">1</span> funnel principal
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -116,7 +115,6 @@ app.innerHTML = `
                 <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones +
                 <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -125,7 +123,6 @@ app.innerHTML = `
                 <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones +
                 <span class="text-emerald-200 font-semibold">3</span> funnels + reportes
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
             </div>
           </div>
 
@@ -136,18 +133,15 @@ app.innerHTML = `
 
         <!-- Precio / Integraciones -->
         <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-4 card-soft md:h-full flex flex-col">
-          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Precio e integraciones</p>
+          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Integraciones</p>
 
           <p class="mt-2 text-sm text-slate-200/90 leading-relaxed">
-            <span class="text-emerald-200 font-semibold">Setup desde $350</span> · mensualidad fija por plan:
-            <span class="text-emerald-200 font-semibold">Base $200</span> ·
-            <span class="text-emerald-200 font-semibold">Crecimiento $350</span> ·
-            <span class="text-emerald-200 font-semibold">Escala $550</span>.
+            Si ya usas CRM, WhatsApp, email o pasarela, nos integramos para aprovechar lo que ya funciona.
+            Integraciones especiales se cotizan por proyecto.
           </p>
 
           <p class="text-[11px] text-slate-400 mt-auto pt-2 leading-relaxed">
-            Si ya usas CRM, WhatsApp, email o pasarela, nos integramos para aprovechar lo que ya funciona.
-            Integraciones especiales se cotizan por proyecto.
+            Coordinamos el alcance en una llamada corta y te enviamos propuesta con entregables y timing.
           </p>
         </div>
 
@@ -307,9 +301,9 @@ app.innerHTML = `
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones", price: "$200/mes" },
-                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones", price: "$350/mes" },
-                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones", price: "$550/mes" },
+                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones" },
+                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones" },
+                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" },
               ]
                 .map(
                   (p) => `
@@ -319,7 +313,6 @@ app.innerHTML = `
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
-                          <p class="text-[11px] text-emerald-200/90 mt-1 font-semibold">${p.price}</p>
                         </div>
                       </div>
                     </label>
@@ -393,7 +386,7 @@ app.innerHTML = `
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="#planes">Planes y precios</a></li>
+              <!-- ✅ Planes y precios removido -->
             </ul>
           </div>
         </div>

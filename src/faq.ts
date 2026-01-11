@@ -230,7 +230,7 @@ app.innerHTML = `
                 aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${InstagramIcon}" alt="Instagram @cabra_labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${InstagramIcon}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -275,12 +275,6 @@ app.innerHTML = `
               <li>
                 <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
                   Preguntas frecuentes
-                </a>
-              </li>
-
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/#agentes">
-                  Planes y precios
                 </a>
               </li>
             </ul>

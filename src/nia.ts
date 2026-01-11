@@ -324,7 +324,6 @@ app.innerHTML = `
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-purple-200 font-semibold">Hasta 3</span> automatizaciones + <span class="text-purple-200 font-semibold">1</span> pipeline.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $200/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -332,7 +331,6 @@ app.innerHTML = `
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-purple-200 font-semibold">Hasta 6</span> automatizaciones + <span class="text-purple-200 font-semibold">2</span> pipelines + segmentación.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $350/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -340,7 +338,6 @@ app.innerHTML = `
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-purple-200 font-semibold">Hasta 10</span> automatizaciones + <span class="text-purple-200 font-semibold">3</span> pipelines + dashboards.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $550/mes</p>
             </div>
 
             <p class="text-[11px] text-slate-400">
@@ -349,15 +346,13 @@ app.innerHTML = `
           </div>
         </div>
 
-        <!-- Precio -->
+        <!-- Precio (sin precios) -->
         <div class="rounded-3xl border border-purple-400/25 bg-gradient-to-r from-purple-500/10 via-slate-900/60 to-sky-500/10 p-5 card-soft equal-card md:h-full">
-          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Precio</p>
+          <p class="text-xs uppercase tracking-[0.22em] text-purple-200/90">Integraciones</p>
 
           <p class="mt-3 text-sm text-slate-200/90">
-            <span class="text-purple-200 font-semibold">Setup desde $300</span> · mensualidad fija por plan:
-            <span class="text-purple-200 font-semibold">Base $200/mes</span> ·
-            <span class="text-purple-200 font-semibold">Crecimiento $350/mes</span> ·
-            <span class="text-purple-200 font-semibold">Escala $550/mes</span>.
+            Definimos el plan ideal según tu CRM, volumen de leads y complejidad del seguimiento.
+            Armamos Nia encima de lo que ya usas para aprovechar tu base y cerrar más rápido.
           </p>
 
           <p class="text-[11px] text-slate-400 mt-2">
@@ -554,9 +549,9 @@ app.innerHTML = `
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "1 pipeline · hasta 3 automatizaciones", price: "$200/mes" },
-                { key: "Crecimiento", desc: "2 pipelines · hasta 6 automatizaciones", price: "$350/mes" },
-                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones", price: "$550/mes" },
+                { key: "Base", desc: "1 pipeline · hasta 3 automatizaciones" },
+                { key: "Crecimiento", desc: "2 pipelines · hasta 6 automatizaciones" },
+                { key: "Escala", desc: "3 pipelines · hasta 10 automatizaciones" },
               ]
                 .map(
                   (p) => `
@@ -566,7 +561,6 @@ app.innerHTML = `
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
-                          <p class="text-[11px] text-purple-200/90 mt-1 font-semibold">${p.price}</p>
                         </div>
                       </div>
                     </label>
@@ -640,7 +634,6 @@ app.innerHTML = `
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/#agentes">Planes y precios</a></li>
             </ul>
           </div>
         </div>
