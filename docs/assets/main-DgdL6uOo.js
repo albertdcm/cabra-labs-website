@@ -272,7 +272,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
         </div>
 
         <div class="grid gap-6 md:gap-8 md:grid-cols-3">
-          <!-- GALA (✅ sin precios) -->
+          <!-- GALA -->
           <article class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -304,7 +304,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
             </div>
           </article>
 
-          <!-- BRUNO (✅ sin precios) -->
+          <!-- BRUNO -->
           <article class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -336,7 +336,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
             </div>
           </article>
 
-          <!-- NIA (✅ sin precios) -->
+          <!-- NIA -->
           <article class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -770,7 +770,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
               href="https://wa.me/584120599367"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold px-7 py-2.5 transition-colors duration-200"
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold px-7 py-2.5 transition-colors duración-200"
             >
               Hablar por WhatsApp
               <span class="text-base text-white">↗</span>
@@ -783,7 +783,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
         </div>
       </section>
 
-      <!-- FOOTER -->
+      <!-- FOOTER (✅ LINKS LEGALES SE QUEDAN AQUÍ) -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
           <div class="space-y-3">
@@ -832,8 +832,8 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
                   Contacto
                 </a>
               </li>
-              <li><a class="hover:text-emerald-200 transition-colors" href.="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href=."/privacy.html">Política de Privacidad</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
