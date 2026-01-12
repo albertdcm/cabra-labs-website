@@ -289,7 +289,7 @@ app.innerHTML = `
         </div>
 
         <div class="grid gap-6 md:gap-8 md:grid-cols-3">
-          <!-- GALA (✅ sin precios) -->
+          <!-- GALA -->
           <article class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -321,7 +321,7 @@ app.innerHTML = `
             </div>
           </article>
 
-          <!-- BRUNO (✅ sin precios) -->
+          <!-- BRUNO -->
           <article class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -353,7 +353,7 @@ app.innerHTML = `
             </div>
           </article>
 
-          <!-- NIA (✅ sin precios) -->
+          <!-- NIA -->
           <article class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -787,7 +787,7 @@ app.innerHTML = `
               href="https://wa.me/584120599367"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold px-7 py-2.5 transition-colors duration-200"
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold px-7 py-2.5 transition-colors duración-200"
             >
               Hablar por WhatsApp
               <span class="text-base text-white">↗</span>
@@ -886,7 +886,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
+        (entry.target as HTMLElement).classList.add("is-visible");
         observer.unobserve(entry.target);
       }
     });
