@@ -832,8 +832,8 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets
                   Contacto
                 </a>
               </li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href.="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href=."/privacy.html">Política de Privacidad</a></li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
