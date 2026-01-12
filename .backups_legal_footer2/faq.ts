@@ -88,103 +88,38 @@ const groups = Array.from(
 
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
-    <style>
-      .cabra-header, .cabra-header * { -webkit-tap-highlight-color: rgba(30, 41, 59, 0.55); }
-      .cabra-header a:active, .cabra-header button:active { background-color: rgba(30, 41, 59, 0.38); }
-      .cabra-header a:focus, .cabra-header button:focus { outline: none; }
-      .cabra-header a:focus-visible, .cabra-header button:focus-visible {
-        outline: 2px solid rgba(52, 211, 153, 0.6);
-        outline-offset: 2px;
-        border-radius: 9999px;
-      }
-
-      .legal-card {
-        border: 1px solid rgba(255,255,255,0.10);
-        background: rgba(255,255,255,0.06);
-      }
-      .legal-chip {
-        border: 1px solid rgba(255,255,255,0.10);
-        background: rgba(255,255,255,0.05);
-      }
-      .legal-link {
-        color: rgba(110, 231, 183, 0.92);
-      }
-      .legal-link:hover {
-        color: rgba(167, 243, 208, 0.95);
-        text-decoration: underline;
-      }
-
-      /* ✅ Cookie banner */
-      .cookie-wrap { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 14px; }
-      .cookie-card {
-        max-width: 980px; margin: 0 auto;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(2, 6, 23, 0.78);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-radius: 20px;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-        padding: 14px 14px;
-      }
-      .cookie-btn {
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.06);
-        color: rgba(226,232,240,0.92);
-        transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
-      }
-      .cookie-btn:hover { background: rgba(255,255,255,0.09); transform: translateY(-1px); }
-      .cookie-btn-primary {
-        background: linear-gradient(90deg, rgba(56,189,248,0.95), rgba(16,185,129,0.95));
-        border: none;
-        color: white;
-      }
-      .cookie-btn-primary:hover { transform: translateY(-1px); filter: brightness(1.03); }
-      .cookie-hidden { display: none !important; }
-    </style>
-
-    <!-- NAVBAR (igual a Terms) -->
-    <header class="cabra-header sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
-      <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
-        <a href="/" class="flex items-center group rounded-full px-2 py-1 active:bg-slate-800/40">
-          <img src="${CabraLogo}" alt="Cabra Labs" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200" loading="eager" decoding="async" />
+    <!-- NAVBAR SIMPLE -->
+    <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+        <a href="/" class="flex items-center group">
+          <img
+            src="${CabraLogo}"
+            alt="Cabra Labs"
+            class="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+            loading="eager"
+            decoding="async"
+          />
         </a>
 
-        <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-          <a href="/" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
-            Inicio
+        <div class="flex items-center gap-4">
+          <a
+            href="/#agentes"
+            class="hidden sm:inline text-xs sm:text-sm text-slate-300 hover:text-emerald-300 transition-colors"
+          >
+            Ver agentes
           </a>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <div class="hidden md:flex items-center gap-3">
-            <a href="https://tiktok.com/@cabra.labs" target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200 active:bg-slate-800/40"
-              aria-label="TikTok">
-              <img src="${TikTokIcon}" class="w-5 h-5 opacity-90" alt="TikTok" loading="lazy" decoding="async" />
-            </a>
-
-            <a href="https://instagram.com/cabra_labs" target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600/40 via-emerald-400/30 to-emerald-300/30 border border-emerald-400/30 hover:scale-105 transition-all duration-200 active:bg-slate-800/40"
-              aria-label="Instagram">
-              <img src="${InstagramIcon}" class="w-5 h-5 opacity-90" alt="Instagram" loading="lazy" decoding="async" />
-            </a>
-          </div>
 
           <a
-            href="https://wa.me/584120599367?text=Hola%20Cabra%20Labs%2C%20tengo%20una%20consulta%20sobre%20preguntas%20frecuentes."
-            target="_blank"
-            rel="noopener"
-            class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500
-                   px-5 py-2.5 text-sm sm:text-base font-semibold text-white
-                   shadow-md shadow-emerald-500/25 hover:shadow-emerald-500/45 hover:scale-[1.03]
-                   transition-all duration-200 whitespace-nowrap leading-none active:bg-slate-800/40">
-            Conversemos
+            href="/"
+            class="text-xs sm:text-sm text-slate-300 hover:text-emerald-300 transition-colors"
+          >
+            ← Volver a la página principal
           </a>
         </div>
       </nav>
     </header>
 
-    <!-- CONTENIDO (sin cambios) -->
+    <!-- CONTENIDO -->
     <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-10">
 
       <!-- HERO FAQ -->
@@ -266,7 +201,7 @@ app.innerHTML = `
           .join("")}
       </section>
 
-      <!-- FOOTER (sin cambios) -->
+      <!-- FOOTER -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
 
@@ -342,8 +277,6 @@ app.innerHTML = `
                   Preguntas frecuentes
                 </a>
               </li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
 
@@ -357,56 +290,3 @@ app.innerHTML = `
     </main>
   </div>
 `;
-
-// ✅ Mini banner de cookies (sin librerías)
-(function initCookieBanner() {
-  const KEY = "cabra_cookie_consent_v1";
-  const existing = localStorage.getItem(KEY);
-  if (existing === "accepted" || existing === "rejected") return;
-
-  const wrap = document.createElement("div");
-  wrap.className = "cookie-wrap";
-  wrap.innerHTML = `
-    <div class="cookie-card">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div class="space-y-1">
-          <p class="text-sm font-semibold text-slate-100">🍪 Cookies</p>
-          <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">
-            Usamos cookies esenciales para que el sitio funcione correctamente. Si aceptas, podremos usar cookies
-            adicionales para medir y mejorar la experiencia.
-            <a class="legal-link font-semibold" href="/privacy.html#cookies">Ver detalles</a>.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap gap-2 justify-start md:justify-end">
-          <button id="cookie-reject" class="cookie-btn rounded-full px-4 py-2 text-xs font-semibold">
-            Solo esenciales
-          </button>
-          <button id="cookie-accept" class="cookie-btn cookie-btn-primary rounded-full px-4 py-2 text-xs font-semibold">
-            Aceptar
-          </button>
-        </div>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(wrap);
-
-  const acceptBtn = document.getElementById("cookie-accept") as HTMLButtonElement | null;
-  const rejectBtn = document.getElementById("cookie-reject") as HTMLButtonElement | null;
-
-  const close = () => {
-    wrap.classList.add("cookie-hidden");
-    setTimeout(() => wrap.remove(), 200);
-  };
-
-  acceptBtn?.addEventListener("click", () => {
-    localStorage.setItem(KEY, "accepted");
-    close();
-  });
-
-  rejectBtn?.addEventListener("click", () => {
-    localStorage.setItem(KEY, "rejected");
-    close();
-  });
-})();

@@ -1,5 +1,5 @@
 import "./style.css";
-import GalaInternoImg from "./assets/agents/Gala Interno.png";
+import BrunoInternoImg from "./assets/agents/Bruno Interno.png";
 import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
 import TikTokIcon from "./assets/agents/tik-tok.svg";
 import InstagramIcon from "./assets/agents/instagram.svg";
@@ -11,10 +11,34 @@ if (!app) {
 }
 
 app.innerHTML = `
-  <div class="min-h-screen bg-slate-950 text-slate-50">
+  <div class="theme-bruno min-h-screen bg-slate-950 text-slate-50">
+    <!-- ✅ AJUSTE: contorno azul (hover/click/focus) SOLO para contenedores (.card-soft) en Bruno -->
+    <style>
+      .theme-bruno .card-soft {
+        transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+      }
+
+      .theme-bruno .card-soft:hover,
+      .theme-bruno .card-soft:active,
+      .theme-bruno .card-soft:focus-within {
+        border-color: rgba(56, 189, 248, 0.55) !important; /* sky-400 */
+        box-shadow:
+          0 0 0 1px rgba(56, 189, 248, 0.22),
+          0 0 34px -12px rgba(56, 189, 248, 0.55) !important;
+      }
+
+      /* ✅ Igualar alturas SOLO en desktop para la fila de 3 tarjetas */
+      @media (min-width: 768px){
+        .theme-bruno .equal-row > .equal-card{
+          height: 100%;
+        }
+      }
+    </style>
+
     <!-- NAVBAR SIMPLE -->
     <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+        <!-- LOGO (PNG, VITE OK) -->
         <a href="/" class="flex items-center group">
           <img
             src="${CabraLogo}"
@@ -27,7 +51,7 @@ app.innerHTML = `
 
         <a
           href="/"
-          class="text-xs sm:text-sm text-slate-300 hover:text-emerald-300 transition-colors"
+          class="text-xs sm:text-sm text-slate-300 hover:text-sky-300 transition-colors"
         >
           ← Volver a la página principal
         </a>
@@ -35,145 +59,141 @@ app.innerHTML = `
     </header>
 
     <!-- CONTENIDO -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-8 md:py-10 space-y-10">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-9 md:py-12 space-y-10 md:space-y-12">
 
-      <!-- ✅ HERO GALA (compacto + imagen integrada al banner como Bruno/Nia) -->
-      <section class="grid gap-6 md:gap-8 md:grid-cols-[minmax(0,1.55fr),minmax(0,1fr)] items-center">
+      <!-- HERO BRUNO (más compacto y con imagen integrada) -->
+      <section class="grid gap-8 md:gap-10 md:grid-cols-[minmax(0,1.35fr),minmax(0,1fr)] items-center">
         <!-- Texto -->
-        <div class="space-y-4 md:space-y-5">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-200">
+        <div class="space-y-5 md:space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-sky-200">
             <span class="text-sm">⚡</span>
-            <span>Gala · Captación y calificación</span>
+            <span>Bruno · Responde por ti 24/7</span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
-            Convierte clics y mensajes en <span class="text-gradient-emerald">leads listos para comprar</span>
+            Tu negocio responde, filtra y escala con <span class="text-sky-300">Bruno</span>
           </h1>
 
           <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-            Gala diseña tu ruta de ventas con un funnel probado:
-            <span class="text-slate-100">atrae</span>,
-            <span class="text-slate-100">califica</span> y
-            <span class="text-slate-100">mueve al lead</span> hacia la decisión con
-            seguimiento inteligente para que no se te escape ninguna oportunidad.
+            Bruno convierte mensajes en oportunidades: responde en WhatsApp, Instagram y web, califica interesados,
+            captura datos y, cuando hace falta, <span class="text-slate-100">te pasa la conversación con contexto</span>
+            para que tú solo cierres o resuelvas.
           </p>
         </div>
 
-        <!-- ✅ Imagen Gala (subida + alineada al centro del hero; se siente parte del banner) -->
+        <!-- Imagen Bruno (sube y se siente parte del hero/banner) -->
         <div class="relative flex items-center justify-center md:justify-end">
-          <div class="absolute -inset-8 rounded-3xl bg-emerald-500/15 blur-3xl opacity-80"></div>
-
-          <div class="relative rounded-3xl border border-emerald-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
+          <div class="absolute -inset-6 rounded-3xl bg-sky-500/15 blur-3xl opacity-80"></div>
+          <div class="relative rounded-3xl border border-sky-400/40 bg-slate-900/80 px-4 py-5 md:px-6 md:py-6 card-soft">
             <img
-              src="${GalaInternoImg}"
-              alt="Gala, agente GOAT de estrategia y funnels"
-              class="w-44 md:w-56 lg:w-64 max-w-full mx-auto"
+              src="${BrunoInternoImg}"
+              alt="Bruno, agente GOAT de atención y calificación"
+              class="w-48 md:w-64 lg:w-72 max-w-full mx-auto"
               loading="lazy"
               decoding="async"
             />
-            <p class="mt-3 text-[11px] text-center text-emerald-100/80">
-              Gala define qué decir, cuándo decirlo y cómo llevar al lead al siguiente paso.
+            <p class="mt-3 text-[11px] text-center text-sky-100/80">
+              Bruno atiende lo repetitivo, filtra interesados y escala a humano cuando toca.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ✅ INFO EN 1 FILA (Qué incluye / Planes / Precio) | MÁS COMPACTO + MISMO ALTO -->
-      <section id="planes" class="grid gap-4 md:gap-3 md:grid-cols-3 items-stretch scroll-mt-24">
-
+      <!-- ✅ FILA 3-COLUMNAS (desktop) con alto igual: Qué incluye / Planes / Precio -->
+      <section class="grid gap-4 md:gap-5 md:grid-cols-3 md:items-stretch equal-row">
         <!-- Qué incluye -->
-        <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-4 card-soft md:h-full flex flex-col">
-          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Qué incluye</p>
-
-          <ul class="mt-2 space-y-2 text-sm text-slate-200/90">
-            <li>• Diagnóstico + mapa del funnel (etapas, fricciones, objeciones).</li>
-            <li>• Mensajes por etapa con tono de marca (WhatsApp/IG · Email opcional).</li>
-            <li>• Calificación (frío / tibio / caliente) + segmentación base.</li>
-            <li>• Tracking + métricas clave para mejorar con datos.</li>
-            <li>• Iteración semanal: ajustes para convertir más.</li>
+        <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Qué incluye</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+            <li>• Diseño por objetivos (ventas / soporte / mixto).</li>
+            <li>• Base de respuestas + tono de marca.</li>
+            <li>• Flujos de atención: precios, horarios, envíos, disponibilidad, políticas, etc.</li>
+            <li>• Calificación de leads (preguntas clave + etiquetas).</li>
+            <li>• Escalamiento a humano con contexto (handoff).</li>
+            <li>• Reporte mensual con conversaciones, motivos y oportunidades.</li>
           </ul>
-
-          <div class="mt-auto"></div>
         </div>
 
         <!-- Planes -->
-        <div class="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-4 card-soft md:h-full flex flex-col">
-          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Planes (incluye automatizaciones)</p>
+        <div class="rounded-3xl border border-sky-400/25 bg-slate-900/70 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Planes (flujos y canales incluidos)</p>
 
-          <div class="mt-2 space-y-2 text-sm text-slate-200/90">
+          <div class="mt-3 space-y-3 text-sm text-slate-200/90">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
               <p class="font-semibold text-slate-100">Base</p>
               <p class="text-xs text-slate-300 mt-1">
-                <span class="text-emerald-200 font-semibold">Hasta 3</span> automatizaciones +
-                <span class="text-emerald-200 font-semibold">1</span> funnel principal
+                <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
               </p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
               <p class="font-semibold text-slate-100">Crecimiento</p>
               <p class="text-xs text-slate-300 mt-1">
-                <span class="text-emerald-200 font-semibold">Hasta 6</span> automatizaciones +
-                <span class="text-emerald-200 font-semibold">2</span> funnels + segmentación
+                <span class="text-sky-200 font-semibold">Hasta 5</span> flujos + <span class="text-sky-200 font-semibold">2</span> canales + handoff a humano.
               </p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
               <p class="font-semibold text-slate-100">Escala</p>
               <p class="text-xs text-slate-300 mt-1">
-                <span class="text-emerald-200 font-semibold">Hasta 10</span> automatizaciones +
-                <span class="text-emerald-200 font-semibold">3</span> funnels + reportes
+                <span class="text-sky-200 font-semibold">Hasta 8</span> flujos + <span class="text-sky-200 font-semibold">3</span> canales + etiquetas + reportes avanzados.
               </p>
             </div>
+
+            <p class="text-[11px] text-slate-400">
+              “Flujo” = una ruta completa (ej: consulta → preguntas → respuesta → captura de datos → cierre o soporte).
+            </p>
           </div>
-
-          <p class="text-[11px] text-slate-400 mt-auto pt-2">
-            “Automatización” = un flujo completo (lead → calificación → recordatorios → cierre).
-          </p>
         </div>
 
-        <!-- Precio / Integraciones -->
-        <div class="rounded-3xl border border-emerald-400/25 bg-gradient-to-r from-emerald-500/10 via-slate-900/60 to-sky-500/10 p-4 card-soft md:h-full flex flex-col">
-          <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Integraciones</p>
+        <!-- Precio (sin precios) -->
+        <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft equal-card md:h-full">
+          <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Precio</p>
 
-          <p class="mt-2 text-sm text-slate-200/90 leading-relaxed">
-            Si ya usas CRM, WhatsApp, email o pasarela, nos integramos para aprovechar lo que ya funciona.
-            Integraciones especiales se cotizan por proyecto.
+          <p class="mt-3 text-sm text-slate-200/90">
+            Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
+            Integraciones especiales o automatizaciones a medida se cotizan por proyecto.
           </p>
 
-          <p class="text-[11px] text-slate-400 mt-auto pt-2 leading-relaxed">
-            Coordinamos el alcance en una llamada corta y te enviamos propuesta con entregables y timing.
-          </p>
+          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-xs text-slate-300">
+              Ideal si hoy:
+            </p>
+            <ul class="mt-2 space-y-1 text-[12px] text-slate-200/90">
+              <li>• Respondes tarde y se enfrían leads</li>
+              <li>• Te saturan preguntas repetidas</li>
+              <li>• Necesitas handoff ordenado a tu equipo</li>
+            </ul>
+          </div>
         </div>
-
       </section>
 
-      <!-- FORMULARIO GALA -->
-      <section id="briefing" class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start scroll-mt-24">
+      <!-- FORMULARIO BRUNO -->
+      <section class="grid gap-8 md:grid-cols-[minmax(0,1.05fr),minmax(0,1.15fr)] items-start">
         <!-- Copy formulario -->
         <div class="space-y-4">
           <h2 class="text-xl md:text-2xl font-semibold">
-            Briefing para activar a Gala
+            Briefing para activar a Bruno
           </h2>
-
           <p class="text-sm text-slate-300 leading-relaxed">
-            Con esta info preparamos tu diagnóstico y estimamos el plan ideal para captar y calificar mejor
-            <span class="text-slate-100">desde el día 1</span>.
+            Con esta información definimos qué debe responder, cómo califica interesados, cuándo escala a humano
+            y el nivel ideal de automatización (Base / Crecimiento / Escala).
           </p>
 
           <div class="rounded-3xl border border-white/10 bg-white/5 p-5 card-soft">
-            <p class="text-xs uppercase tracking-[0.22em] text-emerald-200/90">Lo que te llevas</p>
+            <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Lo que armamos con esto</p>
             <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
-              <li>• Funnel recomendado (1–3 etapas principales).</li>
-              <li>• Plan sugerido (Base / Crecimiento / Escala).</li>
-              <li>• Integraciones recomendadas (si aplica).</li>
-              <li>• Próximos pasos + timing estimado.</li>
+              <li>• Flujos prioritarios (ventas, soporte, reclamos, seguimiento).</li>
+              <li>• Preguntas clave para filtrar y calificar leads.</li>
+              <li>• Reglas claras de escalamiento a humano (handoff).</li>
+              <li>• Integraciones necesarias (CRM, Sheets, pasarela, etc.).</li>
             </ul>
           </div>
         </div>
 
         <!-- Form -->
         <form
-          class="space-y-4 rounded-3xl border border-emerald-400/30 bg-slate-900/80 p-5 md:p-6 shadow-xl shadow-emerald-500/15"
+          class="space-y-4 rounded-3xl border border-sky-400/30 bg-slate-900/80 p-5 md:p-6 shadow-xl shadow-sky-500/15"
         >
           <div class="grid gap-4 md:grid-cols-2">
             <div class="space-y-1.5">
@@ -181,8 +201,8 @@ app.innerHTML = `
               <input
                 type="text"
                 name="nombre"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-                placeholder="¿Con quién va a hablar Gala?"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+                placeholder="¿Con quién hablará Bruno?"
                 required
               />
             </div>
@@ -192,7 +212,7 @@ app.innerHTML = `
               <input
                 type="email"
                 name="email"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                 placeholder="para enviarte el diagnóstico"
                 required
               />
@@ -205,7 +225,7 @@ app.innerHTML = `
               <input
                 type="tel"
                 name="whatsapp"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                 placeholder="+58..."
               />
             </div>
@@ -215,101 +235,117 @@ app.innerHTML = `
               <input
                 type="text"
                 name="url"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                 placeholder="tu web o @instagram"
               />
             </div>
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">¿Qué vendes y a quién?</label>
+            <label class="text-xs text-slate-300">¿Qué atiende Bruno?</label>
             <textarea
-              name="oferta"
+              name="casos"
               rows="3"
-              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-              placeholder="Producto/servicio, cliente ideal, qué problema resuelves"
+              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+              placeholder="Ej: preguntas repetidas, precios, envíos, horarios, disponibilidad, reclamos, devoluciones..."
               required
             ></textarea>
           </div>
 
+          <div class="space-y-1.5">
+            <label class="text-xs text-slate-300">Canales donde lo quieres activo</label>
+            <div class="grid gap-2 sm:grid-cols-2">
+              ${[
+                "WhatsApp Business",
+                "Instagram DM",
+                "Web (chat)",
+                "Facebook Messenger",
+                "Email (respuestas sugeridas)"
+              ]
+                .map(
+                  (ch) => `
+                    <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200/90 hover:bg-white/10 transition-colors">
+                      <input type="checkbox" name="canales" value="${ch}" class="accent-sky-400" />
+                      ${ch}
+                    </label>
+                  `
+                )
+                .join("")}
+            </div>
+          </div>
+
           <div class="grid gap-4 md:grid-cols-2">
             <div class="space-y-1.5">
-              <label class="text-xs text-slate-300">Ticket promedio</label>
+              <label class="text-xs text-slate-300">Horario de atención humana</label>
               <input
                 type="text"
-                name="ticket"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-                placeholder="Ej: $50 / $250 / $1.200"
+                name="horario"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+                placeholder="Ej: Lun–Vie 9am–6pm"
               />
             </div>
 
             <div class="space-y-1.5">
-              <label class="text-xs text-slate-300">Objetivo (próx. 3–6 meses)</label>
+              <label class="text-xs text-slate-300">Tiempo ideal de respuesta humana</label>
               <select
-                name="objetivo"
-                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
+                name="sla"
+                class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
               >
                 <option value="">Selecciona uno</option>
-                <option>Conseguir más leads</option>
-                <option>Convertir más (mejor cierre)</option>
-                <option>Subir ticket / upsells</option>
-                <option>Reactivar base fría</option>
-                <option>Automatizar seguimiento</option>
+                <option>En menos de 5 min</option>
+                <option>En menos de 30 min</option>
+                <option>En menos de 2 horas</option>
+                <option>En el mismo día</option>
               </select>
             </div>
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">¿Cómo llegan tus clientes hoy?</label>
+            <label class="text-xs text-slate-300">Escalamiento a humano</label>
             <textarea
-              name="canales"
+              name="handoff"
               rows="3"
-              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400"
-              placeholder="Ej: Instagram orgánico, Meta Ads, referidos, web, WhatsApp..."
+              class="w-full rounded-xl bg-slate-950/70 border border-slate-600/70 px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+              placeholder="¿Cuándo debe pasarte la conversación? Ej: pagos, reclamos complejos, negociación, casos VIP..."
             ></textarea>
           </div>
 
           <div class="space-y-1.5">
-            <label class="text-xs text-slate-300">Herramientas actuales</label>
+            <label class="text-xs text-slate-300">Integraciones deseadas</label>
             <div class="grid gap-2 sm:grid-cols-2">
               ${[
-                "WhatsApp Business",
-                "Instagram DM",
-                "Meta Ads",
-                "Email (Mailchimp/Klaviyo)",
                 "CRM (Kommo/HubSpot)",
-                "Shopify/WooCommerce",
-                "Pasarela (Stripe/PayPal)",
                 "Google Sheets",
+                "Notificaciones por Email",
+                "Slack/Telegram",
+                "E-commerce (Shopify/Woo)",
+                "Pasarela (Stripe/PayPal)"
               ]
                 .map(
                   (tool) => `
                     <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200/90 hover:bg-white/10 transition-colors">
-                      <input type="checkbox" name="herramientas" value="${tool}" class="accent-emerald-400" />
+                      <input type="checkbox" name="integraciones" value="${tool}" class="accent-sky-400" />
                       ${tool}
                     </label>
                   `
                 )
                 .join("")}
             </div>
-            <p class="text-[11px] text-slate-500">
-              Si no está tu herramienta, no importa: igual lo levantamos en la llamada.
-            </p>
           </div>
 
           <div class="space-y-1.5">
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
               ${[
-                { key: "Base", desc: "1 funnel · hasta 3 automatizaciones" },
-                { key: "Crecimiento", desc: "2 funnels · hasta 6 automatizaciones" },
-                { key: "Escala", desc: "3 funnels · hasta 10 automatizaciones" },
+                { key: "Base", desc: "2 flujos · 1 canal" },
+                { key: "Crecimiento", desc: "5 flujos · 2 canales · handoff" },
+                { key: "Escala", desc: "8 flujos · 3 canales · reportes" }
               ]
                 .map(
                   (p) => `
                     <label class="rounded-2xl border border-white/10 bg-white/5 p-3 text-xs text-slate-200/90 hover:bg-white/10 transition-colors cursor-pointer">
                       <div class="flex items-start gap-2">
-                        <input type="radio" name="plan" value="${p.key}" class="mt-0.5 accent-emerald-400" />
+                        <input type="radio" name="plan" value="${p.key}" class="mt-0.5 accent-sky-400" />
                         <div>
                           <p class="font-semibold text-slate-100">${p.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${p.desc}</p>
@@ -324,9 +360,9 @@ app.innerHTML = `
 
           <button
             type="submit"
-            class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-sky-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-400/40 hover:scale-[1.02] transition-transform"
+            class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/30 hover:shadow-sky-400/40 hover:scale-[1.02] transition-transform"
           >
-            Enviar briefing para Gala
+            Enviar briefing para Bruno
             <span class="text-base">↗</span>
           </button>
 
@@ -339,6 +375,8 @@ app.innerHTML = `
       <!-- FOOTER -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
+
+          <!-- BRAND -->
           <div class="space-y-3">
             <p class="font-semibold">Cabra Labs</p>
             <p class="text-xs text-slate-400 leading-relaxed">
@@ -368,6 +406,7 @@ app.innerHTML = `
             </div>
           </div>
 
+          <!-- AGENTES -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
@@ -377,6 +416,7 @@ app.innerHTML = `
             </ul>
           </div>
 
+          <!-- SOPORTE -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
             <ul class="space-y-1 text-xs text-slate-400">
@@ -386,11 +426,9 @@ app.innerHTML = `
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <!-- ✅ Planes y precios removido -->
-              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
+
         </div>
 
         <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">
@@ -403,7 +441,7 @@ app.innerHTML = `
 `;
 
 /* ======================================================
-   ✅ MODAL (ÉXITO) + ALERTA BONITA (ERROR) — SOLO UI
+   ✅ MODAL (ÉXITO) + TOAST (ERROR) — SOLO UI
 ====================================================== */
 
 function mountLeadUI() {
@@ -557,7 +595,7 @@ function mountLeadUI() {
         <div class="cabra-modal__body">
           <div class="cabra-title" id="cabra-success-title">¡Briefing recibido! 🚀</div>
           <div class="cabra-text" id="cabra-success-msg">
-            Recibimos tu información. Gala ya puede preparar el diagnóstico y el diseño del funnel.
+            Recibimos tu información. Bruno ya puede preparar el bot y los flujos para atender y calificar interesados.
           </div>
           <div class="cabra-actions">
             <button class="cabra-btn cabra-btn--primary" type="button" data-cabra-close>Perfecto</button>
@@ -643,6 +681,8 @@ function hideErrorToast() {
 
 /* ================================
    ✅ CONEXIÓN CON n8n (CORS-SAFE)
+   - Evita preflight: Content-Type text/plain
+   - Token va dentro del body (NO header custom)
 ================================== */
 
 const N8N_WEBHOOK_URL = "https://cabralab.app.n8n.cloud/webhook/form-submission";
@@ -656,9 +696,7 @@ async function sendLead(payload: any) {
 
   const res = await fetch(N8N_WEBHOOK_URL, {
     method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=UTF-8",
-    },
+    headers: { "Content-Type": "text/plain;charset=UTF-8" },
     body: rawBody,
   });
 
@@ -670,30 +708,36 @@ async function sendLead(payload: any) {
     data = { raw: text };
   }
 
-  if (!res.ok) throw new Error(data?.message || data?.raw || "Error enviando el formulario");
+  if (!res.ok) {
+    throw new Error(data?.message || data?.raw || "Error enviando el formulario");
+  }
+
   return data;
 }
 
-const galaForm = app.querySelector("form") as HTMLFormElement | null;
+const brunoForm = app.querySelector("form") as HTMLFormElement | null;
 
-if (galaForm) {
-  galaForm.addEventListener("submit", async (e) => {
+if (brunoForm) {
+  brunoForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const getValue = (name: string) =>
-      (
-        galaForm.querySelector(
-          `[name="${name}"]`
-        ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null
-      )?.value?.trim?.() ?? "";
+      (brunoForm.querySelector(
+        `[name="${name}"]`
+      ) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null)?.value?.trim?.() ?? "";
 
-    const herramientas = Array.from(
-      galaForm.querySelectorAll<HTMLInputElement>('input[name="herramientas"]:checked')
+    const canales = Array.from(
+      brunoForm.querySelectorAll<HTMLInputElement>('input[name="canales"]:checked')
+    ).map((i) => i.value);
+
+    const integraciones = Array.from(
+      brunoForm.querySelectorAll<HTMLInputElement>('input[name="integraciones"]:checked')
     ).map((i) => i.value);
 
     const plan =
-      (galaForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
+      (brunoForm.querySelector('input[name="plan"]:checked') as HTMLInputElement | null)?.value ?? "";
 
+    // UTM
     const urlParams = new URLSearchParams(window.location.search);
     const utmObj = Object.fromEntries(urlParams.entries());
     const utm_source = urlParams.get("utm_source") || "";
@@ -702,57 +746,73 @@ if (galaForm) {
     const utm_content = urlParams.get("utm_content") || "";
     const utm_term = urlParams.get("utm_term") || "";
 
-    const oferta = getValue("oferta");
-    const canales = getValue("canales");
-    const objetivo = getValue("objetivo");
-    const ticket = getValue("ticket");
+    const nombre = getValue("nombre");
+    const email = getValue("email");
+    const whatsapp = getValue("whatsapp");
     const websiteOrIg = getValue("url");
 
+    const casos = getValue("casos");
+    const horario = getValue("horario");
+    const sla = getValue("sla");
+    const handoff = getValue("handoff");
+
     const messageText = [
-      `Oferta: ${oferta}`,
-      canales ? `Canales: ${canales}` : "",
-      objetivo ? `Objetivo: ${objetivo}` : "",
-      ticket ? `Ticket: ${ticket}` : "",
-      herramientas.length ? `Herramientas: ${herramientas.join(", ")}` : "",
+      casos ? `Casos: ${casos}` : "",
+      canales.length ? `Canales: ${canales.join(", ")}` : "",
+      horario ? `Horario humano: ${horario}` : "",
+      sla ? `SLA humano: ${sla}` : "",
+      handoff ? `Handoff: ${handoff}` : "",
+      integraciones.length ? `Integraciones: ${integraciones.join(", ")}` : "",
       plan ? `Plan sugerido: ${plan}` : "",
     ]
       .filter(Boolean)
       .join("\n");
 
     const payload = {
-      agent: "Gala",
+      agent: "Bruno",
       plan,
-      name: getValue("nombre"),
-      email: getValue("email"),
-      phone: getValue("whatsapp"),
+
+      name: nombre,
+      email,
+      phone: whatsapp,
       company: "",
       website: websiteOrIg,
       message: messageText,
       source_url: window.location.href,
-      need: messageText,
-      budget: ticket,
-      timeline: "",
+
+      // compat
+      nombre,
+      whatsapp,
+      url: websiteOrIg,
+
+      // UTM
+      utm: utmObj,
       utm_source,
       utm_medium,
       utm_campaign,
       utm_content,
       utm_term,
-      utm: utmObj,
-      gala_objetivo: objetivo,
-      gala_procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
-      gala_herramientas: herramientas.join("\n"),
-      gala_integraciones: herramientas.join("\n"),
-      gala_plan: plan,
-      gala: {
-        objetivo,
-        procesos: [oferta, canales ? `Canales: ${canales}` : ""].filter(Boolean).join("\n"),
-        herramientas: herramientas.join("\n"),
-        integraciones: herramientas.join("\n"),
+
+      // columnas Bruno
+      bruno_negocio: "",
+      bruno_oferta: casos,
+      bruno_canales: canales.join(", "),
+      bruno_presupuesto: "",
+      bruno_objetivo: "",
+      bruno_plan: plan,
+
+      bruno: {
+        oferta: casos,
+        canales: canales.join("\n"),
+        horario,
+        sla,
+        handoff,
+        integraciones: integraciones.join("\n"),
         plan,
       },
     };
 
-    const submitBtn = galaForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const submitBtn = brunoForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     const originalText = submitBtn?.textContent ?? "";
 
     try {
@@ -763,7 +823,7 @@ if (galaForm) {
 
       const data = await sendLead(payload);
       openSuccessModal(data?.message || "Recibimos tu información. Te contactaremos pronto.");
-      galaForm.reset();
+      brunoForm.reset();
     } catch (err) {
       console.error(err);
       showErrorToast("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.");
@@ -775,4 +835,3 @@ if (galaForm) {
     }
   });
 }
-

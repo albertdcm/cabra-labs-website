@@ -1,90 +1,17 @@
 import "./style.css";
-import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
-import TikTokIcon from "./assets/agents/tik-tok.svg";
+
 import InstagramIcon from "./assets/agents/instagram.svg";
+import TikTokIcon from "./assets/agents/tik-tok.svg";
+import CabraLogo from "./assets/agents/Cabra Labs Logo.png";
 
 const app = document.querySelector<HTMLDivElement>("#app");
+if (!app) throw new Error("No se encontró el elemento #app");
 
-if (!app) {
-  throw new Error("No se encontró el elemento #app");
-}
-
-const faqs: { q: string; a: string; tag?: string }[] = [
-  {
-    tag: "General",
-    q: "¿Qué hace Cabra Labs?",
-    a: "Creamos equipos de asistentes digitales (GOAT) y automatizaciones para que tu negocio atienda y venda incluso cuando tú no estás. Diseñamos el sistema, lo conectamos con tus herramientas y lo dejamos funcionando con métricas.",
-  },
-  {
-    tag: "General",
-    q: "¿Necesito saber de automatizaciones para trabajar con ustedes?",
-    a: "No. Te guiamos paso a paso. Solo necesitamos entender tu proceso (cómo llegan los clientes, cómo les vendes y cómo atiendes) y nosotros traducimos eso a flujos y automatizaciones.",
-  },
-  {
-    tag: "General",
-    q: "¿En cuánto tiempo se ve funcionando?",
-    a: "Depende del alcance. Un primer flujo simple puede estar listo en pocos días, y un sistema con varios canales/CRM suele tomar 1–3 semanas. Te confirmamos tiempos luego del diagnóstico.",
-  },
-  {
-    tag: "Bruno",
-    q: "¿Bruno reemplaza a mi equipo de soporte?",
-    a: "No: Bruno se encarga de lo repetitivo (preguntas frecuentes, capturar datos, filtrar, clasificar) y escala a humano cuando el caso lo amerita. Así tu equipo atiende menos ruido y más casos importantes.",
-  },
-  {
-    tag: "Bruno",
-    q: "¿Bruno puede atender en WhatsApp e Instagram?",
-    a: "Sí. Podemos activarlo por canal (WhatsApp Business, Instagram DM, web chat, etc.) según tu plan y el tipo de atención que necesites.",
-  },
-  {
-    tag: "Bruno",
-    q: "¿Qué es “handoff a humano” (escalamiento)?",
-    a: "Es la regla que define cuándo Bruno te pasa la conversación: por ejemplo pagos, reclamos complejos, negociación, casos VIP o cuando el cliente lo pide explícitamente.",
-  },
-  {
-    tag: "Nia",
-    q: "¿Nia funciona si no tengo CRM?",
-    a: "Sí. Si no tienes CRM, te proponemos una estructura simple (por ejemplo con Google Sheets o un CRM recomendado) y montamos el pipeline con etapas, tareas y seguimiento automático.",
-  },
-  {
-    tag: "Nia",
-    q: "¿Qué es un “pipeline”?",
-    a: "Es el camino que recorre un prospecto hasta la compra: por ejemplo Nuevo → Calificado → Cotizado → Llamada → Negociación → Cerrado/Perdido. Nia lo ordena y lo mantiene actualizado.",
-  },
-  {
-    tag: "Nia",
-    q: "¿Qué tipo de seguimientos puede automatizar Nia?",
-    a: "Ejemplos: no respondió (1h/24h/72h), post-cotización, post-llamada, reactivación de leads fríos, post-venta (recompra) y recordatorios de pago, entre otros.",
-  },
-  {
-    tag: "Gala",
-    q: "¿Gala sirve si todavía no tengo un funnel?",
-    a: "Sí. Gala puede ayudarte a estructurar el funnel desde cero (oferta, lead magnet, pasos, mensajes, páginas) y luego automatiza para que el proceso se ejecute solo.",
-  },
-  {
-    tag: "Pagos",
-    q: "¿Cómo trabajan los precios?",
-    a: "Normalmente hay un mensual (operación/soporte/optimización) y un setup según cantidad de flujos, canales, integraciones y personalización. Después del briefing te damos una propuesta clara.",
-  },
-  {
-    tag: "Integraciones",
-    q: "¿Con qué herramientas pueden integrarse?",
-    a: "Con lo que ya uses: CRM (Kommo/HubSpot/Pipedrive), Google Sheets, e-commerce (Shopify/Woo), pasarelas (Stripe/PayPal), Slack/Telegram, email y más.",
-  },
-  {
-    tag: "Seguridad",
-    q: "¿Qué pasa con mis datos y los de mis clientes?",
-    a: "Usamos buenas prácticas de acceso mínimo y conectamos herramientas oficiales. Te explicamos qué datos se guardan, dónde y con qué propósito. Si necesitas políticas específicas, las definimos contigo.",
-  },
-];
-
-const groups = Array.from(
-  faqs.reduce((map, item) => {
-    const key = item.tag ?? "General";
-    if (!map.has(key)) map.set(key, []);
-    map.get(key)!.push(item);
-    return map;
-  }, new Map<string, { q: string; a: string; tag?: string }[]>())
-);
+/**
+ * ⚙️ Edita estos 2 valores si quieres:
+ */
+const UPDATED_AT = "11 de enero de 2026";
+const CONTACT_EMAIL = "contacto@cabralabs.com";
 
 app.innerHTML = `
   <div class="min-h-screen bg-slate-950 text-slate-50">
@@ -142,7 +69,7 @@ app.innerHTML = `
       .cookie-hidden { display: none !important; }
     </style>
 
-    <!-- NAVBAR (igual a Terms) -->
+    <!-- NAVBAR (✅ SIN FAQ / TÉRMINOS / PRIVACIDAD) -->
     <header class="cabra-header sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/60">
       <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-0">
         <a href="/" class="flex items-center group rounded-full px-2 py-1 active:bg-slate-800/40">
@@ -171,7 +98,7 @@ app.innerHTML = `
           </div>
 
           <a
-            href="https://wa.me/584120599367?text=Hola%20Cabra%20Labs%2C%20tengo%20una%20consulta%20sobre%20preguntas%20frecuentes."
+            href="https://wa.me/584120599367?text=Hola%20Cabra%20Labs%2C%20tengo%20una%20consulta%20sobre%20t%C3%A9rminos%20y%20servicios."
             target="_blank"
             rel="noopener"
             class="rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500
@@ -184,97 +111,118 @@ app.innerHTML = `
       </nav>
     </header>
 
-    <!-- CONTENIDO (sin cambios) -->
-    <main class="max-w-6xl mx-auto px-4 md:px-0 py-10 md:py-14 space-y-10">
+    <main class="max-w-6xl mx-auto px-4 md:px-0 py-12 md:py-16 space-y-10">
+      <section class="space-y-5">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          Legal · Términos y Condiciones
+        </div>
 
-      <!-- HERO FAQ -->
-      <section class="relative overflow-hidden rounded-3xl border border-emerald-400/20 bg-slate-900/60 p-6 md:p-8 card-soft">
-        <div class="pointer-events-none absolute -left-24 -top-20 h-56 w-56 rounded-full bg-emerald-500/15 blur-3xl"></div>
-        <div class="pointer-events-none absolute -right-24 -bottom-20 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl"></div>
-
-        <div class="space-y-3 relative">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-200">
-            <span class="text-sm">❓</span>
-            <span>Preguntas frecuentes</span>
-          </div>
-
-          <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
-            Respuestas rápidas para entender cómo trabajamos
+        <div class="space-y-3">
+          <h1 class="text-3xl md:text-4xl font-semibold leading-tight">
+            Términos y <span class="text-gradient-emerald">Condiciones</span>
           </h1>
-
-          <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-3xl">
-            Aquí aclaramos lo más común sobre nuestros agentes GOAT, automatizaciones, tiempos, precios e integraciones.
-            Si quieres que agreguemos una pregunta, escríbenos y la sumamos.
+          <p class="text-sm md:text-base text-slate-300 max-w-3xl leading-relaxed">
+            Estos términos regulan el uso del sitio y los servicios de Cabra Labs (automatizaciones, integraciones,
+            asistentes GOAT e implementación técnica).
           </p>
+          <p class="text-[11px] text-slate-400">
+            Última actualización: <span class="text-slate-300">${UPDATED_AT}</span>
+          </p>
+        </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
-            <a
-              href="https://wa.me/584120599367"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-sky-400 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-400/35 hover:scale-[1.02] transition-transform"
-            >
-              Hablar por WhatsApp
-              <span class="text-base">↗</span>
-            </a>
-
-            <a
-              href="/#agentes"
-              class="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:bg-white/10 transition-colors"
-            >
-              Ver planes y agentes
-            </a>
-          </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="legal-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Servicios</span>
+          <span class="legal-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Responsabilidad</span>
+          <span class="legal-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Propiedad intelectual</span>
+          <span class="legal-chip rounded-full px-3 py-1 text-[11px] text-slate-300">Pagos</span>
         </div>
       </section>
 
-      <!-- FAQ LIST -->
-      <section class="space-y-8">
-        ${groups
-          .map(([tag, items]) => {
-            return `
-              <div class="space-y-3">
-                <h2 class="text-sm uppercase tracking-[0.22em] text-slate-300">
-                  ${tag}
-                </h2>
-
-                <div class="grid gap-3">
-                  ${items
-                    .map((item) => {
-                      return `
-                        <details class="group rounded-3xl border border-white/10 bg-white/5 p-5 card-soft hover:border-emerald-400/35 transition-colors">
-                          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-                            <span class="text-sm md:text-base font-semibold text-slate-100">
-                              ${item.q}
-                            </span>
-                            <span class="shrink-0 text-slate-400 group-open:text-emerald-200 transition-colors">
-                              ▾
-                            </span>
-                          </summary>
-
-                          <div class="pt-3 text-sm text-slate-300 leading-relaxed">
-                            ${item.a}
-                          </div>
-                        </details>
-                      `;
-                    })
-                    .join("")}
-                </div>
-              </div>
-            `;
-          })
-          .join("")}
+      <section class="legal-card rounded-3xl p-6 md:p-7 card-soft space-y-3">
+        <h2 class="text-lg md:text-xl font-semibold">Importante</h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Cabra Labs ofrece servicios tecnológicos. Podemos optimizar flujos, automatizar seguimiento y mejorar respuestas,
+          pero los resultados comerciales dependen de múltiples factores (oferta, demanda, pricing, operación y atención humana).
+          No garantizamos un número específico de ventas.
+        </p>
       </section>
 
-      <!-- FOOTER (sin cambios) -->
+      <section class="grid gap-6">
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">1) Alcance del servicio</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            Cabra Labs puede ofrecer: diagnóstico, diseño de flujos, automatizaciones, integraciones (CRM, pagos, e-commerce),
+            asistentes conversacionales, paneles y soporte. El alcance exacto se define en propuesta/plan/acuerdo.
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">2) Uso permitido</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-200/90">
+            <li>• Uso legal y responsable.</li>
+            <li>• Prohibido spam, fraude, suplantación o uso para actividades ilegales.</li>
+            <li>• Prohibido intentar vulnerar seguridad o extraer datos sin autorización.</li>
+          </ul>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">3) Plataformas de terceros</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            Nuestros sistemas pueden depender de terceros (Meta/WhatsApp/Instagram, hosting, CRM, herramientas de automatización, IA).
+            No controlamos caídas, cambios de políticas, límites o precios de terceros. Te ayudamos a mitigar, pero no podemos garantizar continuidad absoluta.
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">4) IA y limitaciones</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            La IA puede generar respuestas incorrectas. Implementamos reglas, validaciones y escalamiento a humano cuando aplica.
+            El cliente es responsable de aprobar mensajes sensibles (precios, garantías, temas legales).
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">5) Propiedad intelectual</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            Cabra Labs conserva la propiedad de plantillas y componentes reutilizables. Los entregables específicos para el cliente
+            se rigen por el acuerdo/propuesta. En ausencia de acuerdo, el cliente recibe licencia de uso para operar su solución.
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">6) Pagos y cancelaciones</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            Pagos, plazos, entregables y cancelaciones se definen por propuesta/plan. Salvo acuerdo escrito, pagos ejecutados y/o horas consumidas
+            no son reembolsables una vez iniciada la ejecución.
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">7) Jurisdicción</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">
+            Jurisdicción: Venezuela y/o Estados Unidos (según aplique al cliente, canal de contratación y/o acuerdo firmado).
+            Si existe un contrato/SOW/propuesta firmada, ese documento prevalece para definir ley aplicable y jurisdicción.
+          </p>
+        </article>
+
+        <article class="legal-card rounded-3xl p-6 md:p-7 card-soft">
+          <h3 class="text-base md:text-lg font-semibold">8) Contacto</h3>
+          <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-sm text-slate-200/90">
+              Escríbenos a: <a class="legal-link font-semibold" href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- FOOTER (✅ LINKS LEGALES SE QUEDAN AQUÍ) -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
-
-          <!-- BRAND -->
           <div class="space-y-3">
             <p class="font-semibold">Cabra Labs</p>
             <p class="text-xs text-slate-400 leading-relaxed">
-              Creamos equipos de asistentes digitales y automatizaciones GOAT para que tu negocio siga atendiendo y vendiendo.
+              Creamos equipos GOAT para que tu negocio responda, capture leads y haga seguimiento hasta cerrar ventas.
             </p>
 
             <div class="pt-2 flex items-center gap-3">
@@ -300,53 +248,28 @@ app.innerHTML = `
             </div>
           </div>
 
-          <!-- AGENTES -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Agentes</p>
             <ul class="space-y-1 text-xs text-slate-400">
-              <li>
-                <a href="/gala.html" class="hover:text-emerald-200 transition-colors">
-                  Gala · Estrategia &amp; Funnels
-                </a>
-              </li>
-              <li>
-                <a href="/bruno.html" class="hover:text-emerald-200 transition-colors">
-                  Bruno · Soporte &amp; Bots
-                </a>
-              </li>
-              <li>
-                <a href="/nia.html" class="hover:text-emerald-200 transition-colors">
-                  Nia · CRM &amp; Seguimiento
-                </a>
-              </li>
+              <li><a href="/gala.html" class="hover:text-emerald-200 transition-colors">Gala · Leads listos para comprar</a></li>
+              <li><a href="/bruno.html" class="hover:text-emerald-200 transition-colors">Bruno · Atención 24/7 sin estrés</a></li>
+              <li><a href="/nia.html" class="hover:text-emerald-200 transition-colors">Nia · Seguimiento que cierra</a></li>
             </ul>
           </div>
 
-          <!-- SOPORTE -->
           <div>
             <p class="text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wide">Soporte</p>
             <ul class="space-y-1 text-xs text-slate-400">
               <li>
-                <a
-                  class="hover:text-emerald-200 transition-colors"
-                  href="https://wa.me/584120599367"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a class="hover:text-emerald-200 transition-colors" href="https://wa.me/584120599367" target="_blank" rel="noopener">
                   Contacto
                 </a>
               </li>
-
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
-                  Preguntas frecuentes
-                </a>
-              </li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
-
         </div>
 
         <div class="border-t border-white/10 text-[11px] text-slate-500 py-4 text-center">

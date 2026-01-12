@@ -387,8 +387,6 @@ app.innerHTML = `
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
               <!-- ✅ Planes y precios removido -->
-              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
         </div>
