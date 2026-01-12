@@ -800,7 +800,7 @@ app.innerHTML = `
         </div>
       </section>
 
-      <!-- FOOTER -->
+      <!-- FOOTER (✅ LINKS LEGALES SE QUEDAN AQUÍ) -->
       <footer class="border-t border-white/10 mt-8">
         <div class="max-w-6xl mx-auto px-4 md:px-0 py-10 grid gap-8 md:grid-cols-3 text-sm">
           <div class="space-y-3">
@@ -849,21 +849,9 @@ app.innerHTML = `
                   Contacto
                 </a>
               </li>
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/faq.html">
-                  Preguntas frecuentes
-                </a>
-              </li>
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/privacy.html">
-                  Política de Privacidad
-                </a>
-              </li>
-              <li>
-                <a class="hover:text-emerald-200 transition-colors" href="/terms.html">
-                  Términos y Condiciones
-                </a>
-              </li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
         </div>
