@@ -1,4 +1,4 @@
-import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets/Bruno-Cyc_QUnD.png",m="/assets/Gala-krAELU__.png",x="/assets/Nia-hhaFx0w2.png",u="/assets/cabras%20trabajando-CGKFwWGa.png",v="/assets/cabras%20futuristas-4WcOcFQL.png",b=document.querySelector("#app");if(!b)throw new Error("No se encontró el elemento #app");b.innerHTML=`
+import{C as c,T as d,I as n}from"./Cabra Labs Logo--6aE7PCr.js";const p="/assets/Bruno-Cyc_QUnD.png",m="/assets/Gala-krAELU__.png",x="/assets/Nia-hhaFx0w2.png",u="/assets/cabras%20trabajando-CGKFwWGa.png",b="/assets/cabras%20futuristas-4WcOcFQL.png",g=document.querySelector("#app");if(!g)throw new Error("No se encontró el elemento #app");g.innerHTML=`
   <div class="min-h-screen bg-slate-950 text-slate-50">
     <!-- FIX: Tap highlight / click overlay (iOS + desktop) -> gris oscuro, focus verde -->
     <style>
@@ -48,12 +48,21 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
         border: 1px solid rgba(255, 255, 255, 0.10);
         background: rgba(255, 255, 255, 0.06);
       }
-      .quote-card h4 {
-        letter-spacing: 0.18em;
-      }
+      .quote-card h4 { letter-spacing: 0.18em; }
       .quote-chip {
         border: 1px solid rgba(255, 255, 255, 0.10);
         background: rgba(255, 255, 255, 0.05);
+      }
+
+      /* ============================
+         ✅ SERVICIOS IA - ICON CHIP
+         ============================ */
+      .svc-icon {
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(255,255,255,0.06);
+      }
+      .svc-kicker {
+        letter-spacing: 0.22em;
       }
     </style>
 
@@ -77,8 +86,8 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
           <a href="#agentes" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Agentes
           </a>
-          <a href="#integraciones" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
-            Integraciones
+          <a href="#servicios-ia" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
+            Servicios IA
           </a>
           <a href="#sobre" class="rounded-full px-3 py-2 text-slate-200 hover:text-emerald-300 transition-colors active:bg-slate-800/40">
             Cómo trabajamos
@@ -142,7 +151,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
               responde rápido y convierte más sin contratar más personal.
             </h1>
             <p class="text-slate-300 text-sm md:text-base max-w-xl">
-              Creamos asistentes GOAT que captan, responden y hacen seguimiento en WhatsApp, Instagram, 
+              Creamos asistentes GOAT que captan, responden y hacen seguimiento en WhatsApp, Instagram,
               web y otros canales, para que no se pierdan oportunidades de venta.
             </p>
           </div>
@@ -208,7 +217,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
         </aside>
       </section>
 
-      <!-- ✅ GUÍA RÁPIDA (para reducir fricción y mejorar el scroll) -->
+      <!-- ✅ GUÍA RÁPIDA -->
       <section class="relative">
         <div class="pointer-events-none absolute -left-24 -top-12 h-60 w-60 rounded-full bg-emerald-500/12 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-24 bottom-0 h-60 w-60 rounded-full bg-sky-500/12 blur-3xl"></div>
@@ -263,7 +272,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
         </div>
 
         <div class="grid gap-6 md:gap-8 md:grid-cols-3">
-          <!-- GALA -->
+          <!-- GALA (✅ sin precios) -->
           <article class="group relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-950 shadow-[0_0_80px_rgba(16,185,129,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(16,185,129,0.35)] hover:border-emerald-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -271,7 +280,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
                   <img src="${m}" alt="Gala" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-slate-50">Gala · Leads listos para comprar</h3>
-                    <p class="text-sm text-emerald-200/90">$350 configuración inicial · $150/mes.</p>
+                    <p class="text-xs text-emerald-200/90 uppercase tracking-[0.22em]">Captación + calificación</p>
                   </div>
                 </div>
 
@@ -295,7 +304,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
             </div>
           </article>
 
-          <!-- BRUNO -->
+          <!-- BRUNO (✅ sin precios) -->
           <article class="group relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-sky-500/5 to-slate-950 shadow-[0_0_80px_rgba(56,189,248,0.16)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(56,189,248,0.35)] hover:border-sky-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -303,7 +312,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
                   <img src="${p}" alt="Bruno" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-slate-50">Bruno · Atención 24/7 sin estrés</h3>
-                    <p class="text-sm text-sky-200/90">$250 configuración inicial · $150/mes.</p>
+                    <p class="text-xs text-sky-200/90 uppercase tracking-[0.22em]">Atención + filtros</p>
                   </div>
                 </div>
 
@@ -327,7 +336,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
             </div>
           </article>
 
-          <!-- NIA -->
+          <!-- NIA (✅ sin precios) -->
           <article class="group relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/15 via-purple-500/5 to-slate-950 shadow-[0_0_80px_rgba(168,85,247,0.18)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_120px_rgba(168,85,247,0.38)] hover:border-purple-300/80 h-full">
             <div class="relative px-8 pt-8 pb-7 space-y-6 h-full flex flex-col">
               <div class="space-y-5 grow">
@@ -335,7 +344,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
                   <img src="${x}" alt="Nia" class="h-28 w-auto drop-shadow-xl" loading="lazy" decoding="async"/>
                   <div class="space-y-1 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-slate-50">Nia · Seguimiento que cierra</h3>
-                    <p class="text-sm text-purple-200/90">$300 configuración inicial · $200/mes.</p>
+                    <p class="text-xs text-purple-200/90 uppercase tracking-[0.22em]">Seguimiento + cierre</p>
                   </div>
                 </div>
 
@@ -511,36 +520,131 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
 
       </section>
 
-      <!-- INTEGRACIONES (✅ se queda SOLO esta, removimos la redundante) -->
-      <section id="integraciones" class="relative space-y-6 py-6">
+      <!-- ✅ SERVICIOS IA (con íconos restaurados) -->
+      <section id="servicios-ia" class="relative space-y-8 py-6">
         <div class="pointer-events-none absolute -left-20 top-0 h-60 w-60 rounded-full bg-emerald-500/10 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-sky-500/10 blur-3xl"></div>
 
         <div class="relative space-y-3">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
-            <span class="text-base">⚡</span>
-            <span>Integraciones</span>
+            <span class="text-base">✨</span>
+            <span>Servicios IA</span>
           </div>
 
-          <h2 class="text-xl md:text-2xl font-semibold">
-            Se conecta con tu stack actual
+          <h2 class="text-2xl md:text-3xl font-semibold">
+            La capa creativa que potencia a tus agentes GOAT
           </h2>
 
-          <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
-            Bancos, medios de pago, CRM y tiendas online. Si no ves tu herramienta, igual la revisamos.
+          <p class="text-sm text-slate-300 max-w-3xl leading-relaxed">
+            Además de automatizar respuestas y seguimiento, creamos los activos que hacen que tu embudo convierta:
+            landing pages, sitios web y contenido con IA (imagen, video y audio) listo para publicar.
           </p>
         </div>
 
-        <div class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-3 pt-2">
-          ${["Credicard","Bancamiga","Stripe","PayPal","Profit Plus","Odoo","Shopify","WooCommerce"].map(a=>`
-              <div class="card-soft py-2 px-3 flex items-center justify-center text-[11px] text-slate-200 border border-white/10 bg-white/5 rounded-full hover:bg-white/10 hover:border-emerald-400/30 transition-all duration-200">
-                ${a}
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- WEB & CONVERSIÓN -->
+          <article class="card-soft relative overflow-hidden rounded-3xl border border-emerald-400/25 bg-gradient-to-br from-emerald-500/10 via-slate-900/70 to-slate-950 p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="svc-kicker text-[11px] uppercase text-emerald-200/80">Web & conversión</p>
+                <h3 class="mt-3 text-2xl font-semibold">Landing + sitios web</h3>
               </div>
-            `).join("")}
+              <div class="svc-icon w-11 h-11 rounded-2xl flex items-center justify-center">
+                <span class="text-lg">🌐</span>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-sm text-slate-200/90">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                <span><span class="text-emerald-200 font-semibold">Landing express (mobile-first)</span> para vender</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                <span>Copy + estructura (CTA, secciones, FAQ, prueba social)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+                <span>SEO básico + performance + tracking (Pixel/GA opcional)</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- CREATIVOS IA -->
+          <article class="card-soft relative overflow-hidden rounded-3xl border border-sky-400/25 bg-gradient-to-br from-sky-500/10 via-slate-900/70 to-slate-950 p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="svc-kicker text-[11px] uppercase text-sky-200/80">Creativos IA</p>
+                <h3 class="mt-3 text-2xl font-semibold">Diseño de imágenes</h3>
+              </div>
+              <div class="svc-icon w-11 h-11 rounded-2xl flex items-center justify-center">
+                <span class="text-lg">🖼️</span>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-sm text-slate-200/90">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400 shrink-0"></span>
+                <span><span class="text-sky-200 font-semibold">Posts, stories y banners</span> (brand-lock)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400 shrink-0"></span>
+                <span>Creativos para Ads (variantes A/B)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400 shrink-0"></span>
+                <span>Mockups / producto / carruseles / thumbnails</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- CONTENIDO IA -->
+          <article class="card-soft relative overflow-hidden rounded-3xl border border-purple-400/25 bg-gradient-to-br from-purple-500/12 via-slate-900/70 to-slate-950 p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="svc-kicker text-[11px] uppercase text-purple-200/80">Contenido IA</p>
+                <h3 class="mt-3 text-2xl font-semibold">Videos y audios</h3>
+              </div>
+              <div class="svc-icon w-11 h-11 rounded-2xl flex items-center justify-center">
+                <span class="text-lg">🎬</span>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3 text-sm text-slate-200/90">
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                <span><span class="text-purple-200 font-semibold">Reels/TikTok:</span> edición + subtítulos + ganchos</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                <span>Guiones + voiceover IA + locuciones</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0"></span>
+                <span>Piezas para campañas + UGC-style (opcional)</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pt-2">
+          <p class="text-[11px] text-slate-400 max-w-3xl">
+            Ideal si ya usas Gala/Bruno/Nia y quieres aumentar conversión con piezas creativas + landing + contenido.
+          </p>
+
+          <div class="mt-4">
+            <a
+              href="#contacto"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-400 via-emerald-400 to-emerald-500 hover:shadow-lg hover:shadow-emerald-500/40 text-white text-sm font-semibold px-6 py-2.5 transition-all duration-200"
+            >
+              Quiero un pack creativo
+              <span class="text-base text-white">↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- SOBRE (más corto) -->
+      <!-- SOBRE -->
       <section id="sobre" class="relative">
         <div class="pointer-events-none absolute -left-32 top-0 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"></div>
         <div class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl"></div>
@@ -592,7 +696,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
         </div>
       </section>
 
-      <!-- SIEMPRE TRABAJANDO (más directo) -->
+      <!-- SIEMPRE TRABAJANDO -->
       <section class="relative grid gap-10 md:grid-cols-[minmax(0,1.15fr),minmax(0,1.1fr)] items-center">
         <div class="space-y-5">
           <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-emerald-200">
@@ -620,7 +724,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
 
               <div class="overflow-hidden rounded-2xl border border-emerald-400/30 bg-slate-900/70">
                 <img
-                  src="${v}"
+                  src="${b}"
                   alt="Cabras futuristas"
                   class="w-full h-32 md:h-40 object-cover rounded-2xl"
                   loading="lazy"
@@ -660,6 +764,7 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
               Chat exploratorio · Sin compromiso.
             </p>
           </div>
+
           <div class="flex flex-col items-start md:items-end gap-2">
             <a
               href="https://wa.me/584120599367"
@@ -728,7 +833,8 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
         </div>
@@ -740,4 +846,4 @@ import{C as c,T as d,I as n}from"./Cabra Labs Logo-DKhkTmSi.js";const p="/assets
 
     </main>
   </div>
-`;const h=document.querySelectorAll("main section, .card-soft"),g=new IntersectionObserver(a=>{a.forEach(e=>{e.isIntersecting&&(e.target.classList.add("is-visible"),g.unobserve(e.target))})},{threshold:.12,rootMargin:"120px 0px"});h.forEach((a,e)=>{a.classList.add("reveal-on-scroll"),a.style.transitionDelay=`${Math.min(e*16,160)}ms`,g.observe(a)});(function(){const e=Array.from(document.querySelectorAll("[data-goat-tab]")),o=Array.from(document.querySelectorAll("[data-goat-panel]"));if(!e.length||!o.length)return;const i=s=>{e.forEach(t=>{const r=t.getAttribute("data-goat-tab")===s;t.setAttribute("aria-selected",r?"true":"false")}),o.forEach(t=>{const r=t.getAttribute("data-goat-panel")===s;t.toggleAttribute("hidden",!r)})};e.forEach(s=>{s.addEventListener("click",()=>{const t=s.getAttribute("data-goat-tab")||"puntual";i(t)})}),i("puntual")})();const l=a=>{const e=new Image;e.decoding="async",e.loading="eager",e.src=a};l(c);l(u);l(m);l(p);l(x);
+`;const f=document.querySelectorAll("main section, .card-soft"),v=new IntersectionObserver(a=>{a.forEach(e=>{e.isIntersecting&&(e.target.classList.add("is-visible"),v.unobserve(e.target))})},{threshold:.12,rootMargin:"120px 0px"});f.forEach((a,e)=>{a.classList.add("reveal-on-scroll"),a.style.transitionDelay=`${Math.min(e*16,160)}ms`,v.observe(a)});(function(){const e=Array.from(document.querySelectorAll("[data-goat-tab]")),o=Array.from(document.querySelectorAll("[data-goat-panel]"));if(!e.length||!o.length)return;const i=l=>{e.forEach(t=>{const r=t.getAttribute("data-goat-tab")===l;t.setAttribute("aria-selected",r?"true":"false")}),o.forEach(t=>{const r=t.getAttribute("data-goat-panel")===l;t.toggleAttribute("hidden",!r)})};e.forEach(l=>{l.addEventListener("click",()=>{const t=l.getAttribute("data-goat-tab")||"puntual";i(t)})}),i("puntual")})();const s=a=>{const e=new Image;e.decoding="async",e.loading="eager",e.src=a};s(c);s(u);s(m);s(p);s(x);s(b);

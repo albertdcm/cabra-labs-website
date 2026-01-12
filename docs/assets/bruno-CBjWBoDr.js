@@ -1,4 +1,4 @@
-import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets/Bruno%20Interno-J3XYnWux.png",f=document.querySelector("#app");if(!f)throw new Error("No se encontró el elemento #app");f.innerHTML=`
+import{C as P,T as R,I as $}from"./Cabra Labs Logo--6aE7PCr.js";const N="/assets/Bruno%20Interno-J3XYnWux.png",f=document.querySelector("#app");if(!f)throw new Error("No se encontró el elemento #app");f.innerHTML=`
   <div class="theme-bruno min-h-screen bg-slate-950 text-slate-50">
     <!-- ✅ AJUSTE: contorno azul (hover/click/focus) SOLO para contenedores (.card-soft) en Bruno -->
     <style>
@@ -29,7 +29,7 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
         <!-- LOGO (PNG, VITE OK) -->
         <a href="/" class="flex items-center group">
           <img
-            src="${A}"
+            src="${P}"
             alt="Cabra Labs"
             class="h-10 w-auto group-hover:scale-105 transition-transform duration-200"
             loading="eager"
@@ -112,7 +112,6 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-sky-200 font-semibold">Hasta 2</span> flujos + <span class="text-sky-200 font-semibold">1</span> canal.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $150/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -120,7 +119,6 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-sky-200 font-semibold">Hasta 5</span> flujos + <span class="text-sky-200 font-semibold">2</span> canales + handoff a humano.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $250/mes</p>
             </div>
 
             <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -128,7 +126,6 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
               <p class="text-xs text-slate-300 mt-1">
                 <span class="text-sky-200 font-semibold">Hasta 8</span> flujos + <span class="text-sky-200 font-semibold">3</span> canales + etiquetas + reportes avanzados.
               </p>
-              <p class="text-[11px] text-slate-400 mt-1">Desde $400/mes</p>
             </div>
 
             <p class="text-[11px] text-slate-400">
@@ -137,18 +134,11 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
           </div>
         </div>
 
-        <!-- Precio -->
+        <!-- Precio (sin precios) -->
         <div class="rounded-3xl border border-sky-400/25 bg-gradient-to-r from-sky-500/10 via-slate-900/60 to-emerald-500/10 p-5 card-soft equal-card md:h-full">
           <p class="text-xs uppercase tracking-[0.22em] text-sky-200/90">Precio</p>
 
           <p class="mt-3 text-sm text-slate-200/90">
-            <span class="text-sky-200 font-semibold">Setup desde $250</span> · mensualidad fija por plan:
-            <span class="text-sky-200 font-semibold">Base $150/mes</span> ·
-            <span class="text-sky-200 font-semibold">Crecimiento $250/mes</span> ·
-            <span class="text-sky-200 font-semibold">Escala $400/mes</span>.
-          </p>
-
-          <p class="text-[11px] text-slate-400 mt-2">
             Lo conectamos con CRM, Google Sheets, pasarelas y herramientas que ya usas.
             Integraciones especiales o automatizaciones a medida se cotizan por proyecto.
           </p>
@@ -313,14 +303,13 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
           <div class="space-y-1.5">
             <label class="text-xs text-slate-300">Plan sugerido</label>
             <div class="grid gap-2 sm:grid-cols-3">
-              ${[{key:"Base",desc:"2 flujos · 1 canal",price:"$150/mes"},{key:"Crecimiento",desc:"5 flujos · 2 canales · handoff",price:"$250/mes"},{key:"Escala",desc:"8 flujos · 3 canales · reportes",price:"$400/mes"}].map(e=>`
+              ${[{key:"Base",desc:"2 flujos · 1 canal"},{key:"Crecimiento",desc:"5 flujos · 2 canales · handoff"},{key:"Escala",desc:"8 flujos · 3 canales · reportes"}].map(e=>`
                     <label class="rounded-2xl border border-white/10 bg-white/5 p-3 text-xs text-slate-200/90 hover:bg-white/10 transition-colors cursor-pointer">
                       <div class="flex items-start gap-2">
                         <input type="radio" name="plan" value="${e.key}" class="mt-0.5 accent-sky-400" />
                         <div>
                           <p class="font-semibold text-slate-100">${e.key}</p>
                           <p class="text-[11px] text-slate-400 mt-1">${e.desc}</p>
-                          <p class="text-[11px] text-sky-200/90 mt-1 font-semibold">${e.price}</p>
                         </div>
                       </div>
                     </label>
@@ -371,7 +360,7 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
                 aria-label="Instagram @cabra_labs"
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0f2e2c] border border-emerald-400/40 shadow-[0_0_15px_-2px_rgba(16,185,129,0.25)] hover:scale-105 transition-transform duration-200"
               >
-                <img src="${P}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
+                <img src="${$}" alt="Instagram @cabra.labs" class="w-5 h-5" loading="lazy" decoding="async" />
               </a>
             </div>
           </div>
@@ -396,7 +385,8 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
                 </a>
               </li>
               <li><a class="hover:text-emerald-200 transition-colors" href="/faq.html">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-emerald-200 transition-colors" href="#agentes">Planes y precios</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/privacy.html">Política de Privacidad</a></li>
+              <li><a class="hover:text-emerald-200 transition-colors" href="/terms.html">Términos y Condiciones</a></li>
             </ul>
           </div>
 
@@ -580,7 +570,7 @@ import{C as A,T as R,I as P}from"./Cabra Labs Logo-DKhkTmSi.js";const N="/assets
         <button class="cabra-toast__close" type="button" aria-label="Cerrar" data-cabra-toast-close>✕</button>
       </div>
     </div>
-  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",s=>{s.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(s=>{s.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(s=>{s.addEventListener("click",()=>g())}),window.addEventListener("keydown",s=>{s.key==="Escape"&&(x(),g())})}function z(e){E();const a=document.getElementById("cabra-success-overlay"),s=document.getElementById("cabra-success-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function M(e){E();const a=document.getElementById("cabra-error-toast"),s=document.getElementById("cabra-error-msg");s&&e&&(s.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{g()},4500)}function g(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const H="https://cabralab.app.n8n.cloud/webhook/form-submission",W="cabra_labs_goat_2025_secure";async function F(e){const a=JSON.stringify({token:W,body:e}),s=await fetch(H,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),n=await s.text();let t={};try{t=n?JSON.parse(n):{}}catch{t={raw:n}}if(!s.ok)throw new Error((t==null?void 0:t.message)||(t==null?void 0:t.raw)||"Error enviando el formulario");return t}const l=f.querySelector("form");l&&l.addEventListener("submit",async e=>{var w;e.preventDefault();const a=o=>{var k,p,_;return((_=(p=(k=l.querySelector(`[name="${o}"]`))==null?void 0:k.value)==null?void 0:p.trim)==null?void 0:_.call(p))??""},s=Array.from(l.querySelectorAll('input[name="canales"]:checked')).map(o=>o.value),n=Array.from(l.querySelectorAll('input[name="integraciones"]:checked')).map(o=>o.value),t=((w=l.querySelector('input[name="plan"]:checked'))==null?void 0:w.value)??"",i=new URLSearchParams(window.location.search),j=Object.fromEntries(i.entries()),B=i.get("utm_source")||"",C=i.get("utm_medium")||"",I=i.get("utm_campaign")||"",T=i.get("utm_content")||"",S=i.get("utm_term")||"",y=a("nombre"),$=a("email"),h=a("whatsapp"),v=a("url"),d=a("casos"),m=a("horario"),u=a("sla"),b=a("handoff"),L=[d?`Casos: ${d}`:"",s.length?`Canales: ${s.join(", ")}`:"",m?`Horario humano: ${m}`:"",u?`SLA humano: ${u}`:"",b?`Handoff: ${b}`:"",n.length?`Integraciones: ${n.join(", ")}`:"",t?`Plan sugerido: ${t}`:""].filter(Boolean).join(`
-`),q={agent:"Bruno",plan:t,name:y,email:$,phone:h,company:"",website:v,message:L,source_url:window.location.href,nombre:y,whatsapp:h,url:v,utm:j,utm_source:B,utm_medium:C,utm_campaign:I,utm_content:T,utm_term:S,bruno_negocio:"",bruno_oferta:d,bruno_canales:s.join(", "),bruno_presupuesto:"",bruno_objetivo:"",bruno_plan:t,bruno:{oferta:d,canales:s.join(`
-`),horario:m,sla:u,handoff:b,integraciones:n.join(`
-`),plan:t}},r=l.querySelector('button[type="submit"]'),O=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const o=await F(q);z((o==null?void 0:o.message)||"Recibimos tu información. Te contactaremos pronto."),l.reset()}catch(o){console.error(o),M("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{r&&(r.disabled=!1,r.textContent=O)}});
+  `,document.body.appendChild(e);const a=document.getElementById("cabra-success-overlay");a==null||a.addEventListener("click",t=>{t.target===a&&x()}),document.querySelectorAll("[data-cabra-close]").forEach(t=>{t.addEventListener("click",()=>x())}),document.querySelectorAll("[data-cabra-toast-close]").forEach(t=>{t.addEventListener("click",()=>g())}),window.addEventListener("keydown",t=>{t.key==="Escape"&&(x(),g())})}function z(e){E();const a=document.getElementById("cabra-success-overlay"),t=document.getElementById("cabra-success-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-open")}function x(){const e=document.getElementById("cabra-success-overlay");e==null||e.classList.remove("is-open")}let c;function M(e){E();const a=document.getElementById("cabra-error-toast"),t=document.getElementById("cabra-error-msg");t&&e&&(t.textContent=e),a==null||a.classList.add("is-show"),c&&window.clearTimeout(c),c=window.setTimeout(()=>{g()},4500)}function g(){const e=document.getElementById("cabra-error-toast");e==null||e.classList.remove("is-show"),c&&window.clearTimeout(c),c=void 0}const H="https://cabralab.app.n8n.cloud/webhook/form-submission",W="cabra_labs_goat_2025_secure";async function F(e){const a=JSON.stringify({token:W,body:e}),t=await fetch(H,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:a}),l=await t.text();let s={};try{s=l?JSON.parse(l):{}}catch{s={raw:l}}if(!t.ok)throw new Error((s==null?void 0:s.message)||(s==null?void 0:s.raw)||"Error enviando el formulario");return s}const n=f.querySelector("form");n&&n.addEventListener("submit",async e=>{var w;e.preventDefault();const a=o=>{var k,p,_;return((_=(p=(k=n.querySelector(`[name="${o}"]`))==null?void 0:k.value)==null?void 0:p.trim)==null?void 0:_.call(p))??""},t=Array.from(n.querySelectorAll('input[name="canales"]:checked')).map(o=>o.value),l=Array.from(n.querySelectorAll('input[name="integraciones"]:checked')).map(o=>o.value),s=((w=n.querySelector('input[name="plan"]:checked'))==null?void 0:w.value)??"",i=new URLSearchParams(window.location.search),j=Object.fromEntries(i.entries()),B=i.get("utm_source")||"",T=i.get("utm_medium")||"",C=i.get("utm_campaign")||"",I=i.get("utm_content")||"",S=i.get("utm_term")||"",y=a("nombre"),L=a("email"),h=a("whatsapp"),v=a("url"),d=a("casos"),u=a("horario"),m=a("sla"),b=a("handoff"),q=[d?`Casos: ${d}`:"",t.length?`Canales: ${t.join(", ")}`:"",u?`Horario humano: ${u}`:"",m?`SLA humano: ${m}`:"",b?`Handoff: ${b}`:"",l.length?`Integraciones: ${l.join(", ")}`:"",s?`Plan sugerido: ${s}`:""].filter(Boolean).join(`
+`),O={agent:"Bruno",plan:s,name:y,email:L,phone:h,company:"",website:v,message:q,source_url:window.location.href,nombre:y,whatsapp:h,url:v,utm:j,utm_source:B,utm_medium:T,utm_campaign:C,utm_content:I,utm_term:S,bruno_negocio:"",bruno_oferta:d,bruno_canales:t.join(", "),bruno_presupuesto:"",bruno_objetivo:"",bruno_plan:s,bruno:{oferta:d,canales:t.join(`
+`),horario:u,sla:m,handoff:b,integraciones:l.join(`
+`),plan:s}},r=n.querySelector('button[type="submit"]'),A=(r==null?void 0:r.textContent)??"";try{r&&(r.disabled=!0,r.textContent="Enviando…");const o=await F(O);z((o==null?void 0:o.message)||"Recibimos tu información. Te contactaremos pronto."),n.reset()}catch(o){console.error(o),M("No se pudo enviar. Intenta de nuevo. Si persiste, escríbenos por WhatsApp.")}finally{r&&(r.disabled=!1,r.textContent=A)}});
