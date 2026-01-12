@@ -3,9 +3,9 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
-  base: "/",
+  base: "/", // para dominio propio (cabralabs.com)
   build: {
-    outDir: "docs",          // (si usas GitHub Pages desde /docs)
+    outDir: "docs",      // IMPORTANTÍSIMO si GitHub Pages sirve /docs
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -13,9 +13,11 @@ export default defineConfig({
         gala: resolve(__dirname, "gala.html"),
         bruno: resolve(__dirname, "bruno.html"),
         nia: resolve(__dirname, "nia.html"),
-        privacy: resolve(__dirname, "privacy.html"),
+
+        // ✅ agrega estas 3
+        faq: resolve(__dirname, "faq.html"),
         terms: resolve(__dirname, "terms.html"),
-        faq: resolve(__dirname, "faq.html"), // si también la quieres
+        privacy: resolve(__dirname, "privacy.html"),
       },
     },
   },
